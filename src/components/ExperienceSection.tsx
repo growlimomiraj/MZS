@@ -38,34 +38,34 @@ export const ExperienceSection: React.FC = () => {
 
   useEffect(() => {
     const ctx = gsap.context(() => {
-      // 1. Title scrub in on scroll
+      // 1. Title smooth entrance
       if (titleRef.current && subtitleRef.current) {
-        const titleTl = gsap.timeline({
+        gsap.from(titleRef.current, {
+          y: 40,
+          opacity: 0,
+          duration: 0.8,
+          ease: 'power2.out',
           scrollTrigger: {
             trigger: titleRef.current,
-            start: 'top 85%',
-            end: 'top 55%',
-            scrub: 1.5,
+            start: 'top 90%',
+            toggleActions: 'play none none none',
+            once: true,
           },
         });
 
-        titleTl.from(titleRef.current, {
-          y: 70,
+        gsap.from(subtitleRef.current, {
+          y: 30,
           opacity: 0,
-          duration: 1,
+          duration: 0.8,
+          delay: 0.1,
           ease: 'power2.out',
-        });
-
-        titleTl.from(
-          subtitleRef.current,
-          {
-            y: 50,
-            opacity: 0,
-            duration: 1,
-            ease: 'power2.out',
+          scrollTrigger: {
+            trigger: subtitleRef.current,
+            start: 'top 90%',
+            toggleActions: 'play none none none',
+            once: true,
           },
-          '-=0.7'
-        );
+        });
       }
 
       // 2. Desktop Pinned Stack Unpeel Scroll Animation
