@@ -24,7 +24,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onSearch }) => {
       tl.from(titleRef.current, {
         y: 60,
         opacity: 0,
-        scale: 0.92,
+        scale: 0.94,
         duration: 1.1,
       });
 
@@ -76,29 +76,34 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onSearch }) => {
   return (
     <section
       ref={sectionRef}
-      className="relative min-h-[100svh] flex flex-col justify-end items-center pb-8 sm:pb-12 px-4 sm:px-6 lg:px-8 bg-[#0F1319]"
+      className="relative min-h-[100svh] flex flex-col justify-end items-center pb-8 sm:pb-12 lg:pb-14 px-4 sm:px-6 lg:px-8 bg-[#0F1319]"
     >
       {/* Sticky Background Container with clip-path matching Blacklane CSS */}
       <div className="absolute inset-0 [clip-path:inset(0)] pointer-events-none select-none z-0">
         <picture className="w-full h-full">
           <source
             media="(min-width: 1024px)"
-            srcSet="https://static.blacklane.com/assets/_next/static/media/bg.01a8f1ce1808c5e8.webp"
+            srcSet="/assets/hero/bg.webp, https://static.blacklane.com/assets/_next/static/media/bg.01a8f1ce1808c5e8.webp"
           />
           <source
             media="(max-width: 1023px)"
-            srcSet="https://static.blacklane.com/assets/_next/static/media/bg-mobile.bec167bf82cf67ed.webp"
+            srcSet="/assets/hero/bg-mobile.webp, https://static.blacklane.com/assets/_next/static/media/bg-mobile.bec167bf82cf67ed.webp"
           />
           <img
             ref={bgImgRef}
-            src="https://static.blacklane.com/assets/_next/static/media/bg.01a8f1ce1808c5e8.webp"
+            src="/assets/hero/bg.webp"
+            onError={(e) => {
+              e.currentTarget.src =
+                'https://static.blacklane.com/assets/_next/static/media/bg.01a8f1ce1808c5e8.webp';
+            }}
             alt="Your chauffeur awaits"
             className="fixed max-lg:absolute inset-0 w-full h-full object-cover object-[center_32%] brightness-95 contrast-[1.03]"
             loading="eager"
+            fetchPriority="high"
           />
         </picture>
-        {/* Subtle top & overall gradient for navigation readability */}
-        <div className="absolute inset-0 bg-gradient-to-b from-black/55 via-transparent to-black/20 pointer-events-none z-[1]" />
+        {/* Subtle top & overall gradient for navigation readability matching Blacklane */}
+        <div className="absolute inset-0 bg-gradient-to-b from-black/55 via-transparent to-black/35 pointer-events-none z-[1]" />
       </div>
 
       {/* Content Container positioned in lower portion to match reference */}
@@ -106,7 +111,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onSearch }) => {
         {/* Title: Exact Ice Blue color #aecff3 and PP Fragment typography */}
         <h1
           ref={titleRef}
-          className="text-3xl sm:text-5xl lg:text-[54px] font-['PP_Fragment',serif] font-normal text-[#aecff3] tracking-tight leading-[1.12] mb-4 sm:mb-5 max-w-4xl drop-shadow-md will-change-transform"
+          className="text-4xl sm:text-5xl lg:text-[56px] font-['PP_Fragment',serif] font-normal text-[#aecff3] tracking-tight leading-[1.08] mb-4 sm:mb-5 max-w-4xl drop-shadow-md will-change-transform select-none"
         >
           Your chauffeur awaits.
         </h1>
