@@ -97,13 +97,13 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onSearch }) => {
                 'https://static.blacklane.com/assets/_next/static/media/bg.01a8f1ce1808c5e8.webp';
             }}
             alt="Your chauffeur awaits"
-            className="fixed max-lg:absolute inset-0 w-full h-full object-cover object-[center_32%] brightness-95 contrast-[1.03]"
+            className="fixed max-lg:absolute inset-0 w-full h-full object-cover object-[center_32%] brightness-105 contrast-[1.02] opacity-100 transition-opacity duration-300"
             loading="eager"
             fetchPriority="high"
           />
         </picture>
-        {/* Subtle top & overall gradient for navigation readability matching Blacklane */}
-        <div className="absolute inset-0 bg-gradient-to-b from-black/55 via-transparent to-black/35 pointer-events-none z-[1]" />
+        {/* Subtle top-only gradient for navbar readability without dimming the picture */}
+        <div className="absolute top-0 inset-x-0 h-32 bg-gradient-to-b from-black/40 to-transparent pointer-events-none z-[1]" />
       </div>
 
       {/* Content Container positioned in lower portion to match reference */}
