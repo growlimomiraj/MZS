@@ -81,7 +81,7 @@ export const ExperienceSection: React.FC = () => {
         const pinTl = gsap.timeline({
           scrollTrigger: {
             trigger: stackContainerRef.current,
-            start: 'top 12%',
+            start: 'top 84px',
             end: '+=200%',
             scrub: 1,
             pin: true,
@@ -89,14 +89,14 @@ export const ExperienceSection: React.FC = () => {
           },
         });
 
-        // Unpeel card 0, then card 1
+        // Unpeel card 0, then card 1 matching Blacklane JS
         cardRefs.forEach((ref, idx) => {
           if (ref.current && idx < cardRefs.length - 1) {
             pinTl.to(
               ref.current,
               {
-                yPercent: -115,
-                ease: 'power1.inOut',
+                yPercent: -110,
+                ease: 'none',
                 duration: 1,
               },
               idx
@@ -152,17 +152,14 @@ export const ExperienceSection: React.FC = () => {
                 />
 
                 {/* Dark gradient vignette */}
-                <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent pointer-events-none" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent pointer-events-none" />
 
-                {/* Content Overlay - Matching user screenshot exactly */}
-                <div className="relative z-10 max-w-2xl text-left">
-                  <span className="text-[11px] font-semibold tracking-[0.16em] uppercase text-white/80 mb-2 block">
-                    Sanctuary Detail 0{idx + 1}
-                  </span>
-                  <h3 className="text-2xl sm:text-3xl lg:text-4xl font-['PP_Fragment',serif] font-normal text-white mb-2.5">
+                {/* Floating Frosted Glass Content Box matching video */}
+                <div className="absolute bottom-6 left-6 right-6 sm:bottom-8 sm:left-8 sm:right-8 p-6 sm:p-7 rounded-xl backdrop-blur-xl bg-black/45 border border-white/20 text-white z-10 select-none shadow-lg text-left">
+                  <h3 className="text-2xl sm:text-3xl font-['PP_Fragment',serif] font-normal text-white mb-2 leading-tight">
                     {item.title}
                   </h3>
-                  <p className="text-sm sm:text-base text-gray-200 leading-relaxed font-normal max-w-xl">
+                  <p className="text-sm sm:text-base text-white/90 leading-relaxed font-normal max-w-2xl">
                     {item.description}
                   </p>
                 </div>
@@ -187,9 +184,6 @@ export const ExperienceSection: React.FC = () => {
                 />
               </div>
               <div className="p-6">
-                <span className="text-[10px] font-semibold tracking-wider uppercase text-gray-400 mb-1.5 block">
-                  Sanctuary Detail 0{idx + 1}
-                </span>
                 <h3 className="text-xl sm:text-2xl font-serif text-[#0F1319] mb-2">{item.title}</h3>
                 <p className="text-sm text-[#666F7B] leading-relaxed">{item.description}</p>
               </div>

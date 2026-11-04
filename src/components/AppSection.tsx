@@ -51,15 +51,15 @@ export const AppSection: React.FC = () => {
   return (
     <section
       ref={sectionRef}
-      className="bg-white text-[#0F1319] py-20 sm:py-32 px-4 sm:px-6 lg:px-8 border-t border-gray-100 overflow-hidden"
+      className="bg-[#eaf2fb] text-[#0F1319] py-20 sm:py-28 px-4 sm:px-8 lg:px-12 overflow-hidden"
     >
-      <div className="max-w-[1440px] mx-auto grid grid-cols-1 lg:grid-cols-2 items-center gap-12 lg:gap-16">
+      <div className="w-full max-w-[1720px] mx-auto grid grid-cols-1 lg:grid-cols-2 items-center gap-12 lg:gap-16">
         {/* Left Column: Text & Badges */}
         <div ref={textColRef} className="flex flex-col justify-center max-w-xl will-change-transform">
-          <h2 className="text-4xl sm:text-5xl lg:text-[56px] font-serif font-normal text-[#0F1319] tracking-tight leading-[1.08] mb-6">
+          <h2 className="text-3xl sm:text-5xl lg:text-[56px] font-['PP_Fragment',serif] font-normal text-[#0F1319] tracking-tight leading-[1.1] mb-5">
             We move with you.
           </h2>
-          <p className="text-lg sm:text-xl text-[#666F7B] leading-relaxed mb-8">
+          <p className="text-base sm:text-xl text-gray-700 leading-relaxed mb-8 font-normal">
             Have all your journeys in the palm of your hand with the Blacklane app.
           </p>
 

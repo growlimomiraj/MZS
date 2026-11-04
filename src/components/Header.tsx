@@ -68,16 +68,22 @@ export const Header: React.FC<HeaderProps> = ({
     onNavigate(route);
   };
 
-  const isLightPage = colorMode === 'light' && !isScrolled;
-  const textColor = isLightPage ? 'text-[#0F1319]' : 'text-white';
-  const logoColor = isLightPage ? 'dark' : 'white';
+  const isLight = isScrolled || (colorMode === 'light' && currentRoute !== '/');
+  const textColor = isLight ? 'text-[#0F1319] hover:text-[#0F63BD]' : 'text-white/90 hover:text-white';
+  const logoColor = isLight ? 'dark' : 'white';
+  const dropdownBg = isLight
+    ? 'bg-white/98 text-[#0F1319] border border-gray-200 shadow-xl'
+    : 'bg-[#0F1319]/95 text-white border border-white/15 shadow-2xl';
+  const dropdownItemClass = isLight
+    ? 'w-full text-left px-4 py-2.5 text-sm text-gray-700 hover:text-[#0F63BD] hover:bg-gray-50 rounded-xl transition-colors cursor-pointer'
+    : 'w-full text-left px-4 py-2.5 text-sm text-gray-200 hover:text-white hover:bg-white/10 rounded-xl transition-colors cursor-pointer';
 
   return (
     <header
       ref={headerRef}
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled
-          ? 'bg-[#0F1319]/90 backdrop-blur-md shadow-lg border-b border-white/10'
+        isLight
+          ? 'bg-white/95 backdrop-blur-md shadow-sm border-b border-gray-100'
           : 'bg-transparent'
       }`}
     >
@@ -102,7 +108,7 @@ export const Header: React.FC<HeaderProps> = ({
               <button
                 type="button"
                 onClick={() => setActiveDropdown(activeDropdown === 'services' ? null : 'services')}
-                className={`flex items-center gap-1 px-3 py-2 text-sm font-normal text-white/90 hover:text-white transition-colors cursor-pointer`}
+                className={`flex items-center gap-1 px-3 py-2 text-sm font-normal ${textColor} transition-colors cursor-pointer`}
                 aria-expanded={activeDropdown === 'services'}
               >
                 <span>Our services</span>
@@ -114,40 +120,40 @@ export const Header: React.FC<HeaderProps> = ({
               </button>
 
               {activeDropdown === 'services' && (
-                <div className="absolute top-full left-0 mt-2 w-64 bg-[#0F1319]/95 backdrop-blur-xl border border-white/15 rounded-2xl p-2 shadow-2xl animate-slide-down">
+                <div className={`absolute top-full left-0 mt-2 w-64 ${dropdownBg} backdrop-blur-xl rounded-2xl p-2 animate-slide-down`}>
                   <button
                     onClick={() => handleNavClick('/city-to-city')}
-                    className="w-full text-left px-4 py-2.5 text-sm text-gray-200 hover:text-white hover:bg-white/10 rounded-xl transition-colors cursor-pointer"
+                    className={dropdownItemClass}
                   >
                     City-to-City rides
                   </button>
                   <button
                     onClick={() => handleNavClick('/chauffeur-service')}
-                    className="w-full text-left px-4 py-2.5 text-sm text-gray-200 hover:text-white hover:bg-white/10 rounded-xl transition-colors cursor-pointer"
+                    className={dropdownItemClass}
                   >
                     Chauffeur hailing
                   </button>
                   <button
                     onClick={() => handleNavClick('/airport-transfer')}
-                    className="w-full text-left px-4 py-2.5 text-sm text-gray-200 hover:text-white hover:bg-white/10 rounded-xl transition-colors cursor-pointer"
+                    className={dropdownItemClass}
                   >
                     Airport transfers
                   </button>
                   <button
                     onClick={() => handleNavClick('/hourly-car-service')}
-                    className="w-full text-left px-4 py-2.5 text-sm text-gray-200 hover:text-white hover:bg-white/10 rounded-xl transition-colors cursor-pointer"
+                    className={dropdownItemClass}
                   >
                     Hourly hire
                   </button>
                   <button
                     onClick={() => handleNavClick('/chauffeur-service')}
-                    className="w-full text-left px-4 py-2.5 text-sm text-gray-200 hover:text-white hover:bg-white/10 rounded-xl transition-colors cursor-pointer"
+                    className={dropdownItemClass}
                   >
                     Chauffeur service
                   </button>
                   <button
                     onClick={() => handleNavClick('/limousine-service')}
-                    className="w-full text-left px-4 py-2.5 text-sm text-gray-200 hover:text-white hover:bg-white/10 rounded-xl transition-colors cursor-pointer"
+                    className={dropdownItemClass}
                   >
                     Limousine service
                   </button>
@@ -160,7 +166,7 @@ export const Header: React.FC<HeaderProps> = ({
               <button
                 type="button"
                 onClick={() => setActiveDropdown(activeDropdown === 'business' ? null : 'business')}
-                className={`flex items-center gap-1 px-3 py-2 text-sm font-normal text-white/90 hover:text-white transition-colors cursor-pointer`}
+                className={`flex items-center gap-1 px-3 py-2 text-sm font-normal ${textColor} transition-colors cursor-pointer`}
                 aria-expanded={activeDropdown === 'business'}
               >
                 <span>For business</span>
@@ -172,28 +178,28 @@ export const Header: React.FC<HeaderProps> = ({
               </button>
 
               {activeDropdown === 'business' && (
-                <div className="absolute top-full left-0 mt-2 w-64 bg-[#0F1319]/95 backdrop-blur-xl border border-white/15 rounded-2xl p-2 shadow-2xl animate-slide-down">
+                <div className={`absolute top-full left-0 mt-2 w-64 ${dropdownBg} backdrop-blur-xl rounded-2xl p-2 animate-slide-down`}>
                   <button
                     onClick={() => handleNavClick('/business')}
-                    className="w-full text-left px-4 py-2.5 text-sm text-gray-200 hover:text-white hover:bg-white/10 rounded-xl transition-colors cursor-pointer"
+                    className={dropdownItemClass}
                   >
                     Overview
                   </button>
                   <button
                     onClick={() => handleNavClick('/corporations')}
-                    className="w-full text-left px-4 py-2.5 text-sm text-gray-200 hover:text-white hover:bg-white/10 rounded-xl transition-colors cursor-pointer"
+                    className={dropdownItemClass}
                   >
                     Corporations
                   </button>
                   <button
                     onClick={() => handleNavClick('/travel-agencies')}
-                    className="w-full text-left px-4 py-2.5 text-sm text-gray-200 hover:text-white hover:bg-white/10 rounded-xl transition-colors cursor-pointer"
+                    className={dropdownItemClass}
                   >
                     Travel agencies
                   </button>
                   <button
                     onClick={() => handleNavClick('/strategic-partnerships')}
-                    className="w-full text-left px-4 py-2.5 text-sm text-gray-200 hover:text-white hover:bg-white/10 rounded-xl transition-colors cursor-pointer"
+                    className={dropdownItemClass}
                   >
                     Strategic partnerships
                   </button>
@@ -204,13 +210,13 @@ export const Header: React.FC<HeaderProps> = ({
             {/* Direct Links */}
             <button
               onClick={() => handleNavClick('/partners')}
-              className="px-3 py-2 text-sm font-normal text-white/90 hover:text-white transition-colors cursor-pointer"
+              className={`px-3 py-2 text-sm font-normal ${textColor} transition-colors cursor-pointer`}
             >
               For chauffeurs
             </button>
             <button
               onClick={() => handleNavClick('/help')}
-              className="px-3 py-2 text-sm font-normal text-white/90 hover:text-white transition-colors cursor-pointer"
+              className={`px-3 py-2 text-sm font-normal ${textColor} transition-colors cursor-pointer`}
             >
               Help
             </button>
@@ -220,7 +226,7 @@ export const Header: React.FC<HeaderProps> = ({
               <button
                 type="button"
                 onClick={() => setActiveDropdown(activeDropdown === 'lang' ? null : 'lang')}
-                className="flex items-center gap-1 px-3 py-2 text-sm font-normal text-white/90 hover:text-white transition-colors cursor-pointer"
+                className={`flex items-center gap-1 px-3 py-2 text-sm font-normal ${textColor} transition-colors cursor-pointer`}
                 aria-label="Select language"
               >
                 <span>{selectedLanguage}</span>
@@ -232,7 +238,7 @@ export const Header: React.FC<HeaderProps> = ({
               </button>
 
               {activeDropdown === 'lang' && (
-                <div className="absolute top-full right-0 mt-2 w-52 bg-[#0F1319]/95 backdrop-blur-xl border border-white/15 rounded-2xl p-2 shadow-2xl max-h-80 overflow-y-auto animate-slide-down">
+                <div className={`absolute top-full right-0 mt-2 w-52 ${dropdownBg} backdrop-blur-xl rounded-2xl p-2 max-h-80 overflow-y-auto animate-slide-down`}>
                   {LANGUAGES.map((lang) => (
                     <button
                       key={lang.code}
@@ -240,7 +246,11 @@ export const Header: React.FC<HeaderProps> = ({
                         setSelectedLanguage(lang.label);
                         setActiveDropdown(null);
                       }}
-                      className="w-full flex items-center justify-between px-3.5 py-2 text-sm text-gray-200 hover:text-white hover:bg-white/10 rounded-xl transition-colors cursor-pointer"
+                      className={`w-full flex items-center justify-between px-3.5 py-2 text-sm rounded-xl transition-colors cursor-pointer ${
+                        isLight
+                          ? 'text-gray-700 hover:text-black hover:bg-gray-100'
+                          : 'text-gray-200 hover:text-white hover:bg-white/10'
+                      }`}
                     >
                       <span>{lang.label}</span>
                       {selectedLanguage === lang.label && <Check className="w-4 h-4 text-[#0F63BD]" />}
@@ -251,11 +261,15 @@ export const Header: React.FC<HeaderProps> = ({
             </div>
           </nav>
 
-          {/* Sign in Button: Glass Pill with User Icon */}
+          {/* Sign in Button: Glass Pill or Clean White/Border Pill */}
           <button
             type="button"
             onClick={onOpenAuth}
-            className="flex items-center gap-2 px-4 py-2 text-sm font-normal text-white glass-pill rounded-full transition-all duration-200 cursor-pointer shadow-sm hover:bg-white/20"
+            className={`flex items-center gap-2 px-4 py-2 text-sm font-normal rounded-full transition-all duration-200 cursor-pointer shadow-sm ${
+              isLight
+                ? 'border border-gray-300 text-[#0F1319] hover:bg-gray-50'
+                : 'glass-pill text-white hover:bg-white/20'
+            }`}
           >
             <User className="w-4 h-4 opacity-90" />
             <span>Sign in</span>
@@ -285,7 +299,9 @@ export const Header: React.FC<HeaderProps> = ({
           <button
             type="button"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            className="lg:hidden p-2 text-white hover:bg-white/10 rounded-full transition-colors cursor-pointer"
+            className={`lg:hidden p-2 rounded-full transition-colors cursor-pointer ${
+              isLight ? 'text-[#0F1319] hover:bg-gray-100' : 'text-white hover:bg-white/10'
+            }`}
             aria-label="Toggle navigation menu"
           >
             {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
