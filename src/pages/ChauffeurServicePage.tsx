@@ -41,7 +41,7 @@ export const ChauffeurServicePage: React.FC<ChauffeurServicePageProps> = ({ onSe
       <section className="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
         <div className="text-center max-w-3xl mx-auto mb-16">
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-serif font-normal text-[#0F1319] mb-4">
-            The Blacklane Chauffeur Standard
+            The MZS Chauffeur Standard
           </h2>
           <p className="text-lg text-[#666F7B]">
             We recruit only the top 10% of licensed professional drivers in every market.

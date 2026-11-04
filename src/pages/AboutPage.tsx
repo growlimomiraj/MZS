@@ -19,7 +19,7 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onNavigate }) => {
             Peace of mind for every journey.
           </h1>
           <p className="text-lg sm:text-xl text-gray-300 max-w-2xl mx-auto font-normal leading-relaxed">
-            Founded in Berlin in 2011, Blacklane has connected discerning travelers with licensed, top-tier chauffeurs across 500+ cities worldwide.
+            Founded in Berlin in 2011, MZS has connected discerning travelers with licensed, top-tier chauffeurs across 500+ cities worldwide.
           </p>
         </div>
       </section>
@@ -57,13 +57,13 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onNavigate }) => {
               Travel should be an experience of absolute calm and elevated productivity, not friction and uncertainty. When you step off a flight in an unfamiliar city, you shouldn't have to worry about taxi lines, language barriers, or surge pricing spikes.
             </p>
             <p className="text-[#666F7B] leading-relaxed text-base">
-              With Blacklane, you are met by a courteous professional in a pristine luxury vehicle who knows the city intimately, tracks your flight in real time, and guarantees your comfort from touchdown to final destination.
+              With MZS, you are met by a courteous professional in a pristine luxury vehicle who knows the city intimately, tracks your flight in real time, and guarantees your comfort from touchdown to final destination.
             </p>
           </div>
           <div className="rounded-3xl overflow-hidden aspect-[4/3] bg-gray-100 shadow-xl">
             <img
               src="https://static.blacklane.com/assets/_next/static/media/bg.01a8f1ce1808c5e8.webp"
-              alt="Blacklane Executive Chauffeur"
+              alt="MZS Executive Chauffeur"
               className="w-full h-full object-cover"
             />
           </div>

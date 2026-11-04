@@ -89,7 +89,7 @@ export const CityToCityPage: React.FC<CityToCityPageProps> = ({ onSearch, onNavi
         </div>
       </section>
 
-      {/* Comparison Table: Blacklane vs Flights vs Trains */}
+      {/* Comparison Table: MZS vs Flights vs Trains */}
       <section className="py-20 px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto border-t border-gray-100">
         <h2 className="text-3xl sm:text-4xl font-serif text-center mb-12">
           Why choose City-to-City over planes or trains?
@@ -103,7 +103,7 @@ export const CityToCityPage: React.FC<CityToCityPageProps> = ({ onSearch, onNavi
                   Feature
                 </th>
                 <th className="py-4 px-6 text-base font-serif font-bold text-[#0F63BD]">
-                  Blacklane Chauffeur
+                  MZS Chauffeur
                 </th>
                 <th className="py-4 px-6 text-sm font-semibold text-gray-600">
                   Short-Haul Flight

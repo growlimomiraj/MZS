@@ -33,7 +33,7 @@ export const BusinessPage: React.FC<BusinessPageProps> = ({ onNavigate, onOpenAu
 
         <div className="relative z-10 w-full max-w-4xl mx-auto text-center">
           <span className="inline-block px-4 py-1.5 rounded-full bg-white/10 text-xs font-semibold uppercase tracking-wider text-gray-300 mb-4">
-            Blacklane for Business & Travel Management
+            MZS for Business & Travel Management
           </span>
           <h1 className="text-4xl sm:text-5xl lg:text-7xl font-serif font-normal text-white mb-6 leading-tight">
             Corporate travel, simplified.
@@ -120,7 +120,7 @@ export const BusinessPage: React.FC<BusinessPageProps> = ({ onNavigate, onOpenAu
         <div className="p-8 sm:p-12 rounded-3xl bg-[#0F1319] text-white shadow-2xl">
           <div className="text-center max-w-xl mx-auto mb-10">
             <h2 className="text-3xl sm:text-4xl font-serif font-normal mb-3">
-              Open a Blacklane Corporate Account
+              Open a MZS Corporate Account
             </h2>
             <p className="text-sm text-gray-400">
               Get in touch with our enterprise mobility team for customized volume rates and invoicing terms.
@@ -132,7 +132,7 @@ export const BusinessPage: React.FC<BusinessPageProps> = ({ onNavigate, onOpenAu
               <CheckCircle2 className="w-16 h-16 text-emerald-400 mx-auto mb-4" />
               <h3 className="text-2xl font-serif mb-2">Inquiry Received</h3>
               <p className="text-sm text-gray-300">
-                A dedicated Blacklane corporate account director will contact you within 24 business hours.
+                A dedicated MZS corporate account director will contact you within 24 business hours.
               </p>
             </div>
           ) : (

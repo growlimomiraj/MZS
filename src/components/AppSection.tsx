@@ -96,7 +96,7 @@ export const AppSection: React.FC = () => {
             We move with you.
           </h2>
           <p className="text-base sm:text-xl text-[#0F1319]/80 leading-relaxed mb-8 font-normal max-w-md mx-auto lg:mx-0">
-            Have all your journeys in the palm of your hand with the Blacklane app.
+            Have all your journeys in the palm of your hand with the MZS app.
           </p>
 
           <div className="flex flex-wrap items-center justify-center lg:justify-start gap-4">
@@ -141,7 +141,7 @@ export const AppSection: React.FC = () => {
           <div className="relative w-full max-w-[700px]">
             <img
               src="https://static.blacklane.com/assets/_next/static/media/img.fc9e3e8ded216699.webp"
-              alt="Blacklane mobile and desktop platform"
+              alt="MZS mobile and desktop platform"
               loading="lazy"
               className="w-full h-auto drop-shadow-2xl"
             />

@@ -80,7 +80,7 @@ export const LimousineServicePage: React.FC<LimousineServicePageProps> = ({ onSe
               </div>
               <h3 className="text-2xl font-serif mb-3">Complete Discretion</h3>
               <p className="text-[#666F7B] text-sm sm:text-base leading-relaxed">
-                Every Blacklane driver signs rigorous non-disclosure agreements to safeguard your privacy and commercial sensitivity.
+                Every MZS driver signs rigorous non-disclosure agreements to safeguard your privacy and commercial sensitivity.
               </p>
             </div>
           </div>

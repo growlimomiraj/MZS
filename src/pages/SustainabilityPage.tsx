@@ -19,7 +19,7 @@ export const SustainabilityPage: React.FC<SustainabilityPageProps> = ({ onNaviga
             Chauffeured luxury without environmental compromise.
           </h1>
           <p className="text-lg sm:text-xl text-gray-300 max-w-2xl mx-auto font-normal leading-relaxed">
-            Since 2017, Blacklane has offset 100% of all ride emissions. Today, we lead the worldwide luxury mobility transition to pure electric fleets.
+            Since 2017, MZS has offset 100% of all ride emissions. Today, we lead the worldwide luxury mobility transition to pure electric fleets.
           </p>
         </div>
       </section>

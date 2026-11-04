@@ -117,16 +117,16 @@ export const FAQS_DATA = [
     a: 'Yes. You can cancel or change your booking free of charge up to 1 hour before pickup for one-way rides, or up to 24 hours before pickup for by-the-hour and long-distance bookings.'
   },
   {
-    q: 'What is included in the Blacklane price?',
-    a: 'All Blacklane prices are all-inclusive fixed rates guaranteed at the time of booking. They include all taxes, tolls, fees, gratuities, flight tracking, and complimentary wait time. There are no surge pricing spikes or hidden surprises.'
+    q: 'What is included in the MZS price?',
+    a: 'All MZS prices are all-inclusive fixed rates guaranteed at the time of booking. They include all taxes, tolls, fees, gratuities, flight tracking, and complimentary wait time. There are no surge pricing spikes or hidden surprises.'
   },
   {
     q: 'What is the difference between One Way and By the Hour?',
     a: 'A One Way ride is a direct point-to-point transfer from your pickup location to your destination. By the Hour reserves a dedicated chauffeur and luxury vehicle for an agreed duration (from 2 to 24 hours) with unlimited stops within the city perimeter.'
   },
   {
-    q: 'How does Blacklane offset carbon emissions?',
-    a: 'Blacklane was the first global chauffeur service to offset 100% of carbon emissions from all rides since 2017 in partnership with South Pole and The Climate Pledge. We are also accelerating the electrification of our global fleet.'
+    q: 'How does MZS offset carbon emissions?',
+    a: 'MZS was the first global chauffeur service to offset 100% of carbon emissions from all rides since 2017 in partnership with South Pole and The Climate Pledge. We are also accelerating the electrification of our global fleet.'
   }
 ];
 

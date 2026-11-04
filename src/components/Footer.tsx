@@ -13,7 +13,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, onOpenCookies }) => 
         {/* Top App Download CTA in Footer */}
         <div className="flex flex-col sm:flex-row items-center justify-between pb-12 mb-12 border-b border-white/10 gap-6">
           <div className="flex items-center gap-3">
-            <span className="text-xl sm:text-2xl font-serif">Blacklane</span>
+            <span className="text-xl sm:text-2xl font-['PP_Fragment',serif] font-bold tracking-[0.08em]">MZS</span>
             <span className="text-gray-400 text-sm hidden sm:inline">|</span>
             <span className="text-gray-400 text-sm">Your chauffeur awaits worldwide</span>
           </div>
@@ -63,7 +63,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, onOpenCookies }) => 
                   onClick={() => onNavigate('/about')}
                   className="text-gray-300 hover:text-white transition-colors cursor-pointer text-left"
                 >
-                  How Blacklane works
+                  How MZS works
                 </button>
               </li>
               <li>
@@ -338,7 +338,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, onOpenCookies }) => 
         <div className="pt-8 border-t border-white/10 flex flex-col md:flex-row items-center justify-between gap-6 text-xs text-gray-400">
           {/* Legal Links */}
           <div className="flex flex-wrap items-center justify-center md:justify-start gap-4 sm:gap-6">
-            <span>&copy; {new Date().getFullYear()} Blacklane GmbH. All rights reserved.</span>
+            <span>&copy; {new Date().getFullYear()} MZS Inc. All rights reserved.</span>
             <button
               onClick={() => onNavigate('/terms')}
               className="hover:text-white transition-colors cursor-pointer"

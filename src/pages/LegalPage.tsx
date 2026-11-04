@@ -19,7 +19,7 @@ export const LegalPage: React.FC<LegalPageProps> = ({ initialTab = 'terms', onNa
         <div className="max-w-4xl mx-auto">
           <h1 className="text-4xl sm:text-5xl font-serif mb-4">Legal & Compliance</h1>
           <p className="text-sm text-gray-400">
-            Blacklane GmbH &bull; Registered in Berlin, Germany &bull; Global Operations
+            MZS GmbH &bull; Registered in Berlin, Germany &bull; Global Operations
           </p>
         </div>
       </section>
@@ -91,17 +91,17 @@ export const LegalPage: React.FC<LegalPageProps> = ({ initialTab = 'terms', onNa
 
             <h3 className="text-xl font-serif font-semibold mt-6">1. Scope and Subject Matter</h3>
             <p className="text-sm leading-relaxed text-[#666F7B]">
-              These General Terms and Conditions govern the intermediation and execution of passenger transportation arrangements facilitated by Blacklane GmbH ("Blacklane"). By making a reservation through our digital channels (website, mobile application, or corporate APIs), the user agrees to be bound by these Terms.
+              These General Terms and Conditions govern the intermediation and execution of passenger transportation arrangements facilitated by MZS GmbH ("MZS"). By making a reservation through our digital channels (website, mobile application, or corporate APIs), the user agrees to be bound by these Terms.
             </p>
 
             <h3 className="text-xl font-serif font-semibold mt-6">2. Contractual Relationship & Booking Confirmation</h3>
             <p className="text-sm leading-relaxed text-[#666F7B]">
-              Blacklane acts as an agent arranging carriage agreements between passengers and licensed independent transportation providers ("Chauffeur Partners"). A binding booking request is created when the user completes payment information and clicks "Confirm Booking". Confirmation is transmitted immediately by email and SMS.
+              MZS acts as an agent arranging carriage agreements between passengers and licensed independent transportation providers ("Chauffeur Partners"). A binding booking request is created when the user completes payment information and clicks "Confirm Booking". Confirmation is transmitted immediately by email and SMS.
             </p>
 
             <h3 className="text-xl font-serif font-semibold mt-6">3. Guaranteed All-Inclusive Pricing</h3>
             <p className="text-sm leading-relaxed text-[#666F7B]">
-              All quotes provided by Blacklane are all-inclusive fixed rates guaranteed at the moment of reservation. Rates include applicable sales taxes, motorway tolls, statutory road levies, flight delay monitoring, and driver gratuity. No unexpected surge surcharges apply.
+              All quotes provided by MZS are all-inclusive fixed rates guaranteed at the moment of reservation. Rates include applicable sales taxes, motorway tolls, statutory road levies, flight delay monitoring, and driver gratuity. No unexpected surge surcharges apply.
             </p>
 
             <h3 className="text-xl font-serif font-semibold mt-6">4. Cancellation & Modification Policies</h3>
@@ -119,7 +119,7 @@ export const LegalPage: React.FC<LegalPageProps> = ({ initialTab = 'terms', onNa
 
             <h3 className="text-xl font-serif font-semibold mt-6">1. Data Controller Overview</h3>
             <p className="text-sm leading-relaxed text-[#666F7B]">
-              Blacklane GmbH, Franklinstraße 28-29, 10587 Berlin, Germany, acts as the data controller responsible for personal information processed under Regulation (EU) 2016/679 (General Data Protection Regulation) and international privacy frameworks.
+              MZS GmbH, Franklinstraße 28-29, 10587 Berlin, Germany, acts as the data controller responsible for personal information processed under Regulation (EU) 2016/679 (General Data Protection Regulation) and international privacy frameworks.
             </p>
 
             <h3 className="text-xl font-serif font-semibold mt-6">2. Collection of Information</h3>
@@ -138,7 +138,7 @@ export const LegalPage: React.FC<LegalPageProps> = ({ initialTab = 'terms', onNa
           <div className="space-y-6 text-[#0F1319]">
             <h2 className="text-3xl font-serif">Legal Notice (Imprint)</h2>
             <div className="p-6 rounded-2xl bg-[#F8F9FA] border border-gray-200 text-sm space-y-3 leading-relaxed text-[#666F7B]">
-              <p><strong>Company:</strong> Blacklane GmbH</p>
+              <p><strong>Company:</strong> MZS GmbH</p>
               <p><strong>Address:</strong> Franklinstraße 28-29, 10587 Berlin, Germany</p>
               <p><strong>Managing Directors:</strong> Dr. Jens Wohltorf, Frank Steuer</p>
               <p><strong>Commercial Register:</strong> Amtsgericht Charlottenburg (Berlin), HRB 138350 B</p>
@@ -153,7 +153,7 @@ export const LegalPage: React.FC<LegalPageProps> = ({ initialTab = 'terms', onNa
           <div className="space-y-6 text-[#0F1319]">
             <h2 className="text-3xl font-serif">Accessibility Statement</h2>
             <p className="text-sm leading-relaxed text-[#666F7B]">
-              Blacklane is committed to ensuring digital accessibility for people with disabilities. We continually enhance the user experience for everyone and apply relevant accessibility standards, conforming to WCAG 2.1 Level AA specifications across web and mobile platforms.
+              MZS is committed to ensuring digital accessibility for people with disabilities. We continually enhance the user experience for everyone and apply relevant accessibility standards, conforming to WCAG 2.1 Level AA specifications across web and mobile platforms.
             </p>
             <p className="text-sm leading-relaxed text-[#666F7B]">
               Should you encounter any accessibility barrier on our website or wish to request special assistance for your journey, please contact our 24/7 accessibility coordinator at accessibility@blacklane.com.

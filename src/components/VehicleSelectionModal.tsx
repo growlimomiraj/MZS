@@ -169,7 +169,7 @@ export const VehicleSelectionModal: React.FC<VehicleSelectionModalProps> = ({
               <div className="p-4 rounded-2xl bg-white/5 border border-white/10 flex items-center gap-3 text-xs text-gray-400">
                 <Shield className="w-5 h-5 text-[#0F63BD] shrink-0" />
                 <span>
-                  <strong>Blacklane Guarantee:</strong> 100% carbon-neutral rides, complimentary 60 min airport wait time, flight tracking, and full refund for cancellations up to 1 hour prior to pickup.
+                  <strong>MZS Guarantee:</strong> 100% carbon-neutral rides, complimentary 60 min airport wait time, flight tracking, and full refund for cancellations up to 1 hour prior to pickup.
                 </span>
               </div>
             </div>

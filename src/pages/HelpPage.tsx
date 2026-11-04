@@ -23,7 +23,7 @@ export const HelpPage: React.FC<HelpPageProps> = ({ onNavigate }) => {
       <section className="pt-32 pb-20 px-4 sm:px-6 lg:px-8 bg-[#0F1319] text-white text-center">
         <div className="max-w-3xl mx-auto">
           <span className="inline-block px-4 py-1.5 rounded-full bg-white/10 text-xs font-semibold uppercase tracking-wider text-gray-300 mb-4">
-            Blacklane Help Center
+            MZS Help Center
           </span>
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-serif font-normal text-white mb-6">
             How can we assist you today?

@@ -37,7 +37,7 @@ export const PartnersPage: React.FC<PartnersPageProps> = ({ onNavigate }) => {
             For Chauffeurs & Fleet Owners
           </span>
           <h1 className="text-4xl sm:text-5xl lg:text-7xl font-serif font-normal text-white mb-6 leading-tight">
-            Become a Blacklane Chauffeur Partner
+            Become a MZS Chauffeur Partner
           </h1>
           <p className="text-lg sm:text-xl text-gray-300 max-w-2xl mx-auto mb-10 font-normal">
             Grow your professional chauffeuring business with high-value executive bookings, reliable weekly payouts, and respectful global guests.
@@ -50,7 +50,7 @@ export const PartnersPage: React.FC<PartnersPageProps> = ({ onNavigate }) => {
             }}
             className="px-8 py-4 bg-[#0F63BD] hover:bg-[#0D529C] text-white font-semibold rounded-full transition-all shadow-lg text-sm cursor-pointer"
           >
-            Apply to Drive with Blacklane
+            Apply to Drive with MZS
           </button>
         </div>
       </section>
