@@ -53,7 +53,7 @@ export const ExcellenceSection: React.FC = () => {
   return (
     <section
       ref={sectionRef}
-      className="bg-white text-[#0F1319] py-24 lg:py-32 px-4 sm:px-6 lg:px-8 border-t border-gray-100 overflow-hidden"
+      className="relative z-10 bg-white text-[#0F1319] py-24 lg:py-32 px-4 sm:px-6 lg:px-8 border-t border-gray-100 overflow-hidden"
     >
       <div className="max-w-[1440px] mx-auto">
         {/* Headings */}

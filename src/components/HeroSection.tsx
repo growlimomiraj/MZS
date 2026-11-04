@@ -38,31 +38,33 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onSearch }) => {
         '-=0.6'
       );
 
-      // 2. Background parallax on scroll
-      if (bgImgRef.current && sectionRef.current) {
-        gsap.to(bgImgRef.current, {
-          yPercent: 18,
+      // 2. Scrub widget and title up and out as user scrolls past hero
+      if (widgetContainerRef.current) {
+        gsap.to(widgetContainerRef.current, {
+          y: -180,
+          opacity: 0,
           ease: 'none',
+          immediateRender: false,
           scrollTrigger: {
-            trigger: sectionRef.current,
-            start: 'top top',
-            end: 'bottom top',
+            trigger: widgetContainerRef.current,
+            start: 'bottom 65%',
+            end: '+=450',
             scrub: true,
           },
         });
       }
 
-      // 3. Scrub widget out as user scrolls past hero
-      if (widgetContainerRef.current && sectionRef.current) {
-        gsap.to(widgetContainerRef.current, {
-          y: -80,
-          opacity: 0.15,
+      if (titleRef.current) {
+        gsap.to(titleRef.current, {
+          y: -120,
+          opacity: 0,
           ease: 'none',
+          immediateRender: false,
           scrollTrigger: {
-            trigger: widgetContainerRef.current,
-            start: 'bottom 65%',
-            end: '+=450',
-            scrub: 1,
+            trigger: titleRef.current,
+            start: 'bottom 50%',
+            end: '+=350',
+            scrub: true,
           },
         });
       }
@@ -74,29 +76,30 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onSearch }) => {
   return (
     <section
       ref={sectionRef}
-      className="relative min-h-[100svh] flex flex-col justify-end items-center pb-8 sm:pb-12 px-4 sm:px-6 lg:px-8 overflow-hidden bg-[#0F1319]"
+      className="relative min-h-[100svh] flex flex-col justify-end items-center pb-8 sm:pb-12 px-4 sm:px-6 lg:px-8 bg-[#0F1319]"
     >
-      {/* Background Picture with Parallax */}
-      <picture className="absolute inset-0 w-full h-[115%] -top-[7%] pointer-events-none select-none">
-        <source
-          media="(min-width: 1024px)"
-          srcSet="https://static.blacklane.com/assets/_next/static/media/bg.01a8f1ce1808c5e8.webp"
-        />
-        <source
-          media="(max-width: 1023px)"
-          srcSet="https://static.blacklane.com/assets/_next/static/media/bg-mobile.bec167bf82cf67ed.webp"
-        />
-        <img
-          ref={bgImgRef}
-          src="https://static.blacklane.com/assets/_next/static/media/bg.01a8f1ce1808c5e8.webp"
-          alt="Your chauffeur awaits"
-          className="w-full h-full object-cover object-[center_32%] brightness-95 contrast-[1.03]"
-          loading="eager"
-        />
-      </picture>
-
-      {/* Subtle top & overall gradient for navigation readability */}
-      <div className="absolute inset-0 bg-gradient-to-b from-black/55 via-transparent to-black/20 pointer-events-none" />
+      {/* Sticky Background Container with clip-path matching Blacklane CSS */}
+      <div className="absolute inset-0 [clip-path:inset(0)] pointer-events-none select-none z-0">
+        <picture className="w-full h-full">
+          <source
+            media="(min-width: 1024px)"
+            srcSet="https://static.blacklane.com/assets/_next/static/media/bg.01a8f1ce1808c5e8.webp"
+          />
+          <source
+            media="(max-width: 1023px)"
+            srcSet="https://static.blacklane.com/assets/_next/static/media/bg-mobile.bec167bf82cf67ed.webp"
+          />
+          <img
+            ref={bgImgRef}
+            src="https://static.blacklane.com/assets/_next/static/media/bg.01a8f1ce1808c5e8.webp"
+            alt="Your chauffeur awaits"
+            className="fixed max-lg:absolute inset-0 w-full h-full object-cover object-[center_32%] brightness-95 contrast-[1.03]"
+            loading="eager"
+          />
+        </picture>
+        {/* Subtle top & overall gradient for navigation readability */}
+        <div className="absolute inset-0 bg-gradient-to-b from-black/55 via-transparent to-black/20 pointer-events-none z-[1]" />
+      </div>
 
       {/* Content Container positioned in lower portion to match reference */}
       <div className="relative z-10 w-full max-w-7xl mx-auto flex flex-col items-center text-center">

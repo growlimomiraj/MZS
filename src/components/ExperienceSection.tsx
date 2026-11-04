@@ -112,7 +112,7 @@ export const ExperienceSection: React.FC = () => {
   return (
     <section
       ref={sectionRef}
-      className="bg-white text-[#0F1319] pt-20 pb-16 lg:pt-28 lg:pb-24 px-4 sm:px-8 lg:px-12 border-t border-gray-100 overflow-hidden"
+      className="relative z-10 bg-white text-[#0F1319] pt-20 pb-16 lg:pt-28 lg:pb-24 px-4 sm:px-8 lg:px-12 border-t border-gray-100 overflow-hidden"
     >
       <div className="w-full max-w-[1800px] mx-auto">
         {/* Headings - Centered like Blacklane reference */}

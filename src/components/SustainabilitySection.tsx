@@ -7,7 +7,7 @@ interface SustainabilitySectionProps {
 
 export const SustainabilitySection: React.FC<SustainabilitySectionProps> = ({ onNavigate }) => {
   return (
-    <section className="bg-white text-[#0F1319] py-16 sm:py-20 px-4 sm:px-6 lg:px-8 border-t border-gray-100">
+    <section className="relative z-10 bg-white text-[#0F1319] py-16 sm:py-20 px-4 sm:px-6 lg:px-8 border-t border-gray-100">
       <div className="max-w-[1440px] mx-auto text-center">
         <h3 className="text-xl sm:text-2xl font-serif font-normal text-[#0F1319] mb-10">
           Sustainability partners

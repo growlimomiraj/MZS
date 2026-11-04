@@ -51,7 +51,7 @@ export const AppSection: React.FC = () => {
   return (
     <section
       ref={sectionRef}
-      className="bg-[#eaf2fb] text-[#0F1319] py-20 sm:py-28 px-4 sm:px-8 lg:px-12 overflow-hidden"
+      className="relative z-10 bg-[#eaf2fb] text-[#0F1319] py-20 sm:py-28 px-4 sm:px-8 lg:px-12 overflow-hidden"
     >
       <div className="w-full max-w-[1720px] mx-auto grid grid-cols-1 lg:grid-cols-2 items-center gap-12 lg:gap-16">
         {/* Left Column: Text & Badges */}

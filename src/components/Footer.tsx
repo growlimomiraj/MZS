@@ -8,7 +8,7 @@ interface FooterProps {
 
 export const Footer: React.FC<FooterProps> = ({ onNavigate, onOpenCookies }) => {
   return (
-    <footer className="bg-[#0F1319] text-white pt-16 pb-12 px-4 sm:px-6 lg:px-8 border-t border-white/10">
+    <footer className="relative z-10 bg-[#0F1319] text-white pt-16 pb-12 px-4 sm:px-6 lg:px-8 border-t border-white/10">
       <div className="max-w-[1440px] mx-auto">
         {/* Top App Download CTA in Footer */}
         <div className="flex flex-col sm:flex-row items-center justify-between pb-12 mb-12 border-b border-white/10 gap-6">
