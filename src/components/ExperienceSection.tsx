@@ -112,57 +112,57 @@ export const ExperienceSection: React.FC = () => {
   return (
     <section
       ref={sectionRef}
-      className="bg-white text-[#0F1319] py-24 lg:py-32 px-4 sm:px-6 lg:px-8 border-t border-gray-100 overflow-hidden"
+      className="bg-white text-[#0F1319] pt-20 pb-16 lg:pt-28 lg:pb-24 px-4 sm:px-8 lg:px-12 border-t border-gray-100 overflow-hidden"
     >
-      <div className="max-w-[1440px] mx-auto">
-        {/* Headings */}
-        <div className="max-w-3xl mb-14 lg:mb-18">
+      <div className="w-full max-w-[1800px] mx-auto">
+        {/* Headings - Centered like Blacklane reference */}
+        <div className="max-w-[1170px] mx-auto text-center mb-12 lg:mb-16">
           <h2
             ref={titleRef}
-            className="text-4xl sm:text-5xl lg:text-[64px] font-serif font-normal text-[#0F1319] tracking-tight leading-[1.08] mb-6 will-change-transform"
+            className="text-3xl sm:text-5xl lg:text-[56px] font-['PP_Fragment',serif] font-normal text-[#0F1319] tracking-tight leading-[1.12] mb-4 will-change-transform max-w-[800px] mx-auto"
           >
             Step in. Breathe out.
           </h2>
           <h3
             ref={subtitleRef}
-            className="text-xl sm:text-2xl text-[#666F7B] font-normal leading-relaxed will-change-transform"
+            className="text-base sm:text-xl lg:text-[22px] text-[#666F7B] font-normal leading-relaxed will-change-transform max-w-[800px] mx-auto"
           >
             Thoughtful details and discreet service transform every journey into your personal sanctuary.
           </h3>
         </div>
 
-        {/* Desktop Pinned Card Stack (< 1024px falls back to horizontal scroll) */}
-        <div className="hidden lg:block">
+        {/* Desktop Pinned Card Stack - Full width matching user screenshot */}
+        <div className="hidden lg:block w-full">
           <div
             ref={stackContainerRef}
-            className="relative w-full h-[620px] rounded-[36px] overflow-hidden bg-black shadow-2xl"
+            className="relative w-full h-[calc(100vh-140px)] min-h-[600px] max-h-[800px] rounded-2xl overflow-hidden bg-black shadow-[0_12px_40px_rgba(0,0,0,0.2)]"
           >
             {EXPERIENCES.map((item, idx) => (
               <div
                 key={idx}
                 ref={cardRefs[idx]}
-                className="absolute inset-0 w-full h-full rounded-[36px] overflow-hidden will-change-transform flex flex-col justify-end p-12 text-white bg-black select-none"
+                className="absolute inset-0 w-full h-full rounded-2xl overflow-hidden will-change-transform flex flex-col justify-end p-8 sm:p-12 lg:p-14 text-white bg-black select-none"
               >
                 {/* Full-bleed background photography */}
                 <img
                   src={item.image}
                   alt={item.title}
                   loading="lazy"
-                  className="absolute inset-0 w-full h-full object-cover brightness-[0.82] contrast-[1.08]"
+                  className="absolute inset-0 w-full h-full object-cover object-center brightness-[0.88] contrast-[1.04]"
                 />
 
                 {/* Dark gradient vignette */}
-                <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent pointer-events-none" />
 
-                {/* Content Overlay */}
-                <div className="relative z-10 max-w-xl">
-                  <span className="text-xs font-semibold tracking-wider uppercase text-gray-300 mb-2 block">
+                {/* Content Overlay - Matching user screenshot exactly */}
+                <div className="relative z-10 max-w-2xl text-left">
+                  <span className="text-[11px] font-semibold tracking-[0.16em] uppercase text-white/80 mb-2 block">
                     Sanctuary Detail 0{idx + 1}
                   </span>
-                  <h3 className="text-3xl sm:text-4xl font-serif text-white mb-3">
+                  <h3 className="text-2xl sm:text-3xl lg:text-4xl font-['PP_Fragment',serif] font-normal text-white mb-2.5">
                     {item.title}
                   </h3>
-                  <p className="text-base sm:text-lg text-gray-200 leading-relaxed font-normal">
+                  <p className="text-sm sm:text-base text-gray-200 leading-relaxed font-normal max-w-xl">
                     {item.description}
                   </p>
                 </div>
@@ -176,7 +176,7 @@ export const ExperienceSection: React.FC = () => {
           {EXPERIENCES.map((item, idx) => (
             <div
               key={idx}
-              className="w-[85vw] sm:w-[420px] shrink-0 snap-start flex flex-col rounded-3xl overflow-hidden bg-white shadow-sm border border-gray-100"
+              className="w-[88vw] sm:w-[480px] shrink-0 snap-start flex flex-col rounded-2xl overflow-hidden bg-white shadow-sm border border-gray-100"
             >
               <div className="relative aspect-[4/5] overflow-hidden bg-gray-100">
                 <img
@@ -187,7 +187,10 @@ export const ExperienceSection: React.FC = () => {
                 />
               </div>
               <div className="p-6">
-                <h3 className="text-2xl font-serif text-[#0F1319] mb-2">{item.title}</h3>
+                <span className="text-[10px] font-semibold tracking-wider uppercase text-gray-400 mb-1.5 block">
+                  Sanctuary Detail 0{idx + 1}
+                </span>
+                <h3 className="text-xl sm:text-2xl font-serif text-[#0F1319] mb-2">{item.title}</h3>
                 <p className="text-sm text-[#666F7B] leading-relaxed">{item.description}</p>
               </div>
             </div>
