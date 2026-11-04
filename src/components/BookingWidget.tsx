@@ -2,9 +2,6 @@ import React, { useState, useRef, useEffect } from 'react';
 import {
   MapPin,
   Plane,
-  Building2,
-  Calendar as CalendarIcon,
-  Clock,
   ChevronDown,
   ChevronLeft,
   ChevronRight,
@@ -58,13 +55,13 @@ export const BookingWidget: React.FC<BookingWidgetProps> = ({ onSearch }) => {
   const [dropoff, setDropoff] = useState('');
   const [durationHours, setDurationHours] = useState(3);
 
-  // Initialize date to today in YYYY-MM-DD
+  // Initialize date
   const today = new Date();
   const todayStr = `${today.getFullYear()}-${String(today.getMonth() + 1).padStart(2, '0')}-${String(today.getDate()).padStart(2, '0')}`;
   const [pickupDate, setPickupDate] = useState(todayStr);
 
-  // Default time 11:00 AM
-  const [pickupTime, setPickupTime] = useState('11:00');
+  // Default time 11:40 AM matching reference screenshot
+  const [pickupTime, setPickupTime] = useState('11:40');
 
   // Calendar State
   const [calMonth, setCalMonth] = useState(today.getMonth());
@@ -166,7 +163,6 @@ export const BookingWidget: React.FC<BookingWidgetProps> = ({ onSearch }) => {
   const daysInMonth = (month: number, year: number) => new Date(year, month + 1, 0).getDate();
   const firstDayOfMonth = (month: number, year: number) => {
     const day = new Date(year, month, 1).getDay();
-    // 0 is Sunday, make Monday 0
     return day === 0 ? 6 : day - 1;
   };
 
@@ -242,113 +238,44 @@ export const BookingWidget: React.FC<BookingWidgetProps> = ({ onSearch }) => {
         </div>
       </div>
 
-      {/* 2. Main Booking Window Bar */}
-      <div className="w-full relative backdrop-blur-2xl bg-[#0f1319]/50 border border-white/25 rounded-2xl p-3 sm:p-4 lg:p-3 shadow-[0_8px_32px_rgba(0,0,0,0.5)] transition-all">
+      {/* 2. Main Booking Window Bar matching reference image pixel-for-pixel */}
+      <div className="w-full relative backdrop-blur-2xl bg-black/40 border border-white/20 rounded-xl p-4 sm:p-5 lg:py-3.5 lg:px-6 shadow-[0_8px_32px_rgba(0,0,0,0.45)] transition-all">
         <form
           onSubmit={handleSearchSubmit}
-          className="flex flex-col lg:flex-row items-stretch lg:items-center gap-2.5 lg:gap-0"
+          className="flex flex-col lg:flex-row items-stretch lg:items-center gap-4 lg:gap-5 w-full"
         >
-          {/* A. Pickup Location */}
-          <div className="relative flex-1 px-3 sm:px-4 py-2 hover:bg-white/5 rounded-xl transition-colors">
-            <label className="block text-[11px] font-['Geist',sans-serif] font-medium text-[#aeaeae] uppercase tracking-wider mb-0.5">
-              Pickup location
-            </label>
-            <div className="relative flex items-center">
-              <input
-                type="text"
-                value={pickup}
-                onChange={(e) => {
-                  setPickup(e.target.value);
-                  setShowPickupSuggestions(true);
-                  setError(null);
-                }}
-                onFocus={() => {
-                  setShowPickupSuggestions(true);
-                  setShowDropoffSuggestions(false);
-                  setShowDatePicker(false);
-                  setShowTimePicker(false);
-                  setShowDurationPicker(false);
-                }}
-                placeholder="Address, airport, hotel, ..."
-                className="w-full bg-transparent text-white placeholder-[#aeaeae]/70 text-sm sm:text-base font-normal focus:outline-none truncate"
-              />
-              {pickup && (
-                <button
-                  type="button"
-                  onClick={() => setPickup('')}
-                  className="text-white/50 hover:text-white ml-2 focus:outline-none cursor-pointer"
-                  aria-label="Clear pickup location"
-                >
-                  <X className="w-3.5 h-3.5" />
-                </button>
-              )}
-            </div>
-
-            {/* Suggestions Dropdown */}
-            {showPickupSuggestions && (
-              <div className="absolute top-full left-0 mt-2 w-full sm:w-[380px] bg-[#0F1319]/98 backdrop-blur-2xl border border-white/20 rounded-2xl p-2 z-50 shadow-2xl max-h-80 overflow-y-auto animate-in fade-in zoom-in-95">
-                <div className="text-[10px] font-semibold text-gray-400 uppercase px-3 py-1.5 tracking-wider">
-                  Popular Locations
-                </div>
-                {filteredPickups.map((item) => (
-                  <button
-                    key={item.id}
-                    type="button"
-                    onClick={() => {
-                      setPickup(item.title);
-                      setShowPickupSuggestions(false);
-                    }}
-                    className="w-full text-left flex items-start gap-3 p-2.5 rounded-xl hover:bg-white/10 transition-colors cursor-pointer group"
-                  >
-                    {item.type === 'airport' ? (
-                      <Plane className="w-4 h-4 text-[#0F63BD] mt-0.5 shrink-0 group-hover:scale-110 transition-transform" />
-                    ) : (
-                      <MapPin className="w-4 h-4 text-[#0F63BD] mt-0.5 shrink-0 group-hover:scale-110 transition-transform" />
-                    )}
-                    <div>
-                      <div className="text-sm font-medium text-white">{item.title}</div>
-                      <div className="text-xs text-gray-400">{item.subtitle}</div>
-                    </div>
-                  </button>
-                ))}
-              </div>
-            )}
-          </div>
-
-          {/* Divider */}
-          <div className="hidden lg:block w-[1px] h-10 bg-white/20 mx-1 shrink-0 self-center" />
-
-          {/* B. Drop-off Location OR Duration */}
-          {bookingType === 'transfer' ? (
-            <div className="relative flex-1 px-3 sm:px-4 py-2 hover:bg-white/5 rounded-xl transition-colors">
-              <label className="block text-[11px] font-['Geist',sans-serif] font-medium text-[#aeaeae] uppercase tracking-wider mb-0.5">
-                Drop-off location
+          {/* SECTION 1: Locations (Pickup & Drop-off with underlines) */}
+          <div className="flex-1 grid grid-cols-1 sm:grid-cols-2 gap-4 lg:gap-6">
+            {/* A. Pickup Location */}
+            <div className="relative text-left">
+              <label className="block text-[13px] font-['Geist',sans-serif] font-medium text-white mb-1.5 select-none">
+                Pickup location
               </label>
-              <div className="relative flex items-center">
+              <div className="relative flex items-center border-b border-white/35 focus-within:border-white transition-colors pb-1.5">
                 <input
                   type="text"
-                  value={dropoff}
+                  value={pickup}
                   onChange={(e) => {
-                    setDropoff(e.target.value);
-                    setShowDropoffSuggestions(true);
+                    setPickup(e.target.value);
+                    setShowPickupSuggestions(true);
                     setError(null);
                   }}
                   onFocus={() => {
-                    setShowDropoffSuggestions(true);
-                    setShowPickupSuggestions(false);
+                    setShowPickupSuggestions(true);
+                    setShowDropoffSuggestions(false);
                     setShowDatePicker(false);
                     setShowTimePicker(false);
                     setShowDurationPicker(false);
                   }}
                   placeholder="Address, airport, hotel, ..."
-                  className="w-full bg-transparent text-white placeholder-[#aeaeae]/70 text-sm sm:text-base font-normal focus:outline-none truncate"
+                  className="w-full bg-transparent text-white placeholder-white/50 text-[15px] font-normal focus:outline-none truncate"
                 />
-                {dropoff && (
+                {pickup && (
                   <button
                     type="button"
-                    onClick={() => setDropoff('')}
+                    onClick={() => setPickup('')}
                     className="text-white/50 hover:text-white ml-2 focus:outline-none cursor-pointer"
-                    aria-label="Clear drop-off location"
+                    aria-label="Clear pickup location"
                   >
                     <X className="w-3.5 h-3.5" />
                   </button>
@@ -356,18 +283,18 @@ export const BookingWidget: React.FC<BookingWidgetProps> = ({ onSearch }) => {
               </div>
 
               {/* Suggestions Dropdown */}
-              {showDropoffSuggestions && (
+              {showPickupSuggestions && (
                 <div className="absolute top-full left-0 mt-2 w-full sm:w-[380px] bg-[#0F1319]/98 backdrop-blur-2xl border border-white/20 rounded-2xl p-2 z-50 shadow-2xl max-h-80 overflow-y-auto animate-in fade-in zoom-in-95">
                   <div className="text-[10px] font-semibold text-gray-400 uppercase px-3 py-1.5 tracking-wider">
-                    Popular Destinations
+                    Popular Locations
                   </div>
-                  {filteredDropoffs.map((item) => (
+                  {filteredPickups.map((item) => (
                     <button
                       key={item.id}
                       type="button"
                       onClick={() => {
-                        setDropoff(item.title);
-                        setShowDropoffSuggestions(false);
+                        setPickup(item.title);
+                        setShowPickupSuggestions(false);
                       }}
                       className="w-full text-left flex items-start gap-3 p-2.5 rounded-xl hover:bg-white/10 transition-colors cursor-pointer group"
                     >
@@ -385,215 +312,286 @@ export const BookingWidget: React.FC<BookingWidgetProps> = ({ onSearch }) => {
                 </div>
               )}
             </div>
-          ) : (
-            <div className="relative flex-1 px-3 sm:px-4 py-2 hover:bg-white/5 rounded-xl transition-colors cursor-pointer">
-              <label className="block text-[11px] font-['Geist',sans-serif] font-medium text-[#aeaeae] uppercase tracking-wider mb-0.5">
-                Duration
+
+            {/* B. Drop-off Location OR Duration */}
+            {bookingType === 'transfer' ? (
+              <div className="relative text-left">
+                <label className="block text-[13px] font-['Geist',sans-serif] font-medium text-white mb-1.5 select-none">
+                  Drop-off location
+                </label>
+                <div className="relative flex items-center border-b border-white/35 focus-within:border-white transition-colors pb-1.5">
+                  <input
+                    type="text"
+                    value={dropoff}
+                    onChange={(e) => {
+                      setDropoff(e.target.value);
+                      setShowDropoffSuggestions(true);
+                      setError(null);
+                    }}
+                    onFocus={() => {
+                      setShowDropoffSuggestions(true);
+                      setShowPickupSuggestions(false);
+                      setShowDatePicker(false);
+                      setShowTimePicker(false);
+                      setShowDurationPicker(false);
+                    }}
+                    placeholder="Address, airport, hotel, ..."
+                    className="w-full bg-transparent text-white placeholder-white/50 text-[15px] font-normal focus:outline-none truncate"
+                  />
+                  {dropoff && (
+                    <button
+                      type="button"
+                      onClick={() => setDropoff('')}
+                      className="text-white/50 hover:text-white ml-2 focus:outline-none cursor-pointer"
+                      aria-label="Clear drop-off location"
+                    >
+                      <X className="w-3.5 h-3.5" />
+                    </button>
+                  )}
+                </div>
+
+                {/* Suggestions Dropdown */}
+                {showDropoffSuggestions && (
+                  <div className="absolute top-full left-0 mt-2 w-full sm:w-[380px] bg-[#0F1319]/98 backdrop-blur-2xl border border-white/20 rounded-2xl p-2 z-50 shadow-2xl max-h-80 overflow-y-auto animate-in fade-in zoom-in-95">
+                    <div className="text-[10px] font-semibold text-gray-400 uppercase px-3 py-1.5 tracking-wider">
+                      Popular Destinations
+                    </div>
+                    {filteredDropoffs.map((item) => (
+                      <button
+                        key={item.id}
+                        type="button"
+                        onClick={() => {
+                          setDropoff(item.title);
+                          setShowDropoffSuggestions(false);
+                        }}
+                        className="w-full text-left flex items-start gap-3 p-2.5 rounded-xl hover:bg-white/10 transition-colors cursor-pointer group"
+                      >
+                        {item.type === 'airport' ? (
+                          <Plane className="w-4 h-4 text-[#0F63BD] mt-0.5 shrink-0 group-hover:scale-110 transition-transform" />
+                        ) : (
+                          <MapPin className="w-4 h-4 text-[#0F63BD] mt-0.5 shrink-0 group-hover:scale-110 transition-transform" />
+                        )}
+                        <div>
+                          <div className="text-sm font-medium text-white">{item.title}</div>
+                          <div className="text-xs text-gray-400">{item.subtitle}</div>
+                        </div>
+                      </button>
+                    ))}
+                  </div>
+                )}
+              </div>
+            ) : (
+              <div className="relative text-left cursor-pointer">
+                <label className="block text-[13px] font-['Geist',sans-serif] font-medium text-white mb-1.5 select-none">
+                  Duration
+                </label>
+                <div
+                  onClick={() => {
+                    setShowDurationPicker(!showDurationPicker);
+                    setShowPickupSuggestions(false);
+                    setShowDropoffSuggestions(false);
+                    setShowDatePicker(false);
+                    setShowTimePicker(false);
+                  }}
+                  className="flex items-center justify-between text-white text-[15px] font-normal border-b border-white/35 pb-1.5"
+                >
+                  <span>{durationHours} hours</span>
+                  <ChevronDown className="w-4 h-4 text-white/80" />
+                </div>
+
+                {showDurationPicker && (
+                  <div className="absolute top-full left-0 mt-2 w-56 bg-[#0F1319]/98 backdrop-blur-2xl border border-white/20 rounded-2xl p-2 z-50 shadow-2xl max-h-64 overflow-y-auto animate-in fade-in zoom-in-95">
+                    <div className="text-[10px] font-semibold text-gray-400 uppercase px-3 py-1.5 tracking-wider">
+                      Hire Duration
+                    </div>
+                    {[2, 3, 4, 5, 6, 8, 10, 12, 16, 24].map((hrs) => (
+                      <button
+                        key={hrs}
+                        type="button"
+                        onClick={() => {
+                          setDurationHours(hrs);
+                          setShowDurationPicker(false);
+                        }}
+                        className="w-full flex items-center justify-between px-3 py-2 text-sm text-gray-200 hover:text-white hover:bg-white/10 rounded-xl cursor-pointer"
+                      >
+                        <span>{hrs} hours {hrs === 8 && '(Full Day)'}</span>
+                        {durationHours === hrs && <Check className="w-4 h-4 text-[#0F63BD]" />}
+                      </button>
+                    ))}
+                  </div>
+                )}
+              </div>
+            )}
+          </div>
+
+          {/* Vertical Divider 1 */}
+          <div className="hidden lg:block w-[1px] h-9 bg-white/30 shrink-0 self-center mx-1" />
+
+          {/* SECTION 2: Schedule (Date & Pickup time with underlines and chevrons) */}
+          <div className="w-full lg:w-[380px] grid grid-cols-1 sm:grid-cols-2 gap-4 lg:gap-6">
+            {/* C. Date */}
+            <div className="relative text-left cursor-pointer">
+              <label className="block text-[13px] font-['Geist',sans-serif] font-medium text-white mb-1.5 select-none">
+                Date
               </label>
               <div
                 onClick={() => {
-                  setShowDurationPicker(!showDurationPicker);
+                  setShowDatePicker(!showDatePicker);
+                  setShowPickupSuggestions(false);
+                  setShowDropoffSuggestions(false);
+                  setShowTimePicker(false);
+                  setShowDurationPicker(false);
+                }}
+                className="flex items-center justify-between text-[15px] font-normal border-b border-white/35 pb-1.5 gap-2"
+              >
+                <span className={`whitespace-nowrap truncate ${pickupDate ? 'text-white' : 'text-white/60'}`}>
+                  {formatDisplayDate(pickupDate)}
+                </span>
+                <ChevronDown
+                  className={`w-4 h-4 text-white/80 transition-transform shrink-0 ml-auto ${
+                    showDatePicker ? 'rotate-180' : ''
+                  }`}
+                />
+              </div>
+
+              {/* Custom Interactive Calendar Popover */}
+              {showDatePicker && (
+                <div className="absolute top-full left-0 sm:left-auto sm:right-0 lg:left-0 mt-2 w-[310px] bg-[#0F1319]/98 backdrop-blur-2xl border border-white/20 rounded-2xl p-4 z-50 shadow-2xl animate-in fade-in zoom-in-95 select-none">
+                  {/* Month & Year Navigation Header */}
+                  <div className="flex items-center justify-between mb-3 pb-2 border-b border-white/15">
+                    <button
+                      type="button"
+                      onClick={handlePrevMonth}
+                      className="p-1 text-white/70 hover:text-white hover:bg-white/10 rounded-lg transition-colors cursor-pointer"
+                      aria-label="Previous month"
+                    >
+                      <ChevronLeft className="w-5 h-5" />
+                    </button>
+                    <span className="text-sm font-semibold text-white">
+                      {monthNames[calMonth]} {calYear}
+                    </span>
+                    <button
+                      type="button"
+                      onClick={handleNextMonth}
+                      className="p-1 text-white/70 hover:text-white hover:bg-white/10 rounded-lg transition-colors cursor-pointer"
+                      aria-label="Next month"
+                    >
+                      <ChevronRight className="w-5 h-5" />
+                    </button>
+                  </div>
+
+                  {/* Day Names Row */}
+                  <div className="grid grid-cols-7 gap-1 text-center text-[11px] font-medium text-gray-400 mb-2">
+                    <span>Mo</span>
+                    <span>Tu</span>
+                    <span>We</span>
+                    <span>Th</span>
+                    <span>Fr</span>
+                    <span>Sa</span>
+                    <span>Su</span>
+                  </div>
+
+                  {/* Days Grid */}
+                  <div className="grid grid-cols-7 gap-1 text-center">
+                    {/* Empty cells before day 1 */}
+                    {Array.from({ length: firstDayOfMonth(calMonth, calYear) }).map((_, i) => (
+                      <div key={`empty-${i}`} className="h-8 w-8" />
+                    ))}
+
+                    {/* Days of month */}
+                    {Array.from({ length: daysInMonth(calMonth, calYear) }).map((_, i) => {
+                      const day = i + 1;
+                      const past = isPastDate(day);
+                      const selected = isSelectedDate(day);
+
+                      return (
+                        <button
+                          key={day}
+                          type="button"
+                          disabled={past}
+                          onClick={() => handleSelectDay(day)}
+                          className={`h-8 w-8 flex items-center justify-center text-xs rounded-full transition-all cursor-pointer ${
+                            selected
+                              ? 'bg-[#0F63BD] text-white font-bold shadow-md'
+                              : past
+                              ? 'text-gray-600 cursor-not-allowed'
+                              : 'text-white hover:bg-white/20'
+                          }`}
+                        >
+                          {day}
+                        </button>
+                      );
+                    })}
+                  </div>
+                </div>
+              )}
+            </div>
+
+            {/* D. Pickup Time Picker */}
+            <div className="relative text-left cursor-pointer">
+              <label className="block text-[13px] font-['Geist',sans-serif] font-medium text-white mb-1.5 select-none">
+                Pickup time
+              </label>
+              <div
+                onClick={() => {
+                  setShowTimePicker(!showTimePicker);
                   setShowPickupSuggestions(false);
                   setShowDropoffSuggestions(false);
                   setShowDatePicker(false);
-                  setShowTimePicker(false);
+                  setShowDurationPicker(false);
                 }}
-                className="flex items-center justify-between text-white text-sm sm:text-base font-normal"
+                className="flex items-center justify-between text-[15px] font-normal border-b border-white/35 pb-1.5 gap-2"
               >
-                <span>{durationHours} hours</span>
-                <ChevronDown className="w-4 h-4 text-white/70" />
+                <span className="whitespace-nowrap text-white truncate font-normal">
+                  {formatDisplayTime(pickupTime)}
+                </span>
+                <ChevronDown
+                  className={`w-4 h-4 text-white/80 transition-transform shrink-0 ml-auto ${
+                    showTimePicker ? 'rotate-180' : ''
+                  }`}
+                />
               </div>
 
-              {showDurationPicker && (
-                <div className="absolute top-full left-0 mt-2 w-56 bg-[#0F1319]/98 backdrop-blur-2xl border border-white/20 rounded-2xl p-2 z-50 shadow-2xl max-h-64 overflow-y-auto animate-in fade-in zoom-in-95">
+              {/* Time List Popover */}
+              {showTimePicker && (
+                <div
+                  ref={timePickerRef}
+                  className="absolute top-full right-0 mt-2 w-48 bg-[#0F1319]/98 backdrop-blur-2xl border border-white/20 rounded-2xl p-2 z-50 shadow-2xl max-h-64 overflow-y-auto animate-in fade-in zoom-in-95"
+                >
                   <div className="text-[10px] font-semibold text-gray-400 uppercase px-3 py-1.5 tracking-wider">
-                    Hire Duration
+                    Select Time
                   </div>
-                  {[2, 3, 4, 5, 6, 8, 10, 12, 16, 24].map((hrs) => (
+                  {timeOptions.map((t) => (
                     <button
-                      key={hrs}
+                      key={t}
                       type="button"
                       onClick={() => {
-                        setDurationHours(hrs);
-                        setShowDurationPicker(false);
+                        setPickupTime(t);
+                        setShowTimePicker(false);
                       }}
-                      className="w-full flex items-center justify-between px-3 py-2 text-sm text-gray-200 hover:text-white hover:bg-white/10 rounded-xl cursor-pointer"
+                      className={`w-full flex items-center justify-between px-3 py-2 text-sm rounded-xl cursor-pointer transition-colors ${
+                        pickupTime === t
+                          ? 'bg-[#0F63BD]/20 text-[#0F63BD] font-semibold'
+                          : 'text-gray-200 hover:text-white hover:bg-white/10'
+                      }`}
                     >
-                      <span>{hrs} hours {hrs === 8 && '(Full Day)'}</span>
-                      {durationHours === hrs && <Check className="w-4 h-4 text-[#0F63BD]" />}
+                      <span>{formatDisplayTime(t)}</span>
+                      {pickupTime === t && <Check className="w-4 h-4 text-[#0F63BD]" />}
                     </button>
                   ))}
                 </div>
               )}
             </div>
-          )}
-
-          {/* Divider */}
-          <div className="hidden lg:block w-[1px] h-10 bg-white/20 mx-1 shrink-0 self-center" />
-
-          {/* C. Date Picker */}
-          <div className="relative flex-1 px-3 sm:px-4 py-2 hover:bg-white/5 rounded-xl transition-colors cursor-pointer">
-            <label className="block text-[11px] font-['Geist',sans-serif] font-medium text-[#aeaeae] uppercase tracking-wider mb-0.5">
-              Date
-            </label>
-            <div
-              onClick={() => {
-                setShowDatePicker(!showDatePicker);
-                setShowPickupSuggestions(false);
-                setShowDropoffSuggestions(false);
-                setShowTimePicker(false);
-                setShowDurationPicker(false);
-              }}
-              className="flex items-center justify-between text-white text-sm sm:text-base font-normal gap-2"
-            >
-              <span className="whitespace-nowrap text-white font-normal">
-                {formatDisplayDate(pickupDate)}
-              </span>
-              <ChevronDown
-                className={`w-4 h-4 text-white/70 transition-transform ${
-                  showDatePicker ? 'rotate-180' : ''
-                }`}
-              />
-            </div>
-
-            {/* Custom Interactive Calendar Popover */}
-            {showDatePicker && (
-              <div className="absolute top-full left-0 sm:left-auto sm:right-0 lg:left-0 mt-2 w-[310px] bg-[#0F1319]/98 backdrop-blur-2xl border border-white/20 rounded-2xl p-4 z-50 shadow-2xl animate-in fade-in zoom-in-95 select-none">
-                {/* Month & Year Navigation Header */}
-                <div className="flex items-center justify-between mb-3 pb-2 border-b border-white/15">
-                  <button
-                    type="button"
-                    onClick={handlePrevMonth}
-                    className="p-1 text-white/70 hover:text-white hover:bg-white/10 rounded-lg transition-colors cursor-pointer"
-                    aria-label="Previous month"
-                  >
-                    <ChevronLeft className="w-5 h-5" />
-                  </button>
-                  <span className="text-sm font-semibold text-white">
-                    {monthNames[calMonth]} {calYear}
-                  </span>
-                  <button
-                    type="button"
-                    onClick={handleNextMonth}
-                    className="p-1 text-white/70 hover:text-white hover:bg-white/10 rounded-lg transition-colors cursor-pointer"
-                    aria-label="Next month"
-                  >
-                    <ChevronRight className="w-5 h-5" />
-                  </button>
-                </div>
-
-                {/* Day Names Row */}
-                <div className="grid grid-cols-7 gap-1 text-center text-[11px] font-medium text-gray-400 mb-2">
-                  <span>Mo</span>
-                  <span>Tu</span>
-                  <span>We</span>
-                  <span>Th</span>
-                  <span>Fr</span>
-                  <span>Sa</span>
-                  <span>Su</span>
-                </div>
-
-                {/* Days Grid */}
-                <div className="grid grid-cols-7 gap-1 text-center">
-                  {/* Empty cells before day 1 */}
-                  {Array.from({ length: firstDayOfMonth(calMonth, calYear) }).map((_, i) => (
-                    <div key={`empty-${i}`} className="h-8 w-8" />
-                  ))}
-
-                  {/* Days of month */}
-                  {Array.from({ length: daysInMonth(calMonth, calYear) }).map((_, i) => {
-                    const day = i + 1;
-                    const past = isPastDate(day);
-                    const selected = isSelectedDate(day);
-
-                    return (
-                      <button
-                        key={day}
-                        type="button"
-                        disabled={past}
-                        onClick={() => handleSelectDay(day)}
-                        className={`h-8 w-8 flex items-center justify-center text-xs rounded-full transition-all cursor-pointer ${
-                          selected
-                            ? 'bg-[#0F63BD] text-white font-bold shadow-md'
-                            : past
-                            ? 'text-gray-600 cursor-not-allowed'
-                            : 'text-white hover:bg-white/20'
-                        }`}
-                      >
-                        {day}
-                      </button>
-                    );
-                  })}
-                </div>
-              </div>
-            )}
           </div>
 
-          {/* Divider */}
-          <div className="hidden lg:block w-[1px] h-10 bg-white/20 mx-1 shrink-0 self-center" />
+          {/* Vertical Divider 2 */}
+          <div className="hidden lg:block w-[1px] h-9 bg-white/30 shrink-0 self-center mx-1" />
 
-          {/* D. Pickup Time Picker */}
-          <div className="relative flex-1 px-3 sm:px-4 py-2 hover:bg-white/5 rounded-xl transition-colors cursor-pointer">
-            <label className="block text-[11px] font-['Geist',sans-serif] font-medium text-[#aeaeae] uppercase tracking-wider mb-0.5">
-              Pickup time
-            </label>
-            <div
-              onClick={() => {
-                setShowTimePicker(!showTimePicker);
-                setShowPickupSuggestions(false);
-                setShowDropoffSuggestions(false);
-                setShowDatePicker(false);
-                setShowDurationPicker(false);
-              }}
-              className="flex items-center justify-between text-white text-sm sm:text-base font-normal gap-2"
-            >
-              <span className="whitespace-nowrap font-normal">{formatDisplayTime(pickupTime)}</span>
-              <ChevronDown
-                className={`w-4 h-4 text-white/70 transition-transform ${
-                  showTimePicker ? 'rotate-180' : ''
-                }`}
-              />
-            </div>
-
-            {/* Time List Popover */}
-            {showTimePicker && (
-              <div
-                ref={timePickerRef}
-                className="absolute top-full right-0 mt-2 w-48 bg-[#0F1319]/98 backdrop-blur-2xl border border-white/20 rounded-2xl p-2 z-50 shadow-2xl max-h-64 overflow-y-auto animate-in fade-in zoom-in-95"
-              >
-                <div className="text-[10px] font-semibold text-gray-400 uppercase px-3 py-1.5 tracking-wider">
-                  Select Time
-                </div>
-                {timeOptions.map((t) => (
-                  <button
-                    key={t}
-                    type="button"
-                    onClick={() => {
-                      setPickupTime(t);
-                      setShowTimePicker(false);
-                    }}
-                    className={`w-full flex items-center justify-between px-3 py-2 text-sm rounded-xl cursor-pointer transition-colors ${
-                      pickupTime === t
-                        ? 'bg-[#0F63BD]/20 text-[#0F63BD] font-semibold'
-                        : 'text-gray-200 hover:text-white hover:bg-white/10'
-                    }`}
-                  >
-                    <span>{formatDisplayTime(t)}</span>
-                    {pickupTime === t && <Check className="w-4 h-4 text-[#0F63BD]" />}
-                  </button>
-                ))}
-              </div>
-            )}
-          </div>
-
-          {/* Divider */}
-          <div className="hidden lg:block w-[1px] h-10 bg-white/20 mx-1 shrink-0 self-center" />
-
-          {/* E. Action Button ("View options") */}
-          <div className="flex items-center lg:pl-3">
+          {/* SECTION 3: Action Button ("View options") */}
+          <div className="flex items-center justify-end shrink-0 pt-2 lg:pt-0">
             <button
               type="submit"
-              className="w-full lg:w-auto px-8 py-3.5 bg-[#0F63BD] hover:bg-[#0D529C] text-white font-medium text-sm sm:text-base rounded-full transition-all duration-200 shadow-lg hover:shadow-xl cursor-pointer whitespace-nowrap active:scale-95"
+              className="w-full lg:w-auto px-7 py-3 bg-[#0F63BD] hover:bg-[#0c4fa0] text-white font-medium text-[15px] rounded-full transition-all duration-200 shadow-md hover:shadow-lg cursor-pointer whitespace-nowrap active:scale-95"
             >
               View options
             </button>
@@ -616,7 +614,6 @@ export const BookingWidget: React.FC<BookingWidgetProps> = ({ onSearch }) => {
           alt=""
           className="w-8 h-8 object-contain shrink-0 drop-shadow"
           onError={(e) => {
-            // fallback if svg fails
             e.currentTarget.style.display = 'none';
           }}
         />
