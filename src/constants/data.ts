@@ -129,3 +129,4 @@ export const FAQS_DATA = [
     a: 'Blacklane was the first global chauffeur service to offset 100% of carbon emissions from all rides since 2017 in partnership with South Pole and The Climate Pledge. We are also accelerating the electrification of our global fleet.'
   }
 ];
+

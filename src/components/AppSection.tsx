@@ -1,12 +1,62 @@
-import React from 'react';
+import React, { useRef, useEffect } from 'react';
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
+gsap.registerPlugin(ScrollTrigger);
 
 export const AppSection: React.FC = () => {
+  const sectionRef = useRef<HTMLElement>(null);
+  const textColRef = useRef<HTMLDivElement>(null);
+  const imgColRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const ctx = gsap.context(() => {
+      // 1. Left column scrub in
+      if (textColRef.current) {
+        gsap.from(textColRef.current, {
+          x: -60,
+          opacity: 0,
+          duration: 1.2,
+          ease: 'power2.out',
+          scrollTrigger: {
+            trigger: sectionRef.current,
+            start: 'top 75%',
+            end: 'top 40%',
+            scrub: 1.5,
+          },
+        });
+      }
+
+      // 2. Right phone mockup scrub in
+      if (imgColRef.current) {
+        gsap.from(imgColRef.current, {
+          y: 90,
+          opacity: 0,
+          scale: 0.94,
+          duration: 1.3,
+          ease: 'power2.out',
+          scrollTrigger: {
+            trigger: sectionRef.current,
+            start: 'top 70%',
+            end: 'top 35%',
+            scrub: 1.5,
+          },
+        });
+      }
+    }, sectionRef);
+
+    return () => ctx.revert();
+  }, []);
+
   return (
-    <section className="bg-white text-[#0F1319] py-16 sm:py-24 px-4 sm:px-6 lg:px-8 border-t border-gray-100">
+    <section
+      ref={sectionRef}
+      className="bg-white text-[#0F1319] py-20 sm:py-32 px-4 sm:px-6 lg:px-8 border-t border-gray-100 overflow-hidden"
+    >
       <div className="max-w-[1440px] mx-auto grid grid-cols-1 lg:grid-cols-2 items-center gap-12 lg:gap-16">
         {/* Left Column: Text & Badges */}
-        <div className="flex flex-col justify-center max-w-xl">
-          <h2 className="text-4xl sm:text-5xl lg:text-[56px] font-serif font-normal text-[#0F1319] tracking-tight leading-[1.1] mb-6">
+        <div ref={textColRef} className="flex flex-col justify-center max-w-xl will-change-transform">
+          <h2 className="text-4xl sm:text-5xl lg:text-[56px] font-serif font-normal text-[#0F1319] tracking-tight leading-[1.08] mb-6">
             We move with you.
           </h2>
           <p className="text-lg sm:text-xl text-[#666F7B] leading-relaxed mb-8">
@@ -19,7 +69,7 @@ export const AppSection: React.FC = () => {
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Download on the iOS App Store"
-              className="hover:opacity-85 transition-opacity"
+              className="hover:scale-105 transition-transform"
             >
               <img
                 src="https://static.blacklane.com/assets/_next/static/media/app-store-logo-dark.5dc6643c29136385.svg"
@@ -34,7 +84,7 @@ export const AppSection: React.FC = () => {
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Get it on Google Play"
-              className="hover:opacity-85 transition-opacity"
+              className="hover:scale-105 transition-transform"
             >
               <img
                 src="https://static.blacklane.com/assets/_next/static/media/playstore-logo-dark.083f89dd5c62e18d.svg"
@@ -48,7 +98,7 @@ export const AppSection: React.FC = () => {
         </div>
 
         {/* Right Column: Phone Mockup */}
-        <div className="flex justify-center lg:justify-end">
+        <div ref={imgColRef} className="flex justify-center lg:justify-end will-change-transform">
           <div className="relative max-w-md w-full">
             <img
               src="https://static.blacklane.com/assets/_next/static/media/img.fc9e3e8ded216699.webp"

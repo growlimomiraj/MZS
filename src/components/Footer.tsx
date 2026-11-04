@@ -423,3 +423,4 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, onOpenCookies }) => 
     </footer>
   );
 };
+

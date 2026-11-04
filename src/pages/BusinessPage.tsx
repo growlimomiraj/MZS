@@ -194,3 +194,4 @@ export const BusinessPage: React.FC<BusinessPageProps> = ({ onNavigate, onOpenAu
     </div>
   );
 };
+

@@ -65,3 +65,4 @@ export type PageRoute =
   | '/privacy-policy'
   | '/imprint'
   | '/accessibility';
+

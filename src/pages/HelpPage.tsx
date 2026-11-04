@@ -129,3 +129,4 @@ export const HelpPage: React.FC<HelpPageProps> = ({ onNavigate }) => {
     </div>
   );
 };
+

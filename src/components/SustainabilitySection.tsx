@@ -57,3 +57,4 @@ export const SustainabilitySection: React.FC<SustainabilitySectionProps> = ({ on
     </section>
   );
 };
+

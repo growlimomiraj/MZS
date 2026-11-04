@@ -39,3 +39,4 @@ export const SafeTravelsIcon: React.FC<{ className?: string }> = ({ className = 
     />
   </svg>
 );
+

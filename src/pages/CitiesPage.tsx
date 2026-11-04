@@ -77,3 +77,4 @@ export const CitiesPage: React.FC<CitiesPageProps> = ({ onNavigate }) => {
     </div>
   );
 };
+

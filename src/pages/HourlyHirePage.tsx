@@ -89,3 +89,4 @@ export const HourlyHirePage: React.FC<HourlyHirePageProps> = ({ onSearch, onNavi
     </div>
   );
 };
+

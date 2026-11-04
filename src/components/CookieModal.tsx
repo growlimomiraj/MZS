@@ -175,3 +175,4 @@ export const CookieModal: React.FC<CookieModalProps> = ({ isOpen, onClose }) => 
     </div>
   );
 };
+

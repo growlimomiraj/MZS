@@ -72,3 +72,4 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onNavigate }) => {
     </div>
   );
 };
+

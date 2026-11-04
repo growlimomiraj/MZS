@@ -153,3 +153,4 @@ export const CityToCityPage: React.FC<CityToCityPageProps> = ({ onSearch, onNavi
     </div>
   );
 };
+

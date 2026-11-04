@@ -385,3 +385,4 @@ export const BookingWidget: React.FC<BookingWidgetProps> = ({ onSearch }) => {
     </div>
   );
 };
+

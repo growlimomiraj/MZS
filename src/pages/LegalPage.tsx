@@ -164,3 +164,4 @@ export const LegalPage: React.FC<LegalPageProps> = ({ initialTab = 'terms', onNa
     </div>
   );
 };
+

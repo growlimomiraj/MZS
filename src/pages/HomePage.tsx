@@ -24,3 +24,4 @@ export const HomePage: React.FC<HomePageProps> = ({ onSearch, onNavigate }) => {
     </main>
   );
 };
+

@@ -214,3 +214,4 @@ export const PartnersPage: React.FC<PartnersPageProps> = ({ onNavigate }) => {
     </div>
   );
 };
+

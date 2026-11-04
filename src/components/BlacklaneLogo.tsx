@@ -32,3 +32,4 @@ export const BlacklaneLogo: React.FC<LogoProps> = ({ color = 'white', className 
     </svg>
   );
 };
+

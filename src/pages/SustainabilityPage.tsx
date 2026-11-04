@@ -67,3 +67,4 @@ export const SustainabilityPage: React.FC<SustainabilityPageProps> = ({ onNaviga
     </div>
   );
 };
+

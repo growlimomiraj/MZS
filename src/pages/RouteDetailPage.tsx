@@ -88,3 +88,4 @@ export const RouteDetailPage: React.FC<RouteDetailPageProps> = ({
     </div>
   );
 };
+
