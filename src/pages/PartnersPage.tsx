@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { PageRoute } from '../types';
-import { DollarSign, Calendar, Users, ShieldCheck, CheckCircle2, ChevronDown, ArrowRight } from 'lucide-react';
+import { DollarSign, Calendar, Users, ShieldCheck, CheckCircle2, ChevronDown, ArrowRight, Phone, Mail } from 'lucide-react';
 
 interface PartnersPageProps {
   onNavigate: (route: PageRoute) => void;
@@ -12,7 +12,7 @@ export const PartnersPage: React.FC<PartnersPageProps> = ({ onNavigate }) => {
   const [email, setEmail] = useState('');
   const [phone, setPhone] = useState('');
   const [city, setCity] = useState('');
-  const [vehicle, setVehicle] = useState('Mercedes-Benz E-Class');
+  const [vehicle, setVehicle] = useState('Mercedes-Benz S-Class');
   const [openFaq, setOpenFaq] = useState<number | null>(0);
 
   const handleSubmit = (e: React.FormEvent) => {
@@ -22,20 +22,20 @@ export const PartnersPage: React.FC<PartnersPageProps> = ({ onNavigate }) => {
 
   const partnerFaqs = [
     {
-      q: 'Can independent drivers become an MZS partner?',
-      a: 'We partner with licensed, insured chauffeur operators and fleet companies. To apply, you must meet our vehicle standards, hold active commercial chauffeur licenses, and submit company registration and proof of commercial insurance.'
+      q: 'Can independent US fleet operators become an MZS Executive Chauffeurs partner?',
+      a: 'Yes. We partner with licensed, commercially insured chauffeur operators and luxury fleet companies across the United States. To apply, you must meet our late-model vehicle standards, hold active TLC / DOT commercial permits, and provide verifiable certificates of commercial auto liability insurance.'
     },
     {
-      q: 'How does payment work for chauffeur partners?',
-      a: 'All ride fares, wait time charges, and applicable airport fees are tracked digitally. Payouts are transferred automatically via direct bank deposit on a regular, reliable weekly schedule with itemized digital statements.'
+      q: 'How does payment work for chauffeur partners in the US?',
+      a: 'All ride fares, flight delay wait time, tolls, and tips are calculated automatically in the digital dispatch portal. Payouts are transferred automatically via direct bank deposit on a weekly schedule with itemized digital statements.'
     },
     {
       q: 'Do I have to accept every ride sent to me?',
       a: 'No. As an independent partner, you have 100% control over your schedule. You can accept only the rides, dates, and corridors that fit your business needs.'
     },
     {
-      q: 'What vehicles qualify for MZS service classes?',
-      a: 'We accept premium late-model luxury vehicles (typically under 5 years old) in black or dark finishes with black leather interiors. Qualifying models include Mercedes-Benz E-Class, S-Class, V-Class, EQE/EQS, BMW 5/7 Series, and Cadillac Escalade/CT6.'
+      q: 'What vehicles qualify for MZS Executive Chauffeurs classes?',
+      a: 'We accept premium late-model luxury vehicles (typically under 4-5 years old) in black exterior finishes with clean black or executive leather interiors. Qualifying models include Mercedes-Benz S-Class, E-Class, EQS/EQE, Cadillac Escalade ESV, Lincoln Navigator, BMW 7 Series, and executive luxury Sprinters.'
     }
   ];
 
@@ -55,13 +55,13 @@ export const PartnersPage: React.FC<PartnersPageProps> = ({ onNavigate }) => {
         <div className="relative z-10 w-full max-w-4xl mx-auto text-center">
           <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/10 backdrop-blur-md text-xs font-semibold uppercase tracking-widest text-gray-200 mb-6 border border-white/15">
             <Users className="w-4 h-4 text-[#0066FF]" />
-            For Chauffeur Companies & Fleet Owners
+            US Chauffeur Companies & Fleet Operators
           </span>
           <h1 className="text-4xl sm:text-6xl lg:text-7xl font-serif font-normal text-white mb-6 leading-[1.08] tracking-tight">
-            Become an MZS service provider
+            Partner with MZS Executive Chauffeurs
           </h1>
           <p className="text-lg sm:text-xl text-gray-200 max-w-2xl mx-auto mb-10 font-light leading-relaxed">
-            Unlock global demand, increase your revenue with premium international travelers, and enjoy reliable weekly direct payments.
+            Connect your fleet with high-value US enterprise corporate travelers, fill empty return legs, and enjoy guaranteed on-time weekly direct deposits.
           </p>
 
           <button
@@ -71,7 +71,7 @@ export const PartnersPage: React.FC<PartnersPageProps> = ({ onNavigate }) => {
             }}
             className="px-8 py-4 bg-[#0066FF] hover:bg-[#0052CC] text-white font-medium rounded-full transition-all shadow-lg text-sm cursor-pointer"
           >
-            Apply to Partner with MZS
+            Apply to Partner with MZS Executive Chauffeurs
           </button>
         </div>
       </section>
@@ -82,7 +82,7 @@ export const PartnersPage: React.FC<PartnersPageProps> = ({ onNavigate }) => {
           <div className="p-8 sm:p-12 rounded-3xl bg-white border border-gray-200 shadow-sm">
             <span className="text-xs font-semibold uppercase tracking-widest text-[#0066FF] block mb-4">Partner Testimonial</span>
             <blockquote className="text-2xl sm:text-3xl font-serif text-[#0F1319] leading-snug mb-6">
-              &ldquo;MZS is 60% of my revenue. I&apos;ve grown from 2 to 20 chauffeurs and have 10 luxury vehicles from working with them.&rdquo;
+              &ldquo;MZS Executive Chauffeurs represents over 60% of our fleet revenue. We grew from 2 to 14 executive sedans and SUVs servicing New York, Miami, and Los Angeles.&rdquo;
             </blockquote>
             <div className="flex items-center gap-3">
               <div className="w-10 h-10 rounded-full bg-[#0F1319] text-white font-semibold flex items-center justify-center text-sm">
@@ -90,7 +90,7 @@ export const PartnersPage: React.FC<PartnersPageProps> = ({ onNavigate }) => {
               </div>
               <div>
                 <div className="font-semibold text-sm text-[#0F1319]">Angel T.</div>
-                <div className="text-xs text-gray-500">MZS Chauffeur Partner, Madrid</div>
+                <div className="text-xs text-gray-500">Fleet Operations Partner &bull; New York & Miami</div>
               </div>
             </div>
           </div>
@@ -98,7 +98,7 @@ export const PartnersPage: React.FC<PartnersPageProps> = ({ onNavigate }) => {
           <div className="rounded-3xl overflow-hidden shadow-xl border border-gray-200 bg-white p-6 flex flex-col items-center">
             <img
               src="https://static.blacklane.com/assets/_next/static/media/1.9acb1b093618cb82.png"
-              alt="MZS partner income growth graph"
+              alt="MZS Executive Chauffeurs partner revenue growth"
               className="w-full h-auto object-contain rounded-2xl"
             />
           </div>
@@ -115,14 +115,14 @@ export const PartnersPage: React.FC<PartnersPageProps> = ({ onNavigate }) => {
             How partner onboarding works
           </h2>
           <p className="text-base sm:text-lg text-[#596372]">
-            Start receiving bookings in as little as 48 hours after verification.
+            Start receiving dispatch bookings in as little as 48 hours after verification.
           </p>
         </div>
 
         <div className="rounded-3xl overflow-hidden shadow-xl border border-gray-200 bg-white p-4 sm:p-8 flex flex-col items-center">
           <img
             src="https://static.blacklane.com/assets/_next/static/media/onboarding.3b5c41e4fc73a8d8.webp"
-            alt="MZS chauffeur onboarding roadmap"
+            alt="MZS Executive Chauffeurs partner onboarding roadmap"
             className="w-full max-w-4xl object-contain rounded-2xl"
           />
         </div>
@@ -138,14 +138,14 @@ export const PartnersPage: React.FC<PartnersPageProps> = ({ onNavigate }) => {
             Vehicle & chauffeur requirements
           </h2>
           <p className="text-base sm:text-lg text-[#596372]">
-            We maintain the highest fleet standards to ensure our guests enjoy an exceptional luxury experience.
+            We maintain the highest US fleet standards to ensure our corporate and VIP guests enjoy an exceptional luxury experience.
           </p>
         </div>
 
         <div className="rounded-3xl overflow-hidden shadow-xl border border-gray-200 bg-white p-4 sm:p-8 flex flex-col items-center">
           <img
             src="https://static.blacklane.com/assets/_next/static/media/requirements.dbdb0d75a05d8d79.webp"
-            alt="MZS vehicle requirements visual"
+            alt="MZS Executive Chauffeurs vehicle standards visual"
             className="w-full max-w-4xl object-contain rounded-2xl"
           />
         </div>
@@ -156,7 +156,7 @@ export const PartnersPage: React.FC<PartnersPageProps> = ({ onNavigate }) => {
         <div className="p-8 sm:p-12 rounded-3xl bg-white border border-gray-200 shadow-xl">
           <div className="text-center mb-8">
             <span className="text-xs font-semibold uppercase tracking-widest text-[#0066FF] block mb-2">Apply Online</span>
-            <h3 className="text-3xl font-serif text-[#0F1319] mb-3">Join the MZS Global Network</h3>
+            <h3 className="text-3xl font-serif text-[#0F1319] mb-3">Join the MZS Executive Chauffeurs US Network</h3>
             <p className="text-sm text-[#596372]">
               Submit your company credentials to begin the partner onboarding process.
             </p>
@@ -173,7 +173,7 @@ export const PartnersPage: React.FC<PartnersPageProps> = ({ onNavigate }) => {
           ) : (
             <form onSubmit={handleSubmit} className="space-y-4">
               <div>
-                <label className="block text-xs font-medium text-gray-700 uppercase tracking-wider mb-1.5">Full Name</label>
+                <label className="block text-xs font-medium text-gray-700 uppercase tracking-wider mb-1.5">Full Name / Operator Contact</label>
                 <input
                   type="text"
                   required
@@ -186,7 +186,7 @@ export const PartnersPage: React.FC<PartnersPageProps> = ({ onNavigate }) => {
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div>
-                  <label className="block text-xs font-medium text-gray-700 uppercase tracking-wider mb-1.5">Email Address</label>
+                  <label className="block text-xs font-medium text-gray-700 uppercase tracking-wider mb-1.5">Company Email</label>
                   <input
                     type="email"
                     required
@@ -197,13 +197,13 @@ export const PartnersPage: React.FC<PartnersPageProps> = ({ onNavigate }) => {
                   />
                 </div>
                 <div>
-                  <label className="block text-xs font-medium text-gray-700 uppercase tracking-wider mb-1.5">Phone Number</label>
+                  <label className="block text-xs font-medium text-gray-700 uppercase tracking-wider mb-1.5">Direct Phone</label>
                   <input
                     type="tel"
                     required
                     value={phone}
                     onChange={(e) => setPhone(e.target.value)}
-                    placeholder="+1 (555) 000-0000"
+                    placeholder="(555) 000-0000"
                     className="w-full px-4 py-3 rounded-xl border border-gray-300 focus:outline-none focus:border-[#0066FF] text-sm"
                   />
                 </div>
@@ -211,29 +211,30 @@ export const PartnersPage: React.FC<PartnersPageProps> = ({ onNavigate }) => {
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div>
-                  <label className="block text-xs font-medium text-gray-700 uppercase tracking-wider mb-1.5">Primary City</label>
+                  <label className="block text-xs font-medium text-gray-700 uppercase tracking-wider mb-1.5">Primary US Metro Market</label>
                   <input
                     type="text"
                     required
                     value={city}
                     onChange={(e) => setCity(e.target.value)}
-                    placeholder="e.g. London, New York, Dubai"
+                    placeholder="e.g. New York, Miami, Los Angeles, Chicago"
                     className="w-full px-4 py-3 rounded-xl border border-gray-300 focus:outline-none focus:border-[#0066FF] text-sm"
                   />
                 </div>
                 <div>
-                  <label className="block text-xs font-medium text-gray-700 uppercase tracking-wider mb-1.5">Primary Vehicle</label>
+                  <label className="block text-xs font-medium text-gray-700 uppercase tracking-wider mb-1.5">Primary Fleet Vehicle</label>
                   <select
                     value={vehicle}
                     onChange={(e) => setVehicle(e.target.value)}
                     className="w-full px-4 py-3 rounded-xl border border-gray-300 focus:outline-none focus:border-[#0066FF] text-sm bg-white"
                   >
-                    <option value="Mercedes-Benz E-Class">Mercedes-Benz E-Class</option>
                     <option value="Mercedes-Benz S-Class">Mercedes-Benz S-Class</option>
-                    <option value="Mercedes-Benz V-Class">Mercedes-Benz V-Class</option>
-                    <option value="Mercedes-Benz EQE/EQS">Mercedes-Benz EQE / EQS (Electric)</option>
-                    <option value="Cadillac Escalade / SUV">Cadillac Escalade / Luxury SUV</option>
-                    <option value="Multiple Fleet Vehicles">Multiple Fleet Vehicles (5+ cars)</option>
+                    <option value="Mercedes-Benz E-Class">Mercedes-Benz E-Class</option>
+                    <option value="Cadillac Escalade ESV">Cadillac Escalade ESV / Luxury SUV</option>
+                    <option value="Lincoln Navigator L">Lincoln Navigator L</option>
+                    <option value="Mercedes-Benz EQS / EQE">Mercedes-Benz EQS / EQE (Electric)</option>
+                    <option value="Executive Luxury Sprinter">Executive Luxury Sprinter</option>
+                    <option value="Multi-Vehicle Fleet (5+ cars)">Multi-Vehicle Fleet (5+ cars)</option>
                   </select>
                 </div>
               </div>
@@ -242,7 +243,7 @@ export const PartnersPage: React.FC<PartnersPageProps> = ({ onNavigate }) => {
                 type="submit"
                 className="w-full py-4 rounded-full bg-[#0066FF] hover:bg-[#0052CC] text-white font-medium text-sm transition-all shadow-md cursor-pointer mt-6"
               >
-                Submit Application
+                Submit Partner Application
               </button>
             </form>
           )}
@@ -272,6 +273,22 @@ export const PartnersPage: React.FC<PartnersPageProps> = ({ onNavigate }) => {
               )}
             </div>
           ))}
+        </div>
+
+        {/* Partner Support Contact Callout */}
+        <div className="mt-12 p-8 rounded-2xl bg-[#0F1319] text-white text-center">
+          <h3 className="text-xl font-serif mb-2">Have questions about becoming an MZS Chauffeur Partner?</h3>
+          <p className="text-sm text-gray-300 mb-6">Our US Partner Operations desk is here to assist you.</p>
+          <div className="flex flex-wrap items-center justify-center gap-4 text-xs sm:text-sm">
+            <a href="tel:+18888017476" className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-[#0066FF] hover:bg-[#0052CC] text-white font-medium transition-all">
+              <Phone className="w-4 h-4" />
+              Call Dispatch: (888) 801-7476
+            </a>
+            <a href="mailto:info@mzexecutivechauffeurs.com" className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-white/10 hover:bg-white/20 text-white font-medium transition-all border border-white/20">
+              <Mail className="w-4 h-4" />
+              info@mzexecutivechauffeurs.com
+            </a>
+          </div>
         </div>
       </section>
     </div>

@@ -34,13 +34,13 @@ export const BusinessPage: React.FC<BusinessPageProps> = ({ onNavigate, onOpenAu
         <div className="relative z-10 w-full max-w-4xl mx-auto text-center">
           <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/10 backdrop-blur-md text-xs font-semibold uppercase tracking-widest text-gray-200 mb-6 border border-white/15">
             <Building2 className="w-4 h-4 text-[#0066FF]" />
-            MZS for Business & Corporate Mobility
+            MZS Executive Chauffeurs for Business
           </span>
           <h1 className="text-4xl sm:text-6xl lg:text-7xl font-serif font-normal text-white mb-6 leading-[1.08] tracking-tight">
             Corporate travel, simplified.
           </h1>
           <p className="text-lg sm:text-xl text-gray-200 max-w-2xl mx-auto mb-10 font-light leading-relaxed">
-            One single, intuitive platform for enterprises and travel management teams to book, track, and reconcile executive rides across 500+ cities globally.
+            One single, intuitive platform for enterprises and travel management teams to book, track, and reconcile executive rides across the United States.
           </p>
 
           <div className="flex flex-wrap items-center justify-center gap-4">
@@ -132,9 +132,9 @@ export const BusinessPage: React.FC<BusinessPageProps> = ({ onNavigate, onOpenAu
         <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-6">
           <div className="p-6 rounded-2xl bg-white border border-gray-200 shadow-sm">
             <Globe className="w-8 h-8 text-[#0066FF] mb-4" />
-            <h4 className="text-lg font-serif mb-2">Global reliability</h4>
+            <h4 className="text-lg font-serif mb-2">Nationwide reliability</h4>
             <p className="text-xs text-[#596372] leading-relaxed">
-              Instant confirmation and consistent 5-star chauffeur standards across 60+ countries.
+              Instant confirmation and consistent 5-star chauffeur standards across the United States.
             </p>
           </div>
 

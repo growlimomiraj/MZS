@@ -96,7 +96,7 @@ export const AppSection: React.FC = () => {
             We move with you.
           </h2>
           <p className="text-base sm:text-xl text-[#0F1319]/80 leading-relaxed mb-8 font-normal max-w-md mx-auto lg:mx-0">
-            Have all your journeys in the palm of your hand with the MZS app.
+            Have all your journeys in the palm of your hand with MZS Executive Chauffeurs.
           </p>
 
           <div className="flex flex-wrap items-center justify-center lg:justify-start gap-4">

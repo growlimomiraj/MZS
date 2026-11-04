@@ -32,7 +32,7 @@ export const VehicleSelectionModal: React.FC<VehicleSelectionModalProps> = ({
 
   const handleConfirmBooking = (e: React.FormEvent) => {
     e.preventDefault();
-    const code = 'BLK-' + Math.floor(100000 + Math.random() * 900000);
+    const code = 'MZS-' + Math.floor(100000 + Math.random() * 900000);
     setBookingCode(code);
     setStep('confirmed');
   };

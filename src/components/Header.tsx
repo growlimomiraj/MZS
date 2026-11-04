@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { BlacklaneLogo } from './BlacklaneLogo';
-import { ChevronDown, User, Menu, X, Globe, Check } from 'lucide-react';
+import { ChevronDown, User, Menu, X, Globe, Check, Phone, Mail } from 'lucide-react';
 import { PageRoute } from '../types';
 
 interface HeaderProps {
@@ -259,6 +259,18 @@ export const Header: React.FC<HeaderProps> = ({
                 </div>
               )}
             </div>
+            {/* Direct Phone Call */}
+            <a
+              href="tel:+18888017476"
+              className={`flex items-center gap-1.5 px-3 py-1.5 text-xs font-semibold rounded-full border transition-all ${
+                isLight
+                  ? 'border-gray-200 text-[#0F1319] hover:border-black'
+                  : 'border-white/20 text-white hover:bg-white/10'
+              }`}
+            >
+              <Phone className="w-3.5 h-3.5 text-[#0066FF]" />
+              <span>(888) 801-7476</span>
+            </a>
           </nav>
 
           {/* Sign in Button: Glass Pill or Clean White/Border Pill */}
@@ -425,6 +437,24 @@ export const Header: React.FC<HeaderProps> = ({
             >
               Help
             </button>
+
+            {/* Mobile Contact Information */}
+            <div className="pt-4 space-y-3">
+              <a
+                href="tel:+18888017476"
+                className="flex items-center gap-2.5 text-white/90 text-sm py-2 hover:text-white"
+              >
+                <Phone className="w-4 h-4 text-[#0066FF]" />
+                <span>Call 24/7: (888) 801-7476</span>
+              </a>
+              <a
+                href="mailto:info@mzexecutivechauffeurs.com"
+                className="flex items-center gap-2.5 text-white/90 text-sm py-2 hover:text-white"
+              >
+                <Mail className="w-4 h-4 text-[#0066FF]" />
+                <span>info@mzexecutivechauffeurs.com</span>
+              </a>
+            </div>
           </div>
         </div>
       )}

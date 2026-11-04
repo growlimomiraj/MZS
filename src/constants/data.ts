@@ -1,21 +1,21 @@
 import { LocationSuggestion, VehicleClass } from '../types';
 
 export const LOCATION_SUGGESTIONS: LocationSuggestion[] = [
-  { id: '1', title: 'John F. Kennedy International Airport (JFK)', subtitle: 'Queens, NY, USA', type: 'airport' },
+  { id: '1', title: 'John F. Kennedy International Airport (JFK)', subtitle: 'Queens, New York, NY, USA', type: 'airport' },
   { id: '2', title: 'Newark Liberty International Airport (EWR)', subtitle: 'Newark, NJ, USA', type: 'airport' },
-  { id: '3', title: 'LaGuardia Airport (LGA)', subtitle: 'Queens, NY, USA', type: 'airport' },
-  { id: '4', title: 'London Heathrow Airport (LHR)', subtitle: 'Hounslow, London, UK', type: 'airport' },
-  { id: '5', title: 'Paris Charles de Gaulle Airport (CDG)', subtitle: 'Roissy-en-France, France', type: 'airport' },
-  { id: '6', title: 'Dubai International Airport (DXB)', subtitle: 'Dubai, United Arab Emirates', type: 'airport' },
-  { id: '7', title: 'Frankfurt Airport (FRA)', subtitle: 'Frankfurt, Germany', type: 'airport' },
-  { id: '8', title: 'The Plaza Hotel', subtitle: '768 5th Ave, New York, NY 10019', type: 'address' },
-  { id: '9', title: 'Grand Central Terminal', subtitle: '89 E 42nd St, New York, NY 10017', type: 'station' },
-  { id: '10', title: 'Manhattan, New York', subtitle: 'New York, NY, USA', type: 'city' },
-  { id: '11', title: 'East Hampton', subtitle: 'Long Island, NY, USA', type: 'city' },
-  { id: '12', title: 'The Ritz-Carlton, London', subtitle: '150 Piccadilly, St. James\'s, London', type: 'address' },
-  { id: '13', title: 'Beverly Hills Hotel', subtitle: '9641 Sunset Blvd, Beverly Hills, CA', type: 'address' },
-  { id: '14', title: 'Los Angeles International Airport (LAX)', subtitle: 'Los Angeles, CA, USA', type: 'airport' },
-  { id: '15', title: 'Burj Khalifa / Downtown Dubai', subtitle: '1 Sheikh Mohammed bin Rashid Blvd, Dubai', type: 'address' }
+  { id: '3', title: 'LaGuardia Airport (LGA)', subtitle: 'Queens, New York, NY, USA', type: 'airport' },
+  { id: '4', title: 'Los Angeles International Airport (LAX)', subtitle: 'Los Angeles, CA, USA', type: 'airport' },
+  { id: '5', title: 'San Francisco International Airport (SFO)', subtitle: 'San Francisco, CA, USA', type: 'airport' },
+  { id: '6', title: 'Miami International Airport (MIA)', subtitle: 'Miami, FL, USA', type: 'airport' },
+  { id: '7', title: 'Chicago O\'Hare International Airport (ORD)', subtitle: 'Chicago, IL, USA', type: 'airport' },
+  { id: '8', title: 'Boston Logan International Airport (BOS)', subtitle: 'Boston, MA, USA', type: 'airport' },
+  { id: '9', title: 'Dallas/Fort Worth International Airport (DFW)', subtitle: 'Dallas, TX, USA', type: 'airport' },
+  { id: '10', title: 'The Plaza Hotel', subtitle: '768 5th Ave, New York, NY 10019', type: 'address' },
+  { id: '11', title: 'Grand Central Terminal', subtitle: '89 E 42nd St, New York, NY 10017', type: 'station' },
+  { id: '12', title: 'Manhattan, New York', subtitle: 'New York, NY, USA', type: 'city' },
+  { id: '13', title: 'East Hampton', subtitle: 'Long Island, NY, USA', type: 'city' },
+  { id: '14', title: 'Beverly Hills Hotel', subtitle: '9641 Sunset Blvd, Beverly Hills, CA', type: 'address' },
+  { id: '15', title: 'Palm Beach International Airport (PBI)', subtitle: 'West Palm Beach, FL, USA', type: 'airport' }
 ];
 
 export const VEHICLE_CLASSES: VehicleClass[] = [
@@ -28,11 +28,11 @@ export const VEHICLE_CLASSES: VehicleClass[] = [
     luggage: 2,
     price: 148,
     currency: 'USD',
-    description: 'Our most popular service for everyday business travel and seamless airport transfers.',
+    description: 'Our most popular service for corporate business travel and seamless airport transfers across the USA.',
     features: [
       'Complimentary 60 minutes airport wait time',
       'Free cancellation up to 1 hour before pickup',
-      'Professional English-speaking chauffeur',
+      'Professional licensed US chauffeur',
       'Complimentary bottled water and Wi-Fi'
     ]
   },
@@ -45,13 +45,13 @@ export const VEHICLE_CLASSES: VehicleClass[] = [
     luggage: 2,
     price: 225,
     currency: 'USD',
-    description: 'Uncompromising luxury for special occasions, high-profile executives, and VIP hospitality.',
+    description: 'Uncompromising luxury for special occasions, high-profile executives, and VIP hospitality nationwide.',
     features: [
       'Top-tier flagship luxury vehicles',
       'VIP meet & greet inside airport terminal',
       'Complimentary 60 minutes airport wait time',
       'Highest chauffeur vetting rating',
-      'Onboard phone chargers and climate tailored'
+      'Onboard phone fast-chargers and climate tailored'
     ]
   },
   {
@@ -63,12 +63,12 @@ export const VEHICLE_CLASSES: VehicleClass[] = [
     luggage: 5,
     price: 185,
     currency: 'USD',
-    description: 'Ample space for executive groups, family travel, and extra luggage without sacrificing luxury.',
+    description: 'Spacious luxury seating for executive teams, roadshows, family travel, and extra luggage.',
     features: [
       'Spacious luxury seating for up to 5 passengers',
-      'Generous luggage room for 5 suitcases',
+      'Generous luggage room for 5 full-size suitcases',
       'Complimentary 60 minutes airport wait time',
-      'Ideal for airport transfers and roadshows',
+      'Ideal for airport transfers and multi-city roadshows',
       'Free cancellation up to 1 hour before pickup'
     ]
   },
@@ -81,10 +81,10 @@ export const VEHICLE_CLASSES: VehicleClass[] = [
     luggage: 2,
     price: 162,
     currency: 'USD',
-    description: '100% emission-free zero-impact luxury journeys in leading electric vehicles.',
+    description: '100% emission-free zero-impact luxury journeys in leading electric vehicles across the USA.',
     features: [
       'Zero emissions on all rides',
-      'Ultra-quiet cabin experience',
+      'Ultra-quiet acoustic cabin experience',
       'Complimentary 60 minutes airport wait time',
       'Certified sustainable partner of The Climate Pledge'
     ]
@@ -92,41 +92,52 @@ export const VEHICLE_CLASSES: VehicleClass[] = [
 ];
 
 export const CITIES_DATA = [
-  { region: 'North America', cities: ['New York', 'Los Angeles', 'San Francisco', 'Miami', 'Chicago', 'Boston', 'Las Vegas', 'Washington D.C.', 'Toronto', 'Vancouver', 'Montreal'] },
-  { region: 'Europe', cities: ['London', 'Paris', 'Berlin', 'Munich', 'Frankfurt', 'Rome', 'Milan', 'Madrid', 'Barcelona', 'Amsterdam', 'Vienna', 'Zurich', 'Geneva'] },
-  { region: 'Middle East & Africa', cities: ['Dubai', 'Abu Dhabi', 'Riyadh', 'Doha', 'Muscat', 'Cape Town', 'Johannesburg'] },
-  { region: 'Asia-Pacific', cities: ['Tokyo', 'Singapore', 'Hong Kong', 'Sydney', 'Melbourne', 'Seoul', 'Bangkok', 'Kuala Lumpur'] }
+  {
+    region: 'Northeast & Mid-Atlantic',
+    cities: ['New York City', 'Boston', 'Philadelphia', 'Washington D.C.', 'Baltimore', 'Pittsburgh', 'Greenwich', 'Atlantic City', 'Providence']
+  },
+  {
+    region: 'West Coast & Pacific',
+    cities: ['Los Angeles', 'San Francisco', 'San Diego', 'Las Vegas', 'Seattle', 'Phoenix', 'Scottsdale', 'San Jose', 'Portland', 'Palm Springs', 'Orange County']
+  },
+  {
+    region: 'South & Southeast',
+    cities: ['Miami', 'Fort Lauderdale', 'Palm Beach', 'Orlando', 'Tampa', 'Atlanta', 'Charlotte', 'Nashville', 'New Orleans', 'Naples', 'Boca Raton']
+  },
+  {
+    region: 'Midwest & Central',
+    cities: ['Chicago', 'Dallas', 'Houston', 'Austin', 'Denver', 'Minneapolis', 'Detroit', 'Indianapolis', 'San Antonio', 'Columbus']
+  }
 ];
 
 export const ROUTES_DATA = [
-  { from: 'New York', to: 'East Hampton', duration: '2h 30m', distance: '105 miles', price: '$490', tag: 'Popular in US' },
-  { from: 'Los Angeles', to: 'San Diego', duration: '2h 15m', distance: '120 miles', price: '$420', tag: 'Coast route' },
-  { from: 'Miami', to: 'Palm Beach', duration: '1h 15m', distance: '72 miles', price: '$260', tag: 'Fast transfer' },
-  { from: 'London', to: 'Bristol', duration: '2h 20m', distance: '118 miles', price: '£360', tag: 'UK Corridor' },
-  { from: 'Dubai', to: 'Abu Dhabi', duration: '1h 20m', distance: '86 miles', price: 'AED 620', tag: 'Express Highway' },
-  { from: 'Paris', to: 'Reims', duration: '1h 45m', distance: '90 miles', price: '€340', tag: 'Champagne region' }
+  { from: 'New York', to: 'East Hampton', duration: '2h 30m', distance: '105 miles', price: '$490', tag: 'Hamptons Getaway' },
+  { from: 'Los Angeles', to: 'San Diego', duration: '2h 15m', distance: '120 miles', price: '$420', tag: 'Southern California' },
+  { from: 'Miami', to: 'Palm Beach', duration: '1h 15m', distance: '72 miles', price: '$260', tag: 'South Florida Corridor' },
+  { from: 'New York', to: 'Philadelphia', duration: '1h 50m', distance: '95 miles', price: '$380', tag: 'Northeast Corridor' },
+  { from: 'San Francisco', to: 'Napa Valley', duration: '1h 20m', distance: '58 miles', price: '$320', tag: 'Wine Country' },
+  { from: 'Los Angeles', to: 'Palm Springs', duration: '2h 00m', distance: '108 miles', price: '$390', tag: 'Desert Oasis' }
 ];
 
 export const FAQS_DATA = [
   {
-    q: 'How does pickup work at the airport?',
-    a: 'Your chauffeur will meet you inside the arrivals hall holding a personalized name board once you clear customs or baggage claim. Flight tracking is automatically included, so even if your flight is early or delayed, your chauffeur will adjust their arrival accordingly. You also receive 60 minutes of complimentary wait time starting from actual touchdown.'
+    q: 'How does pickup work at US airports?',
+    a: 'Your MZS Executive Chauffeurs driver will meet you inside the arrivals terminal holding a personalized digital name sign once you claim baggage. Automated flight tracking is standard, so whether your flight touches down early or is delayed, your chauffeur will be waiting. You also receive 60 minutes of complimentary wait time from actual wheels-down.'
   },
   {
     q: 'Can I cancel or modify my booking?',
-    a: 'Yes. You can cancel or change your booking free of charge up to 1 hour before pickup for one-way rides, or up to 24 hours before pickup for by-the-hour and long-distance bookings.'
+    a: 'Yes. You can cancel or modify your reservation free of charge up to 1 hour before scheduled pickup for one-way rides, or up to 24 hours before pickup for by-the-hour and long-distance city-to-city trips.'
   },
   {
-    q: 'What is included in the MZS price?',
-    a: 'All MZS prices are all-inclusive fixed rates guaranteed at the time of booking. They include all taxes, tolls, fees, gratuities, flight tracking, and complimentary wait time. There are no surge pricing spikes or hidden surprises.'
+    q: 'What is included in the MZS Executive Chauffeurs price?',
+    a: 'All MZS Executive Chauffeurs fares are guaranteed all-inclusive rates confirmed at booking. They cover all US highway tolls, airport access fees, parking, taxes, and chauffeur gratuities with zero surge pricing.'
   },
   {
     q: 'What is the difference between One Way and By the Hour?',
-    a: 'A One Way ride is a direct point-to-point transfer from your pickup location to your destination. By the Hour reserves a dedicated chauffeur and luxury vehicle for an agreed duration (from 2 to 24 hours) with unlimited stops within the city perimeter.'
+    a: 'A One Way ride is a direct point-to-point transfer from your pickup address to your destination. By the Hour reserves a dedicated luxury vehicle and chauffeur on standby for an agreed duration (2 to 24 hours) with unlimited stops within the metropolitan region.'
   },
   {
-    q: 'How does MZS offset carbon emissions?',
-    a: 'MZS was the first global chauffeur service to offset 100% of carbon emissions from all rides since 2017 in partnership with South Pole and The Climate Pledge. We are also accelerating the electrification of our global fleet.'
+    q: 'How can I reach customer support?',
+    a: 'Our US-based client concierge team is available 24/7 by toll-free phone at (888) 801-7476 or by email at info@mzexecutivechauffeurs.com.'
   }
 ];
-

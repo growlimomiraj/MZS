@@ -14,19 +14,19 @@ export const LimousineServicePage: React.FC<LimousineServicePageProps> = ({ onSe
 
   const limoFaqs = [
     {
-      q: 'What is considered a luxury limousine service with MZS?',
-      a: 'At MZS, limousine service means pristine executive sedans (such as the Mercedes-Benz S-Class, BMW 7 Series, Audi A8) and spacious luxury SUVs/vans driven by commercially certified chauffeurs in professional business attire, rather than stretched novelty limousines.'
+      q: 'What is considered a luxury limousine service with MZS Executive Chauffeurs?',
+      a: 'At MZS Executive Chauffeurs, limousine service means pristine executive sedans (such as the Mercedes-Benz S-Class, BMW 7 Series, Audi A8) and spacious luxury SUVs (Cadillac Escalade, Lincoln Navigator) driven by commercially certified chauffeurs in tailored business suits, rather than stretched novelty limousines.'
     },
     {
       q: 'How far in advance can I book a limousine?',
-      a: 'You can book months in advance for important events, weddings, and galas, or as little as 30 to 60 minutes prior to pickup depending on vehicle availability in your city.'
+      a: 'You can book months in advance for important events, weddings, and galas, or as little as 30 to 60 minutes prior to pickup depending on vehicle availability in your US city.'
     },
     {
       q: 'Can I book a limousine for several hours or the entire day?',
-      a: 'Yes. Simply select "By the hour" on our booking bar. You can reserve an executive vehicle for any duration between 2 and 24 hours with an agreed kilometer allowance and unlimited stops.'
+      a: 'Yes. Simply select "By the hour" on our booking bar. You can reserve an executive vehicle for any duration between 2 and 24 hours with an agreed mileage allowance and unlimited stops.'
     },
     {
-      q: 'Does MZS offer airport limousine transfers?',
+      q: 'Does MZS Executive Chauffeurs offer airport limousine transfers?',
       a: 'Yes. Every airport limousine booking includes flight tracking, 60 minutes of complimentary wait time after landing, and an inside-terminal meet & greet with luggage assistance.'
     }
   ];
@@ -50,10 +50,10 @@ export const LimousineServicePage: React.FC<LimousineServicePageProps> = ({ onSe
             First-Class Flagship Mobility
           </span>
           <h1 className="text-4xl sm:text-6xl lg:text-7xl font-serif font-normal text-white mb-6 leading-[1.08] tracking-tight">
-            Limo Service Around the Globe
+            Luxury Limo Service across the United States
           </h1>
           <p className="text-lg sm:text-xl text-gray-200 max-w-2xl mx-auto mb-10 font-light leading-relaxed">
-            Mercedes-Benz S-Class, BMW 7 Series, and flagship prestige sedans for distinguished arrivals in over 500 cities worldwide.
+            Mercedes-Benz S-Class, BMW 7 Series, Cadillac Escalade, and flagship prestige vehicles for distinguished arrivals across the USA.
           </p>
 
           <BookingWidget onSearch={onSearch} />

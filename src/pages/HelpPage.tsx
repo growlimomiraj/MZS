@@ -23,13 +23,13 @@ export const HelpPage: React.FC<HelpPageProps> = ({ onNavigate }) => {
       <section className="pt-36 pb-20 px-4 sm:px-6 lg:px-8 bg-[#0F1319] text-white text-center">
         <div className="max-w-3xl mx-auto">
           <span className="inline-block px-4 py-1.5 rounded-full bg-white/10 text-xs font-semibold uppercase tracking-wider text-gray-300 mb-4">
-            MZS Help Center
+            MZS Executive Chauffeurs Concierge
           </span>
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-serif font-normal text-white mb-6">
             How can we assist you today?
           </h1>
           <p className="text-base sm:text-lg text-gray-300 mb-8 font-light">
-            Browse answers to common questions or reach our 24/7 multilingual guest concierge.
+            Browse answers to common questions or reach our 24/7 US guest concierge team.
           </p>
 
           {/* Search Bar */}
@@ -64,13 +64,13 @@ export const HelpPage: React.FC<HelpPageProps> = ({ onNavigate }) => {
             <div className="w-14 h-14 rounded-2xl bg-[#0066FF]/10 text-[#0066FF] flex items-center justify-center mb-4">
               <Phone className="w-7 h-7" />
             </div>
-            <h3 className="text-xl font-serif mb-1">Global Telephone</h3>
-            <p className="text-xs text-[#596372] mb-5">Toll-free priority assistance</p>
+            <h3 className="text-xl font-serif mb-1">Toll-Free USA Support</h3>
+            <p className="text-xs text-[#596372] mb-5">24/7 Nationwide assistance</p>
             <a
-              href="tel:+18557342928"
+              href="tel:+18888017476"
               className="px-6 py-2.5 rounded-full border border-gray-300 text-xs font-semibold hover:bg-gray-50 transition-colors"
             >
-              +1 (855) 734-2928
+              (888) 801-7476
             </a>
           </div>
 
@@ -81,10 +81,10 @@ export const HelpPage: React.FC<HelpPageProps> = ({ onNavigate }) => {
             <h3 className="text-xl font-serif mb-1">Email Inquiries</h3>
             <p className="text-xs text-[#596372] mb-5">Guaranteed response within 2 hours</p>
             <a
-              href="mailto:concierge@mzs.com"
+              href="mailto:info@mzexecutivechauffeurs.com"
               className="px-6 py-2.5 rounded-full border border-gray-300 text-xs font-semibold hover:bg-gray-50 transition-colors"
             >
-              concierge@mzs.com
+              info@mzexecutivechauffeurs.com
             </a>
           </div>
         </div>

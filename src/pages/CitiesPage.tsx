@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { PageRoute } from '../types';
 import { CITIES_DATA } from '../constants/data';
-import { Search, MapPin, ArrowRight, Globe } from 'lucide-react';
+import { Search, MapPin, ArrowRight, ShieldCheck, Phone, Mail } from 'lucide-react';
 
 interface CitiesPageProps {
   onNavigate: (route: PageRoute) => void;
@@ -11,13 +11,57 @@ export const CitiesPage: React.FC<CitiesPageProps> = ({ onNavigate }) => {
   const [filter, setFilter] = useState('');
 
   const featuredCities = [
-    { name: 'New York', country: 'United States', img: 'https://images.unsplash.com/photo-1496442226666-8d4d0e62e6e9?auto=format&fit=crop&w=600&q=80', routes: '21 routes' },
-    { name: 'London', country: 'United Kingdom', img: 'https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?auto=format&fit=crop&w=600&q=80', routes: '25 routes' },
-    { name: 'Paris', country: 'France', img: 'https://images.unsplash.com/photo-1502602898657-3e91760cbb34?auto=format&fit=crop&w=600&q=80', routes: '16 routes' },
-    { name: 'Dubai', country: 'United Arab Emirates', img: 'https://images.unsplash.com/photo-1512453979798-5ea266f8880c?auto=format&fit=crop&w=600&q=80', routes: '15 routes' },
-    { name: 'Tokyo', country: 'Japan', img: 'https://images.unsplash.com/photo-1503899036084-c55cdd92da26?auto=format&fit=crop&w=600&q=80', routes: '12 routes' },
-    { name: 'Los Angeles', country: 'United States', img: 'https://images.unsplash.com/photo-1580655653885-65763b2597d0?auto=format&fit=crop&w=600&q=80', routes: '18 routes' }
+    {
+      name: 'New York City',
+      state: 'New York',
+      img: 'https://images.unsplash.com/photo-1496442226666-8d4d0e62e6e9?auto=format&fit=crop&w=800&q=80',
+      routes: '28+ regional routes',
+      airports: 'JFK • LGA • EWR • TEB FBO',
+    },
+    {
+      name: 'Los Angeles',
+      state: 'California',
+      img: 'https://images.unsplash.com/photo-1580655653885-65763b2597d0?auto=format&fit=crop&w=800&q=80',
+      routes: '24+ regional routes',
+      airports: 'LAX • BUR • VNY FBO • SNA',
+    },
+    {
+      name: 'Miami & Palm Beach',
+      state: 'Florida',
+      img: 'https://images.unsplash.com/photo-1506953823976-52e1fdc0149a?auto=format&fit=crop&w=800&q=80',
+      routes: '18+ regional routes',
+      airports: 'MIA • FLL • PBI • OPF FBO',
+    },
+    {
+      name: 'Chicago',
+      state: 'Illinois',
+      img: 'https://images.unsplash.com/photo-1494522855154-9297ac14b55f?auto=format&fit=crop&w=800&q=80',
+      routes: '16+ regional routes',
+      airports: 'ORD • MDW • PWK FBO',
+    },
+    {
+      name: 'San Francisco & Bay Area',
+      state: 'California',
+      img: 'https://images.unsplash.com/photo-1501594907352-04cda38ebc29?auto=format&fit=crop&w=800&q=80',
+      routes: '20+ regional routes',
+      airports: 'SFO • OAK • SJC • PAO',
+    },
+    {
+      name: 'Las Vegas',
+      state: 'Nevada',
+      img: 'https://images.unsplash.com/photo-1518684079-3c830dcef090?auto=format&fit=crop&w=800&q=80',
+      routes: '12+ regional routes',
+      airports: 'LAS • HND • VGT FBO',
+    },
   ];
+
+  const filteredRegions = CITIES_DATA.map((reg) => ({
+    ...reg,
+    cities: reg.cities.filter((c) =>
+      c.toLowerCase().includes(filter.toLowerCase()) ||
+      reg.region.toLowerCase().includes(filter.toLowerCase())
+    ),
+  })).filter((reg) => reg.cities.length > 0);
 
   return (
     <div className="bg-[#FAF8F5] text-[#0F1319]">
@@ -34,14 +78,14 @@ export const CitiesPage: React.FC<CitiesPageProps> = ({ onNavigate }) => {
 
         <div className="relative z-10 max-w-4xl mx-auto">
           <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/10 backdrop-blur-md text-xs font-semibold uppercase tracking-widest text-gray-200 mb-6 border border-white/15">
-            <Globe className="w-4 h-4 text-[#0066FF]" />
-            Global City Network
+            <ShieldCheck className="w-4 h-4 text-[#0066FF]" />
+            US Nationwide Executive Coverage
           </span>
           <h1 className="text-4xl sm:text-6xl font-serif font-normal text-white mb-6 leading-tight">
-            Explore 500+ Cities Across 60+ Countries
+            Chauffeur Services in Premier US Cities
           </h1>
           <p className="text-lg text-gray-200 max-w-2xl mx-auto font-light mb-8">
-            Experience uniform executive standards, vetted licensed chauffeurs, and guaranteed transparent rates wherever your journey takes you.
+            Experience uniform executive standards, licensed commercial chauffeurs, and transparent fixed pricing across every major metropolitan market in the United States.
           </p>
 
           <div className="relative max-w-md mx-auto">
@@ -50,9 +94,20 @@ export const CitiesPage: React.FC<CitiesPageProps> = ({ onNavigate }) => {
               type="text"
               value={filter}
               onChange={(e) => setFilter(e.target.value)}
-              placeholder="Search by city or country..."
+              placeholder="Search US cities or regions..."
               className="w-full pl-11 pr-4 py-3 bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl text-white placeholder-gray-400 text-sm focus:outline-none focus:border-[#0066FF]"
             />
+          </div>
+
+          <div className="mt-8 flex flex-wrap items-center justify-center gap-4 text-xs text-gray-300">
+            <a href="tel:+18888017476" className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 hover:bg-white/20 backdrop-blur-sm border border-white/15 transition-all text-white">
+              <Phone className="w-3.5 h-3.5 text-[#0066FF]" />
+              (888) 801-7476
+            </a>
+            <a href="mailto:info@mzexecutivechauffeurs.com" className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 hover:bg-white/20 backdrop-blur-sm border border-white/15 transition-all text-white">
+              <Mail className="w-3.5 h-3.5 text-[#0066FF]" />
+              info@mzexecutivechauffeurs.com
+            </a>
           </div>
         </div>
       </section>
@@ -61,11 +116,14 @@ export const CitiesPage: React.FC<CitiesPageProps> = ({ onNavigate }) => {
       <section className="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
         <div className="text-center max-w-3xl mx-auto mb-14">
           <span className="text-xs font-semibold tracking-widest text-[#0066FF] uppercase mb-2 block">
-            Most Visited
+            Nationwide Hubs
           </span>
           <h2 className="text-3xl sm:text-4xl font-serif text-[#0F1319]">
-            Top global destinations
+            Top US Metros & Airport Hubs
           </h2>
+          <p className="text-sm text-[#596372] mt-2">
+            Seamless private ground transfers with MZS Executive Chauffeurs
+          </p>
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -80,13 +138,14 @@ export const CitiesPage: React.FC<CitiesPageProps> = ({ onNavigate }) => {
                 alt={c.name}
                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/25 to-transparent" />
               <div className="absolute bottom-6 left-6 right-6 text-white flex items-end justify-between">
                 <div>
                   <h3 className="text-2xl font-serif font-normal">{c.name}</h3>
-                  <p className="text-xs text-gray-300">{c.country} &bull; {c.routes}</p>
+                  <p className="text-xs text-gray-300 mb-1">{c.state} &bull; {c.routes}</p>
+                  <p className="text-[11px] text-gray-400 font-mono">{c.airports}</p>
                 </div>
-                <div className="w-10 h-10 rounded-full bg-white/20 backdrop-blur-md flex items-center justify-center group-hover:bg-[#0066FF] transition-colors">
+                <div className="w-10 h-10 rounded-full bg-white/20 backdrop-blur-md flex items-center justify-center group-hover:bg-[#0066FF] transition-colors shrink-0 ml-3">
                   <ArrowRight className="w-5 h-5 text-white" />
                 </div>
               </div>
@@ -95,40 +154,64 @@ export const CitiesPage: React.FC<CitiesPageProps> = ({ onNavigate }) => {
         </div>
       </section>
 
-      {/* Complete Cities Directory by Region */}
+      {/* Complete US Cities Directory by Region */}
       <section className="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto border-t border-gray-200">
         <div className="space-y-16">
-          {CITIES_DATA.map((regionGroup, rIdx) => {
-            const matchingCities = regionGroup.cities.filter((c) =>
-              c.toLowerCase().includes(filter.toLowerCase())
-            );
-
-            if (matchingCities.length === 0) return null;
-
-            return (
-              <div key={rIdx}>
-                <h3 className="text-2xl font-serif font-normal text-[#0F1319] border-b border-gray-200 pb-3 mb-8">
+          {filteredRegions.map((regionGroup, idx) => (
+            <div key={idx}>
+              <div className="flex items-center gap-3 mb-8">
+                <MapPin className="w-6 h-6 text-[#0066FF]" />
+                <h3 className="text-2xl sm:text-3xl font-serif text-[#0F1319]">
                   {regionGroup.region}
                 </h3>
-
-                <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4">
-                  {matchingCities.map((city, cIdx) => (
-                    <button
-                      key={cIdx}
-                      onClick={() => onNavigate('airport-transfer')}
-                      className="p-4 rounded-2xl bg-white hover:bg-[#0066FF] text-[#0F1319] hover:text-white transition-all text-left flex items-center justify-between group cursor-pointer border border-gray-200 shadow-sm"
-                    >
-                      <div className="flex items-center gap-2">
-                        <MapPin className="w-4 h-4 text-[#0066FF] group-hover:text-white shrink-0" />
-                        <span className="text-sm font-medium">{city}</span>
-                      </div>
-                      <ArrowRight className="w-3.5 h-3.5 opacity-0 group-hover:opacity-100 transition-opacity" />
-                    </button>
-                  ))}
-                </div>
               </div>
-            );
-          })}
+
+              <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4">
+                {regionGroup.cities.map((city, cIdx) => (
+                  <div
+                    key={cIdx}
+                    onClick={() => onNavigate('city-to-city')}
+                    className="p-4 rounded-2xl bg-white border border-gray-200 hover:border-[#0066FF] hover:shadow-md transition-all cursor-pointer group"
+                  >
+                    <span className="text-sm font-medium text-gray-800 group-hover:text-[#0066FF] transition-colors block">
+                      {city}
+                    </span>
+                    <span className="text-xs text-gray-400 flex items-center gap-1 mt-1">
+                      MZS Executive <ArrowRight className="w-3 h-3 group-hover:translate-x-0.5 transition-transform" />
+                    </span>
+                  </div>
+                ))}
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* Direct Contact Bar */}
+      <section className="py-16 px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto text-center border-t border-gray-200">
+        <div className="p-8 sm:p-12 rounded-3xl bg-[#0F1319] text-white">
+          <h3 className="text-2xl sm:text-3xl font-serif mb-3">
+            Looking for a customized US route or city?
+          </h3>
+          <p className="text-gray-300 text-sm max-w-xl mx-auto mb-8 font-light">
+            Our 24/7 US dispatch desk can arrange licensed executive chauffeurs for any city, private airport, or bespoke multi-city itinerary.
+          </p>
+          <div className="flex flex-wrap items-center justify-center gap-4">
+            <a
+              href="tel:+18888017476"
+              className="px-6 py-3 rounded-full bg-[#0066FF] hover:bg-[#0052CC] text-white font-medium text-sm transition-all shadow-md inline-flex items-center gap-2"
+            >
+              <Phone className="w-4 h-4" />
+              Call (888) 801-7476
+            </a>
+            <a
+              href="mailto:info@mzexecutivechauffeurs.com"
+              className="px-6 py-3 rounded-full bg-white/10 hover:bg-white/20 text-white font-medium text-sm transition-all border border-white/20 inline-flex items-center gap-2"
+            >
+              <Mail className="w-4 h-4" />
+              info@mzexecutivechauffeurs.com
+            </a>
+          </div>
         </div>
       </section>
     </div>

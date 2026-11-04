@@ -12,11 +12,11 @@ interface FeatureItem {
 
 const FEATURES: FeatureItem[] = [
   {
-    title: 'Available worldwide',
-    description: 'Expert local chauffeurs in 500+ cities',
+    title: 'Nationwide coverage',
+    description: 'Licensed professional chauffeurs across the USA',
     image: '/assets/excellence/like.png',
     fallback: 'https://static.blacklane.com/assets/_next/static/media/like.6f578ab713c8f1de.png',
-    alt: 'Available worldwide',
+    alt: 'Nationwide coverage across the USA',
     svgFallback: <WorldwideIcon className="h-28 sm:h-32 w-auto object-contain" />,
   },
   {

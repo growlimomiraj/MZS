@@ -19,7 +19,7 @@ export const HourlyHirePage: React.FC<HourlyHirePageProps> = ({ onSearch, onNavi
     },
     {
       q: 'Are mileage limits included in hourly bookings?',
-      a: 'Yes. Every hourly booking includes 20 kilometers (approx. 12 miles) per reserved hour within the metropolitan area. Additional distance beyond the allowance is billed at our standard transparent per-km rate.'
+      a: 'Yes. Every hourly booking includes 15 miles per reserved hour within the metropolitan area. Additional distance beyond the allowance is billed at our standard transparent per-mile rate.'
     },
     {
       q: 'Can I extend my booking while in the car?',

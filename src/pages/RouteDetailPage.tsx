@@ -2,7 +2,7 @@ import React from 'react';
 import { BookingWidget } from '../components/BookingWidget';
 import { BookingState, PageRoute } from '../types';
 import { VEHICLE_CLASSES } from '../constants/data';
-import { MapPin, Clock, ShieldCheck, ArrowRight, Check, Sparkles } from 'lucide-react';
+import { MapPin, Clock, ShieldCheck, ArrowRight, Check, Sparkles, Phone, Mail } from 'lucide-react';
 
 interface RouteDetailPageProps {
   from: string;
@@ -39,13 +39,13 @@ export const RouteDetailPage: React.FC<RouteDetailPageProps> = ({
         <div className="relative z-10 w-full max-w-5xl mx-auto text-center mb-10">
           <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/10 backdrop-blur-md text-xs font-semibold uppercase tracking-widest text-gray-200 mb-6 border border-white/15">
             <Sparkles className="w-4 h-4 text-[#0066FF]" />
-            Private City-to-City Route
+            Private US City-to-City Route
           </span>
           <h1 className="text-4xl sm:text-6xl lg:text-7xl font-serif font-normal text-white mb-6 leading-[1.08] tracking-tight">
             {from} to {to}
           </h1>
           <p className="text-lg sm:text-xl text-gray-200 max-w-2xl mx-auto mb-10 font-light leading-relaxed">
-            Relax in executive comfort across {distance} in approximately {duration}. Guaranteed all-inclusive fixed rate starting from {price}.
+            Relax in executive comfort across {distance} in approximately {duration}. Guaranteed all-inclusive fixed rate starting from {price} with MZS Executive Chauffeurs.
           </p>
 
           <BookingWidget onSearch={onSearch} />
@@ -82,7 +82,7 @@ export const RouteDetailPage: React.FC<RouteDetailPageProps> = ({
             </div>
             <div className="flex items-center gap-3">
               <Check className="w-4 h-4 text-[#0066FF] shrink-0" />
-              <span>Tolls, congestion charges, and chauffeur gratuities fully covered</span>
+              <span>US highway tolls, congestion surcharges, and chauffeur gratuities fully included</span>
             </div>
             <div className="flex items-center gap-3">
               <Check className="w-4 h-4 text-[#0066FF] shrink-0" />
@@ -98,6 +98,7 @@ export const RouteDetailPage: React.FC<RouteDetailPageProps> = ({
           <h2 className="text-3xl sm:text-4xl font-serif font-normal text-[#0F1319] mb-4">
             Available vehicle classes for {from} &rarr; {to}
           </h2>
+          <p className="text-sm text-[#596372]">Select your preferred class for door-to-door private chauffeur service</p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -116,12 +117,31 @@ export const RouteDetailPage: React.FC<RouteDetailPageProps> = ({
                   <div className="text-[11px] uppercase tracking-wider text-gray-400">All-Inclusive</div>
                   <div className="text-lg font-bold text-[#0F1319]">{price}</div>
                 </div>
-                <span className="text-xs font-semibold text-[#0066FF] flex items-center gap-1">
+                <button
+                  onClick={() => onNavigate('airport-transfer')}
+                  className="text-xs font-semibold text-[#0066FF] flex items-center gap-1 hover:underline cursor-pointer"
+                >
                   Book <ArrowRight className="w-3.5 h-3.5" />
-                </span>
+                </button>
               </div>
             </div>
           ))}
+        </div>
+
+        {/* Custom Route Contact Bar */}
+        <div className="mt-16 p-8 rounded-2xl bg-[#0F1319] text-white text-center">
+          <h3 className="text-xl font-serif mb-2">Need a custom US itinerary or multi-day chauffeur?</h3>
+          <p className="text-sm text-gray-300 mb-6">Our 24/7 US dispatch desk provides personalized routing, group transfers, and custom vehicle requests.</p>
+          <div className="flex flex-wrap items-center justify-center gap-4 text-xs sm:text-sm">
+            <a href="tel:+18888017476" className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-[#0066FF] hover:bg-[#0052CC] text-white font-medium transition-all">
+              <Phone className="w-4 h-4" />
+              Call (888) 801-7476
+            </a>
+            <a href="mailto:info@mzexecutivechauffeurs.com" className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-white/10 hover:bg-white/20 text-white font-medium transition-all border border-white/20">
+              <Mail className="w-4 h-4" />
+              info@mzexecutivechauffeurs.com
+            </a>
+          </div>
         </div>
       </section>
     </div>

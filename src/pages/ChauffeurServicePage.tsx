@@ -14,16 +14,16 @@ export const ChauffeurServicePage: React.FC<ChauffeurServicePageProps> = ({ onSe
 
   const chauffeurFaqs = [
     {
-      q: 'What qualifications do MZS chauffeurs hold?',
-      a: 'All MZS chauffeurs are professionally licensed, insured, and thoroughly vetted commercial drivers. They pass background security checks, driving record evaluations, and complete rigorous customer service and etiquette training.'
+      q: 'What qualifications do MZS Executive Chauffeurs drivers hold?',
+      a: 'All MZS Executive Chauffeurs drivers are professionally licensed, commercially insured, and thoroughly vetted. They pass rigorous background security checks, clean driving record evaluations, and complete executive hospitality training.'
     },
     {
-      q: 'Do chauffeurs speak English?',
-      a: 'Yes, English proficiency is mandatory for all MZS chauffeurs worldwide, ensuring clear, polite, and seamless communication regardless of which country you travel in.'
+      q: 'Are your chauffeur services available nationwide across the USA?',
+      a: 'Yes. MZS Executive Chauffeurs provides professional chauffeur services in all major US metropolitan areas, financial hubs, and commercial/private FBO airports nationwide.'
     },
     {
       q: 'Is tipping required or expected?',
-      a: 'No. All MZS fares include all chauffeur gratuities, road tolls, and taxes. You are never expected to carry cash or pay extra at the conclusion of your journey.'
+      a: 'No. All MZS Executive Chauffeurs fares are all-inclusive fixed rates covering driver gratuities, road tolls, and taxes. You never need to carry cash.'
     },
     {
       q: 'Can I request a child seat?',
@@ -47,13 +47,13 @@ export const ChauffeurServicePage: React.FC<ChauffeurServicePageProps> = ({ onSe
         <div className="relative z-10 w-full max-w-5xl mx-auto text-center mb-10">
           <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/10 backdrop-blur-md text-xs font-semibold uppercase tracking-widest text-gray-200 mb-6 border border-white/15">
             <Award className="w-4 h-4 text-[#0066FF]" />
-            The Gold Standard in Ground Hospitality
+            The Gold Standard in American Ground Hospitality
           </span>
           <h1 className="text-4xl sm:text-6xl lg:text-7xl font-serif font-normal text-white mb-6 leading-[1.08] tracking-tight">
-            Your Professional Chauffeur Service
+            Professional US Chauffeur Services
           </h1>
           <p className="text-lg sm:text-xl text-gray-200 max-w-2xl mx-auto mb-10 font-light leading-relaxed">
-            Immaculately presented, discreet, English-speaking chauffeurs committed to delivering supreme peace of mind in 500+ cities.
+            Immaculately presented, discreet, licensed professional chauffeurs committed to delivering supreme peace of mind across the United States.
           </p>
 
           <BookingWidget onSearch={onSearch} />

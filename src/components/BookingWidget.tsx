@@ -16,37 +16,35 @@ interface BookingWidgetProps {
 }
 
 const LUXURY_LOCATIONS = [
-  // Airports
+  // US Major Airports & Private FBOs
   { id: 'jfk', title: 'JFK - John F. Kennedy International Airport', subtitle: 'Queens, New York, United States', type: 'airport' },
   { id: 'lga', title: 'LGA - LaGuardia Airport', subtitle: 'Queens, New York, United States', type: 'airport' },
   { id: 'ewr', title: 'EWR - Newark Liberty International Airport', subtitle: 'Newark, New Jersey, United States', type: 'airport' },
-  { id: 'lhr', title: 'LHR - London Heathrow Airport', subtitle: 'Hounslow, London, United Kingdom', type: 'airport' },
-  { id: 'lgw', title: 'LGW - London Gatwick Airport', subtitle: 'Horley, Gatwick, United Kingdom', type: 'airport' },
-  { id: 'cdg', title: 'CDG - Paris Charles de Gaulle Airport', subtitle: 'Roissy-en-France, Paris, France', type: 'airport' },
-  { id: 'ory', title: 'ORY - Paris Orly Airport', subtitle: 'Orly, Paris, France', type: 'airport' },
-  { id: 'dxb', title: 'DXB - Dubai International Airport', subtitle: 'Garhoud, Dubai, United Arab Emirates', type: 'airport' },
+  { id: 'teb', title: 'TEB - Teterboro Airport (Private Aviation FBO)', subtitle: 'Teterboro, New Jersey, United States', type: 'airport' },
   { id: 'lax', title: 'LAX - Los Angeles International Airport', subtitle: 'Los Angeles, California, United States', type: 'airport' },
+  { id: 'vny', title: 'VNY - Van Nuys Executive Airport FBO', subtitle: 'Van Nuys, California, United States', type: 'airport' },
   { id: 'sfo', title: 'SFO - San Francisco International Airport', subtitle: 'San Mateo County, California, United States', type: 'airport' },
-  { id: 'fra', title: 'FRA - Frankfurt Airport', subtitle: 'Frankfurt am Main, Germany', type: 'airport' },
-  { id: 'muc', title: 'MUC - Munich Airport', subtitle: 'Munich, Bavaria, Germany', type: 'airport' },
-  { id: 'hnd', title: 'HND - Tokyo Haneda Airport', subtitle: 'Ota City, Tokyo, Japan', type: 'airport' },
-  { id: 'nrt', title: 'NRT - Tokyo Narita International Airport', subtitle: 'Narita, Chiba, Japan', type: 'airport' },
+  { id: 'mia', title: 'MIA - Miami International Airport', subtitle: 'Miami, Florida, United States', type: 'airport' },
+  { id: 'opf', title: 'OPF - Miami-Opa Locka Executive Airport FBO', subtitle: 'Opa-locka, Florida, United States', type: 'airport' },
+  { id: 'pbi', title: 'PBI - Palm Beach International Airport', subtitle: 'West Palm Beach, Florida, United States', type: 'airport' },
+  { id: 'ord', title: 'ORD - O\'Hare International Airport', subtitle: 'Chicago, Illinois, United States', type: 'airport' },
+  { id: 'bos', title: 'BOS - Boston Logan International Airport', subtitle: 'Boston, Massachusetts, United States', type: 'airport' },
+  { id: 'dfw', title: 'DFW - Dallas/Fort Worth International Airport', subtitle: 'Dallas, Texas, United States', type: 'airport' },
+  { id: 'las', title: 'LAS - Harry Reid International Airport', subtitle: 'Las Vegas, Nevada, United States', type: 'airport' },
 
-  // Hotels & Landmarks
-  { id: 'plaza', title: 'The Plaza Hotel', subtitle: 'Fifth Avenue at Central Park South, New York', type: 'hotel' },
-  { id: 'ritz_ny', title: 'The Ritz-Carlton New York, Central Park', subtitle: '50 Central Park South, New York', type: 'hotel' },
-  { id: 'fourseasons_ny', title: 'Four Seasons Hotel New York Downtown', subtitle: '27 Barclay Street, New York', type: 'hotel' },
-  { id: 'savoy_lon', title: 'The Savoy', subtitle: 'Strand, London, United Kingdom', type: 'hotel' },
-  { id: 'claridges_lon', title: "Claridge's", subtitle: 'Brook Street, Mayfair, London, United Kingdom', type: 'hotel' },
-  { id: 'ritz_paris', title: 'Ritz Paris', subtitle: '15 Place Vendôme, 75001 Paris, France', type: 'hotel' },
-  { id: 'george_v', title: 'Four Seasons Hotel George V', subtitle: '31 Avenue George V, Paris, France', type: 'hotel' },
-  { id: 'burj_al_arab', title: 'Burj Al Arab Jumeirah', subtitle: 'Jumeirah Beach Road, Dubai, United Arab Emirates', type: 'hotel' },
-  { id: 'armani_dxb', title: 'Armani Hotel Dubai', subtitle: 'Burj Khalifa, Downtown Dubai, United Arab Emirates', type: 'hotel' },
-  { id: 'beverly_hills', title: 'The Beverly Hills Hotel', subtitle: '9641 Sunset Boulevard, Beverly Hills, California', type: 'hotel' },
-  { id: 'chateau_marmont', title: 'Chateau Marmont', subtitle: '8221 Sunset Boulevard, West Hollywood, California', type: 'hotel' },
+  // US Luxury Hotels & Landmarks
+  { id: 'plaza', title: 'The Plaza Hotel', subtitle: 'Fifth Avenue at Central Park South, New York, NY', type: 'hotel' },
+  { id: 'ritz_ny', title: 'The Ritz-Carlton New York, Central Park', subtitle: '50 Central Park South, New York, NY', type: 'hotel' },
+  { id: 'fourseasons_ny', title: 'Four Seasons Hotel New York Downtown', subtitle: '27 Barclay Street, New York, NY', type: 'hotel' },
+  { id: 'beverly_hills', title: 'The Beverly Hills Hotel', subtitle: '9641 Sunset Boulevard, Beverly Hills, CA', type: 'hotel' },
+  { id: 'chateau_marmont', title: 'Chateau Marmont', subtitle: '8221 Sunset Boulevard, West Hollywood, CA', type: 'hotel' },
+  { id: 'faena_mia', title: 'Faena Hotel Miami Beach', subtitle: '3201 Collins Ave, Miami Beach, FL', type: 'hotel' },
+  { id: 'breakers_pbi', title: 'The Breakers Palm Beach', subtitle: '1 S County Rd, Palm Beach, FL', type: 'hotel' },
+  { id: 'peninsula_chi', title: 'The Peninsula Chicago', subtitle: '108 E Superior St, Chicago, IL', type: 'hotel' },
   { id: 'financial_dist', title: 'Financial District / Wall Street', subtitle: 'Manhattan, New York, NY 10005', type: 'landmark' },
   { id: 'midtown_manhattan', title: 'Midtown Manhattan', subtitle: 'New York, NY 10019, United States', type: 'landmark' },
-  { id: 'mayfair_london', title: 'Mayfair', subtitle: 'City of Westminster, London W1K, United Kingdom', type: 'landmark' },
+  { id: 'silicon_valley', title: 'Silicon Valley / Sand Hill Road', subtitle: 'Menlo Park, CA 94025, United States', type: 'landmark' },
+  { id: 'brickell_mia', title: 'Brickell Financial District', subtitle: 'Miami, FL 33131, United States', type: 'landmark' },
 ];
 
 export const BookingWidget: React.FC<BookingWidgetProps> = ({ onSearch }) => {

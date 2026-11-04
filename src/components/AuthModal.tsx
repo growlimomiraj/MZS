@@ -42,7 +42,7 @@ export const AuthModal: React.FC<AuthModalProps> = ({ isOpen, onClose }) => {
             <BlacklaneLogo color="white" className="h-6 w-auto" />
           </div>
           <h3 className="text-2xl font-serif">
-            {tab === 'signin' ? 'Sign in to MZS' : 'Create your account'}
+            {tab === 'signin' ? 'Sign in to MZS Executive Chauffeurs' : 'Create your account'}
           </h3>
           <p className="text-xs text-gray-400 mt-1">
             Access your booked rides, receipts, and personal preferences
