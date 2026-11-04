@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { PageRoute } from '../types';
-import { Building2, CreditCard, Shield, FileText, CheckCircle2, ArrowRight } from 'lucide-react';
+import { Building2, CreditCard, ShieldCheck, FileText, CheckCircle2, ArrowRight, Sparkles, Clock, Globe } from 'lucide-react';
 
 interface BusinessPageProps {
   onNavigate: (route: PageRoute) => void;
@@ -19,27 +19,28 @@ export const BusinessPage: React.FC<BusinessPageProps> = ({ onNavigate, onOpenAu
   };
 
   return (
-    <div className="bg-white text-[#0F1319]">
+    <div className="bg-[#FAF8F5] text-[#0F1319]">
       {/* Hero */}
-      <section className="relative min-h-[70vh] flex flex-col justify-center items-center pt-32 pb-20 px-4 sm:px-6 lg:px-8 bg-[#0F1319] text-white overflow-hidden">
+      <section className="relative min-h-[85vh] flex flex-col justify-center items-center pt-32 pb-24 px-4 sm:px-6 lg:px-8 bg-[#0F1319] text-white overflow-hidden">
         <div
-          className="absolute inset-0 bg-cover bg-center brightness-70 contrast-105 pointer-events-none"
+          className="absolute inset-0 bg-cover bg-center brightness-75 contrast-105 pointer-events-none"
           style={{
             backgroundImage:
-              'url(https://static.blacklane.com/assets/_next/static/media/4.13f5624e9bdcc2ee.webp)',
+              'url(https://static.blacklane.com/assets/_next/static/media/1.019b61163ce406a2.webp)',
           }}
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-[#0F1319] via-black/40 to-black/70 pointer-events-none" />
+        <div className="absolute inset-0 bg-gradient-to-t from-[#0F1319]/90 via-[#0F1319]/40 to-black/60 pointer-events-none" />
 
         <div className="relative z-10 w-full max-w-4xl mx-auto text-center">
-          <span className="inline-block px-4 py-1.5 rounded-full bg-white/10 text-xs font-semibold uppercase tracking-wider text-gray-300 mb-4">
-            MZS for Business & Travel Management
+          <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/10 backdrop-blur-md text-xs font-semibold uppercase tracking-widest text-gray-200 mb-6 border border-white/15">
+            <Building2 className="w-4 h-4 text-[#0066FF]" />
+            MZS for Business & Corporate Mobility
           </span>
-          <h1 className="text-4xl sm:text-5xl lg:text-7xl font-serif font-normal text-white mb-6 leading-tight">
+          <h1 className="text-4xl sm:text-6xl lg:text-7xl font-serif font-normal text-white mb-6 leading-[1.08] tracking-tight">
             Corporate travel, simplified.
           </h1>
-          <p className="text-lg sm:text-xl text-gray-300 max-w-2xl mx-auto mb-10 font-normal">
-            One single, intuitive platform for enterprises and travel agencies to book, monitor, and invoice executive journeys globally.
+          <p className="text-lg sm:text-xl text-gray-200 max-w-2xl mx-auto mb-10 font-light leading-relaxed">
+            One single, intuitive platform for enterprises and travel management teams to book, track, and reconcile executive rides across 500+ cities globally.
           </p>
 
           <div className="flex flex-wrap items-center justify-center gap-4">
@@ -48,13 +49,13 @@ export const BusinessPage: React.FC<BusinessPageProps> = ({ onNavigate, onOpenAu
                 const el = document.getElementById('corporate-form');
                 el?.scrollIntoView({ behavior: 'smooth' });
               }}
-              className="px-8 py-4 bg-[#0F63BD] hover:bg-[#0D529C] text-white font-semibold rounded-full transition-all shadow-lg text-sm cursor-pointer"
+              className="px-8 py-4 bg-[#0066FF] hover:bg-[#0052CC] text-white font-medium rounded-full transition-all shadow-lg text-sm cursor-pointer"
             >
               Request Corporate Account
             </button>
             <button
               onClick={onOpenAuth}
-              className="px-8 py-4 glass-pill text-white font-semibold rounded-full transition-all text-sm cursor-pointer"
+              className="px-8 py-4 glass-pill text-white font-medium rounded-full transition-all text-sm cursor-pointer border border-white/20 hover:bg-white/15"
             >
               Sign In to Company Portal
             </button>
@@ -62,130 +63,190 @@ export const BusinessPage: React.FC<BusinessPageProps> = ({ onNavigate, onOpenAu
         </div>
       </section>
 
-      {/* Corporate Features */}
+      {/* Booker Portal Preview Graphic */}
       <section className="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-          <div className="p-8 rounded-3xl bg-[#F8F9FA] border border-gray-100 flex flex-col justify-between">
-            <div>
-              <div className="w-12 h-12 rounded-2xl bg-[#0F63BD]/10 text-[#0F63BD] flex items-center justify-center mb-6">
-                <Building2 className="w-6 h-6" />
-              </div>
-              <h3 className="text-xl font-serif mb-2">Centralized Corporate Portal</h3>
-              <p className="text-sm text-[#666F7B] leading-relaxed">
-                Book for multiple executives, VIP guests, or board members across global offices from a single dashboard.
+        <div className="text-center max-w-3xl mx-auto mb-14">
+          <span className="text-xs font-semibold tracking-widest text-[#0066FF] uppercase mb-2 block">
+            Centralized Platform
+          </span>
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-serif text-[#0F1319] mb-4">
+            From planning to pickup
+          </h2>
+          <p className="text-base sm:text-lg text-[#596372]">
+            Our enterprise tools are built to make your airport transfers, executive commutes, and city-to-city journeys effortless.
+          </p>
+        </div>
+
+        <div className="rounded-3xl overflow-hidden shadow-2xl border border-gray-200 bg-white p-4 sm:p-8">
+          <img
+            src="https://static.blacklane.com/assets/_next/static/media/booker-portal.0060f05309e1f2f2.png"
+            alt="MZS corporate booker portal dashboard"
+            className="w-full h-auto object-contain rounded-2xl"
+          />
+        </div>
+      </section>
+
+      {/* Tailored to You: 2 Solution Cards */}
+      <section className="py-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto border-t border-gray-200">
+        <div className="text-center max-w-3xl mx-auto mb-14">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-serif text-[#0F1319] mb-4">
+            Tailored to your organization
+          </h2>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div className="rounded-3xl bg-white border border-gray-200 overflow-hidden shadow-sm flex flex-col justify-between">
+            <div className="p-8">
+              <span className="text-xs font-semibold uppercase tracking-widest text-[#0066FF] block mb-2">Enterprise</span>
+              <h3 className="text-2xl font-serif text-[#0F1319] mb-3">Corporate Travel</h3>
+              <p className="text-[#596372] text-sm leading-relaxed mb-6">
+                Arrange executive journeys for your leadership, employees, and VIP clients with consolidated billing, cost centers, and customized duty of care reporting.
               </p>
             </div>
+            <img
+              src="https://static.blacklane.com/assets/_next/static/media/2.02944b3196f37e01.webp"
+              alt="MZS corporate travel solution"
+              className="w-full h-64 object-cover"
+            />
           </div>
 
-          <div className="p-8 rounded-3xl bg-[#F8F9FA] border border-gray-100 flex flex-col justify-between">
-            <div>
-              <div className="w-12 h-12 rounded-2xl bg-[#0F63BD]/10 text-[#0F63BD] flex items-center justify-center mb-6">
-                <CreditCard className="w-6 h-6" />
-              </div>
-              <h3 className="text-xl font-serif mb-2">Flexible Corporate Billing</h3>
-              <p className="text-sm text-[#666F7B] leading-relaxed">
-                Consolidated monthly invoices, split billing by department, cost center codes, and automated expense sync.
+          <div className="rounded-3xl bg-white border border-gray-200 overflow-hidden shadow-sm flex flex-col justify-between">
+            <div className="p-8">
+              <span className="text-xs font-semibold uppercase tracking-widest text-[#0066FF] block mb-2">Agencies</span>
+              <h3 className="text-2xl font-serif text-[#0F1319] mb-3">Travel Agencies & TMCs</h3>
+              <p className="text-[#596372] text-sm leading-relaxed mb-6">
+                Earn competitive commissions with a premier ground transportation provider seamlessly integrated into your corporate booking tool or GDS workflow.
               </p>
             </div>
-          </div>
-
-          <div className="p-8 rounded-3xl bg-[#F8F9FA] border border-gray-100 flex flex-col justify-between">
-            <div>
-              <div className="w-12 h-12 rounded-2xl bg-[#0F63BD]/10 text-[#0F63BD] flex items-center justify-center mb-6">
-                <Shield className="w-6 h-6" />
-              </div>
-              <h3 className="text-xl font-serif mb-2">Unmatched Duty of Care</h3>
-              <p className="text-sm text-[#666F7B] leading-relaxed">
-                Vetted licensed professional chauffeurs, flight tracking, 24/7 dedicated corporate helpline, and live GPS ride status.
-              </p>
-            </div>
-          </div>
-
-          <div className="p-8 rounded-3xl bg-[#F8F9FA] border border-gray-100 flex flex-col justify-between">
-            <div>
-              <div className="w-12 h-12 rounded-2xl bg-[#0F63BD]/10 text-[#0F63BD] flex items-center justify-center mb-6">
-                <FileText className="w-6 h-6" />
-              </div>
-              <h3 className="text-xl font-serif mb-2">Sustainability Reporting</h3>
-              <p className="text-sm text-[#666F7B] leading-relaxed">
-                Every kilometer is 100% carbon-neutral. Receive certified carbon offset audits for corporate ESG reporting.
-              </p>
-            </div>
+            <img
+              src="https://static.blacklane.com/assets/_next/static/media/3.92ac7d18f1ce61a2.webp"
+              alt="MZS travel management partner solution"
+              className="w-full h-64 object-cover"
+            />
           </div>
         </div>
       </section>
 
-      {/* Corporate Account Request Form */}
-      <section id="corporate-form" className="py-20 px-4 sm:px-6 lg:px-8 max-w-4xl mx-auto border-t border-gray-100">
-        <div className="p-8 sm:p-12 rounded-3xl bg-[#0F1319] text-white shadow-2xl">
-          <div className="text-center max-w-xl mx-auto mb-10">
-            <h2 className="text-3xl sm:text-4xl font-serif font-normal mb-3">
-              Open a MZS Corporate Account
-            </h2>
-            <p className="text-sm text-gray-400">
-              Get in touch with our enterprise mobility team for customized volume rates and invoicing terms.
+      {/* 5 Enterprise Benefits */}
+      <section className="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto border-t border-gray-200">
+        <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-6">
+          <div className="p-6 rounded-2xl bg-white border border-gray-200 shadow-sm">
+            <Globe className="w-8 h-8 text-[#0066FF] mb-4" />
+            <h4 className="text-lg font-serif mb-2">Global reliability</h4>
+            <p className="text-xs text-[#596372] leading-relaxed">
+              Instant confirmation and consistent 5-star chauffeur standards across 60+ countries.
+            </p>
+          </div>
+
+          <div className="p-6 rounded-2xl bg-white border border-gray-200 shadow-sm">
+            <CreditCard className="w-8 h-8 text-[#0066FF] mb-4" />
+            <h4 className="text-lg font-serif mb-2">Competitive rates</h4>
+            <p className="text-xs text-[#596372] leading-relaxed">
+              Transparent distance-based rates with zero surge pricing or unannounced extras.
+            </p>
+          </div>
+
+          <div className="p-6 rounded-2xl bg-white border border-gray-200 shadow-sm">
+            <Clock className="w-8 h-8 text-[#0066FF] mb-4" />
+            <h4 className="text-lg font-serif mb-2">Unrivaled flexibility</h4>
+            <p className="text-xs text-[#596372] leading-relaxed">
+              Change or cancel free of charge up to 1 hour before scheduled pickup.
+            </p>
+          </div>
+
+          <div className="p-6 rounded-2xl bg-white border border-gray-200 shadow-sm">
+            <ShieldCheck className="w-8 h-8 text-[#0066FF] mb-4" />
+            <h4 className="text-lg font-serif mb-2">Priority 24/7 care</h4>
+            <p className="text-xs text-[#596372] leading-relaxed">
+              Dedicated enterprise support reps ready to manage urgent changes around the clock.
+            </p>
+          </div>
+
+          <div className="p-6 rounded-2xl bg-white border border-gray-200 shadow-sm">
+            <FileText className="w-8 h-8 text-[#0066FF] mb-4" />
+            <h4 className="text-lg font-serif mb-2">Simplified invoicing</h4>
+            <p className="text-xs text-[#596372] leading-relaxed">
+              Monthly consolidated invoicing with department expense coding and automated exports.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Fleet Showcase Graphic */}
+      <section className="py-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto border-t border-gray-200">
+        <div className="rounded-3xl overflow-hidden shadow-xl border border-gray-200 bg-white p-6 sm:p-10 flex flex-col items-center">
+          <img
+            src="https://static.blacklane.com/assets/_next/static/media/lux.f17851e5daa4361a.png"
+            alt="MZS luxury executive fleet"
+            className="w-full max-w-4xl object-contain rounded-2xl"
+          />
+        </div>
+      </section>
+
+      {/* Corporate Inquiry Form */}
+      <section id="corporate-form" className="py-20 px-4 sm:px-6 lg:px-8 max-w-3xl mx-auto border-t border-gray-200">
+        <div className="p-8 sm:p-12 rounded-3xl bg-white border border-gray-200 shadow-xl">
+          <div className="text-center mb-8">
+            <span className="text-xs font-semibold uppercase tracking-widest text-[#0066FF] block mb-2">Get Started</span>
+            <h3 className="text-3xl font-serif text-[#0F1319] mb-3">Open an MZS Corporate Account</h3>
+            <p className="text-sm text-[#596372]">
+              Fill in your organization details to receive our corporate rate schedule and dedicated portal access.
             </p>
           </div>
 
           {formSubmitted ? (
-            <div className="text-center py-12">
-              <CheckCircle2 className="w-16 h-16 text-emerald-400 mx-auto mb-4" />
-              <h3 className="text-2xl font-serif mb-2">Inquiry Received</h3>
-              <p className="text-sm text-gray-300">
-                A dedicated MZS corporate account director will contact you within 24 business hours.
+            <div className="p-8 rounded-2xl bg-green-50 border border-green-200 text-center">
+              <CheckCircle2 className="w-12 h-12 text-green-600 mx-auto mb-4" />
+              <h4 className="text-xl font-serif text-green-900 mb-2">Inquiry Received</h4>
+              <p className="text-sm text-green-700">
+                Thank you. An MZS Enterprise Account Director will contact you within 2 business hours with your corporate portal credentials.
               </p>
             </div>
           ) : (
-            <form onSubmit={handleSubmit} className="space-y-4 max-w-lg mx-auto">
+            <form onSubmit={handleSubmit} className="space-y-4">
               <div>
-                <label className="block text-xs font-semibold text-gray-400 uppercase tracking-wider mb-1">
-                  Company Name *
-                </label>
+                <label className="block text-xs font-medium text-gray-700 uppercase tracking-wider mb-1.5">Company Name</label>
                 <input
                   type="text"
                   required
                   value={companyName}
                   onChange={(e) => setCompanyName(e.target.value)}
-                  placeholder="e.g. Goldman Sachs or Acme Corp"
-                  className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-xl text-sm text-white placeholder-gray-500 focus:outline-none focus:border-[#0F63BD]"
+                  placeholder="e.g. Goldman Sachs, McKinsey, Vogue"
+                  className="w-full px-4 py-3 rounded-xl border border-gray-300 focus:outline-none focus:border-[#0066FF] text-sm"
                 />
               </div>
 
               <div>
-                <label className="block text-xs font-semibold text-gray-400 uppercase tracking-wider mb-1">
-                  Work Email *
-                </label>
+                <label className="block text-xs font-medium text-gray-700 uppercase tracking-wider mb-1.5">Work Email</label>
                 <input
                   type="email"
                   required
                   value={workEmail}
                   onChange={(e) => setWorkEmail(e.target.value)}
-                  placeholder="travel@company.com"
-                  className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-xl text-sm text-white placeholder-gray-500 focus:outline-none focus:border-[#0F63BD]"
+                  placeholder="executive@company.com"
+                  className="w-full px-4 py-3 rounded-xl border border-gray-300 focus:outline-none focus:border-[#0066FF] text-sm"
                 />
               </div>
 
               <div>
-                <label className="block text-xs font-semibold text-gray-400 uppercase tracking-wider mb-1">
-                  Estimated Monthly Rides
-                </label>
+                <label className="block text-xs font-medium text-gray-700 uppercase tracking-wider mb-1.5">Monthly Travel Volume</label>
                 <select
                   value={estimatedRides}
                   onChange={(e) => setEstimatedRides(e.target.value)}
-                  className="w-full px-4 py-3 bg-[#1C222C] border border-white/10 rounded-xl text-sm text-white focus:outline-none focus:border-[#0F63BD]"
+                  className="w-full px-4 py-3 rounded-xl border border-gray-300 focus:outline-none focus:border-[#0066FF] text-sm bg-white"
                 >
                   <option value="1-10">1 - 10 rides / month</option>
                   <option value="10-50">10 - 50 rides / month</option>
                   <option value="50-200">50 - 200 rides / month</option>
-                  <option value="200+">200+ rides / month (Enterprise)</option>
+                  <option value="200+">200+ rides / month (Enterprise tier)</option>
                 </select>
               </div>
 
               <button
                 type="submit"
-                className="w-full py-4 bg-[#0F63BD] hover:bg-[#0D529C] text-white font-semibold rounded-xl text-sm transition-all shadow-lg cursor-pointer mt-6"
+                className="w-full py-4 rounded-full bg-[#0066FF] hover:bg-[#0052CC] text-white font-medium text-sm transition-all shadow-md cursor-pointer mt-6"
               >
-                Submit Corporate Application
+                Submit Corporate Request
               </button>
             </form>
           )}
@@ -194,4 +255,3 @@ export const BusinessPage: React.FC<BusinessPageProps> = ({ onNavigate, onOpenAu
     </div>
   );
 };
-

@@ -34,7 +34,7 @@ export const LegalPage: React.FC<LegalPageProps> = ({ initialTab = 'terms', onNa
             }}
             className={`py-2 text-sm font-semibold tracking-wide border-b-2 transition-all cursor-pointer whitespace-nowrap ${
               tab === 'terms'
-                ? 'border-[#0F63BD] text-[#0F63BD]'
+                ? 'border-[#0066FF] text-[#0066FF]'
                 : 'border-transparent text-gray-500 hover:text-black'
             }`}
           >
@@ -47,7 +47,7 @@ export const LegalPage: React.FC<LegalPageProps> = ({ initialTab = 'terms', onNa
             }}
             className={`py-2 text-sm font-semibold tracking-wide border-b-2 transition-all cursor-pointer whitespace-nowrap ${
               tab === 'privacy'
-                ? 'border-[#0F63BD] text-[#0F63BD]'
+                ? 'border-[#0066FF] text-[#0066FF]'
                 : 'border-transparent text-gray-500 hover:text-black'
             }`}
           >
@@ -60,7 +60,7 @@ export const LegalPage: React.FC<LegalPageProps> = ({ initialTab = 'terms', onNa
             }}
             className={`py-2 text-sm font-semibold tracking-wide border-b-2 transition-all cursor-pointer whitespace-nowrap ${
               tab === 'imprint'
-                ? 'border-[#0F63BD] text-[#0F63BD]'
+                ? 'border-[#0066FF] text-[#0066FF]'
                 : 'border-transparent text-gray-500 hover:text-black'
             }`}
           >
@@ -73,7 +73,7 @@ export const LegalPage: React.FC<LegalPageProps> = ({ initialTab = 'terms', onNa
             }}
             className={`py-2 text-sm font-semibold tracking-wide border-b-2 transition-all cursor-pointer whitespace-nowrap ${
               tab === 'accessibility'
-                ? 'border-[#0F63BD] text-[#0F63BD]'
+                ? 'border-[#0066FF] text-[#0066FF]'
                 : 'border-transparent text-gray-500 hover:text-black'
             }`}
           >
