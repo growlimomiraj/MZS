@@ -7,9 +7,9 @@ interface SustainabilitySectionProps {
 
 export const SustainabilitySection: React.FC<SustainabilitySectionProps> = ({ onNavigate }) => {
   return (
-    <section className="relative z-10 bg-white text-[#0F1319] py-16 sm:py-20 px-4 sm:px-6 lg:px-8 border-t border-gray-100">
-      <div className="max-w-[1440px] mx-auto text-center">
-        <h3 className="text-xl sm:text-2xl font-serif font-normal text-[#0F1319] mb-10">
+    <section className="relative z-10 bg-[#fbf8f2] text-[#0F1319] py-14 sm:py-20 px-4 sm:px-6 lg:px-8 border-t border-[#0F1319]/10">
+      <div className="max-w-[1170px] mx-auto text-center">
+        <h3 className="text-xl sm:text-2xl font-['PP_Fragment',serif] font-normal text-[#0F1319] mb-8 sm:mb-12">
           Sustainability partners
         </h3>
 
@@ -20,11 +20,11 @@ export const SustainabilitySection: React.FC<SustainabilitySectionProps> = ({ on
             className="hover:scale-105 transition-transform cursor-pointer focus:outline-none"
             aria-label="The Climate Pledge"
           >
-            <div className="flex items-center gap-3">
-              <span className="text-sm font-semibold tracking-wide text-[#1B945A] uppercase border-b-2 border-[#1B945A] pb-0.5">
-                The Climate Pledge
-              </span>
-            </div>
+            <img
+              src="/assets/sustainability/climate-pledge.svg"
+              alt="The Climate Pledge"
+              className="h-10 sm:h-12 w-auto object-contain"
+            />
           </button>
 
           {/* Leaders for Climate Action */}
@@ -33,11 +33,11 @@ export const SustainabilitySection: React.FC<SustainabilitySectionProps> = ({ on
             className="hover:scale-105 transition-transform cursor-pointer focus:outline-none"
             aria-label="Leaders for Climate Action"
           >
-            <div className="flex items-center gap-3">
-              <span className="text-sm font-semibold tracking-wide text-gray-900 uppercase border-b-2 border-gray-900 pb-0.5">
-                Leaders for Climate Action
-              </span>
-            </div>
+            <img
+              src="/assets/sustainability/leaders.svg"
+              alt="Leaders for Climate Action"
+              className="h-10 sm:h-12 w-auto object-contain"
+            />
           </button>
 
           {/* South Pole */}
@@ -46,15 +46,14 @@ export const SustainabilitySection: React.FC<SustainabilitySectionProps> = ({ on
             className="hover:scale-105 transition-transform cursor-pointer focus:outline-none"
             aria-label="South Pole"
           >
-            <div className="flex items-center gap-3">
-              <span className="text-sm font-semibold tracking-wide text-[#2E528F] uppercase border-b-2 border-[#2E528F] pb-0.5">
-                South Pole
-              </span>
-            </div>
+            <img
+              src="/assets/sustainability/south-pole.svg"
+              alt="South Pole"
+              className="h-10 sm:h-12 w-auto object-contain"
+            />
           </button>
         </div>
       </div>
     </section>
   );
 };
-
