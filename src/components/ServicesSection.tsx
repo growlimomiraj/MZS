@@ -57,48 +57,36 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({ onNavigate }) 
 
   useEffect(() => {
     const ctx = gsap.context(() => {
-      // 1. Background color morph to #fbf8f2 on scroll
-      gsap.to(sectionRef.current, {
-        backgroundColor: '#fbf8f2',
-        ease: 'power2.out',
-        scrollTrigger: {
-          trigger: sectionRef.current,
-          start: 'top 50%',
-          end: 'top 20%',
-          scrub: 1,
-        },
-      });
-
-      // 2. Headings scrub in
+      // 1. Headings smooth entrance
       if (titleWrapperRef.current) {
         gsap.from(titleWrapperRef.current.children, {
-          y: 45,
+          y: 40,
           opacity: 0,
           stagger: 0.15,
-          duration: 1,
+          duration: 0.9,
           ease: 'power2.out',
           scrollTrigger: {
             trigger: titleWrapperRef.current,
-            start: 'top 85%',
-            end: 'top 60%',
-            scrub: 1.5,
+            start: 'top 90%',
+            toggleActions: 'play none none none',
+            once: true,
           },
         });
       }
 
-      // 3. Cards track entrance on scroll
+      // 2. Cards track entrance - once visible, stays 100% visible
       if (cardsTrackRef.current) {
         gsap.from(cardsTrackRef.current.children, {
-          y: 60,
-          opacity: 0.3,
-          stagger: 0.1,
-          duration: 1,
+          y: 45,
+          opacity: 0,
+          stagger: 0.12,
+          duration: 0.85,
           ease: 'power2.out',
           scrollTrigger: {
             trigger: cardsTrackRef.current,
-            start: 'top 80%',
-            end: 'top 45%',
-            scrub: 1,
+            start: 'top 92%',
+            toggleActions: 'play none none none',
+            once: true,
           },
         });
       }

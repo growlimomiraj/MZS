@@ -22,6 +22,10 @@ import { RouteDetailPage } from './pages/RouteDetailPage';
 import { LegalPage } from './pages/LegalPage';
 
 import { BookingState, PageRoute } from './types';
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
+gsap.registerPlugin(ScrollTrigger);
 
 export function App() {
   const [currentRoute, setCurrentRoute] = useState<PageRoute>(() => {
@@ -43,6 +47,14 @@ export function App() {
     window.addEventListener('popstate', handlePopState);
     return () => window.removeEventListener('popstate', handlePopState);
   }, []);
+
+  // Recalibrate ScrollTrigger whenever route changes or components mount
+  useEffect(() => {
+    const t = setTimeout(() => {
+      ScrollTrigger.refresh();
+    }, 200);
+    return () => clearTimeout(t);
+  }, [currentRoute]);
 
   const handleNavigate = (route: PageRoute) => {
     setCurrentRoute(route);
