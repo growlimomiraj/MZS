@@ -47,7 +47,7 @@ export const PartnersPage: React.FC<PartnersPageProps> = ({ onNavigate }) => {
           className="absolute inset-0 bg-cover bg-center brightness-75 contrast-105 pointer-events-none"
           style={{
             backgroundImage:
-              'url(/assets/services/service-1.webp)',
+              'url(/assets/services/service-1.jpg)',
           }}
         />
         <div className="absolute inset-0 bg-gradient-to-t from-[#0F1319]/90 via-[#0F1319]/40 to-black/60 pointer-events-none" />

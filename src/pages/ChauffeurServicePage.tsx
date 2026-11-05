@@ -120,7 +120,7 @@ export const ChauffeurServicePage: React.FC<ChauffeurServicePageProps> = ({ onSe
           </div>
           <div className="relative rounded-3xl overflow-hidden shadow-2xl">
             <img
-              src="/assets/services/service-4.webp"
+              src="/assets/services/service-4.jpg"
               alt="MZS professional chauffeur service"
               className="w-full h-auto object-cover rounded-3xl aspect-[4/3]"
             />

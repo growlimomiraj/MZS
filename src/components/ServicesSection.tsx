@@ -17,7 +17,7 @@ const SERVICES = [
     title: 'Smooth landings, every time.',
     description:
       'Delayed flight? Your MZS chauffeur tracks flight radar in real time. Plus, enjoy 60 minutes of complimentary wait time.',
-    image: '/assets/services/service-1.webp',
+    image: '/assets/services/service-1.jpg',
     route: '/airport-transfer' as PageRoute,
   },
   {
@@ -26,7 +26,7 @@ const SERVICES = [
     title: 'Seize the day.',
     description:
       "Reserve a dedicated MZS chauffeur from 2 to 24 hours. Your driver and luxury vehicle remain on standby curbside as long as you need.",
-    image: '/assets/services/service-2.webp',
+    image: '/assets/services/service-2.jpg',
     route: '/hourly-car-service' as PageRoute,
   },
   {
@@ -35,7 +35,7 @@ const SERVICES = [
     title: 'Between cities, done better.',
     description:
       'Turn long-distance journeys into productive executive time with MZS Executive Chauffeurs. Guaranteed fixed rates with no surge pricing.',
-    image: '/assets/services/service-3.webp',
+    image: '/assets/services/service-3.jpg',
     route: '/city-to-city' as PageRoute,
   },
   {
@@ -44,7 +44,7 @@ const SERVICES = [
     title: 'Corporate travel, simplified.',
     description:
       'One centralized MZS platform for US enterprises and travel agencies to book, track, and reconcile every executive journey.',
-    image: '/assets/services/service-4.webp',
+    image: '/assets/services/service-4.jpg',
     route: '/business' as PageRoute,
   },
 ];
