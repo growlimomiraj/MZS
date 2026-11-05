@@ -39,7 +39,7 @@ export const HourlyHirePage: React.FC<HourlyHirePageProps> = ({ onSearch, onNavi
           className="absolute inset-0 bg-cover bg-center brightness-75 contrast-105 pointer-events-none"
           style={{
             backgroundImage:
-              'url(https://images.unsplash.com/photo-1517524008697-84bbe3c3fd98?auto=format&fit=crop&w=2000&q=80)',
+              'url(/assets/pages/hourly-hero.jpg)',
           }}
         />
         <div className="absolute inset-0 bg-gradient-to-t from-[#0F1319]/90 via-[#0F1319]/40 to-black/60 pointer-events-none" />
@@ -111,7 +111,7 @@ export const HourlyHirePage: React.FC<HourlyHirePageProps> = ({ onSearch, onNavi
       <section className="py-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto border-t border-gray-200">
         <div className="rounded-3xl overflow-hidden shadow-xl border border-gray-200 bg-white p-6 sm:p-10 flex flex-col items-center">
           <img
-            src="https://images.unsplash.com/photo-1502877338535-766e1452684a?auto=format&fit=crop&w=1600&q=80"
+            src="/assets/services/service-2.webp"
             alt="MZS Executive Chauffeurs luxury vehicle interior"
             className="w-full max-w-5xl object-cover rounded-2xl aspect-[16/9]"
           />

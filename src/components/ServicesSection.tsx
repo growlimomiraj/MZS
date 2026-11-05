@@ -17,7 +17,7 @@ const SERVICES = [
     title: 'Smooth landings, every time.',
     description:
       'Delayed flight? Chauffeurs track arrivals and adjust accordingly. Plus, you have 1 hour of complimentary wait time just in case.',
-    image: 'https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&w=1200&q=80',
+    image: '/assets/services/service-1.webp',
     route: '/airport-transfer' as PageRoute,
   },
   {
@@ -26,7 +26,7 @@ const SERVICES = [
     title: 'Seize the day.',
     description:
       "Reserve a dedicated chauffeur from 2 to 24 hours. They'll be on standby as long as you need them.",
-    image: 'https://images.unsplash.com/photo-1555353540-64580b51c258?auto=format&fit=crop&w=1200&q=80',
+    image: '/assets/services/service-2.webp',
     route: '/hourly-car-service' as PageRoute,
   },
   {
@@ -35,7 +35,7 @@ const SERVICES = [
     title: 'Between cities, done better.',
     description:
       'Turn long-distance journeys into time well spent. Arrive refreshed, not stressed.',
-    image: 'https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?auto=format&fit=crop&w=1200&q=80',
+    image: '/assets/services/service-3.webp',
     route: '/city-to-city' as PageRoute,
   },
   {
@@ -44,7 +44,7 @@ const SERVICES = [
     title: 'Corporate travel, simplified.',
     description:
       'One platform for companies and agencies to book, track, and account for every journey.',
-    image: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1200&q=80',
+    image: '/assets/services/service-4.webp',
     route: '/business' as PageRoute,
   },
 ];

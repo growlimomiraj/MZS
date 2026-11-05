@@ -92,57 +92,18 @@ export const AppSection: React.FC = () => {
           </div>
         </div>
 
-        {/* Right Column: Custom MZS Executive Reservation Card Preview */}
+        {/* Right Column: Platform Web & Phone Mockup */}
         <div
           ref={cardColRef}
-          className="w-full lg:w-[48%] flex justify-center lg:justify-end will-change-transform"
+          className="w-full lg:w-[58%] flex justify-center lg:justify-end will-change-transform"
         >
-          <div className="w-full max-w-[460px] bg-white rounded-3xl p-6 sm:p-8 shadow-2xl border border-white/60 text-[#0F1319]">
-            <div className="flex items-center justify-between pb-4 border-b border-gray-100 mb-5">
-              <div>
-                <span className="text-[10px] font-semibold uppercase tracking-wider text-gray-400 block">Upcoming Journey</span>
-                <span className="text-lg font-serif font-bold text-[#0F1319]">MZS Executive Chauffeur</span>
-              </div>
-              <span className="px-3 py-1 bg-emerald-100 text-emerald-800 text-xs font-semibold rounded-full flex items-center gap-1">
-                <CheckCircle2 className="w-3.5 h-3.5" /> Confirmed
-              </span>
-            </div>
-
-            <div className="space-y-4 mb-6">
-              <div className="flex items-start gap-3">
-                <div className="w-3 h-3 rounded-full bg-[#0F63BD] mt-1 shrink-0" />
-                <div>
-                  <div className="text-xs text-gray-500 uppercase tracking-wide">Pickup Location</div>
-                  <div className="text-sm font-medium text-[#0F1319]">JFK International Airport &bull; Terminal 4 Arrivals</div>
-                </div>
-              </div>
-              <div className="flex items-start gap-3">
-                <div className="w-3 h-3 rounded-full bg-[#0F1319] mt-1 shrink-0" />
-                <div>
-                  <div className="text-xs text-gray-500 uppercase tracking-wide">Drop-off Destination</div>
-                  <div className="text-sm font-medium text-[#0F1319]">The Plaza Hotel &bull; Fifth Ave, New York, NY</div>
-                </div>
-              </div>
-            </div>
-
-            <div className="grid grid-cols-2 gap-3 p-4 bg-[#FAF8F5] rounded-2xl border border-gray-100 text-xs mb-5">
-              <div>
-                <span className="text-gray-500 block">Flight Radar</span>
-                <span className="font-semibold text-[#0F1319]">Tracked (On Time)</span>
-              </div>
-              <div>
-                <span className="text-gray-500 block">Wait Time</span>
-                <span className="font-semibold text-[#0F1319]">60 Min Included</span>
-              </div>
-            </div>
-
-            <div className="pt-4 border-t border-gray-100 flex items-center justify-between text-xs text-gray-500">
-              <span className="flex items-center gap-1.5">
-                <ShieldCheck className="w-4 h-4 text-[#0F63BD]" />
-                Commercial US Chauffeur
-              </span>
-              <span className="font-mono text-gray-400">MZS-801-7476</span>
-            </div>
+          <div className="relative w-full max-w-[680px]">
+            <img
+              src="/assets/app/app-mockup.webp"
+              alt="MZS Executive Chauffeurs reservation platform"
+              loading="lazy"
+              className="w-full h-auto drop-shadow-2xl pointer-events-none select-none"
+            />
           </div>
         </div>
       </div>

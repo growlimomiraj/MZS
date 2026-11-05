@@ -39,7 +39,7 @@ export const ChauffeurServicePage: React.FC<ChauffeurServicePageProps> = ({ onSe
           className="absolute inset-0 bg-cover bg-center brightness-75 contrast-105 pointer-events-none"
           style={{
             backgroundImage:
-              'url(https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?auto=format&fit=crop&w=2000&q=80)',
+              'url(/assets/pages/chauffeur-hero.jpg)',
           }}
         />
         <div className="absolute inset-0 bg-gradient-to-t from-[#0F1319]/90 via-[#0F1319]/40 to-black/60 pointer-events-none" />
@@ -120,7 +120,7 @@ export const ChauffeurServicePage: React.FC<ChauffeurServicePageProps> = ({ onSe
           </div>
           <div className="relative rounded-3xl overflow-hidden shadow-2xl">
             <img
-              src="https://images.unsplash.com/photo-1549399542-7e3f8b79c341?auto=format&fit=crop&w=1200&q=80"
+              src="/assets/services/service-4.webp"
               alt="MZS professional chauffeur service"
               className="w-full h-auto object-cover rounded-3xl aspect-[4/3]"
             />

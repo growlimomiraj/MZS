@@ -26,7 +26,7 @@ export const BusinessPage: React.FC<BusinessPageProps> = ({ onNavigate, onOpenAu
           className="absolute inset-0 bg-cover bg-center brightness-75 contrast-105 pointer-events-none"
           style={{
             backgroundImage:
-              'url(https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=2000&q=80)',
+              'url(/assets/pages/business-hero.webp)',
           }}
         />
         <div className="absolute inset-0 bg-gradient-to-t from-[#0F1319]/90 via-[#0F1319]/40 to-black/60 pointer-events-none" />
@@ -127,7 +127,7 @@ export const BusinessPage: React.FC<BusinessPageProps> = ({ onNavigate, onOpenAu
               </p>
             </div>
             <img
-              src="https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=1200&q=80"
+              src="/assets/pages/business-card-1.webp"
               alt="MZS corporate travel solution"
               className="w-full h-64 object-cover"
             />
@@ -142,7 +142,7 @@ export const BusinessPage: React.FC<BusinessPageProps> = ({ onNavigate, onOpenAu
               </p>
             </div>
             <img
-              src="https://images.unsplash.com/photo-1559136555-9303baea8ebd?auto=format&fit=crop&w=1200&q=80"
+              src="/assets/pages/business-card-2.webp"
               alt="MZS travel management partner solution"
               className="w-full h-64 object-cover"
             />
@@ -199,9 +199,9 @@ export const BusinessPage: React.FC<BusinessPageProps> = ({ onNavigate, onOpenAu
       <section className="py-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto border-t border-gray-200">
         <div className="rounded-3xl overflow-hidden shadow-xl border border-gray-200 bg-white p-6 sm:p-10 flex flex-col items-center">
           <img
-            src="https://images.unsplash.com/photo-1563720223185-11003d516935?auto=format&fit=crop&w=1600&q=80"
-            alt="MZS luxury executive fleet"
-            className="w-full max-w-4xl object-cover rounded-2xl aspect-[16/9]"
+            src="/assets/pages/business-portal.png"
+            alt="MZS luxury executive dispatch portal"
+            className="w-full max-w-4xl object-contain rounded-2xl"
           />
         </div>
       </section>

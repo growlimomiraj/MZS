@@ -44,7 +44,7 @@ export const AirportTransferPage: React.FC<AirportTransferPageProps> = ({ onSear
           className="absolute inset-0 bg-cover bg-center brightness-75 contrast-105 pointer-events-none"
           style={{
             backgroundImage:
-              'url(https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&w=2000&q=80)',
+              'url(/assets/pages/airport-hero.webp)',
           }}
         />
         <div className="absolute inset-0 bg-gradient-to-t from-[#0F1319]/90 via-[#0F1319]/40 to-black/60 pointer-events-none" />
@@ -192,7 +192,7 @@ export const AirportTransferPage: React.FC<AirportTransferPageProps> = ({ onSear
           </div>
           <div className="relative rounded-3xl overflow-hidden shadow-2xl">
             <img
-              src="https://images.unsplash.com/photo-1549399542-7e3f8b79c341?auto=format&fit=crop&w=1200&q=80"
+              src="/assets/pages/airport-faq.jpg"
               alt="MZS Executive Chauffeurs airport transfer greeting passenger"
               className="w-full h-auto object-cover rounded-3xl aspect-[4/3]"
             />
@@ -205,7 +205,7 @@ export const AirportTransferPage: React.FC<AirportTransferPageProps> = ({ onSear
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           <div className="order-2 lg:order-1 relative rounded-3xl overflow-hidden shadow-2xl">
             <img
-              src="https://images.unsplash.com/photo-1563720223185-11003d516935?auto=format&fit=crop&w=1200&q=80"
+              src="/assets/pages/family-transit.jpg"
               alt="MZS Executive Chauffeurs luxury travel"
               className="w-full h-auto object-cover rounded-3xl aspect-[4/3]"
             />

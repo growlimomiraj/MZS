@@ -15,7 +15,7 @@ export const SustainabilityPage: React.FC<SustainabilityPageProps> = ({ onNaviga
           className="absolute inset-0 bg-cover bg-center brightness-75 contrast-105 pointer-events-none"
           style={{
             backgroundImage:
-              'url(https://images.unsplash.com/photo-1518684079-3c830dcef090?auto=format&fit=crop&w=2000&q=80)',
+              'url(/assets/pages/sustainability-hero.webp)',
           }}
         />
         <div className="absolute inset-0 bg-gradient-to-t from-[#0F1319]/90 via-[#0F1319]/40 to-black/60 pointer-events-none" />
@@ -53,7 +53,7 @@ export const SustainabilityPage: React.FC<SustainabilityPageProps> = ({ onNaviga
           </div>
           <div className="relative rounded-3xl overflow-hidden shadow-2xl">
             <img
-              src="https://images.unsplash.com/photo-1563720223523-491ff04651de?auto=format&fit=crop&w=1200&q=80"
+              src="/assets/pages/sustainability-1.jpg"
               alt="MZS Executive Chauffeurs Carbon Neutral Certified"
               className="w-full h-auto object-cover rounded-3xl aspect-[4/3]"
             />
@@ -83,7 +83,7 @@ export const SustainabilityPage: React.FC<SustainabilityPageProps> = ({ onNaviga
               </p>
             </div>
             <img
-              src="https://images.unsplash.com/photo-1473496169904-658ba7c44d8a?auto=format&fit=crop&w=1200&q=80"
+              src="/assets/pages/sustainability-1.jpg"
               alt="Environmental preservation project"
               className="w-full h-64 object-cover"
             />
@@ -99,7 +99,7 @@ export const SustainabilityPage: React.FC<SustainabilityPageProps> = ({ onNaviga
               </p>
             </div>
             <img
-              src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1200&q=80"
+              src="/assets/pages/sustainability-2.jpg"
               alt="Third-party audit accountability"
               className="w-full h-64 object-cover"
             />
@@ -115,7 +115,7 @@ export const SustainabilityPage: React.FC<SustainabilityPageProps> = ({ onNaviga
               </p>
             </div>
             <img
-              src="https://images.unsplash.com/photo-1519671482749-fd09be7ccebf?auto=format&fit=crop&w=1200&q=80"
+              src="/assets/pages/sustainability-3.jpg"
               alt="Net zero climate commitment"
               className="w-full h-64 object-cover"
             />
@@ -131,7 +131,7 @@ export const SustainabilityPage: React.FC<SustainabilityPageProps> = ({ onNaviga
               </p>
             </div>
             <img
-              src="https://images.unsplash.com/photo-1563720223523-491ff04651de?auto=format&fit=crop&w=1200&q=80"
+              src="/assets/pages/sustainability-4.jpg"
               alt="Electric luxury vehicle"
               className="w-full h-64 object-cover"
             />

@@ -39,7 +39,7 @@ export const LimousineServicePage: React.FC<LimousineServicePageProps> = ({ onSe
           className="absolute inset-0 bg-cover bg-center brightness-75 contrast-105 pointer-events-none"
           style={{
             backgroundImage:
-              'url(https://images.unsplash.com/photo-1552519507-da3b142c6e3d?auto=format&fit=crop&w=2000&q=80)',
+              'url(/assets/pages/limousine-hero.webp)',
           }}
         />
         <div className="absolute inset-0 bg-gradient-to-t from-[#0F1319]/90 via-[#0F1319]/40 to-black/60 pointer-events-none" />
@@ -120,7 +120,7 @@ export const LimousineServicePage: React.FC<LimousineServicePageProps> = ({ onSe
           </div>
           <div className="relative rounded-3xl overflow-hidden shadow-2xl">
             <img
-              src="https://images.unsplash.com/photo-1617814076367-b759c7d7e738?auto=format&fit=crop&w=1200&q=80"
+              src="/assets/experience/ride-2.webp"
               alt="MZS limousine passenger arrival"
               className="w-full h-auto object-cover rounded-3xl aspect-[4/3]"
             />
