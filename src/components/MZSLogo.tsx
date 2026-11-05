@@ -35,3 +35,4 @@ export const MZSLogo: React.FC<LogoProps> = ({
     </div>
   );
 };
+
