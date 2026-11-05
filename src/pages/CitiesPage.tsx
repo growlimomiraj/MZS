@@ -79,13 +79,13 @@ export const CitiesPage: React.FC<CitiesPageProps> = ({ onNavigate }) => {
         <div className="relative z-10 max-w-4xl mx-auto">
           <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/10 backdrop-blur-md text-xs font-semibold uppercase tracking-widest text-gray-200 mb-6 border border-white/15">
             <ShieldCheck className="w-4 h-4 text-[#0066FF]" />
-            US Nationwide Executive Coverage
+            MZS Nationwide US Executive Coverage
           </span>
           <h1 className="text-4xl sm:text-6xl font-serif font-normal text-white mb-6 leading-tight">
-            Chauffeur Services in Premier US Cities
+            MZS Chauffeur Services in Premier US Cities
           </h1>
           <p className="text-lg text-gray-200 max-w-2xl mx-auto font-light mb-8">
-            Experience uniform executive standards, licensed commercial chauffeurs, and transparent fixed pricing across every major metropolitan market in the United States.
+            Experience uniform 5-star MZS executive standards, licensed commercial chauffeurs, and transparent fixed pricing across every major metropolitan market in the United States.
           </p>
 
           <div className="relative max-w-md mx-auto">

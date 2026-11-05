@@ -117,6 +117,9 @@ export const ExperienceSection: React.FC = () => {
       <div className="w-full max-w-[1800px] mx-auto">
         {/* Headings */}
         <div className="max-w-[1170px] mx-auto text-center mb-12 lg:mb-16">
+          <span className="text-xs font-semibold uppercase tracking-widest text-[#0F63BD] mb-3 block">
+            The MZS Experience &bull; Dedicated Luxury
+          </span>
           <h2
             ref={titleRef}
             className="text-3xl sm:text-5xl lg:text-[56px] font-['PP_Fragment',serif] font-normal text-[#0F1319] tracking-tight leading-[1.12] mb-4 will-change-transform max-w-[800px] mx-auto"
@@ -127,7 +130,7 @@ export const ExperienceSection: React.FC = () => {
             ref={subtitleRef}
             className="text-base sm:text-xl lg:text-[22px] text-[#666F7B] font-normal leading-relaxed will-change-transform max-w-[800px] mx-auto"
           >
-            Thoughtful details and discreet service transform every journey into your personal sanctuary.
+            Thoughtful details and discreet service transform every MZS Executive Chauffeurs journey into your personal sanctuary.
           </h3>
         </div>
 

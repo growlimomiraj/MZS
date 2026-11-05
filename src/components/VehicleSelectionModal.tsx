@@ -58,12 +58,12 @@ export const VehicleSelectionModal: React.FC<VehicleSelectionModalProps> = ({
             )}
             <div>
               <h3 className="text-lg sm:text-xl font-serif">
-                {step === 'vehicles' && 'Select your service class'}
-                {step === 'details' && 'Passenger & Journey Details'}
-                {step === 'confirmed' && 'Booking Confirmed'}
+                {step === 'vehicles' && 'Select your MZS Executive Fleet class'}
+                {step === 'details' && 'MZS Passenger & Reservation Details'}
+                {step === 'confirmed' && 'MZS Reservation Confirmed'}
               </h3>
               <p className="text-xs text-gray-400">
-                {bookingData.type === 'transfer' ? 'Point-to-point transfer' : `Hourly hire (${bookingData.durationHours} hrs)`} &bull; All-inclusive guaranteed pricing
+                {bookingData.type === 'transfer' ? 'Point-to-point US transfer' : `Hourly hire (${bookingData.durationHours} hrs)`} &bull; MZS All-Inclusive Guaranteed Pricing
               </p>
             </div>
           </div>

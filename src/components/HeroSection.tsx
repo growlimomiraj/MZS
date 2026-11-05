@@ -102,6 +102,13 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onSearch }) => {
 
       {/* Content Container positioned in lower portion to match reference */}
       <div className="relative z-10 w-full max-w-7xl mx-auto flex flex-col items-center text-center">
+        {/* MZS Luxury Pill Badge */}
+        <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-black/45 backdrop-blur-md border border-white/20 text-[#aecff3] text-xs font-semibold uppercase tracking-widest mb-3.5 select-none shadow-sm">
+          <span>MZS Executive Chauffeurs</span>
+          <span className="text-white/40">&bull;</span>
+          <span className="text-white/80 font-normal">USA Nationwide</span>
+        </div>
+
         {/* Title: Exact Ice Blue color #aecff3 and PP Fragment typography */}
         <h1
           ref={titleRef}

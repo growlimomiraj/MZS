@@ -199,9 +199,9 @@ export const BusinessPage: React.FC<BusinessPageProps> = ({ onNavigate, onOpenAu
       <section className="py-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto border-t border-gray-200">
         <div className="rounded-3xl overflow-hidden shadow-xl border border-gray-200 bg-white p-6 sm:p-10 flex flex-col items-center">
           <img
-            src="/assets/pages/business-portal.png"
-            alt="MZS luxury executive dispatch portal"
-            className="w-full max-w-4xl object-contain rounded-2xl"
+            src="/assets/experience/ride-2.webp"
+            alt="MZS executive passenger travel"
+            className="w-full max-w-4xl object-cover rounded-2xl aspect-[16/9]"
           />
         </div>
       </section>

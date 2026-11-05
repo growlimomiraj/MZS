@@ -616,8 +616,8 @@ export const BookingWidget: React.FC<BookingWidgetProps> = ({ onSearch }) => {
           }}
         />
         <div className="text-xs sm:text-sm font-['Geist',sans-serif] font-normal leading-tight text-center sm:text-left">
-          <span className="block text-white/90">Nationwide US executive chauffeur coverage.</span>
-          <span className="block text-white/70">Licensed professional chauffeurs on time, every time.</span>
+          <span className="block text-white font-medium">MZS Executive Chauffeurs &bull; Nationwide USA</span>
+          <span className="block text-white/75">Guaranteed on-time pickups across all 50 states &bull; 24/7 Dispatch: (888) 801-7476</span>
         </div>
       </div>
     </div>

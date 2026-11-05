@@ -48,8 +48,35 @@ export function App() {
     return () => window.removeEventListener('popstate', handlePopState);
   }, []);
 
-  // Recalibrate ScrollTrigger whenever route changes or components mount
+  // Recalibrate ScrollTrigger and update browser title whenever route changes
   useEffect(() => {
+    const titles: Record<string, string> = {
+      '/': 'MZS Executive Chauffeurs | Premier Nationwide Chauffeur Service USA',
+      '/airport-transfer': 'Airport Transfers across USA | MZS Executive Chauffeurs',
+      '/city-to-city': 'City-to-City Long Distance Chauffeur Service | MZS Executive Chauffeurs',
+      '/hourly-car-service': 'By-the-Hour Chauffeur Service | MZS Executive Chauffeurs',
+      '/business': 'Enterprise Corporate Travel Solutions | MZS Executive Chauffeurs',
+      '/chauffeur-service': 'Professional Chauffeurs USA | MZS Executive Chauffeurs',
+      '/limousine-service': 'Luxury Limousine Service USA | MZS Executive Chauffeurs',
+      '/partners': 'Chauffeur Partner Network | MZS Executive Chauffeurs',
+      '/about': 'About Us | MZS Executive Chauffeurs',
+      '/sustainability': '100% Carbon-Neutral Travel | MZS Executive Chauffeurs',
+      '/cities': 'Service Cities Nationwide | MZS Executive Chauffeurs',
+      '/help': '24/7 Guest Concierge & Help | MZS Executive Chauffeurs',
+      '/terms': 'Terms of Service | MZS Executive Chauffeurs',
+      '/privacy-policy': 'Privacy Policy | MZS Executive Chauffeurs',
+      '/imprint': 'Legal Notice | MZS Executive Chauffeurs',
+      '/accessibility': 'Accessibility Statement | MZS Executive Chauffeurs',
+    };
+
+    if (titles[currentRoute]) {
+      document.title = titles[currentRoute];
+    } else if (currentRoute.startsWith('/city-to-city/')) {
+      document.title = 'City-to-City Route | MZS Executive Chauffeurs';
+    } else {
+      document.title = 'MZS Executive Chauffeurs | Nationwide USA';
+    }
+
     const t = setTimeout(() => {
       ScrollTrigger.refresh();
     }, 200);

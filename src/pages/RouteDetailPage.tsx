@@ -38,7 +38,7 @@ export const RouteDetailPage: React.FC<RouteDetailPageProps> = ({
         <div className="relative z-10 w-full max-w-5xl mx-auto text-center mb-10">
           <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/10 backdrop-blur-md text-xs font-semibold uppercase tracking-widest text-gray-200 mb-6 border border-white/15">
             <Sparkles className="w-4 h-4 text-[#0066FF]" />
-            Private US City-to-City Route
+            Private US City-to-City Route &bull; MZS Executive Chauffeurs
           </span>
           <h1 className="text-4xl sm:text-6xl lg:text-7xl font-serif font-normal text-white mb-6 leading-[1.08] tracking-tight">
             {from} to {to}

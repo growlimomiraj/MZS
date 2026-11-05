@@ -16,7 +16,7 @@ const SERVICES = [
     subheadline: 'Airport transfers',
     title: 'Smooth landings, every time.',
     description:
-      'Delayed flight? Chauffeurs track arrivals and adjust accordingly. Plus, you have 1 hour of complimentary wait time just in case.',
+      'Delayed flight? Your MZS chauffeur tracks flight radar in real time. Plus, enjoy 60 minutes of complimentary wait time.',
     image: '/assets/services/service-1.webp',
     route: '/airport-transfer' as PageRoute,
   },
@@ -25,7 +25,7 @@ const SERVICES = [
     subheadline: 'Hourly and full day hire',
     title: 'Seize the day.',
     description:
-      "Reserve a dedicated chauffeur from 2 to 24 hours. They'll be on standby as long as you need them.",
+      "Reserve a dedicated MZS chauffeur from 2 to 24 hours. Your driver and luxury vehicle remain on standby curbside as long as you need.",
     image: '/assets/services/service-2.webp',
     route: '/hourly-car-service' as PageRoute,
   },
@@ -34,7 +34,7 @@ const SERVICES = [
     subheadline: 'City-to-city',
     title: 'Between cities, done better.',
     description:
-      'Turn long-distance journeys into time well spent. Arrive refreshed, not stressed.',
+      'Turn long-distance journeys into productive executive time with MZS Executive Chauffeurs. Guaranteed fixed rates with no surge pricing.',
     image: '/assets/services/service-3.webp',
     route: '/city-to-city' as PageRoute,
   },
@@ -43,7 +43,7 @@ const SERVICES = [
     subheadline: 'Enterprise and agency solutions',
     title: 'Corporate travel, simplified.',
     description:
-      'One platform for companies and agencies to book, track, and account for every journey.',
+      'One centralized MZS platform for US enterprises and travel agencies to book, track, and reconcile every executive journey.',
     image: '/assets/services/service-4.webp',
     route: '/business' as PageRoute,
   },
@@ -113,11 +113,14 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({ onNavigate }) 
       <div className="w-full max-w-[1720px] mx-auto">
         {/* Title & Subtitle - Centered matching reference video */}
         <div ref={titleWrapperRef} className="text-center max-w-3xl mx-auto mb-12 sm:mb-16">
+          <span className="text-xs font-semibold uppercase tracking-widest text-[#0F63BD] mb-3 block">
+            MZS Executive Services &bull; Nationwide USA
+          </span>
           <h2 className="text-3xl sm:text-5xl lg:text-[56px] font-['PP_Fragment',serif] font-normal text-[#0F1319] tracking-tight leading-[1.1] mb-3">
             Arrive at your best.
           </h2>
           <h3 className="text-base sm:text-xl text-[#666F7B] font-normal">
-            Effortless journeys, tailored to you.
+            Effortless luxury journeys across the United States, tailored by MZS Executive Chauffeurs.
           </h3>
         </div>
 

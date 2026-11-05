@@ -47,13 +47,13 @@ export const HourlyHirePage: React.FC<HourlyHirePageProps> = ({ onSearch, onNavi
         <div className="relative z-10 w-full max-w-5xl mx-auto text-center mb-10">
           <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/10 backdrop-blur-md text-xs font-semibold uppercase tracking-widest text-gray-200 mb-6 border border-white/15">
             <Sparkles className="w-4 h-4 text-[#0066FF]" />
-            Dedicated Chauffeur on Standby
+            MZS Dedicated Chauffeur on Standby &bull; USA
           </span>
           <h1 className="text-4xl sm:text-6xl lg:text-7xl font-serif font-normal text-white mb-6 leading-[1.08] tracking-tight">
             By-the-hour chauffeur and full-day driver hire
           </h1>
           <p className="text-lg sm:text-xl text-gray-200 max-w-2xl mx-auto mb-10 font-light leading-relaxed">
-            Enjoy absolute freedom with an elite chauffeur on standby as long as you need. Unlimited stops, complete discretion.
+            Enjoy absolute schedule freedom with an elite MZS Executive Chauffeur on standby as long as you need. Unlimited stops, complete discretion across the United States.
           </p>
 
           <BookingWidget onSearch={onSearch} defaultServiceType="hourly" />

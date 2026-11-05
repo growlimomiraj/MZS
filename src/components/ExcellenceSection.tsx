@@ -12,23 +12,23 @@ interface FeatureItem {
 const FEATURES: FeatureItem[] = [
   {
     title: 'Nationwide coverage',
-    description: 'Licensed professional chauffeurs across the USA',
+    description: 'Licensed professional MZS chauffeurs across all 50 US states',
     image: '/assets/excellence/like.png',
-    alt: 'Nationwide coverage across the USA',
+    alt: 'Nationwide US coverage with MZS Executive Chauffeurs',
     svgFallback: <WorldwideIcon className="h-28 sm:h-32 w-auto object-contain" />,
   },
   {
     title: 'High-end vehicles',
-    description: 'Only the best recent models',
+    description: 'Only the best late-model MZS luxury fleet',
     image: '/assets/excellence/cloud.png',
-    alt: 'High-end vehicles',
+    alt: 'High-end luxury vehicles at MZS Executive Chauffeurs',
     svgFallback: <HighEndVehiclesIcon className="h-28 sm:h-32 w-auto object-contain" />,
   },
   {
     title: 'Safe travels',
-    description: 'Trained professionals and reliable pickups',
+    description: 'Strictly vetted MZS chauffeurs and guaranteed on-time pickups',
     image: '/assets/excellence/lock.png',
-    alt: 'Safe travels',
+    alt: 'Safe executive travels with MZS',
     svgFallback: <SafeTravelsIcon className="h-28 sm:h-32 w-auto object-contain" />,
   },
 ];
@@ -38,11 +38,14 @@ export const ExcellenceSection: React.FC = () => {
     <section className="relative z-10 bg-[#fbf8f2] text-[#0F1319] py-20 lg:py-28 px-4 sm:px-8 lg:px-12">
       <div className="max-w-[1170px] mx-auto">
         <div className="text-center max-w-[800px] mx-auto mb-12 sm:mb-16">
+          <span className="text-xs font-semibold uppercase tracking-widest text-[#0F63BD] mb-3 block">
+            The MZS Standard &bull; Excellence Guaranteed
+          </span>
           <h2 className="text-5xl sm:text-6xl lg:text-[72px] font-['PP_Fragment',serif] font-normal text-[#0F1319] tracking-tight leading-[1.06] mb-4 select-none">
             Expect excellence.
           </h2>
           <h3 className="text-base sm:text-lg lg:text-xl font-['Geist',sans-serif] text-[#0F1319] font-medium leading-relaxed select-none">
-            Leave the car refreshed and ready for what's next.
+            Leave the car refreshed and ready for what's next with MZS Executive Chauffeurs.
           </h3>
         </div>
 
