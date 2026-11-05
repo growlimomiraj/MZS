@@ -1,18 +1,18 @@
 import React, { useRef, useEffect } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { Phone, ArrowRight, ShieldCheck, Clock, CheckCircle2 } from 'lucide-react';
 
 gsap.registerPlugin(ScrollTrigger);
 
 export const AppSection: React.FC = () => {
   const sectionRef = useRef<HTMLElement>(null);
   const textColRef = useRef<HTMLDivElement>(null);
-  const imgColRef = useRef<HTMLDivElement>(null);
+  const cardColRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const ctx = gsap.context(() => {
-      // 1. Entrance animation: Text from left (-160px) and Image from right (+160px) come closer to middle on scroll
-      if (textColRef.current && imgColRef.current && sectionRef.current) {
+      if (textColRef.current && cardColRef.current && sectionRef.current) {
         const enterTl = gsap.timeline({
           scrollTrigger: {
             trigger: sectionRef.current,
@@ -25,7 +25,7 @@ export const AppSection: React.FC = () => {
         enterTl.from(
           textColRef.current,
           {
-            x: -160,
+            x: -120,
             opacity: 0,
             duration: 1.2,
             ease: 'power1.out',
@@ -34,44 +34,12 @@ export const AppSection: React.FC = () => {
         );
 
         enterTl.from(
-          imgColRef.current,
+          cardColRef.current,
           {
-            x: 160,
+            x: 120,
             opacity: 0,
             duration: 1.2,
             ease: 'power1.out',
-          },
-          0
-        );
-
-        // 2. Exit scrub animation: Text and image slide away as user scrolls past
-        const exitTl = gsap.timeline({
-          scrollTrigger: {
-            trigger: sectionRef.current,
-            start: 'bottom 65%',
-            end: 'bottom 20%',
-            scrub: 1.5,
-          },
-        });
-
-        exitTl.to(
-          textColRef.current,
-          {
-            x: -160,
-            opacity: 0,
-            duration: 1,
-            ease: 'power1.in',
-          },
-          0
-        );
-
-        exitTl.to(
-          imgColRef.current,
-          {
-            x: 160,
-            opacity: 0,
-            duration: 1,
-            ease: 'power1.in',
           },
           0
         );
@@ -81,70 +49,100 @@ export const AppSection: React.FC = () => {
     return () => ctx.revert();
   }, []);
 
+  const scrollToBooking = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
   return (
     <section
       ref={sectionRef}
       className="relative z-10 bg-[#aecff3] text-[#0F1319] py-20 sm:py-28 px-4 sm:px-8 lg:px-12 overflow-hidden"
     >
       <div className="w-full max-w-[1200px] mx-auto flex flex-col lg:flex-row items-center justify-between gap-10 lg:gap-14">
-        {/* Left Column: Text & Badges (approx 35% width matching Blacklane) */}
+        {/* Left Column: Text & Direct CTAs (no external app links) */}
         <div
           ref={textColRef}
-          className="w-full lg:w-[38%] flex flex-col justify-center text-center lg:text-left will-change-transform"
+          className="w-full lg:w-[48%] flex flex-col justify-center text-center lg:text-left will-change-transform"
         >
+          <span className="text-xs font-semibold uppercase tracking-widest text-[#0F1319]/70 mb-3 block">
+            Executive Reservation Portal
+          </span>
           <h2 className="text-4xl sm:text-5xl lg:text-[56px] font-['PP_Fragment',serif] font-normal text-[#0F1319] tracking-tight leading-[1.08] mb-5">
             We move with you.
           </h2>
-          <p className="text-base sm:text-xl text-[#0F1319]/80 leading-relaxed mb-8 font-normal max-w-md mx-auto lg:mx-0">
-            Have all your journeys in the palm of your hand with MZS Executive Chauffeurs.
+          <p className="text-base sm:text-lg text-[#0F1319]/80 leading-relaxed mb-8 font-normal max-w-md mx-auto lg:mx-0">
+            Book online from any phone, tablet, or desktop. Receive real-time FAA flight tracking, automated chauffeur updates, and itemized corporate receipts.
           </p>
 
           <div className="flex flex-wrap items-center justify-center lg:justify-start gap-4">
-            <a
-              href="https://blacklane.onelink.me/FzXX/iOSAppDownload"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="Download on the iOS App Store"
-              className="hover:scale-105 transition-transform"
+            <button
+              onClick={scrollToBooking}
+              className="px-8 py-3.5 bg-[#0F1319] hover:bg-black text-white text-sm font-medium rounded-full transition-all shadow-md inline-flex items-center gap-2 cursor-pointer"
             >
-              <img
-                src="https://static.blacklane.com/assets/_next/static/media/app-store-logo-dark.5dc6643c29136385.svg"
-                alt="Download on the App Store"
-                width={140}
-                height={42}
-                className="h-10 sm:h-11 w-auto"
-              />
-            </a>
+              <span>Reserve a Chauffeur</span>
+              <ArrowRight className="w-4 h-4" />
+            </button>
             <a
-              href="https://blacklane.onelink.me/Jxjh/androidAppDownload"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="Get it on Google Play"
-              className="hover:scale-105 transition-transform"
+              href="tel:+18888017476"
+              className="px-6 py-3.5 bg-white/70 hover:bg-white text-[#0F1319] text-sm font-medium rounded-full transition-all border border-black/10 inline-flex items-center gap-2"
             >
-              <img
-                src="https://static.blacklane.com/assets/_next/static/media/playstore-logo-dark.083f89dd5c62e18d.svg"
-                alt="Get it on Google Play"
-                width={140}
-                height={42}
-                className="h-10 sm:h-11 w-auto"
-              />
+              <Phone className="w-4 h-4 text-[#0F63BD]" />
+              <span>(888) 801-7476</span>
             </a>
           </div>
         </div>
 
-        {/* Right Column: Platform Web & Phone Mockup (approx 62% width matching Blacklane) */}
+        {/* Right Column: Custom MZS Executive Reservation Card Preview */}
         <div
-          ref={imgColRef}
-          className="w-full lg:w-[62%] flex justify-center lg:justify-end will-change-transform"
+          ref={cardColRef}
+          className="w-full lg:w-[48%] flex justify-center lg:justify-end will-change-transform"
         >
-          <div className="relative w-full max-w-[700px]">
-            <img
-              src="https://static.blacklane.com/assets/_next/static/media/img.fc9e3e8ded216699.webp"
-              alt="MZS mobile and desktop platform"
-              loading="lazy"
-              className="w-full h-auto drop-shadow-2xl"
-            />
+          <div className="w-full max-w-[460px] bg-white rounded-3xl p-6 sm:p-8 shadow-2xl border border-white/60 text-[#0F1319]">
+            <div className="flex items-center justify-between pb-4 border-b border-gray-100 mb-5">
+              <div>
+                <span className="text-[10px] font-semibold uppercase tracking-wider text-gray-400 block">Upcoming Journey</span>
+                <span className="text-lg font-serif font-bold text-[#0F1319]">MZS Executive Chauffeur</span>
+              </div>
+              <span className="px-3 py-1 bg-emerald-100 text-emerald-800 text-xs font-semibold rounded-full flex items-center gap-1">
+                <CheckCircle2 className="w-3.5 h-3.5" /> Confirmed
+              </span>
+            </div>
+
+            <div className="space-y-4 mb-6">
+              <div className="flex items-start gap-3">
+                <div className="w-3 h-3 rounded-full bg-[#0F63BD] mt-1 shrink-0" />
+                <div>
+                  <div className="text-xs text-gray-500 uppercase tracking-wide">Pickup Location</div>
+                  <div className="text-sm font-medium text-[#0F1319]">JFK International Airport &bull; Terminal 4 Arrivals</div>
+                </div>
+              </div>
+              <div className="flex items-start gap-3">
+                <div className="w-3 h-3 rounded-full bg-[#0F1319] mt-1 shrink-0" />
+                <div>
+                  <div className="text-xs text-gray-500 uppercase tracking-wide">Drop-off Destination</div>
+                  <div className="text-sm font-medium text-[#0F1319]">The Plaza Hotel &bull; Fifth Ave, New York, NY</div>
+                </div>
+              </div>
+            </div>
+
+            <div className="grid grid-cols-2 gap-3 p-4 bg-[#FAF8F5] rounded-2xl border border-gray-100 text-xs mb-5">
+              <div>
+                <span className="text-gray-500 block">Flight Radar</span>
+                <span className="font-semibold text-[#0F1319]">Tracked (On Time)</span>
+              </div>
+              <div>
+                <span className="text-gray-500 block">Wait Time</span>
+                <span className="font-semibold text-[#0F1319]">60 Min Included</span>
+              </div>
+            </div>
+
+            <div className="pt-4 border-t border-gray-100 flex items-center justify-between text-xs text-gray-500">
+              <span className="flex items-center gap-1.5">
+                <ShieldCheck className="w-4 h-4 text-[#0F63BD]" />
+                Commercial US Chauffeur
+              </span>
+              <span className="font-mono text-gray-400">MZS-801-7476</span>
+            </div>
           </div>
         </div>
       </div>

@@ -9,7 +9,7 @@ interface RouteDetailPageProps {
   to: string;
   duration: string;
   distance: string;
-  price: string;
+  price?: string;
   onSearch: (bookingData: BookingState) => void;
   onNavigate: (route: PageRoute) => void;
 }
@@ -19,7 +19,6 @@ export const RouteDetailPage: React.FC<RouteDetailPageProps> = ({
   to,
   duration,
   distance,
-  price,
   onSearch,
   onNavigate,
 }) => {
@@ -31,7 +30,7 @@ export const RouteDetailPage: React.FC<RouteDetailPageProps> = ({
           className="absolute inset-0 bg-cover bg-center brightness-75 contrast-105 pointer-events-none"
           style={{
             backgroundImage:
-              'url(https://images.ctfassets.net/ov8o7v78mnye/4k07hkseEOyBAOdkoEnLYu/e78453a0fd7ae64ca9a4fbdc1b70de53/arrive-in-style-hero5.webp?fm=webp&w=2560&q=85)',
+              'url(https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?auto=format&fit=crop&w=2000&q=80)',
           }}
         />
         <div className="absolute inset-0 bg-gradient-to-t from-[#0F1319]/90 via-[#0F1319]/40 to-black/60 pointer-events-none" />
@@ -45,7 +44,7 @@ export const RouteDetailPage: React.FC<RouteDetailPageProps> = ({
             {from} to {to}
           </h1>
           <p className="text-lg sm:text-xl text-gray-200 max-w-2xl mx-auto mb-10 font-light leading-relaxed">
-            Relax in executive comfort across {distance} in approximately {duration}. Guaranteed all-inclusive fixed rate starting from {price} with MZS Executive Chauffeurs.
+            Relax in executive comfort across {distance} in approximately {duration}. Guaranteed all-inclusive fixed rates calculated directly with MZS Executive Chauffeurs.
           </p>
 
           <BookingWidget onSearch={onSearch} />
@@ -66,8 +65,8 @@ export const RouteDetailPage: React.FC<RouteDetailPageProps> = ({
               <div className="text-2xl font-serif text-[#0F1319]">{duration}</div>
             </div>
             <div className="p-6 rounded-2xl bg-[#FAF8F5] border border-gray-100">
-              <div className="text-xs text-gray-500 uppercase font-semibold mb-1">All-Inclusive Price</div>
-              <div className="text-2xl font-serif text-[#0066FF]">{price}</div>
+              <div className="text-xs text-gray-500 uppercase font-semibold mb-1">Pricing Guarantee</div>
+              <div className="text-2xl font-serif text-[#0066FF]">All-Inclusive</div>
             </div>
           </div>
 
@@ -105,8 +104,8 @@ export const RouteDetailPage: React.FC<RouteDetailPageProps> = ({
           {VEHICLE_CLASSES.map((vc) => (
             <div key={vc.id} className="p-6 rounded-3xl bg-white border border-gray-200 shadow-sm flex flex-col justify-between">
               <div>
-                <div className="h-36 flex items-center justify-center mb-4 bg-[#FAF8F5] rounded-2xl p-3">
-                  <img src={vc.image} alt={vc.name} className="max-h-full max-w-full object-contain" />
+                <div className="h-44 flex items-center justify-center mb-4 bg-gray-50 rounded-2xl p-2 overflow-hidden">
+                  <img src={vc.image} alt={vc.name} className="w-full h-full object-cover rounded-xl" />
                 </div>
                 <h3 className="text-xl font-serif text-[#0F1319] mb-1">{vc.name}</h3>
                 <p className="text-xs text-gray-500 mb-3">{vc.models}</p>
@@ -114,14 +113,14 @@ export const RouteDetailPage: React.FC<RouteDetailPageProps> = ({
               </div>
               <div className="pt-4 border-t border-gray-100 flex items-center justify-between">
                 <div>
-                  <div className="text-[11px] uppercase tracking-wider text-gray-400">All-Inclusive</div>
-                  <div className="text-lg font-bold text-[#0F1319]">{price}</div>
+                  <div className="text-[11px] uppercase tracking-wider text-gray-400">Pricing</div>
+                  <div className="text-sm font-bold text-[#0066FF]">All-Inclusive Quote</div>
                 </div>
                 <button
                   onClick={() => onNavigate('airport-transfer')}
                   className="text-xs font-semibold text-[#0066FF] flex items-center gap-1 hover:underline cursor-pointer"
                 >
-                  Book <ArrowRight className="w-3.5 h-3.5" />
+                  Reserve <ArrowRight className="w-3.5 h-3.5" />
                 </button>
               </div>
             </div>

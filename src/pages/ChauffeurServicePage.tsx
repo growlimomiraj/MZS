@@ -39,7 +39,7 @@ export const ChauffeurServicePage: React.FC<ChauffeurServicePageProps> = ({ onSe
           className="absolute inset-0 bg-cover bg-center brightness-75 contrast-105 pointer-events-none"
           style={{
             backgroundImage:
-              'url(https://images.ctfassets.net/ov8o7v78mnye/YAk8zZ91CzLlOomEG4sp4/8af6decc4193c9e279d279170d1a84e6/visionary-at-dusk-hero6.webp?fm=webp&w=2560&q=85)',
+              'url(https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?auto=format&fit=crop&w=2000&q=80)',
           }}
         />
         <div className="absolute inset-0 bg-gradient-to-t from-[#0F1319]/90 via-[#0F1319]/40 to-black/60 pointer-events-none" />
@@ -120,8 +120,8 @@ export const ChauffeurServicePage: React.FC<ChauffeurServicePageProps> = ({ onSe
           </div>
           <div className="relative rounded-3xl overflow-hidden shadow-2xl">
             <img
-              src="https://images.ctfassets.net/ov8o7v78mnye/2cN4KlwmCE4EEmaYuQU6KE/e5712e3383d4145cb44c02025f769f07/Copy_of_visionary-at-dusk-SEO-large6__1_.jpg?fm=webp&w=1280&q=85"
-              alt="MZS professional chauffeur opening car door"
+              src="https://images.unsplash.com/photo-1549399542-7e3f8b79c341?auto=format&fit=crop&w=1200&q=80"
+              alt="MZS professional chauffeur service"
               className="w-full h-auto object-cover rounded-3xl aspect-[4/3]"
             />
           </div>

@@ -15,7 +15,7 @@ export const SustainabilityPage: React.FC<SustainabilityPageProps> = ({ onNaviga
           className="absolute inset-0 bg-cover bg-center brightness-75 contrast-105 pointer-events-none"
           style={{
             backgroundImage:
-              'url(https://images.ctfassets.net/ov8o7v78mnye/4yVKNgR5TO4py6zdvKRqik/9074f09fa190987d38d9f27d76349cd6/visionary-at-dusk-hero6.webp?fm=webp&w=2560&q=85)',
+              'url(https://images.unsplash.com/photo-1518684079-3c830dcef090?auto=format&fit=crop&w=2000&q=80)',
           }}
         />
         <div className="absolute inset-0 bg-gradient-to-t from-[#0F1319]/90 via-[#0F1319]/40 to-black/60 pointer-events-none" />
@@ -53,7 +53,7 @@ export const SustainabilityPage: React.FC<SustainabilityPageProps> = ({ onNaviga
           </div>
           <div className="relative rounded-3xl overflow-hidden shadow-2xl">
             <img
-              src="https://images.ctfassets.net/ov8o7v78mnye/60Fd4qU2zNtVReKggALvQV/ed18638943235dc6cd9f89f1604c8f55/03_Carbon_Natural.jpg"
+              src="https://images.unsplash.com/photo-1563720223523-491ff04651de?auto=format&fit=crop&w=1200&q=80"
               alt="MZS Executive Chauffeurs Carbon Neutral Certified"
               className="w-full h-auto object-cover rounded-3xl aspect-[4/3]"
             />
@@ -83,8 +83,8 @@ export const SustainabilityPage: React.FC<SustainabilityPageProps> = ({ onNaviga
               </p>
             </div>
             <img
-              src="https://images.ctfassets.net/ov8o7v78mnye/3pKwVIaGS5Cv1RzTSUJTDz/cb4b03dd538da9fb1ba98a5fefa84327/content_blocks_1280x720_01.jpg?fm=webp&w=1280&q=85"
-              alt="South Pole environmental project"
+              src="https://images.unsplash.com/photo-1473496169904-658ba7c44d8a?auto=format&fit=crop&w=1200&q=80"
+              alt="Environmental preservation project"
               className="w-full h-64 object-cover"
             />
           </div>
@@ -93,13 +93,13 @@ export const SustainabilityPage: React.FC<SustainabilityPageProps> = ({ onNaviga
           <div className="rounded-3xl bg-white border border-gray-200 overflow-hidden shadow-sm flex flex-col justify-between">
             <div className="p-8">
               <span className="text-xs font-semibold uppercase tracking-widest text-emerald-600 block mb-2">Initiative 02</span>
-              <h3 className="text-2xl font-serif text-[#0F1319] mb-3">Accountability with Cooper Parry</h3>
+              <h3 className="text-2xl font-serif text-[#0F1319] mb-3">Independent Verification</h3>
               <p className="text-[#596372] text-sm leading-relaxed mb-6">
                 Independent third-party audits ensure 100% transparency, eliminating greenwashing with verifiable environmental reporting.
               </p>
             </div>
             <img
-              src="https://images.ctfassets.net/ov8o7v78mnye/2Cl7iVRmVXYkOP2tzOCIR/2d01ef58cdd5fdcc0f86a8d84a7229a6/content_blocks_1280x720_02.jpg?fm=webp&w=1280&q=85"
+              src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1200&q=80"
               alt="Third-party audit accountability"
               className="w-full h-64 object-cover"
             />
@@ -109,14 +109,14 @@ export const SustainabilityPage: React.FC<SustainabilityPageProps> = ({ onNaviga
           <div className="rounded-3xl bg-white border border-gray-200 overflow-hidden shadow-sm flex flex-col justify-between">
             <div className="p-8">
               <span className="text-xs font-semibold uppercase tracking-widest text-emerald-600 block mb-2">Initiative 03</span>
-              <h3 className="text-2xl font-serif text-[#0F1319] mb-3">The Climate Pledge</h3>
+              <h3 className="text-2xl font-serif text-[#0F1319] mb-3">The Climate Commitment</h3>
               <p className="text-[#596372] text-sm leading-relaxed mb-6">
-                Committed to reaching net-zero carbon by 2040 — 10 years ahead of the Paris Agreement timeline.
+                Committed to reaching net-zero carbon by 2040 across our national vehicle operations and office facilities.
               </p>
             </div>
             <img
-              src="https://images.ctfassets.net/ov8o7v78mnye/3FIXFvKJMdRlQYivkTkEwz/468f38392aab0a218cef833272d8e7bb/content_blocks_1280x720_03__1_.jpg?fm=webp&w=1280&q=85"
-              alt="The Climate Pledge partnership"
+              src="https://images.unsplash.com/photo-1519671482749-fd09be7ccebf?auto=format&fit=crop&w=1200&q=80"
+              alt="Net zero climate commitment"
               className="w-full h-64 object-cover"
             />
           </div>
@@ -131,8 +131,8 @@ export const SustainabilityPage: React.FC<SustainabilityPageProps> = ({ onNaviga
               </p>
             </div>
             <img
-              src="https://images.ctfassets.net/ov8o7v78mnye/2AB1zCo43GszqTJpPTLyl3/5299645a4ee965f4d0786c4f6ed89f10/01.jpg?fm=webp&w=1280&q=85"
-              alt="Electric luxury vehicle charging"
+              src="https://images.unsplash.com/photo-1563720223523-491ff04651de?auto=format&fit=crop&w=1200&q=80"
+              alt="Electric luxury vehicle"
               className="w-full h-64 object-cover"
             />
           </div>

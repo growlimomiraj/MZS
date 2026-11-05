@@ -111,7 +111,7 @@ export function App() {
       return <CitiesPage onNavigate={handleNavigate} />;
     }
 
-    // City-to-city route details
+    // City-to-city route details (USA routes)
     if (currentRoute === '/city-to-city/new-york-east-hampton') {
       return (
         <RouteDetailPage
@@ -119,7 +119,6 @@ export function App() {
           to="East Hampton"
           duration="2h 30m"
           distance="105 miles"
-          price="$490"
           onSearch={handleSearchSubmit}
           onNavigate={handleNavigate}
         />
@@ -132,7 +131,6 @@ export function App() {
           to="San Diego"
           duration="2h 15m"
           distance="120 miles"
-          price="$420"
           onSearch={handleSearchSubmit}
           onNavigate={handleNavigate}
         />
@@ -145,46 +143,42 @@ export function App() {
           to="Palm Beach"
           duration="1h 15m"
           distance="72 miles"
-          price="$260"
           onSearch={handleSearchSubmit}
           onNavigate={handleNavigate}
         />
       );
     }
-    if (currentRoute === '/city-to-city/london-bristol') {
+    if (currentRoute === '/city-to-city/new-york-philadelphia') {
       return (
         <RouteDetailPage
-          from="London"
-          to="Bristol"
-          duration="2h 20m"
-          distance="118 miles"
-          price="£360"
+          from="New York"
+          to="Philadelphia"
+          duration="1h 50m"
+          distance="95 miles"
           onSearch={handleSearchSubmit}
           onNavigate={handleNavigate}
         />
       );
     }
-    if (currentRoute === '/city-to-city/abu-dhabi-dubai') {
+    if (currentRoute === '/city-to-city/san-francisco-napa-valley') {
       return (
         <RouteDetailPage
-          from="Dubai"
-          to="Abu Dhabi"
+          from="San Francisco"
+          to="Napa Valley"
           duration="1h 20m"
-          distance="86 miles"
-          price="AED 620"
+          distance="58 miles"
           onSearch={handleSearchSubmit}
           onNavigate={handleNavigate}
         />
       );
     }
-    if (currentRoute === '/city-to-city/paris-reims') {
+    if (currentRoute === '/city-to-city/los-angeles-palm-springs') {
       return (
         <RouteDetailPage
-          from="Paris"
-          to="Reims"
-          duration="1h 45m"
-          distance="90 miles"
-          price="€340"
+          from="Los Angeles"
+          to="Palm Springs"
+          duration="2h 00m"
+          distance="108 miles"
           onSearch={handleSearchSubmit}
           onNavigate={handleNavigate}
         />

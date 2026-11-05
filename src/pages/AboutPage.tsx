@@ -15,7 +15,7 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onNavigate }) => {
           className="absolute inset-0 bg-cover bg-center brightness-75 contrast-105 pointer-events-none"
           style={{
             backgroundImage:
-              'url(https://images.ctfassets.net/ov8o7v78mnye/7LU2kDVHQF4FxN1FDMQXSV/cc7f1d8d198feda7ed6e45e02c8e3024/01_Hero__3_.jpg?fm=webp&w=2560&q=85)',
+              'url(https://images.unsplash.com/photo-1508974239320-0a029497e820?auto=format&fit=crop&w=2000&q=80)',
           }}
         />
         <div className="absolute inset-0 bg-gradient-to-t from-[#0F1319]/90 via-[#0F1319]/40 to-black/60 pointer-events-none" />
@@ -75,7 +75,7 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onNavigate }) => {
           </div>
           <div className="relative rounded-3xl overflow-hidden shadow-2xl">
             <img
-              src="https://images.ctfassets.net/ov8o7v78mnye/6lM08uJMKQGXnI6ZO1zk9P/72203226d1fdd077ae090125ca600a10/01_Innovation.jpg?fm=webp&w=1280&q=85"
+              src="https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=1200&q=80"
               alt="MZS Executive Chauffeurs travel innovation"
               className="w-full h-auto object-cover rounded-3xl aspect-[4/3]"
             />
@@ -88,7 +88,7 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onNavigate }) => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           <div className="order-2 lg:order-1 relative rounded-3xl overflow-hidden shadow-2xl">
             <img
-              src="https://images.ctfassets.net/ov8o7v78mnye/6YwP3bFqKz6Fq6Q37K0tF9/e8e6e5a0e91a0c4f34cf33a598285598/02_How_it_works.jpg?fm=webp&w=1280&q=85"
+              src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=1200&q=80"
               alt="MZS Executive Chauffeurs booking technology"
               className="w-full h-auto object-cover rounded-3xl aspect-[4/3]"
             />

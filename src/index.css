@@ -3,12 +3,12 @@
 @theme {
   --font-serif: 'PP Fragment', 'Playfair Display', Georgia, serif;
   --font-sans: 'Geist', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-  --color-blacklane-dark: #0F1319;
-  --color-blacklane-blue: #0F63BD;
-  --color-blacklane-blue-hover: #0D529C;
-  --color-blacklane-gray: #F4F5F6;
-  --color-blacklane-border: #E5E7EB;
-  --color-blacklane-muted: #666F7B;
+  --color-mzs-dark: #0F1319;
+  --color-mzs-blue: #0F63BD;
+  --color-mzs-blue-hover: #0D529C;
+  --color-mzs-gray: #F4F5F6;
+  --color-mzs-border: #E5E7EB;
+  --color-mzs-muted: #666F7B;
 }
 
 :root {

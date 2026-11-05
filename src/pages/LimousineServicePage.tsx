@@ -39,7 +39,7 @@ export const LimousineServicePage: React.FC<LimousineServicePageProps> = ({ onSe
           className="absolute inset-0 bg-cover bg-center brightness-75 contrast-105 pointer-events-none"
           style={{
             backgroundImage:
-              'url(https://images.ctfassets.net/ov8o7v78mnye/5qJoaOH7PQMJHoJVSKJhum/8e47fe71939ec94cbdb42394fdd107ce/shared-spark-hero1.webp?fm=webp&w=2560&q=85)',
+              'url(https://images.unsplash.com/photo-1552519507-da3b142c6e3d?auto=format&fit=crop&w=2000&q=80)',
           }}
         />
         <div className="absolute inset-0 bg-gradient-to-t from-[#0F1319]/90 via-[#0F1319]/40 to-black/60 pointer-events-none" />
@@ -109,7 +109,7 @@ export const LimousineServicePage: React.FC<LimousineServicePageProps> = ({ onSe
               Wherever you are traveling, once you have arrived, exploring your new surroundings in an MZS limousine ensures you make the best possible impression.
             </p>
             <p className="text-sm sm:text-base text-[#596372] leading-relaxed mb-8">
-              From business dinners in Manhattan to premier film festival arrivals in Cannes or red-carpet galas in London, our limousine fleet is tailored to your taste and stature.
+              From business dinners in Manhattan to Beverly Hills galas, private FBO departures, and high-profile US corporate summits, our limousine fleet is tailored to your taste and stature.
             </p>
             <button
               onClick={() => onNavigate('city-to-city')}
@@ -120,7 +120,7 @@ export const LimousineServicePage: React.FC<LimousineServicePageProps> = ({ onSe
           </div>
           <div className="relative rounded-3xl overflow-hidden shadow-2xl">
             <img
-              src="https://images.ctfassets.net/ov8o7v78mnye/5qJoaOH7PQMJHoJVSKJhum/8e47fe71939ec94cbdb42394fdd107ce/shared-spark-hero1.webp?fm=webp&w=1280&q=85"
+              src="https://images.unsplash.com/photo-1617814076367-b759c7d7e738?auto=format&fit=crop&w=1200&q=80"
               alt="MZS limousine passenger arrival"
               className="w-full h-auto object-cover rounded-3xl aspect-[4/3]"
             />

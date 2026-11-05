@@ -9,19 +9,19 @@ const EXPERIENCES = [
     title: 'A welcome like no other',
     description:
       'The door is opened for you. Your luggage is stowed. Everything is taken care of.',
-    image: 'https://static.blacklane.com/assets/_next/static/media/ride-1.510c61ecb0d86e20.webp',
+    image: 'https://images.unsplash.com/photo-1549399542-7e3f8b79c341?auto=format&fit=crop&w=1600&q=85',
   },
   {
     title: 'You set the tone',
     description:
       'Sit back and relax. Music and temperature will be adjusted to your preferences.',
-    image: 'https://static.blacklane.com/assets/_next/static/media/ride-2.1ffe259f4c10fd5e.webp',
+    image: 'https://images.unsplash.com/photo-1502877338535-766e1452684a?auto=format&fit=crop&w=1600&q=85',
   },
   {
     title: 'Recharge your batteries',
     description:
       'Stay connected on the go with universal chargers for iOS and Android.',
-    image: 'https://static.blacklane.com/assets/_next/static/media/ride-3.232eb40d5ccb6f01.webp',
+    image: 'https://images.unsplash.com/photo-1511919884226-fd3cad34687c?auto=format&fit=crop&w=1600&q=85',
   },
 ];
 
@@ -89,7 +89,7 @@ export const ExperienceSection: React.FC = () => {
           },
         });
 
-        // Unpeel card 0, then card 1 matching Blacklane JS
+        // Unpeel card 0, then card 1 in sequence
         cardRefs.forEach((ref, idx) => {
           if (ref.current && idx < cardRefs.length - 1) {
             pinTl.to(
@@ -115,7 +115,7 @@ export const ExperienceSection: React.FC = () => {
       className="relative z-10 bg-white text-[#0F1319] pt-20 pb-16 lg:pt-28 lg:pb-24 px-4 sm:px-8 lg:px-12 border-t border-gray-100 overflow-hidden"
     >
       <div className="w-full max-w-[1800px] mx-auto">
-        {/* Headings - Centered like Blacklane reference */}
+        {/* Headings */}
         <div className="max-w-[1170px] mx-auto text-center mb-12 lg:mb-16">
           <h2
             ref={titleRef}

@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { BookingWidget } from '../components/BookingWidget';
 import { BookingState, PageRoute } from '../types';
 import { VEHICLE_CLASSES } from '../constants/data';
-import { ChevronDown, ArrowRight, ShieldCheck, Check, Phone, Mail } from 'lucide-react';
+import { ChevronDown, ArrowRight, ShieldCheck, Check, Phone, Mail, Clock, Sparkles } from 'lucide-react';
 
 interface AirportTransferPageProps {
   onSearch: (bookingData: BookingState) => void;
@@ -44,7 +44,7 @@ export const AirportTransferPage: React.FC<AirportTransferPageProps> = ({ onSear
           className="absolute inset-0 bg-cover bg-center brightness-75 contrast-105 pointer-events-none"
           style={{
             backgroundImage:
-              'url(https://images.ctfassets.net/ov8o7v78mnye/2hQ4Zm5cxvBjZ8kUA2AWOV/6d895a3e1c0882df178372857afdf021/early-dept-hero-4.webp?fm=webp&w=2560&q=85)',
+              'url(https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&w=2000&q=80)',
           }}
         />
         <div className="absolute inset-0 bg-gradient-to-t from-[#0F1319]/90 via-[#0F1319]/40 to-black/60 pointer-events-none" />
@@ -65,16 +65,12 @@ export const AirportTransferPage: React.FC<AirportTransferPageProps> = ({ onSear
         </div>
       </section>
 
-      {/* 3 Pillars with Blacklane SVG icons */}
+      {/* 3 Pillars */}
       <section className="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           <div className="p-8 rounded-3xl bg-white border border-gray-100 shadow-[0_4px_24px_rgba(0,0,0,0.04)] hover:shadow-lg transition-all duration-300">
             <div className="w-14 h-14 rounded-2xl bg-[#0066FF]/10 flex items-center justify-center mb-6">
-              <img
-                src="https://images.ctfassets.net/ov8o7v78mnye/XLMoJTwZGJslQWxeqNjQy/7c85f5f61c95f3e4d14a12db4613081d/currency_icon.svg"
-                alt="Competitive rates"
-                className="w-8 h-8"
-              />
+              <ShieldCheck className="w-7 h-7 text-[#0066FF]" />
             </div>
             <h3 className="text-2xl font-serif text-[#0F1319] mb-3">Guaranteed all-inclusive rates</h3>
             <p className="text-[#596372] leading-relaxed text-sm sm:text-base">
@@ -84,11 +80,7 @@ export const AirportTransferPage: React.FC<AirportTransferPageProps> = ({ onSear
 
           <div className="p-8 rounded-3xl bg-white border border-gray-100 shadow-[0_4px_24px_rgba(0,0,0,0.04)] hover:shadow-lg transition-all duration-300">
             <div className="w-14 h-14 rounded-2xl bg-[#0066FF]/10 flex items-center justify-center mb-6">
-              <img
-                src="https://images.ctfassets.net/ov8o7v78mnye/5QtTHIElvWnDJ6sh7zUxN/048c3ff0e2add1d1327ce64582050fa5/plane_clock_icon.svg"
-                alt="Seamless airport travel"
-                className="w-8 h-8"
-              />
+              <Clock className="w-7 h-7 text-[#0066FF]" />
             </div>
             <h3 className="text-2xl font-serif text-[#0F1319] mb-3">Live flight tracking</h3>
             <p className="text-[#596372] leading-relaxed text-sm sm:text-base">
@@ -98,11 +90,7 @@ export const AirportTransferPage: React.FC<AirportTransferPageProps> = ({ onSear
 
           <div className="p-8 rounded-3xl bg-white border border-gray-100 shadow-[0_4px_24px_rgba(0,0,0,0.04)] hover:shadow-lg transition-all duration-300">
             <div className="w-14 h-14 rounded-2xl bg-[#0066FF]/10 flex items-center justify-center mb-6">
-              <img
-                src="https://images.ctfassets.net/ov8o7v78mnye/4y2m9cVwugmupaNRRwoE96/d6950ba3b1c9863e1a8d2b9756d4064b/felxible_time_icon.svg"
-                alt="Travel on your terms"
-                className="w-8 h-8"
-              />
+              <Sparkles className="w-7 h-7 text-[#0066FF]" />
             </div>
             <h3 className="text-2xl font-serif text-[#0F1319] mb-3">Travel on your terms</h3>
             <p className="text-[#596372] leading-relaxed text-sm sm:text-base">
@@ -204,7 +192,7 @@ export const AirportTransferPage: React.FC<AirportTransferPageProps> = ({ onSear
           </div>
           <div className="relative rounded-3xl overflow-hidden shadow-2xl">
             <img
-              src="https://images.ctfassets.net/ov8o7v78mnye/3U7T9v5u8lW0O5j5XpT57c/6fe0a8946766ddbf87b508f7dbcfb544/early-dept-FAQ3__1_.jpg?fm=webp&w=1280&q=85"
+              src="https://images.unsplash.com/photo-1549399542-7e3f8b79c341?auto=format&fit=crop&w=1200&q=80"
               alt="MZS Executive Chauffeurs airport transfer greeting passenger"
               className="w-full h-auto object-cover rounded-3xl aspect-[4/3]"
             />
@@ -217,7 +205,7 @@ export const AirportTransferPage: React.FC<AirportTransferPageProps> = ({ onSear
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           <div className="order-2 lg:order-1 relative rounded-3xl overflow-hidden shadow-2xl">
             <img
-              src="https://images.ctfassets.net/ov8o7v78mnye/10c6MIHcno4geSImMMOqoM/b4b9c75338269afa3bd38c8e3741f3f2/family-in-transit-SEO7__2_.jpg?fm=webp&w=1280&q=85"
+              src="https://images.unsplash.com/photo-1563720223185-11003d516935?auto=format&fit=crop&w=1200&q=80"
               alt="MZS Executive Chauffeurs luxury travel"
               className="w-full h-auto object-cover rounded-3xl aspect-[4/3]"
             />

@@ -26,7 +26,7 @@ export const BusinessPage: React.FC<BusinessPageProps> = ({ onNavigate, onOpenAu
           className="absolute inset-0 bg-cover bg-center brightness-75 contrast-105 pointer-events-none"
           style={{
             backgroundImage:
-              'url(https://static.blacklane.com/assets/_next/static/media/1.019b61163ce406a2.webp)',
+              'url(https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=2000&q=80)',
           }}
         />
         <div className="absolute inset-0 bg-gradient-to-t from-[#0F1319]/90 via-[#0F1319]/40 to-black/60 pointer-events-none" />
@@ -77,12 +77,35 @@ export const BusinessPage: React.FC<BusinessPageProps> = ({ onNavigate, onOpenAu
           </p>
         </div>
 
-        <div className="rounded-3xl overflow-hidden shadow-2xl border border-gray-200 bg-white p-4 sm:p-8">
-          <img
-            src="https://static.blacklane.com/assets/_next/static/media/booker-portal.0060f05309e1f2f2.png"
-            alt="MZS corporate booker portal dashboard"
-            className="w-full h-auto object-contain rounded-2xl"
-          />
+        <div className="rounded-3xl overflow-hidden shadow-2xl border border-gray-200 bg-[#0F1319] text-white p-6 sm:p-10">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8 pb-8 border-b border-white/10 text-center md:text-left">
+            <div>
+              <span className="text-xs uppercase tracking-wider text-gray-400 block mb-1">Corporate Client Portal</span>
+              <span className="text-xl font-serif text-white">MZS Enterprise Dispatch</span>
+            </div>
+            <div>
+              <span className="text-xs uppercase tracking-wider text-gray-400 block mb-1">Billing Reconciliation</span>
+              <span className="text-xl font-serif text-emerald-400">Consolidated Monthly</span>
+            </div>
+            <div>
+              <span className="text-xs uppercase tracking-wider text-gray-400 block mb-1">US Metro Coverage</span>
+              <span className="text-xl font-serif text-[#0066FF]">All 50 States</span>
+            </div>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 text-sm text-gray-300">
+            <div className="p-5 rounded-2xl bg-white/5 border border-white/10">
+              <h4 className="font-semibold text-white mb-2">Automated Duty of Care & Tracking</h4>
+              <p className="text-xs text-gray-400 leading-relaxed">
+                Live flight radar status, driver assignment details, and instant SMS notifications delivered to both travelers and executive travel arrangers.
+              </p>
+            </div>
+            <div className="p-5 rounded-2xl bg-white/5 border border-white/10">
+              <h4 className="font-semibold text-white mb-2">Cost Center & Department Tagging</h4>
+              <p className="text-xs text-gray-400 leading-relaxed">
+                Assign rides to custom project codes, employees, or external client matters with zero manual receipt chasing.
+              </p>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -104,7 +127,7 @@ export const BusinessPage: React.FC<BusinessPageProps> = ({ onNavigate, onOpenAu
               </p>
             </div>
             <img
-              src="https://static.blacklane.com/assets/_next/static/media/2.02944b3196f37e01.webp"
+              src="https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=1200&q=80"
               alt="MZS corporate travel solution"
               className="w-full h-64 object-cover"
             />
@@ -119,7 +142,7 @@ export const BusinessPage: React.FC<BusinessPageProps> = ({ onNavigate, onOpenAu
               </p>
             </div>
             <img
-              src="https://static.blacklane.com/assets/_next/static/media/3.92ac7d18f1ce61a2.webp"
+              src="https://images.unsplash.com/photo-1559136555-9303baea8ebd?auto=format&fit=crop&w=1200&q=80"
               alt="MZS travel management partner solution"
               className="w-full h-64 object-cover"
             />
@@ -176,9 +199,9 @@ export const BusinessPage: React.FC<BusinessPageProps> = ({ onNavigate, onOpenAu
       <section className="py-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto border-t border-gray-200">
         <div className="rounded-3xl overflow-hidden shadow-xl border border-gray-200 bg-white p-6 sm:p-10 flex flex-col items-center">
           <img
-            src="https://static.blacklane.com/assets/_next/static/media/lux.f17851e5daa4361a.png"
+            src="https://images.unsplash.com/photo-1563720223185-11003d516935?auto=format&fit=crop&w=1600&q=80"
             alt="MZS luxury executive fleet"
-            className="w-full max-w-4xl object-contain rounded-2xl"
+            className="w-full max-w-4xl object-cover rounded-2xl aspect-[16/9]"
           />
         </div>
       </section>

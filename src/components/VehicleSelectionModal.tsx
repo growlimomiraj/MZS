@@ -165,7 +165,7 @@ export const VehicleSelectionModal: React.FC<VehicleSelectionModalProps> = ({
                 ))}
               </div>
 
-              {/* Blacklane Guarantee Note */}
+              {/* MZS Guarantee Note */}
               <div className="p-4 rounded-2xl bg-white/5 border border-white/10 flex items-center gap-3 text-xs text-gray-400">
                 <Shield className="w-5 h-5 text-[#0F63BD] shrink-0" />
                 <span>

@@ -6,7 +6,7 @@ interface LogoProps {
   showSubtitle?: boolean;
 }
 
-export const BlacklaneLogo: React.FC<LogoProps> = ({
+export const MZSLogo: React.FC<LogoProps> = ({
   color = 'white',
   className = 'h-7 w-auto',
   showSubtitle = true,

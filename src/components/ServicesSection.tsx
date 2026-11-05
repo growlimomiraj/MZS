@@ -17,7 +17,7 @@ const SERVICES = [
     title: 'Smooth landings, every time.',
     description:
       'Delayed flight? Chauffeurs track arrivals and adjust accordingly. Plus, you have 1 hour of complimentary wait time just in case.',
-    image: 'https://static.blacklane.com/assets/_next/static/media/1.879377e626f27fdd.webp',
+    image: 'https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&w=1200&q=80',
     route: '/airport-transfer' as PageRoute,
   },
   {
@@ -26,7 +26,7 @@ const SERVICES = [
     title: 'Seize the day.',
     description:
       "Reserve a dedicated chauffeur from 2 to 24 hours. They'll be on standby as long as you need them.",
-    image: 'https://static.blacklane.com/assets/_next/static/media/2.9ae17562d88c590d.webp',
+    image: 'https://images.unsplash.com/photo-1555353540-64580b51c258?auto=format&fit=crop&w=1200&q=80',
     route: '/hourly-car-service' as PageRoute,
   },
   {
@@ -35,7 +35,7 @@ const SERVICES = [
     title: 'Between cities, done better.',
     description:
       'Turn long-distance journeys into time well spent. Arrive refreshed, not stressed.',
-    image: 'https://static.blacklane.com/assets/_next/static/media/3.a05cc4329bbe2ee0.webp',
+    image: 'https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?auto=format&fit=crop&w=1200&q=80',
     route: '/city-to-city' as PageRoute,
   },
   {
@@ -44,7 +44,7 @@ const SERVICES = [
     title: 'Corporate travel, simplified.',
     description:
       'One platform for companies and agencies to book, track, and account for every journey.',
-    image: 'https://static.blacklane.com/assets/_next/static/media/4.13f5624e9bdcc2ee.webp',
+    image: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1200&q=80',
     route: '/business' as PageRoute,
   },
 ];
@@ -134,7 +134,7 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({ onNavigate }) 
                   key={service.id}
                   className="w-[85vw] sm:w-[460px] lg:w-[calc(50%-12px)] shrink-0 snap-start flex flex-col bg-transparent group"
                 >
-                  {/* Image Container with 16px radius matching Blacklane */}
+                  {/* Image Container with 16px radius */}
                   <div className="relative aspect-[16/10] rounded-2xl overflow-hidden mb-5 bg-gray-200 shadow-sm">
                     <img
                       src={service.image}

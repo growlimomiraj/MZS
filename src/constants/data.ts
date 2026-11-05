@@ -23,7 +23,7 @@ export const VEHICLE_CLASSES: VehicleClass[] = [
     id: 'business',
     name: 'Business Class',
     models: 'Mercedes-Benz E-Class, BMW 5 Series, Cadillac CT6 or similar',
-    image: 'https://images.ctfassets.net/ov8o7v78mnye/1qi5aJOpeVFSTrDdktsQZJ/46d90531fa90f413ea93d293abe7deea/Mobile_Business_Class_Carousel_1_1x.png?fm=webp&w=768&q=85',
+    image: 'https://images.unsplash.com/photo-1555353540-64580b51c258?auto=format&fit=crop&w=800&q=80',
     passengers: 3,
     luggage: 2,
     price: 148,
@@ -40,7 +40,7 @@ export const VEHICLE_CLASSES: VehicleClass[] = [
     id: 'first',
     name: 'First Class',
     models: 'Mercedes-Benz S-Class, BMW 7 Series, Audi A8 or similar',
-    image: 'https://images.ctfassets.net/ov8o7v78mnye/5ukDCmGk3pJNq48IAoPz1b/d16dd73d44ca71f9a8a442e952f994d6/Mobile_First_Class_Carousel_1_1x.png?fm=webp&w=768&q=85',
+    image: 'https://images.unsplash.com/photo-1563720223185-11003d516935?auto=format&fit=crop&w=800&q=80',
     passengers: 3,
     luggage: 2,
     price: 225,
@@ -57,8 +57,8 @@ export const VEHICLE_CLASSES: VehicleClass[] = [
   {
     id: 'van',
     name: 'Business Van / SUV',
-    models: 'Mercedes-Benz V-Class, Cadillac Escalade, Chevrolet Suburban or similar',
-    image: 'https://images.ctfassets.net/ov8o7v78mnye/6vZRlxdXyChu5uMiZIUAZz/ac5eeb950de8b50ef1d5ac687e9efdeb/Mobile_Van_Class_Carousel_1_1x.png?fm=webp&w=768&q=85',
+    models: 'Cadillac Escalade ESV, Lincoln Navigator, Chevrolet Suburban or similar',
+    image: 'https://images.unsplash.com/photo-1549399542-7e3f8b79c341?auto=format&fit=crop&w=800&q=80',
     passengers: 5,
     luggage: 5,
     price: 185,
@@ -75,8 +75,8 @@ export const VEHICLE_CLASSES: VehicleClass[] = [
   {
     id: 'electric',
     name: 'Electric Class',
-    models: 'Mercedes-Benz EQE, Lucid Air, Porsche Taycan or similar',
-    image: 'https://images.ctfassets.net/ov8o7v78mnye/28Yv0dLuUknHV9Lztkstua/94d3caf5477c0e8e3128ca372430c152/EQE_Luggage_Standard_v001_carousel.png?fm=webp&w=768&q=85',
+    models: 'Mercedes-Benz EQE/EQS, Lucid Air, Porsche Taycan or similar',
+    image: 'https://images.unsplash.com/photo-1563720223523-491ff04651de?auto=format&fit=crop&w=800&q=80',
     passengers: 3,
     luggage: 2,
     price: 162,
@@ -86,7 +86,7 @@ export const VEHICLE_CLASSES: VehicleClass[] = [
       'Zero emissions on all rides',
       'Ultra-quiet acoustic cabin experience',
       'Complimentary 60 minutes airport wait time',
-      'Certified sustainable partner of The Climate Pledge'
+      '100% carbon-neutral luxury executive travel'
     ]
   }
 ];
@@ -110,34 +110,35 @@ export const CITIES_DATA = [
   }
 ];
 
+// Flat quote prices removed per client instruction - custom quotes calculated on request
 export const ROUTES_DATA = [
-  { from: 'New York', to: 'East Hampton', duration: '2h 30m', distance: '105 miles', price: '$490', tag: 'Hamptons Getaway' },
-  { from: 'Los Angeles', to: 'San Diego', duration: '2h 15m', distance: '120 miles', price: '$420', tag: 'Southern California' },
-  { from: 'Miami', to: 'Palm Beach', duration: '1h 15m', distance: '72 miles', price: '$260', tag: 'South Florida Corridor' },
-  { from: 'New York', to: 'Philadelphia', duration: '1h 50m', distance: '95 miles', price: '$380', tag: 'Northeast Corridor' },
-  { from: 'San Francisco', to: 'Napa Valley', duration: '1h 20m', distance: '58 miles', price: '$320', tag: 'Wine Country' },
-  { from: 'Los Angeles', to: 'Palm Springs', duration: '2h 00m', distance: '108 miles', price: '$390', tag: 'Desert Oasis' }
+  { from: 'New York', to: 'East Hampton', duration: '2h 30m', distance: '105 miles', price: 'Custom quote', tag: 'Hamptons Getaway' },
+  { from: 'Los Angeles', to: 'San Diego', duration: '2h 15m', distance: '120 miles', price: 'Custom quote', tag: 'Southern California' },
+  { from: 'Miami', to: 'Palm Beach', duration: '1h 15m', distance: '72 miles', price: 'Custom quote', tag: 'South Florida Corridor' },
+  { from: 'New York', to: 'Philadelphia', duration: '1h 50m', distance: '95 miles', price: 'Custom quote', tag: 'Northeast Corridor' },
+  { from: 'San Francisco', to: 'Napa Valley', duration: '1h 20m', distance: '58 miles', price: 'Custom quote', tag: 'Wine Country' },
+  { from: 'Los Angeles', to: 'Palm Springs', duration: '2h 00m', distance: '108 miles', price: 'Custom quote', tag: 'Desert Oasis' }
 ];
 
 export const FAQS_DATA = [
   {
-    q: 'How does pickup work at US airports?',
-    a: 'Your MZS Executive Chauffeurs driver will meet you inside the arrivals terminal holding a personalized digital name sign once you claim baggage. Automated flight tracking is standard, so whether your flight touches down early or is delayed, your chauffeur will be waiting. You also receive 60 minutes of complimentary wait time from actual wheels-down.'
+    question: 'How does airport pickup work?',
+    answer: 'Your licensed executive chauffeur tracks your flight in real time using official FAA radar data. Once you land, you receive an automated SMS with your chauffeur’s direct contact and vehicle details. Chauffeurs wait in the arrivals hall with an personalized executive greeting sign and assist with your luggage. 60 minutes of complimentary wait time is included.'
   },
   {
-    q: 'Can I cancel or modify my booking?',
-    a: 'Yes. You can cancel or modify your reservation free of charge up to 1 hour before scheduled pickup for one-way rides, or up to 24 hours before pickup for by-the-hour and long-distance city-to-city trips.'
+    question: 'Can I cancel or change my reservation?',
+    answer: 'Yes. All one-way rides can be modified or cancelled free of charge up to 1 hour before scheduled pickup. For hourly reservations, free cancellation applies up to 24 hours prior to departure.'
   },
   {
-    q: 'What is included in the MZS Executive Chauffeurs price?',
-    a: 'All MZS Executive Chauffeurs fares are guaranteed all-inclusive rates confirmed at booking. They cover all US highway tolls, airport access fees, parking, taxes, and chauffeur gratuities with zero surge pricing.'
+    question: 'What is included in the fare?',
+    answer: 'Every reservation includes commercial vehicle insurance, licensed professional chauffeur, state taxes, highway tolls, airport access surcharges, and chauffeur gratuity. There are zero surprise fees or hidden add-ons.'
   },
   {
-    q: 'What is the difference between One Way and By the Hour?',
-    a: 'A One Way ride is a direct point-to-point transfer from your pickup address to your destination. By the Hour reserves a dedicated luxury vehicle and chauffeur on standby for an agreed duration (2 to 24 hours) with unlimited stops within the metropolitan region.'
+    question: 'Are child seats available?',
+    answer: 'Yes, forward-facing, rear-facing, and booster child safety seats are available upon request during booking across our luxury SUV and sedan classes.'
   },
   {
-    q: 'How can I reach customer support?',
-    a: 'Our US-based client concierge team is available 24/7 by toll-free phone at (888) 801-7476 or by email at info@mzexecutivechauffeurs.com.'
+    question: 'Do you offer direct corporate billing and 24/7 phone dispatch?',
+    answer: 'Yes. Corporate accounts receive monthly centralized invoicing, dedicated account management, and priority dispatch. You can also reach our 24/7 executive dispatch line at (888) 801-7476 or email info@mzexecutivechauffeurs.com anytime.'
   }
 ];

@@ -39,7 +39,7 @@ export const HourlyHirePage: React.FC<HourlyHirePageProps> = ({ onSearch, onNavi
           className="absolute inset-0 bg-cover bg-center brightness-75 contrast-105 pointer-events-none"
           style={{
             backgroundImage:
-              'url(https://images.ctfassets.net/ov8o7v78mnye/2CGKgPf7XBS6ibbNTg7WAT/807cf7dc586034d598c31a659877ed8a/entrepreneur-flow-hero4__1_.jpg?fm=webp&w=2560&q=85)',
+              'url(https://images.unsplash.com/photo-1517524008697-84bbe3c3fd98?auto=format&fit=crop&w=2000&q=80)',
           }}
         />
         <div className="absolute inset-0 bg-gradient-to-t from-[#0F1319]/90 via-[#0F1319]/40 to-black/60 pointer-events-none" />
@@ -91,7 +91,7 @@ export const HourlyHirePage: React.FC<HourlyHirePageProps> = ({ onSearch, onNavi
             </div>
             <h3 className="text-2xl font-serif mb-3">From 2 to 24 hours</h3>
             <p className="text-[#596372] text-sm sm:text-base leading-relaxed">
-              Book the exact block of hours your schedule demands. Need more time? Easily extend duration directly with your chauffeur or in your mobile app.
+              Book the exact block of hours your schedule demands. Need more time? Easily extend duration directly with your chauffeur or by calling our 24/7 dispatch desk.
             </p>
           </div>
 
@@ -111,9 +111,9 @@ export const HourlyHirePage: React.FC<HourlyHirePageProps> = ({ onSearch, onNavi
       <section className="py-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto border-t border-gray-200">
         <div className="rounded-3xl overflow-hidden shadow-xl border border-gray-200 bg-white p-6 sm:p-10 flex flex-col items-center">
           <img
-            src="https://images.ctfassets.net/ov8o7v78mnye/2ZNFim3IFRBSImhulS4fJe/43170bf8010138f9871bf477f75333bd/ABCD_Landscape_11_Nowhite.jpg"
-            alt="MZS by the hour journey landscape"
-            className="w-full max-w-5xl object-contain rounded-2xl"
+            src="https://images.unsplash.com/photo-1502877338535-766e1452684a?auto=format&fit=crop&w=1600&q=80"
+            alt="MZS Executive Chauffeurs luxury vehicle interior"
+            className="w-full max-w-5xl object-cover rounded-2xl aspect-[16/9]"
           />
         </div>
       </section>

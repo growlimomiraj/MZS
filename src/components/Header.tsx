@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { BlacklaneLogo } from './BlacklaneLogo';
+import { MZSLogo } from './MZSLogo';
 import { ChevronDown, User, Menu, X, Globe, Check, Phone, Mail } from 'lucide-react';
 import { PageRoute } from '../types';
 
@@ -88,14 +88,14 @@ export const Header: React.FC<HeaderProps> = ({
       }`}
     >
       <div className="max-w-[1440px] mx-auto px-6 sm:px-8 h-[72px] flex items-center justify-between">
-        {/* Left: Official Blacklane Logo */}
+        {/* Left: Official MZS Logo */}
         <div className="flex items-center">
           <button
             onClick={() => handleNavClick('/')}
             className="flex items-center focus:outline-none cursor-pointer"
             aria-label="Go to Homepage"
           >
-            <BlacklaneLogo color={logoColor} className="h-6 sm:h-7 w-auto transition-transform hover:opacity-90" />
+            <MZSLogo color={logoColor} className="h-6 sm:h-7 w-auto transition-transform hover:opacity-90" />
           </button>
         </div>
 

@@ -47,7 +47,7 @@ export const PartnersPage: React.FC<PartnersPageProps> = ({ onNavigate }) => {
           className="absolute inset-0 bg-cover bg-center brightness-75 contrast-105 pointer-events-none"
           style={{
             backgroundImage:
-              'url(https://static.blacklane.com/assets/_next/static/media/bg.e528b82bfe2bcc20.webp)',
+              'url(https://images.unsplash.com/photo-1549399542-7e3f8b79c341?auto=format&fit=crop&w=2000&q=80)',
           }}
         />
         <div className="absolute inset-0 bg-gradient-to-t from-[#0F1319]/90 via-[#0F1319]/40 to-black/60 pointer-events-none" />
@@ -95,12 +95,24 @@ export const PartnersPage: React.FC<PartnersPageProps> = ({ onNavigate }) => {
             </div>
           </div>
 
-          <div className="rounded-3xl overflow-hidden shadow-xl border border-gray-200 bg-white p-6 flex flex-col items-center">
-            <img
-              src="https://static.blacklane.com/assets/_next/static/media/1.9acb1b093618cb82.png"
-              alt="MZS Executive Chauffeurs partner revenue growth"
-              className="w-full h-auto object-contain rounded-2xl"
-            />
+          <div className="rounded-3xl overflow-hidden shadow-xl border border-gray-200 bg-[#0F1319] text-white p-8 sm:p-12 flex flex-col justify-between">
+            <div>
+              <span className="text-xs uppercase tracking-wider text-emerald-400 font-semibold mb-2 block">Direct Partner Payouts</span>
+              <h3 className="text-3xl font-serif text-white mb-4">Reliable Weekly Direct Deposit</h3>
+              <p className="text-gray-300 text-sm leading-relaxed mb-6 font-light">
+                Transparent revenue accounting with itemized ride fares, tolls, airport wait time, and 100% of tips paid directly to your bank account every week.
+              </p>
+            </div>
+            <div className="grid grid-cols-2 gap-4 pt-6 border-t border-white/10 text-center">
+              <div>
+                <span className="text-2xl sm:text-3xl font-serif text-[#0066FF] font-bold block">+65%</span>
+                <span className="text-xs text-gray-400">Fleet Utilization</span>
+              </div>
+              <div>
+                <span className="text-2xl sm:text-3xl font-serif text-emerald-400 font-bold block">7 Days</span>
+                <span className="text-xs text-gray-400">Weekly Payout Cycle</span>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -119,12 +131,35 @@ export const PartnersPage: React.FC<PartnersPageProps> = ({ onNavigate }) => {
           </p>
         </div>
 
-        <div className="rounded-3xl overflow-hidden shadow-xl border border-gray-200 bg-white p-4 sm:p-8 flex flex-col items-center">
-          <img
-            src="https://static.blacklane.com/assets/_next/static/media/onboarding.3b5c41e4fc73a8d8.webp"
-            alt="MZS Executive Chauffeurs partner onboarding roadmap"
-            className="w-full max-w-4xl object-contain rounded-2xl"
-          />
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="p-6 rounded-2xl bg-white border border-gray-200 shadow-sm">
+            <span className="w-8 h-8 rounded-full bg-[#0066FF] text-white font-bold flex items-center justify-center text-sm mb-4">1</span>
+            <h4 className="font-serif text-lg text-[#0F1319] mb-2">Apply Online</h4>
+            <p className="text-xs text-gray-500 leading-relaxed">
+              Submit your company details, vehicle fleet list, and contact information through our simple partner form.
+            </p>
+          </div>
+          <div className="p-6 rounded-2xl bg-white border border-gray-200 shadow-sm">
+            <span className="w-8 h-8 rounded-full bg-[#0066FF] text-white font-bold flex items-center justify-center text-sm mb-4">2</span>
+            <h4 className="font-serif text-lg text-[#0F1319] mb-2">Document Verification</h4>
+            <p className="text-xs text-gray-500 leading-relaxed">
+              Upload commercial chauffeur licenses, commercial insurance certificates, and vehicle registrations.
+            </p>
+          </div>
+          <div className="p-6 rounded-2xl bg-white border border-gray-200 shadow-sm">
+            <span className="w-8 h-8 rounded-full bg-[#0066FF] text-white font-bold flex items-center justify-center text-sm mb-4">3</span>
+            <h4 className="font-serif text-lg text-[#0F1319] mb-2">Quality Standards Call</h4>
+            <p className="text-xs text-gray-500 leading-relaxed">
+              Complete a 15-minute briefing on MZS Executive Chauffeurs service protocols and arrivals standards.
+            </p>
+          </div>
+          <div className="p-6 rounded-2xl bg-white border border-gray-200 shadow-sm">
+            <span className="w-8 h-8 rounded-full bg-emerald-600 text-white font-bold flex items-center justify-center text-sm mb-4">4</span>
+            <h4 className="font-serif text-lg text-[#0F1319] mb-2">Start Receiving Rides</h4>
+            <p className="text-xs text-gray-500 leading-relaxed">
+              Access the MZS dispatch portal, accept incoming premium bookings, and receive weekly direct deposits.
+            </p>
+          </div>
         </div>
       </section>
 
@@ -142,12 +177,25 @@ export const PartnersPage: React.FC<PartnersPageProps> = ({ onNavigate }) => {
           </p>
         </div>
 
-        <div className="rounded-3xl overflow-hidden shadow-xl border border-gray-200 bg-white p-4 sm:p-8 flex flex-col items-center">
-          <img
-            src="https://static.blacklane.com/assets/_next/static/media/requirements.dbdb0d75a05d8d79.webp"
-            alt="MZS Executive Chauffeurs vehicle standards visual"
-            className="w-full max-w-4xl object-contain rounded-2xl"
-          />
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div className="p-8 rounded-3xl bg-white border border-gray-200 shadow-sm">
+            <h4 className="font-serif text-xl text-[#0F1319] mb-3">Vehicle Age & Exterior</h4>
+            <p className="text-sm text-gray-600 leading-relaxed">
+              Late-model executive luxury vehicles (under 5 years old). Pristine black paint finishes, free of scratches or dents, with non-tinted front windows where required by law.
+            </p>
+          </div>
+          <div className="p-8 rounded-3xl bg-white border border-gray-200 shadow-sm">
+            <h4 className="font-serif text-xl text-[#0F1319] mb-3">Interior Detailing</h4>
+            <p className="text-sm text-gray-600 leading-relaxed">
+              Showroom-condition black or dark executive leather interiors. Daily vacuuming, climate control, silent cabin, and complimentary passenger device chargers.
+            </p>
+          </div>
+          <div className="p-8 rounded-3xl bg-white border border-gray-200 shadow-sm">
+            <h4 className="font-serif text-xl text-[#0F1319] mb-3">Chauffeur Dress Code</h4>
+            <p className="text-sm text-gray-600 leading-relaxed">
+              Dark tailored suit, white collared shirt, conservative dark tie, and polished dark dress shoes. Professional, courteous, and strictly discreet hospitality.
+            </p>
+          </div>
         </div>
       </section>
 

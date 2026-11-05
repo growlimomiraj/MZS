@@ -78,25 +78,21 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onSearch }) => {
       ref={sectionRef}
       className="relative min-h-[100svh] flex flex-col justify-end items-center pb-8 sm:pb-12 lg:pb-14 px-4 sm:px-6 lg:px-8 bg-[#0F1319]"
     >
-      {/* Sticky Background Container with clip-path matching Blacklane CSS */}
+      {/* Sticky Background Container */}
       <div className="absolute inset-0 [clip-path:inset(0)] pointer-events-none select-none z-0">
         <picture className="w-full h-full">
           <source
             media="(min-width: 1024px)"
-            srcSet="/assets/hero/bg.webp, https://static.blacklane.com/assets/_next/static/media/bg.01a8f1ce1808c5e8.webp"
+            srcSet="/assets/hero/bg.webp"
           />
           <source
             media="(max-width: 1023px)"
-            srcSet="/assets/hero/bg-mobile.webp, https://static.blacklane.com/assets/_next/static/media/bg-mobile.bec167bf82cf67ed.webp"
+            srcSet="/assets/hero/bg-mobile.webp"
           />
           <img
             ref={bgImgRef}
             src="/assets/hero/bg.webp"
-            onError={(e) => {
-              e.currentTarget.src =
-                'https://static.blacklane.com/assets/_next/static/media/bg.01a8f1ce1808c5e8.webp';
-            }}
-            alt="Your chauffeur awaits"
+            alt="MZS Executive Chauffeurs"
             className="fixed max-lg:absolute inset-0 w-full h-full object-cover object-[center_32%]"
             loading="eager"
             fetchPriority="high"

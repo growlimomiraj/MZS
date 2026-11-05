@@ -5,7 +5,6 @@ interface FeatureItem {
   title: string;
   description: string;
   image: string;
-  fallback: string;
   alt: string;
   svgFallback: React.ReactNode;
 }
@@ -15,7 +14,6 @@ const FEATURES: FeatureItem[] = [
     title: 'Nationwide coverage',
     description: 'Licensed professional chauffeurs across the USA',
     image: '/assets/excellence/like.png',
-    fallback: 'https://static.blacklane.com/assets/_next/static/media/like.6f578ab713c8f1de.png',
     alt: 'Nationwide coverage across the USA',
     svgFallback: <WorldwideIcon className="h-28 sm:h-32 w-auto object-contain" />,
   },
@@ -23,7 +21,6 @@ const FEATURES: FeatureItem[] = [
     title: 'High-end vehicles',
     description: 'Only the best recent models',
     image: '/assets/excellence/cloud.png',
-    fallback: 'https://static.blacklane.com/assets/_next/static/media/cloud.4afa6c08cc182c1c.png',
     alt: 'High-end vehicles',
     svgFallback: <HighEndVehiclesIcon className="h-28 sm:h-32 w-auto object-contain" />,
   },
@@ -31,7 +28,6 @@ const FEATURES: FeatureItem[] = [
     title: 'Safe travels',
     description: 'Trained professionals and reliable pickups',
     image: '/assets/excellence/lock.png',
-    fallback: 'https://static.blacklane.com/assets/_next/static/media/lock.cd4981c5f73169d5.png',
     alt: 'Safe travels',
     svgFallback: <SafeTravelsIcon className="h-28 sm:h-32 w-auto object-contain" />,
   },
@@ -41,7 +37,6 @@ export const ExcellenceSection: React.FC = () => {
   return (
     <section className="relative z-10 bg-[#fbf8f2] text-[#0F1319] py-20 lg:py-28 px-4 sm:px-8 lg:px-12">
       <div className="max-w-[1170px] mx-auto">
-        {/* Headings: Exact PP Fragment typography & hierarchy matching Blacklane reference */}
         <div className="text-center max-w-[800px] mx-auto mb-12 sm:mb-16">
           <h2 className="text-5xl sm:text-6xl lg:text-[72px] font-['PP_Fragment',serif] font-normal text-[#0F1319] tracking-tight leading-[1.06] mb-4 select-none">
             Expect excellence.
@@ -67,16 +62,10 @@ export const ExcellenceSection: React.FC = () => {
                 </p>
               </div>
 
-              {/* Official 3D Production Icon with instant fallback */}
+              {/* 3D Icon with SVG fallback */}
               <div className="h-32 sm:h-36 w-full flex items-center justify-center mt-6">
                 <img
                   src={feature.image}
-                  onError={(e) => {
-                    const target = e.currentTarget;
-                    if (target.src !== feature.fallback) {
-                      target.src = feature.fallback;
-                    }
-                  }}
                   alt={feature.alt}
                   loading="eager"
                   className="h-28 sm:h-32 w-auto object-contain drop-shadow-md pointer-events-none select-none transition-transform hover:scale-105 duration-300"

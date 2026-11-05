@@ -202,7 +202,7 @@ export const BookingWidget: React.FC<BookingWidgetProps> = ({ onSearch }) => {
 
   return (
     <div ref={widgetRef} className="w-full max-w-[1170px] mx-auto flex flex-col items-center">
-      {/* 1. Category Selection Pill - exact SegmentedControl from Blacklane reference */}
+      {/* 1. Category Selection Pill */}
       <div className="flex items-center justify-center mb-4 sm:mb-5">
         <div className="inline-grid grid-flow-col gap-1 p-1 bg-black/40 backdrop-blur-xl rounded-full border border-white/25 shadow-lg select-none">
           <button
@@ -605,7 +605,7 @@ export const BookingWidget: React.FC<BookingWidgetProps> = ({ onSearch }) => {
         )}
       </div>
 
-      {/* 3. Official Companion InfoCard matching Blacklane DOM */}
+      {/* Companion InfoCard */}
       <div className="hidden sm:flex items-center justify-center gap-3 mt-6 text-white/90 select-none opacity-85 hover:opacity-100 transition-opacity">
         <img
           src="/assets/hero/nav-plane.svg"
@@ -616,8 +616,8 @@ export const BookingWidget: React.FC<BookingWidgetProps> = ({ onSearch }) => {
           }}
         />
         <div className="text-xs sm:text-sm font-['Geist',sans-serif] font-normal leading-tight text-center sm:text-left">
-          <span className="block text-white/90">Set your pickup in over 64 countries.</span>
-          <span className="block text-white/70">We'll be there on time.</span>
+          <span className="block text-white/90">Nationwide US executive chauffeur coverage.</span>
+          <span className="block text-white/70">Licensed professional chauffeurs on time, every time.</span>
         </div>
       </div>
     </div>

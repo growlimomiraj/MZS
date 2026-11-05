@@ -71,7 +71,7 @@ export const CitiesPage: React.FC<CitiesPageProps> = ({ onNavigate }) => {
           className="absolute inset-0 bg-cover bg-center brightness-75 contrast-105 pointer-events-none"
           style={{
             backgroundImage:
-              'url(https://images.ctfassets.net/ov8o7v78mnye/WpnuZlA0b1Dy8QpYNyPv1/1f3b44cb49711f74aed280ac5461edaa/blue_gradient_map_be4a5e4afb664db398f8dfb3523f1f25.webp?fm=webp&w=2560&q=85)',
+              'url(https://images.unsplash.com/photo-1508974239320-0a029497e820?auto=format&fit=crop&w=2000&q=80)',
           }}
         />
         <div className="absolute inset-0 bg-gradient-to-t from-[#0F1319]/90 via-[#0F1319]/40 to-black/60 pointer-events-none" />
