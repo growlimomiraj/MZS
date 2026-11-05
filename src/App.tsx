@@ -86,7 +86,10 @@ export function App() {
   const handleNavigate = (route: PageRoute) => {
     setCurrentRoute(route);
     window.history.pushState({}, '', route === '/' ? '/' : route);
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    window.scrollTo(0, 0);
+    setTimeout(() => {
+      ScrollTrigger.refresh();
+    }, 50);
   };
 
   const handleSearchSubmit = (data: BookingState) => {
@@ -240,10 +243,9 @@ export function App() {
         onBookNowClick={() => {
           if (currentRoute !== '/') {
             handleNavigate('/');
-          }
-          setTimeout(() => {
+          } else {
             window.scrollTo({ top: 0, behavior: 'smooth' });
-          }, 150);
+          }
         }}
       />
 

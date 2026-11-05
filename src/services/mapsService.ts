@@ -169,3 +169,4 @@ export function calculateFare(
 
   return Math.max(vehicle.basePrice || 85, total);
 }
+

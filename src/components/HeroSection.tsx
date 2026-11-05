@@ -18,54 +18,25 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onSearch }) => {
 
   useEffect(() => {
     const ctx = gsap.context(() => {
-      // 1. Initial entrance animation
-      const tl = gsap.timeline({ defaults: { ease: 'power2.out' } });
-
-      tl.from(titleRef.current, {
-        y: 60,
-        opacity: 0,
-        scale: 0.94,
-        duration: 1.1,
-      });
-
-      tl.from(
-        widgetContainerRef.current,
-        {
-          y: 40,
+      // Gentle entrance animation with clearProps: 'all' to guarantee it is always visible
+      if (titleRef.current) {
+        gsap.from(titleRef.current, {
+          y: 25,
           opacity: 0,
-          duration: 0.9,
-        },
-        '-=0.6'
-      );
-
-      // 2. Scrub widget and title up and out as user scrolls past hero
-      if (widgetContainerRef.current) {
-        gsap.to(widgetContainerRef.current, {
-          y: -180,
-          opacity: 0,
-          ease: 'none',
-          immediateRender: false,
-          scrollTrigger: {
-            trigger: widgetContainerRef.current,
-            start: 'bottom 65%',
-            end: '+=450',
-            scrub: true,
-          },
+          duration: 0.6,
+          ease: 'power2.out',
+          clearProps: 'all',
         });
       }
 
-      if (titleRef.current) {
-        gsap.to(titleRef.current, {
-          y: -120,
+      if (widgetContainerRef.current) {
+        gsap.from(widgetContainerRef.current, {
+          y: 20,
           opacity: 0,
-          ease: 'none',
-          immediateRender: false,
-          scrollTrigger: {
-            trigger: titleRef.current,
-            start: 'bottom 50%',
-            end: '+=350',
-            scrub: true,
-          },
+          duration: 0.6,
+          delay: 0.1,
+          ease: 'power2.out',
+          clearProps: 'all',
         });
       }
     }, sectionRef);
@@ -118,7 +89,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onSearch }) => {
         </h1>
 
         {/* Booking Form Widget Container */}
-        <div ref={widgetContainerRef} className="w-full will-change-transform">
+        <div id="booking-widget" ref={widgetContainerRef} className="w-full">
           <BookingWidget onSearch={onSearch} />
         </div>
       </div>
