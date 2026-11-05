@@ -69,6 +69,8 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onSearch }) => {
             fetchPriority="high"
           />
         </picture>
+        {/* Subtle cinematic gradient to enhance typography readability and luxury contrast */}
+        <div className="absolute inset-0 bg-gradient-to-t from-[#0F1319]/80 via-[#0F1319]/20 to-transparent pointer-events-none" />
       </div>
 
       {/* Content Container positioned in lower portion to match reference */}
