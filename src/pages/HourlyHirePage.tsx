@@ -142,10 +142,16 @@ export const HourlyHirePage: React.FC<HourlyHirePageProps> = ({ onSearch, onNavi
               </div>
               <div className="pt-4 border-t border-gray-100 flex items-center justify-between">
                 <div>
-                  <div className="text-[11px] uppercase tracking-wider text-gray-400">Hourly from</div>
-                  <div className="text-lg font-bold text-[#0F1319]">${Math.round(vc.price * 0.75)}/hr</div>
+                  <div className="text-[11px] uppercase tracking-wider text-gray-400">Hourly Rate</div>
+                  <div className="text-lg font-bold text-[#0F1319]">${vc.hourlyRate}/hr</div>
+                  <div className="text-[10px] text-gray-400">Min 2 hours reservation</div>
                 </div>
-                <span className="text-xs font-semibold text-[#0066FF]">Min 2 hrs</span>
+                <button
+                  onClick={() => onNavigate('/')}
+                  className="text-xs font-semibold text-[#0066FF] flex items-center gap-1 hover:underline cursor-pointer"
+                >
+                  Book Hourly <ArrowRight className="w-3.5 h-3.5" />
+                </button>
               </div>
             </div>
           ))}

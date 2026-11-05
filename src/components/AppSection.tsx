@@ -188,7 +188,7 @@ export const AppSection: React.FC = () => {
                   <ShieldCheck className="w-3.5 h-3.5 text-[#0F63BD]" />
                   60 Min Free Airport Wait Time
                 </span>
-                <span className="text-white font-semibold">Fixed Rate</span>
+                <span className="text-white font-semibold">Transparent Rate</span>
               </div>
             </div>
           </div>

@@ -247,7 +247,7 @@ export const CityToCityPage: React.FC<CityToCityPageProps> = ({ onSearch, onNavi
               <div className="flex items-center justify-between pt-5 border-t border-gray-100">
                 <div>
                   <span className="text-xs font-semibold text-[#0066FF] block">Custom Executive Quote</span>
-                  <span className="text-[11px] text-gray-500">Guaranteed fixed rate</span>
+                  <span className="text-[11px] text-gray-500">Calculated by distance</span>
                 </div>
                 <button
                   onClick={() => onNavigate(`/city-to-city/${route.from.toLowerCase().replace(/\s+/g, '-')}-${route.to.toLowerCase().replace(/\s+/g, '-')}` as PageRoute)}

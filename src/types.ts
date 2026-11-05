@@ -14,6 +14,9 @@ export interface VehicleClass {
   image: string;
   passengers: number;
   luggage: number;
+  basePrice: number;
+  perMileRate: number;
+  hourlyRate: number;
   price: number;
   currency: string;
   description: string;
@@ -27,6 +30,8 @@ export interface BookingState {
   durationHours: number;
   date: string;
   time: string;
+  distanceMiles?: number;
+  estimatedMinutes?: number;
   selectedVehicle?: VehicleClass;
   passengerName?: string;
   passengerEmail?: string;

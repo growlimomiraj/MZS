@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { X, Users, Briefcase, CheckCircle2, Shield, ArrowRight, ArrowLeft, Clock, MapPin, Calendar, Check } from 'lucide-react';
 import { BookingState, VehicleClass } from '../types';
 import { VEHICLE_CLASSES } from '../constants/data';
+import { calculateFare } from '../services/mapsService';
 
 interface VehicleSelectionModalProps {
   isOpen: boolean;
@@ -24,6 +25,10 @@ export const VehicleSelectionModal: React.FC<VehicleSelectionModalProps> = ({
   const [bookingCode, setBookingCode] = useState('');
 
   if (!isOpen || !bookingData) return null;
+
+  const miles = bookingData.distanceMiles || 18.5;
+  const currentDuration = bookingData.durationHours || 3;
+  const selectedFare = calculateFare(selectedVehicle, bookingData.type, miles, currentDuration);
 
   const handleSelectVehicle = (vehicle: VehicleClass) => {
     setSelectedVehicle(vehicle);
@@ -87,6 +92,14 @@ export const VehicleSelectionModal: React.FC<VehicleSelectionModalProps> = ({
             <MapPin className="w-3.5 h-3.5 text-emerald-400 shrink-0" />
             <span className="truncate">{bookingData.dropoffLocation}</span>
           </div>
+          {bookingData.type === 'transfer' && (
+            <div className="flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-[#0F63BD]/20 border border-[#0F63BD]/40 text-[#4A9CFF] font-medium">
+              <span>{miles} miles</span>
+              {bookingData.estimatedMinutes && (
+                <span className="text-gray-400">&bull; ~{bookingData.estimatedMinutes} mins</span>
+              )}
+            </div>
+          )}
           <div className="flex items-center gap-1.5 ml-auto">
             <Calendar className="w-3.5 h-3.5 text-gray-400" />
             <span>{bookingData.date}</span>
@@ -100,69 +113,74 @@ export const VehicleSelectionModal: React.FC<VehicleSelectionModalProps> = ({
           {step === 'vehicles' && (
             <div className="space-y-4">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                {VEHICLE_CLASSES.map((vehicle) => (
-                  <div
-                    key={vehicle.id}
-                    onClick={() => handleSelectVehicle(vehicle)}
-                    className="group relative p-5 rounded-2xl bg-white/5 hover:bg-white/10 border border-white/10 hover:border-[#0F63BD] transition-all duration-200 cursor-pointer flex flex-col justify-between"
-                  >
-                    <div>
-                      <div className="flex items-start justify-between gap-2 mb-2">
-                        <div>
-                          <h4 className="text-lg font-serif text-white group-hover:text-[#4A9CFF] transition-colors">
-                            {vehicle.name}
-                          </h4>
-                          <p className="text-xs text-gray-400 line-clamp-1">{vehicle.models}</p>
-                        </div>
-                        <div className="text-right">
-                          <span className="text-xl font-bold text-white">
-                            ${vehicle.price}
-                          </span>
-                          <span className="text-[10px] text-gray-400 block uppercase">All-inclusive</span>
-                        </div>
-                      </div>
-
-                      {/* Vehicle Image Placeholder / Realistic Graphic */}
-                      <div className="w-full h-32 my-3 rounded-xl bg-gradient-to-tr from-black/60 to-white/5 border border-white/5 flex items-center justify-center p-3 overflow-hidden">
-                        <img
-                          src={vehicle.image}
-                          alt={vehicle.name}
-                          className="max-h-full w-auto object-contain drop-shadow-lg group-hover:scale-105 transition-transform duration-300"
-                        />
-                      </div>
-
-                      {/* Capacities */}
-                      <div className="flex items-center gap-4 text-xs text-gray-300 mb-3">
-                        <div className="flex items-center gap-1">
-                          <Users className="w-3.5 h-3.5 text-gray-400" />
-                          <span>Max {vehicle.passengers}</span>
-                        </div>
-                        <div className="flex items-center gap-1">
-                          <Briefcase className="w-3.5 h-3.5 text-gray-400" />
-                          <span>Max {vehicle.luggage} bags</span>
-                        </div>
-                      </div>
-
-                      {/* Features list */}
-                      <ul className="space-y-1 mb-4">
-                        {vehicle.features.slice(0, 2).map((feat, fIdx) => (
-                          <li key={fIdx} className="flex items-center gap-1.5 text-xs text-gray-400">
-                            <CheckCircle2 className="w-3 h-3 text-[#0F63BD] shrink-0" />
-                            <span className="truncate">{feat}</span>
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-
-                    <button
-                      type="button"
-                      className="w-full py-2.5 rounded-xl bg-[#0F63BD] group-hover:bg-[#0D529C] text-white text-xs font-semibold tracking-wide transition-colors flex items-center justify-center gap-1.5 shadow-md"
+                {VEHICLE_CLASSES.map((vehicle) => {
+                  const fare = calculateFare(vehicle, bookingData.type, miles, currentDuration);
+                  return (
+                    <div
+                      key={vehicle.id}
+                      onClick={() => handleSelectVehicle(vehicle)}
+                      className="group relative p-5 rounded-2xl bg-white/5 hover:bg-white/10 border border-white/10 hover:border-[#0F63BD] transition-all duration-200 cursor-pointer flex flex-col justify-between"
                     >
-                      <span>Select {vehicle.name}</span>
-                      <ArrowRight className="w-3.5 h-3.5" />
-                    </button>
-                  </div>
-                ))}
+                      <div>
+                        <div className="flex items-start justify-between gap-2 mb-2">
+                          <div>
+                            <h4 className="text-lg font-serif text-white group-hover:text-[#4A9CFF] transition-colors">
+                              {vehicle.name}
+                            </h4>
+                            <p className="text-xs text-gray-400 line-clamp-1">{vehicle.models}</p>
+                          </div>
+                          <div className="text-right">
+                            <span className="text-xl font-bold text-white">
+                              ${fare}
+                            </span>
+                            <span className="text-[10px] text-emerald-400 block font-medium">
+                              {bookingData.type === 'transfer' ? `${miles} mi • Distance rate` : `${currentDuration} hrs • Hourly rate`}
+                            </span>
+                          </div>
+                        </div>
+
+                        {/* Vehicle Image */}
+                        <div className="w-full h-36 my-3 rounded-xl bg-gradient-to-tr from-black/60 to-white/5 border border-white/5 flex items-center justify-center p-2 overflow-hidden">
+                          <img
+                            src={vehicle.image}
+                            alt={vehicle.name}
+                            className="max-h-full w-auto object-contain drop-shadow-xl group-hover:scale-105 transition-transform duration-300"
+                          />
+                        </div>
+
+                        {/* Capacities */}
+                        <div className="flex items-center gap-4 text-xs text-gray-300 mb-3">
+                          <div className="flex items-center gap-1">
+                            <Users className="w-3.5 h-3.5 text-gray-400" />
+                            <span>Max {vehicle.passengers}</span>
+                          </div>
+                          <div className="flex items-center gap-1">
+                            <Briefcase className="w-3.5 h-3.5 text-gray-400" />
+                            <span>Max {vehicle.luggage} bags</span>
+                          </div>
+                        </div>
+
+                        {/* Features list */}
+                        <ul className="space-y-1 mb-4">
+                          {vehicle.features.slice(0, 2).map((feat, fIdx) => (
+                            <li key={fIdx} className="flex items-center gap-1.5 text-xs text-gray-400">
+                              <CheckCircle2 className="w-3 h-3 text-[#0F63BD] shrink-0" />
+                              <span className="truncate">{feat}</span>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+
+                      <button
+                        type="button"
+                        className="w-full py-2.5 rounded-xl bg-[#0F63BD] group-hover:bg-[#0D529C] text-white text-xs font-semibold tracking-wide transition-colors flex items-center justify-center gap-1.5 shadow-md"
+                      >
+                        <span>Select {vehicle.name}</span>
+                        <ArrowRight className="w-3.5 h-3.5" />
+                      </button>
+                    </div>
+                  );
+                })}
               </div>
 
               {/* MZS Guarantee Note */}
@@ -184,8 +202,10 @@ export const VehicleSelectionModal: React.FC<VehicleSelectionModalProps> = ({
                   <div className="text-xs text-gray-400">{selectedVehicle.models}</div>
                 </div>
                 <div className="text-right">
-                  <div className="text-2xl font-bold text-white">${selectedVehicle.price}</div>
-                  <div className="text-[10px] text-emerald-400 font-medium">Guaranteed fixed rate</div>
+                  <div className="text-2xl font-bold text-white">${selectedFare}</div>
+                  <div className="text-[10px] text-emerald-400 font-medium">
+                    {bookingData.type === 'transfer' ? `${miles} miles (@ $${selectedVehicle.perMileRate}/mi)` : `${currentDuration} hrs (@ $${selectedVehicle.hourlyRate}/hr)`}
+                  </div>
                 </div>
               </div>
 
@@ -321,8 +341,8 @@ export const VehicleSelectionModal: React.FC<VehicleSelectionModalProps> = ({
                   <span className="font-semibold text-white truncate max-w-[280px]">{bookingData.dropoffLocation}</span>
                 </div>
                 <div className="flex justify-between items-center text-sm pt-2 font-semibold">
-                  <span>Total Amount Paid</span>
-                  <span className="text-[#4A9CFF]">${selectedVehicle.price} USD</span>
+                  <span>Total Calculated Fare</span>
+                  <span className="text-[#4A9CFF]">${selectedFare} USD</span>
                 </div>
               </div>
 

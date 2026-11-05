@@ -34,7 +34,7 @@ const SERVICES = [
     subheadline: 'City-to-city',
     title: 'Between cities, done better.',
     description:
-      'Turn long-distance journeys into productive executive time with MZS Executive Chauffeurs. Guaranteed fixed rates with no surge pricing.',
+      'Turn long-distance journeys into productive executive time with MZS Executive Chauffeurs. Transparent mileage-based pricing with no surge pricing.',
     image: '/assets/services/service-3.jpg',
     route: '/city-to-city' as PageRoute,
   },

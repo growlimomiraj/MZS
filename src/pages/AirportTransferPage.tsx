@@ -32,7 +32,7 @@ export const AirportTransferPage: React.FC<AirportTransferPageProps> = ({ onSear
     },
     {
       q: 'Are airport access fees, parking, tolls, and tips included?',
-      a: 'Yes, 100%. All MZS Executive Chauffeurs fares are all-inclusive guaranteed fixed rates. State taxes, airport access fees, toll roads, and chauffeur gratuities are completely covered with zero surge pricing spikes.'
+      a: 'Yes, 100%. All MZS Executive Chauffeurs fares are all-inclusive upfront rates calculated dynamically by distance. State taxes, airport access fees, toll roads, and chauffeur gratuities are completely covered with zero surge pricing spikes.'
     }
   ];
 
@@ -142,12 +142,16 @@ export const AirportTransferPage: React.FC<AirportTransferPageProps> = ({ onSear
 
               <div className="pt-4 border-t border-gray-100 flex items-center justify-between">
                 <div>
-                  <div className="text-[11px] uppercase tracking-wider text-gray-400">Fixed rate</div>
-                  <div className="text-lg font-bold text-[#0F1319]">From ${vc.price}</div>
+                  <div className="text-[11px] uppercase tracking-wider text-gray-400">Rate Structure</div>
+                  <div className="text-sm font-bold text-[#0F1319]">${vc.perMileRate}/mile</div>
+                  <div className="text-[10px] text-gray-400">+$ {vc.basePrice} base flag drop</div>
                 </div>
-                <span className="text-xs font-semibold text-[#0066FF] flex items-center gap-1">
-                  Select <ArrowRight className="w-3.5 h-3.5" />
-                </span>
+                <button
+                  onClick={() => onNavigate('/')}
+                  className="text-xs font-semibold text-[#0066FF] flex items-center gap-1 hover:underline cursor-pointer"
+                >
+                  Book by Miles <ArrowRight className="w-3.5 h-3.5" />
+                </button>
               </div>
             </div>
           ))}

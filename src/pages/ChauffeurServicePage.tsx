@@ -23,7 +23,7 @@ export const ChauffeurServicePage: React.FC<ChauffeurServicePageProps> = ({ onSe
     },
     {
       q: 'Is tipping required or expected?',
-      a: 'No. All MZS Executive Chauffeurs fares are all-inclusive fixed rates covering driver gratuities, road tolls, and taxes. You never need to carry cash.'
+      a: 'No. All MZS Executive Chauffeurs fares are all-inclusive rates calculated dynamically by distance, covering driver gratuities, road tolls, and taxes with zero hidden fees. You never need to carry cash.'
     },
     {
       q: 'Can I request a child seat?',
@@ -152,12 +152,16 @@ export const ChauffeurServicePage: React.FC<ChauffeurServicePageProps> = ({ onSe
               </div>
               <div className="pt-4 border-t border-gray-100 flex items-center justify-between">
                 <div>
-                  <div className="text-[11px] uppercase tracking-wider text-gray-400">Fixed rate from</div>
-                  <div className="text-lg font-bold text-[#0F1319]">${vc.price}</div>
+                  <div className="text-[11px] uppercase tracking-wider text-gray-400">Rate Structure</div>
+                  <div className="text-sm font-bold text-[#0F1319]">${vc.perMileRate}/mile</div>
+                  <div className="text-[10px] text-gray-400">+$ {vc.basePrice} base flag drop</div>
                 </div>
-                <span className="text-xs font-semibold text-[#0066FF] flex items-center gap-1">
-                  Book <ArrowRight className="w-3.5 h-3.5" />
-                </span>
+                <button
+                  onClick={() => onNavigate('/')}
+                  className="text-xs font-semibold text-[#0066FF] flex items-center gap-1 hover:underline cursor-pointer"
+                >
+                  Book by Miles <ArrowRight className="w-3.5 h-3.5" />
+                </button>
               </div>
             </div>
           ))}

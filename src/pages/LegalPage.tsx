@@ -101,7 +101,7 @@ export const LegalPage: React.FC<LegalPageProps> = ({ initialTab = 'terms', onNa
 
             <h3 className="text-xl font-serif font-semibold mt-6">3. Guaranteed All-Inclusive Pricing</h3>
             <p className="text-sm leading-relaxed text-[#596372]">
-              All quotes provided by MZS Executive Chauffeurs are all-inclusive fixed rates guaranteed at the time of reservation. Rates cover all applicable state and federal taxes, highway tolls, statutory airport fees, flight delay monitoring, and chauffeur gratuities. No surge pricing or unexpected surcharges apply.
+              All quotes provided by MZS Executive Chauffeurs are all-inclusive guaranteed rates confirmed at the time of reservation, calculated based on distance or booked hourly duration. Rates cover all applicable state and federal taxes, highway tolls, statutory airport fees, flight delay monitoring, and chauffeur gratuities. No surge pricing or unexpected surcharges apply.
             </p>
 
             <h3 className="text-xl font-serif font-semibold mt-6">4. Cancellation & Modification Policies</h3>

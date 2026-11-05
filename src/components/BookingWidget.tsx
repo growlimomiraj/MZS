@@ -8,44 +8,20 @@ import {
   Check,
   AlertCircle,
   X,
+  Compass,
+  Loader2,
 } from 'lucide-react';
 import { BookingState, BookingType } from '../types';
+import {
+  searchAddress,
+  calculateDrivingDistance,
+  AddressSuggestion,
+  LUXURY_LOCATIONS,
+} from '../services/mapsService';
 
 interface BookingWidgetProps {
   onSearch: (bookingData: BookingState) => void;
 }
-
-const LUXURY_LOCATIONS = [
-  // US Major Airports & Private FBOs
-  { id: 'jfk', title: 'JFK - John F. Kennedy International Airport', subtitle: 'Queens, New York, United States', type: 'airport' },
-  { id: 'lga', title: 'LGA - LaGuardia Airport', subtitle: 'Queens, New York, United States', type: 'airport' },
-  { id: 'ewr', title: 'EWR - Newark Liberty International Airport', subtitle: 'Newark, New Jersey, United States', type: 'airport' },
-  { id: 'teb', title: 'TEB - Teterboro Airport (Private Aviation FBO)', subtitle: 'Teterboro, New Jersey, United States', type: 'airport' },
-  { id: 'lax', title: 'LAX - Los Angeles International Airport', subtitle: 'Los Angeles, California, United States', type: 'airport' },
-  { id: 'vny', title: 'VNY - Van Nuys Executive Airport FBO', subtitle: 'Van Nuys, California, United States', type: 'airport' },
-  { id: 'sfo', title: 'SFO - San Francisco International Airport', subtitle: 'San Mateo County, California, United States', type: 'airport' },
-  { id: 'mia', title: 'MIA - Miami International Airport', subtitle: 'Miami, Florida, United States', type: 'airport' },
-  { id: 'opf', title: 'OPF - Miami-Opa Locka Executive Airport FBO', subtitle: 'Opa-locka, Florida, United States', type: 'airport' },
-  { id: 'pbi', title: 'PBI - Palm Beach International Airport', subtitle: 'West Palm Beach, Florida, United States', type: 'airport' },
-  { id: 'ord', title: 'ORD - O\'Hare International Airport', subtitle: 'Chicago, Illinois, United States', type: 'airport' },
-  { id: 'bos', title: 'BOS - Boston Logan International Airport', subtitle: 'Boston, Massachusetts, United States', type: 'airport' },
-  { id: 'dfw', title: 'DFW - Dallas/Fort Worth International Airport', subtitle: 'Dallas, Texas, United States', type: 'airport' },
-  { id: 'las', title: 'LAS - Harry Reid International Airport', subtitle: 'Las Vegas, Nevada, United States', type: 'airport' },
-
-  // US Luxury Hotels & Landmarks
-  { id: 'plaza', title: 'The Plaza Hotel', subtitle: 'Fifth Avenue at Central Park South, New York, NY', type: 'hotel' },
-  { id: 'ritz_ny', title: 'The Ritz-Carlton New York, Central Park', subtitle: '50 Central Park South, New York, NY', type: 'hotel' },
-  { id: 'fourseasons_ny', title: 'Four Seasons Hotel New York Downtown', subtitle: '27 Barclay Street, New York, NY', type: 'hotel' },
-  { id: 'beverly_hills', title: 'The Beverly Hills Hotel', subtitle: '9641 Sunset Boulevard, Beverly Hills, CA', type: 'hotel' },
-  { id: 'chateau_marmont', title: 'Chateau Marmont', subtitle: '8221 Sunset Boulevard, West Hollywood, CA', type: 'hotel' },
-  { id: 'faena_mia', title: 'Faena Hotel Miami Beach', subtitle: '3201 Collins Ave, Miami Beach, FL', type: 'hotel' },
-  { id: 'breakers_pbi', title: 'The Breakers Palm Beach', subtitle: '1 S County Rd, Palm Beach, FL', type: 'hotel' },
-  { id: 'peninsula_chi', title: 'The Peninsula Chicago', subtitle: '108 E Superior St, Chicago, IL', type: 'hotel' },
-  { id: 'financial_dist', title: 'Financial District / Wall Street', subtitle: 'Manhattan, New York, NY 10005', type: 'landmark' },
-  { id: 'midtown_manhattan', title: 'Midtown Manhattan', subtitle: 'New York, NY 10019, United States', type: 'landmark' },
-  { id: 'silicon_valley', title: 'Silicon Valley / Sand Hill Road', subtitle: 'Menlo Park, CA 94025, United States', type: 'landmark' },
-  { id: 'brickell_mia', title: 'Brickell Financial District', subtitle: 'Miami, FL 33131, United States', type: 'landmark' },
-];
 
 export const BookingWidget: React.FC<BookingWidgetProps> = ({ onSearch }) => {
   const [bookingType, setBookingType] = useState<BookingType>('transfer');
@@ -93,19 +69,46 @@ export const BookingWidget: React.FC<BookingWidgetProps> = ({ onSearch }) => {
     return () => document.removeEventListener('mousedown', handleClickOutside);
   }, []);
 
-  // Filter location suggestions
-  const filterLocations = (query: string) => {
-    if (!query.trim()) return LUXURY_LOCATIONS.slice(0, 7);
-    const q = query.toLowerCase();
-    return LUXURY_LOCATIONS.filter(
-      (l) => l.title.toLowerCase().includes(q) || l.subtitle.toLowerCase().includes(q)
-    );
-  };
+  const [pickupCoords, setPickupCoords] = useState<{ lat?: number; lng?: number } | null>(null);
+  const [dropoffCoords, setDropoffCoords] = useState<{ lat?: number; lng?: number } | null>(null);
+  const [pickupSuggestions, setPickupSuggestions] = useState<AddressSuggestion[]>(() => LUXURY_LOCATIONS.slice(0, 6));
+  const [dropoffSuggestions, setDropoffSuggestions] = useState<AddressSuggestion[]>(() => LUXURY_LOCATIONS.slice(0, 6));
+  const [isSearchingPickup, setIsSearchingPickup] = useState(false);
+  const [isSearchingDropoff, setIsSearchingDropoff] = useState(false);
 
-  const filteredPickups = filterLocations(pickup);
-  const filteredDropoffs = filterLocations(dropoff);
+  // Debounce address searching for pickup
+  useEffect(() => {
+    const timer = setTimeout(async () => {
+      setIsSearchingPickup(true);
+      try {
+        const results = await searchAddress(pickup);
+        setPickupSuggestions(results);
+      } catch (err) {
+        console.warn('Pickup address search error', err);
+      } finally {
+        setIsSearchingPickup(false);
+      }
+    }, 250);
+    return () => clearTimeout(timer);
+  }, [pickup]);
 
-  // Handle Form Submission
+  // Debounce address searching for dropoff
+  useEffect(() => {
+    const timer = setTimeout(async () => {
+      setIsSearchingDropoff(true);
+      try {
+        const results = await searchAddress(dropoff);
+        setDropoffSuggestions(results);
+      } catch (err) {
+        console.warn('Dropoff address search error', err);
+      } finally {
+        setIsSearchingDropoff(false);
+      }
+    }, 250);
+    return () => clearTimeout(timer);
+  }, [dropoff]);
+
+  // Handle Form Submission with dynamic distance calculation
   const handleSearchSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     if (!pickup.trim()) {
@@ -117,6 +120,13 @@ export const BookingWidget: React.FC<BookingWidgetProps> = ({ onSearch }) => {
       return;
     }
 
+    const { distanceMiles, durationMinutes } = calculateDrivingDistance(
+      pickupCoords?.lat,
+      pickupCoords?.lng,
+      dropoffCoords?.lat,
+      dropoffCoords?.lng
+    );
+
     setError(null);
     onSearch({
       type: bookingType,
@@ -125,6 +135,8 @@ export const BookingWidget: React.FC<BookingWidgetProps> = ({ onSearch }) => {
       durationHours: durationHours,
       date: pickupDate,
       time: pickupTime,
+      distanceMiles,
+      estimatedMinutes: durationMinutes,
     });
   };
 
@@ -282,16 +294,21 @@ export const BookingWidget: React.FC<BookingWidgetProps> = ({ onSearch }) => {
 
               {/* Suggestions Dropdown */}
               {showPickupSuggestions && (
-                <div className="absolute top-full left-0 mt-2 w-full sm:w-[380px] bg-[#0F1319]/98 backdrop-blur-2xl border border-white/20 rounded-2xl p-2 z-50 shadow-2xl max-h-80 overflow-y-auto animate-in fade-in zoom-in-95">
-                  <div className="text-[10px] font-semibold text-gray-400 uppercase px-3 py-1.5 tracking-wider">
-                    Popular Locations
+                <div className="absolute top-full left-0 mt-2 w-full sm:w-[420px] bg-[#0F1319]/98 backdrop-blur-2xl border border-white/20 rounded-2xl p-2 z-50 shadow-2xl max-h-84 overflow-y-auto animate-in fade-in zoom-in-95">
+                  <div className="flex items-center justify-between text-[10px] font-semibold text-gray-400 uppercase px-3 py-1.5 tracking-wider border-b border-white/10 mb-1">
+                    <span className="flex items-center gap-1.5 text-sky-400">
+                      <Compass className="w-3 h-3 text-[#0F63BD]" />
+                      Google Maps & US Addresses
+                    </span>
+                    {isSearchingPickup && <Loader2 className="w-3 h-3 animate-spin text-gray-400" />}
                   </div>
-                  {filteredPickups.map((item) => (
+                  {pickupSuggestions.map((item) => (
                     <button
                       key={item.id}
                       type="button"
                       onClick={() => {
-                        setPickup(item.title);
+                        setPickup(item.address || item.title);
+                        setPickupCoords({ lat: item.lat, lng: item.lng });
                         setShowPickupSuggestions(false);
                       }}
                       className="w-full text-left flex items-start gap-3 p-2.5 rounded-xl hover:bg-white/10 transition-colors cursor-pointer group"
@@ -301,9 +318,9 @@ export const BookingWidget: React.FC<BookingWidgetProps> = ({ onSearch }) => {
                       ) : (
                         <MapPin className="w-4 h-4 text-[#0F63BD] mt-0.5 shrink-0 group-hover:scale-110 transition-transform" />
                       )}
-                      <div>
-                        <div className="text-sm font-medium text-white">{item.title}</div>
-                        <div className="text-xs text-gray-400">{item.subtitle}</div>
+                      <div className="min-w-0">
+                        <div className="text-sm font-medium text-white truncate">{item.title}</div>
+                        <div className="text-xs text-gray-400 truncate">{item.subtitle}</div>
                       </div>
                     </button>
                   ))}
@@ -339,7 +356,10 @@ export const BookingWidget: React.FC<BookingWidgetProps> = ({ onSearch }) => {
                   {dropoff && (
                     <button
                       type="button"
-                      onClick={() => setDropoff('')}
+                      onClick={() => {
+                        setDropoff('');
+                        setDropoffCoords(null);
+                      }}
                       className="text-white/50 hover:text-white ml-2 focus:outline-none cursor-pointer"
                       aria-label="Clear drop-off location"
                     >
@@ -350,16 +370,21 @@ export const BookingWidget: React.FC<BookingWidgetProps> = ({ onSearch }) => {
 
                 {/* Suggestions Dropdown */}
                 {showDropoffSuggestions && (
-                  <div className="absolute top-full left-0 mt-2 w-full sm:w-[380px] bg-[#0F1319]/98 backdrop-blur-2xl border border-white/20 rounded-2xl p-2 z-50 shadow-2xl max-h-80 overflow-y-auto animate-in fade-in zoom-in-95">
-                    <div className="text-[10px] font-semibold text-gray-400 uppercase px-3 py-1.5 tracking-wider">
-                      Popular Destinations
+                  <div className="absolute top-full left-0 mt-2 w-full sm:w-[420px] bg-[#0F1319]/98 backdrop-blur-2xl border border-white/20 rounded-2xl p-2 z-50 shadow-2xl max-h-84 overflow-y-auto animate-in fade-in zoom-in-95">
+                    <div className="flex items-center justify-between text-[10px] font-semibold text-gray-400 uppercase px-3 py-1.5 tracking-wider border-b border-white/10 mb-1">
+                      <span className="flex items-center gap-1.5 text-sky-400">
+                        <Compass className="w-3 h-3 text-[#0F63BD]" />
+                        Google Maps & US Destinations
+                      </span>
+                      {isSearchingDropoff && <Loader2 className="w-3 h-3 animate-spin text-gray-400" />}
                     </div>
-                    {filteredDropoffs.map((item) => (
+                    {dropoffSuggestions.map((item) => (
                       <button
                         key={item.id}
                         type="button"
                         onClick={() => {
-                          setDropoff(item.title);
+                          setDropoff(item.address || item.title);
+                          setDropoffCoords({ lat: item.lat, lng: item.lng });
                           setShowDropoffSuggestions(false);
                         }}
                         className="w-full text-left flex items-start gap-3 p-2.5 rounded-xl hover:bg-white/10 transition-colors cursor-pointer group"
@@ -369,9 +394,9 @@ export const BookingWidget: React.FC<BookingWidgetProps> = ({ onSearch }) => {
                         ) : (
                           <MapPin className="w-4 h-4 text-[#0F63BD] mt-0.5 shrink-0 group-hover:scale-110 transition-transform" />
                         )}
-                        <div>
-                          <div className="text-sm font-medium text-white">{item.title}</div>
-                          <div className="text-xs text-gray-400">{item.subtitle}</div>
+                        <div className="min-w-0">
+                          <div className="text-sm font-medium text-white truncate">{item.title}</div>
+                          <div className="text-xs text-gray-400 truncate">{item.subtitle}</div>
                         </div>
                       </button>
                     ))}

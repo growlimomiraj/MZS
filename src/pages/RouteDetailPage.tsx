@@ -44,7 +44,7 @@ export const RouteDetailPage: React.FC<RouteDetailPageProps> = ({
             {from} to {to}
           </h1>
           <p className="text-lg sm:text-xl text-gray-200 max-w-2xl mx-auto mb-10 font-light leading-relaxed">
-            Relax in executive comfort across {distance} in approximately {duration}. Guaranteed all-inclusive fixed rates calculated directly with MZS Executive Chauffeurs.
+            Relax in executive comfort across {distance} in approximately {duration}. Transparent all-inclusive quotes calculated by mileage with MZS Executive Chauffeurs.
           </p>
 
           <BookingWidget onSearch={onSearch} />
