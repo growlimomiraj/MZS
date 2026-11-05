@@ -64,7 +64,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onSearch }) => {
             ref={bgImgRef}
             src="/assets/hero/bg.webp"
             alt="MZS Executive Chauffeurs"
-            className="fixed max-lg:absolute inset-0 w-full h-full object-cover object-[center_32%]"
+            className="fixed max-lg:absolute inset-0 w-full h-full object-cover object-[center_28%] max-lg:object-[center_top]"
             loading="eager"
             fetchPriority="high"
           />
