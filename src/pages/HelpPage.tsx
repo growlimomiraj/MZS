@@ -11,11 +11,15 @@ export const HelpPage: React.FC<HelpPageProps> = ({ onNavigate }) => {
   const [searchTerm, setSearchTerm] = useState('');
   const [openFaq, setOpenFaq] = useState<number | null>(0);
 
-  const filteredFaqs = FAQS_DATA.filter(
-    (f) =>
-      f.q.toLowerCase().includes(searchTerm.toLowerCase()) ||
-      f.a.toLowerCase().includes(searchTerm.toLowerCase())
-  );
+  const getQuestion = (f: any): string => f.q || f.question || '';
+  const getAnswer = (f: any): string => f.a || f.answer || '';
+
+  const filteredFaqs = (FAQS_DATA || []).filter((f: any) => {
+    const q = getQuestion(f).toLowerCase();
+    const a = getAnswer(f).toLowerCase();
+    const s = searchTerm.toLowerCase();
+    return q.includes(s) || a.includes(s);
+  });
 
   return (
     <div className="bg-[#FAF8F5] text-[#0F1319]">
@@ -105,7 +109,7 @@ export const HelpPage: React.FC<HelpPageProps> = ({ onNavigate }) => {
                   onClick={() => setOpenFaq(openFaq === idx ? null : idx)}
                   className="w-full flex items-center justify-between p-6 text-left font-medium text-lg text-[#0F1319] hover:bg-[#FAF8F5] cursor-pointer"
                 >
-                  <span>{faq.q}</span>
+                  <span>{getQuestion(faq)}</span>
                   <ChevronDown
                     className={`w-5 h-5 text-gray-500 transition-transform duration-200 ${
                       openFaq === idx ? 'rotate-180 text-[#0066FF]' : ''
@@ -114,7 +118,7 @@ export const HelpPage: React.FC<HelpPageProps> = ({ onNavigate }) => {
                 </button>
                 {openFaq === idx && (
                   <div className="px-6 pb-6 text-sm text-[#596372] leading-relaxed border-t border-gray-100 pt-4">
-                    {faq.a}
+                    {getAnswer(faq)}
                   </div>
                 )}
               </div>

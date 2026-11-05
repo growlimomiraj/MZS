@@ -135,22 +135,32 @@ export const ROUTES_DATA = [
 
 export const FAQS_DATA = [
   {
+    q: 'How does airport pickup work?',
+    a: 'Your licensed executive chauffeur tracks your flight in real time using official FAA radar data. Once you land, you receive an automated SMS with your chauffeur’s direct contact and vehicle details. Chauffeurs wait in the arrivals hall with a personalized executive greeting sign and assist with your luggage. 60 minutes of complimentary wait time is included.',
     question: 'How does airport pickup work?',
-    answer: 'Your licensed executive chauffeur tracks your flight in real time using official FAA radar data. Once you land, you receive an automated SMS with your chauffeur’s direct contact and vehicle details. Chauffeurs wait in the arrivals hall with an personalized executive greeting sign and assist with your luggage. 60 minutes of complimentary wait time is included.'
+    answer: 'Your licensed executive chauffeur tracks your flight in real time using official FAA radar data. Once you land, you receive an automated SMS with your chauffeur’s direct contact and vehicle details. Chauffeurs wait in the arrivals hall with a personalized executive greeting sign and assist with your luggage. 60 minutes of complimentary wait time is included.'
   },
   {
+    q: 'Can I cancel or change my reservation?',
+    a: 'Yes. All one-way rides can be modified or cancelled free of charge up to 1 hour before scheduled pickup. For hourly reservations, free cancellation applies up to 24 hours prior to departure.',
     question: 'Can I cancel or change my reservation?',
     answer: 'Yes. All one-way rides can be modified or cancelled free of charge up to 1 hour before scheduled pickup. For hourly reservations, free cancellation applies up to 24 hours prior to departure.'
   },
   {
+    q: 'What is included in the fare?',
+    a: 'Every reservation includes commercial vehicle insurance, licensed professional chauffeur, state taxes, highway tolls, airport access surcharges, and chauffeur gratuity. There are zero surprise fees or hidden add-ons.',
     question: 'What is included in the fare?',
     answer: 'Every reservation includes commercial vehicle insurance, licensed professional chauffeur, state taxes, highway tolls, airport access surcharges, and chauffeur gratuity. There are zero surprise fees or hidden add-ons.'
   },
   {
+    q: 'Are child seats available?',
+    a: 'Yes, forward-facing, rear-facing, and booster child safety seats are available upon request during booking across our luxury SUV and sedan classes.',
     question: 'Are child seats available?',
     answer: 'Yes, forward-facing, rear-facing, and booster child safety seats are available upon request during booking across our luxury SUV and sedan classes.'
   },
   {
+    q: 'Do you offer direct corporate billing and 24/7 phone dispatch?',
+    a: 'Yes. Corporate accounts receive monthly centralized invoicing, dedicated account management, and priority dispatch. You can also reach our 24/7 executive dispatch line at (888) 801-7476 or email info@mzexecutivechauffeurs.com anytime.',
     question: 'Do you offer direct corporate billing and 24/7 phone dispatch?',
     answer: 'Yes. Corporate accounts receive monthly centralized invoicing, dedicated account management, and priority dispatch. You can also reach our 24/7 executive dispatch line at (888) 801-7476 or email info@mzexecutivechauffeurs.com anytime.'
   }
