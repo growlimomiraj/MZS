@@ -130,7 +130,7 @@ export const CitiesPage: React.FC<CitiesPageProps> = ({ onNavigate }) => {
           {featuredCities.map((c, idx) => (
             <div
               key={idx}
-              onClick={() => onNavigate('airport-transfer')}
+              onClick={() => onNavigate('/airport-transfer')}
               className="group relative rounded-3xl overflow-hidden aspect-[4/3] cursor-pointer shadow-md hover:shadow-2xl transition-all duration-300"
             >
               <img
@@ -170,7 +170,7 @@ export const CitiesPage: React.FC<CitiesPageProps> = ({ onNavigate }) => {
                 {regionGroup.cities.map((city, cIdx) => (
                   <div
                     key={cIdx}
-                    onClick={() => onNavigate('city-to-city')}
+                    onClick={() => onNavigate('/city-to-city')}
                     className="p-4 rounded-2xl bg-white border border-gray-200 hover:border-[#0066FF] hover:shadow-md transition-all cursor-pointer group"
                   >
                     <span className="text-sm font-medium text-gray-800 group-hover:text-[#0066FF] transition-colors block">

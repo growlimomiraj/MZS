@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { BookingWidget } from '../components/BookingWidget';
 import { BookingState, PageRoute } from '../types';
 import { VEHICLE_CLASSES } from '../constants/data';
-import { Clock, Navigation, Briefcase, ChevronDown, Check, Sparkles, ShieldCheck } from 'lucide-react';
+import { Clock, Navigation, Briefcase, ChevronDown, Check, Sparkles, ShieldCheck, ArrowRight } from 'lucide-react';
 
 interface HourlyHirePageProps {
   onSearch: (bookingData: BookingState) => void;
@@ -58,7 +58,7 @@ export const HourlyHirePage: React.FC<HourlyHirePageProps> = ({ onSearch, onNavi
             Enjoy absolute schedule freedom with an elite MZS Executive Chauffeur on standby as long as you need. Unlimited stops, complete discretion across the United States.
           </p>
 
-          <BookingWidget onSearch={onSearch} defaultServiceType="hourly" />
+          <BookingWidget onSearch={onSearch} defaultBookingType="hourly" />
         </div>
       </section>
 

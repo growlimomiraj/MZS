@@ -114,7 +114,7 @@ export const LimousineServicePage: React.FC<LimousineServicePageProps> = ({ onSe
               From business dinners in Manhattan to Beverly Hills galas, private FBO departures, and high-profile US corporate summits, our limousine fleet is tailored to your taste and stature.
             </p>
             <button
-              onClick={() => onNavigate('city-to-city')}
+              onClick={() => onNavigate('/city-to-city')}
               className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-[#0F1319] text-white hover:bg-black font-medium text-sm transition-all"
             >
               Explore City-to-City Limousines <ArrowRight className="w-4 h-4" />

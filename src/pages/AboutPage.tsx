@@ -107,7 +107,7 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onNavigate }) => {
               By combining real-time flight tracking, strict vehicle standards, and 24/7 US dispatch support, we ensure your chauffeur is waiting for you with a personalized welcome, whether in New York, Miami, Chicago, or Los Angeles.
             </p>
             <button
-              onClick={() => onNavigate('sustainability')}
+              onClick={() => onNavigate('/sustainability')}
               className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-[#0F1319] text-white hover:bg-black font-medium text-sm transition-all"
             >
               Learn about our Green Initiatives <ArrowRight className="w-4 h-4" />

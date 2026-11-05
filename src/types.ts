@@ -63,11 +63,16 @@ export type PageRoute =
   | '/city-to-city/new-york-east-hampton'
   | '/city-to-city/los-angeles-san-diego'
   | '/city-to-city/miami-palm-beach'
+  | '/city-to-city/new-york-philadelphia'
+  | '/city-to-city/san-francisco-napa-valley'
+  | '/city-to-city/los-angeles-palm-springs'
   | '/city-to-city/london-bristol'
   | '/city-to-city/abu-dhabi-dubai'
   | '/city-to-city/paris-reims'
+  | `/city-to-city/${string}`
   | '/terms'
   | '/privacy-policy'
   | '/imprint'
-  | '/accessibility';
+  | '/accessibility'
+  | (string & {});
 

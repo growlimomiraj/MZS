@@ -230,7 +230,7 @@ export const AirportTransferPage: React.FC<AirportTransferPageProps> = ({ onSear
               Bypass taxi queues, avoid rideshare parking structure walks, and skip dynamic surge pricing spikes. MZS Executive Chauffeurs delivers effortless curbside elegance across all 50 states.
             </p>
             <button
-              onClick={() => onNavigate('cities')}
+              onClick={() => onNavigate('/cities')}
               className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-[#0F1319] text-white hover:bg-black font-medium text-sm transition-all"
             >
               Explore all US service cities <ArrowRight className="w-4 h-4" />

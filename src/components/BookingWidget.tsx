@@ -21,10 +21,11 @@ import {
 
 interface BookingWidgetProps {
   onSearch: (bookingData: BookingState) => void;
+  defaultBookingType?: BookingType;
 }
 
-export const BookingWidget: React.FC<BookingWidgetProps> = ({ onSearch }) => {
-  const [bookingType, setBookingType] = useState<BookingType>('transfer');
+export const BookingWidget: React.FC<BookingWidgetProps> = ({ onSearch, defaultBookingType = 'transfer' }) => {
+  const [bookingType, setBookingType] = useState<BookingType>(defaultBookingType);
   const [pickup, setPickup] = useState('');
   const [dropoff, setDropoff] = useState('');
   const [durationHours, setDurationHours] = useState(3);

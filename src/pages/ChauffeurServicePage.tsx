@@ -114,7 +114,7 @@ export const ChauffeurServicePage: React.FC<ChauffeurServicePageProps> = ({ onSe
               Trust your travel to professionals who care about your schedule as much as you do. Available for one-way journeys, city-to-city corridors, airport pickups, and full-day dedicated hire.
             </p>
             <button
-              onClick={() => onNavigate('airport-transfer')}
+              onClick={() => onNavigate('/airport-transfer')}
               className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-[#0F1319] text-white hover:bg-black font-medium text-sm transition-all"
             >
               Book an airport chauffeur <ArrowRight className="w-4 h-4" />
