@@ -629,22 +629,6 @@ export const BookingWidget: React.FC<BookingWidgetProps> = ({ onSearch }) => {
           </div>
         )}
       </div>
-
-      {/* Companion InfoCard */}
-      <div className="hidden sm:flex items-center justify-center gap-3 mt-6 text-white/90 select-none opacity-85 hover:opacity-100 transition-opacity">
-        <img
-          src="/assets/hero/nav-plane.svg"
-          alt=""
-          className="w-8 h-8 object-contain shrink-0 drop-shadow"
-          onError={(e) => {
-            e.currentTarget.style.display = 'none';
-          }}
-        />
-        <div className="text-xs sm:text-sm font-['Geist',sans-serif] font-normal leading-tight text-center sm:text-left">
-          <span className="block text-white font-medium">MZS Executive Chauffeurs &bull; Nationwide USA</span>
-          <span className="block text-white/75">Guaranteed on-time pickups across all 50 states &bull; 24/7 Dispatch: (888) 801-7476</span>
-        </div>
-      </div>
     </div>
   );
 };
