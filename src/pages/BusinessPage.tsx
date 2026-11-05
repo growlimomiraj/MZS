@@ -127,7 +127,7 @@ export const BusinessPage: React.FC<BusinessPageProps> = ({ onNavigate, onOpenAu
               </p>
             </div>
             <img
-              src="/assets/pages/business-card-1.webp"
+              src="/assets/pages/business-card-1.jpg"
               alt="MZS corporate travel solution"
               className="w-full h-64 object-cover"
             />
@@ -142,7 +142,7 @@ export const BusinessPage: React.FC<BusinessPageProps> = ({ onNavigate, onOpenAu
               </p>
             </div>
             <img
-              src="/assets/pages/business-card-2.webp"
+              src="/assets/pages/business-card-2.jpg"
               alt="MZS travel management partner solution"
               className="w-full h-64 object-cover"
             />
