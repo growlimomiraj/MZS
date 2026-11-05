@@ -88,7 +88,7 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onNavigate }) => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           <div className="order-2 lg:order-1 relative rounded-3xl overflow-hidden shadow-2xl">
             <img
-              src="/assets/experience/ride-1.webp"
+              src="/assets/experience/ride-1.jpg"
               alt="MZS Executive Chauffeurs booking technology"
               className="w-full h-auto object-cover rounded-3xl aspect-[4/3]"
             />

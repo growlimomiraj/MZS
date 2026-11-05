@@ -9,19 +9,19 @@ const EXPERIENCES = [
     title: 'A welcome like no other',
     description:
       'The door is opened for you. Your luggage is stowed. Everything is taken care of.',
-    image: '/assets/experience/ride-1.webp',
+    image: '/assets/experience/ride-1.jpg',
   },
   {
     title: 'You set the tone',
     description:
       'Sit back and relax. Music and temperature will be adjusted to your preferences.',
-    image: '/assets/experience/ride-2.webp',
+    image: '/assets/experience/ride-2.jpg',
   },
   {
     title: 'Recharge your batteries',
     description:
       'Stay connected on the go with universal chargers for iOS and Android.',
-    image: '/assets/experience/ride-3.webp',
+    image: '/assets/experience/ride-3.jpg',
   },
 ];
 
