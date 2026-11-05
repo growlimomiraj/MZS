@@ -47,7 +47,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onSearch }) => {
   return (
     <section
       ref={sectionRef}
-      className="relative min-h-[100svh] flex flex-col justify-end items-center pb-8 sm:pb-12 lg:pb-14 px-4 sm:px-6 lg:px-8 bg-[#0F1319]"
+      className="relative z-30 min-h-[100svh] flex flex-col justify-end items-center pb-8 sm:pb-12 lg:pb-14 px-4 sm:px-6 lg:px-8 bg-[#0F1319]"
     >
       {/* Sticky Background Container */}
       <div className="absolute inset-0 [clip-path:inset(0)] pointer-events-none select-none z-0">
@@ -74,7 +74,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onSearch }) => {
       </div>
 
       {/* Content Container positioned in lower portion to match reference */}
-      <div className="relative z-10 w-full max-w-7xl mx-auto flex flex-col items-center text-center">
+      <div className="relative z-20 w-full max-w-7xl mx-auto flex flex-col items-center text-center">
         {/* Title: Exact Ice Blue color #aecff3 and PP Fragment typography */}
         <h1
           ref={titleRef}
@@ -84,7 +84,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onSearch }) => {
         </h1>
 
         {/* Booking Form Widget Container */}
-        <div id="booking-widget" ref={widgetContainerRef} className="w-full">
+        <div id="booking-widget" ref={widgetContainerRef} className="w-full relative z-30">
           <BookingWidget onSearch={onSearch} />
         </div>
       </div>

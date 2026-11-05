@@ -34,15 +34,17 @@ export const HourlyHirePage: React.FC<HourlyHirePageProps> = ({ onSearch, onNavi
   return (
     <div className="bg-[#FAF8F5] text-[#0F1319]">
       {/* Hero */}
-      <section className="relative min-h-[85vh] flex flex-col justify-center items-center pt-32 pb-24 px-4 sm:px-6 lg:px-8 bg-[#0F1319] text-white overflow-hidden">
-        <div
-          className="absolute inset-0 bg-cover bg-center brightness-75 contrast-105 pointer-events-none"
-          style={{
-            backgroundImage:
-              'url(/assets/pages/hourly-hero.jpg)',
-          }}
-        />
-        <div className="absolute inset-0 bg-gradient-to-t from-[#0F1319]/90 via-[#0F1319]/40 to-black/60 pointer-events-none" />
+      <section className="relative z-30 min-h-[85vh] flex flex-col justify-center items-center pt-32 pb-24 px-4 sm:px-6 lg:px-8 bg-[#0F1319] text-white">
+        <div className="absolute inset-0 [clip-path:inset(0)] pointer-events-none">
+          <div
+            className="absolute inset-0 bg-cover bg-center brightness-75 contrast-105"
+            style={{
+              backgroundImage:
+                'url(/assets/pages/hourly-hero.jpg)',
+            }}
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-[#0F1319]/90 via-[#0F1319]/40 to-black/60" />
+        </div>
 
         <div className="relative z-10 w-full max-w-5xl mx-auto text-center mb-10">
           <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/10 backdrop-blur-md text-xs font-semibold uppercase tracking-widest text-gray-200 mb-6 border border-white/15">

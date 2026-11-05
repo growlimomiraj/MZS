@@ -249,7 +249,7 @@ export const BookingWidget: React.FC<BookingWidgetProps> = ({ onSearch }) => {
       </div>
 
       {/* 2. Main Booking Window Bar matching reference image pixel-for-pixel */}
-      <div className="w-full relative backdrop-blur-2xl bg-black/40 border border-white/20 rounded-xl p-4 sm:p-5 lg:py-3.5 lg:px-6 shadow-[0_8px_32px_rgba(0,0,0,0.45)] transition-all">
+      <div className="w-full relative z-30 backdrop-blur-2xl bg-black/40 border border-white/20 rounded-xl p-4 sm:p-5 lg:py-3.5 lg:px-6 shadow-[0_8px_32px_rgba(0,0,0,0.45)] transition-all">
         <form
           onSubmit={handleSearchSubmit}
           className="flex flex-col lg:flex-row items-stretch lg:items-center gap-4 lg:gap-5 w-full"
@@ -257,7 +257,7 @@ export const BookingWidget: React.FC<BookingWidgetProps> = ({ onSearch }) => {
           {/* SECTION 1: Locations (Pickup & Drop-off with underlines) */}
           <div className="flex-1 grid grid-cols-1 sm:grid-cols-2 gap-4 lg:gap-6">
             {/* A. Pickup Location */}
-            <div className="relative text-left">
+            <div className={`relative text-left ${showPickupSuggestions ? 'z-50' : 'z-20'}`}>
               <label className="block text-[13px] font-['Geist',sans-serif] font-medium text-white mb-1.5 select-none">
                 Pickup location
               </label>
@@ -294,7 +294,7 @@ export const BookingWidget: React.FC<BookingWidgetProps> = ({ onSearch }) => {
 
               {/* Suggestions Dropdown */}
               {showPickupSuggestions && (
-                <div className="absolute top-full left-0 mt-2 w-full sm:w-[420px] bg-[#0F1319]/98 backdrop-blur-2xl border border-white/20 rounded-2xl p-2 z-50 shadow-2xl max-h-84 overflow-y-auto animate-in fade-in zoom-in-95">
+                <div className="absolute top-full left-0 mt-2 w-full sm:w-[420px] bg-[#0F1319]/98 backdrop-blur-2xl border border-white/20 rounded-2xl p-2 z-[60] shadow-2xl max-h-84 overflow-y-auto animate-in fade-in zoom-in-95">
                   <div className="flex items-center justify-between text-[10px] font-semibold text-gray-400 uppercase px-3 py-1.5 tracking-wider border-b border-white/10 mb-1">
                     <span className="flex items-center gap-1.5 text-sky-400">
                       <Compass className="w-3 h-3 text-[#0F63BD]" />
@@ -330,7 +330,7 @@ export const BookingWidget: React.FC<BookingWidgetProps> = ({ onSearch }) => {
 
             {/* B. Drop-off Location OR Duration */}
             {bookingType === 'transfer' ? (
-              <div className="relative text-left">
+              <div className={`relative text-left ${showDropoffSuggestions ? 'z-50' : 'z-20'}`}>
                 <label className="block text-[13px] font-['Geist',sans-serif] font-medium text-white mb-1.5 select-none">
                   Drop-off location
                 </label>
@@ -370,7 +370,7 @@ export const BookingWidget: React.FC<BookingWidgetProps> = ({ onSearch }) => {
 
                 {/* Suggestions Dropdown */}
                 {showDropoffSuggestions && (
-                  <div className="absolute top-full left-0 mt-2 w-full sm:w-[420px] bg-[#0F1319]/98 backdrop-blur-2xl border border-white/20 rounded-2xl p-2 z-50 shadow-2xl max-h-84 overflow-y-auto animate-in fade-in zoom-in-95">
+                  <div className="absolute top-full left-0 mt-2 w-full sm:w-[420px] bg-[#0F1319]/98 backdrop-blur-2xl border border-white/20 rounded-2xl p-2 z-[60] shadow-2xl max-h-84 overflow-y-auto animate-in fade-in zoom-in-95">
                     <div className="flex items-center justify-between text-[10px] font-semibold text-gray-400 uppercase px-3 py-1.5 tracking-wider border-b border-white/10 mb-1">
                       <span className="flex items-center gap-1.5 text-sky-400">
                         <Compass className="w-3 h-3 text-[#0F63BD]" />
@@ -423,7 +423,7 @@ export const BookingWidget: React.FC<BookingWidgetProps> = ({ onSearch }) => {
                 </div>
 
                 {showDurationPicker && (
-                  <div className="absolute top-full left-0 mt-2 w-56 bg-[#0F1319]/98 backdrop-blur-2xl border border-white/20 rounded-2xl p-2 z-50 shadow-2xl max-h-64 overflow-y-auto animate-in fade-in zoom-in-95">
+                  <div className="absolute top-full left-0 mt-2 w-56 bg-[#0F1319]/98 backdrop-blur-2xl border border-white/20 rounded-2xl p-2 z-[60] shadow-2xl max-h-64 overflow-y-auto animate-in fade-in zoom-in-95">
                     <div className="text-[10px] font-semibold text-gray-400 uppercase px-3 py-1.5 tracking-wider">
                       Hire Duration
                     </div>
@@ -453,7 +453,7 @@ export const BookingWidget: React.FC<BookingWidgetProps> = ({ onSearch }) => {
           {/* SECTION 2: Schedule (Date & Pickup time with underlines and chevrons) */}
           <div className="w-full lg:w-[380px] grid grid-cols-1 sm:grid-cols-2 gap-4 lg:gap-6">
             {/* C. Date */}
-            <div className="relative text-left cursor-pointer">
+            <div className={`relative text-left cursor-pointer ${showDatePicker ? 'z-50' : 'z-20'}`}>
               <label className="block text-[13px] font-['Geist',sans-serif] font-medium text-white mb-1.5 select-none">
                 Date
               </label>
@@ -479,7 +479,7 @@ export const BookingWidget: React.FC<BookingWidgetProps> = ({ onSearch }) => {
 
               {/* Custom Interactive Calendar Popover */}
               {showDatePicker && (
-                <div className="absolute top-full left-0 sm:left-auto sm:right-0 lg:left-0 mt-2 w-[310px] bg-[#0F1319]/98 backdrop-blur-2xl border border-white/20 rounded-2xl p-4 z-50 shadow-2xl animate-in fade-in zoom-in-95 select-none">
+                <div className="absolute top-full left-0 sm:left-auto sm:right-0 lg:left-0 mt-2 w-[310px] bg-[#0F1319]/98 backdrop-blur-2xl border border-white/20 rounded-2xl p-4 z-[60] shadow-2xl animate-in fade-in zoom-in-95 select-none">
                   {/* Month & Year Navigation Header */}
                   <div className="flex items-center justify-between mb-3 pb-2 border-b border-white/15">
                     <button
@@ -551,7 +551,7 @@ export const BookingWidget: React.FC<BookingWidgetProps> = ({ onSearch }) => {
             </div>
 
             {/* D. Pickup Time Picker */}
-            <div className="relative text-left cursor-pointer">
+            <div className={`relative text-left cursor-pointer ${showTimePicker ? 'z-50' : 'z-20'}`}>
               <label className="block text-[13px] font-['Geist',sans-serif] font-medium text-white mb-1.5 select-none">
                 Pickup time
               </label>
@@ -579,7 +579,7 @@ export const BookingWidget: React.FC<BookingWidgetProps> = ({ onSearch }) => {
               {showTimePicker && (
                 <div
                   ref={timePickerRef}
-                  className="absolute top-full right-0 mt-2 w-48 bg-[#0F1319]/98 backdrop-blur-2xl border border-white/20 rounded-2xl p-2 z-50 shadow-2xl max-h-64 overflow-y-auto animate-in fade-in zoom-in-95"
+                  className="absolute top-full right-0 mt-2 w-48 bg-[#0F1319]/98 backdrop-blur-2xl border border-white/20 rounded-2xl p-2 z-[60] shadow-2xl max-h-64 overflow-y-auto animate-in fade-in zoom-in-95"
                 >
                   <div className="text-[10px] font-semibold text-gray-400 uppercase px-3 py-1.5 tracking-wider">
                     Select Time

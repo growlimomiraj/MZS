@@ -108,7 +108,7 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({ onNavigate }) 
   return (
     <section
       ref={sectionRef}
-      className="relative z-10 bg-[#eaf2fb] text-[#0F1319] py-20 lg:py-28 px-4 sm:px-8 lg:px-12 transition-colors duration-700 overflow-hidden shadow-[0_-8px_30px_rgba(0,0,0,0.12)]"
+      className="relative z-0 bg-[#eaf2fb] text-[#0F1319] py-20 lg:py-28 px-4 sm:px-8 lg:px-12 transition-colors duration-700 overflow-hidden shadow-[0_-8px_30px_rgba(0,0,0,0.12)]"
     >
       <div className="w-full max-w-[1720px] mx-auto">
         {/* Title & Subtitle - Centered matching reference video */}
