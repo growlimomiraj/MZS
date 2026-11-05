@@ -22,6 +22,7 @@ import { RouteDetailPage } from './pages/RouteDetailPage';
 import { LegalPage } from './pages/LegalPage';
 
 import { BookingState, PageRoute } from './types';
+import { ArrowUp } from 'lucide-react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
@@ -132,18 +133,31 @@ export function App() {
   const [isVehicleModalOpen, setIsVehicleModalOpen] = useState(false);
   const [isAuthModalOpen, setIsAuthModalOpen] = useState(false);
   const [isCookieModalOpen, setIsCookieModalOpen] = useState(false);
+  const [showScrollTop, setShowScrollTop] = useState(false);
 
-  // Sync route with browser history
+  // Sync route with browser history and always scroll to top on history navigation
   useEffect(() => {
     const handlePopState = () => {
       setCurrentRoute(normalizeRoutePath(window.location.pathname));
+      window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
     };
     window.addEventListener('popstate', handlePopState);
     return () => window.removeEventListener('popstate', handlePopState);
   }, []);
 
-  // Recalibrate ScrollTrigger and update browser title whenever route changes
+  // Monitor scroll distance for back-to-top floating control
   useEffect(() => {
+    const handleScroll = () => {
+      setShowScrollTop(window.scrollY > 350);
+    };
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  // Recalibrate ScrollTrigger, ensure page scrolls to top, and update title on route change
+  useEffect(() => {
+    window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
+
     const titles: Record<string, string> = {
       '/': 'MZS Executive Chauffeurs | Premier Nationwide Chauffeur Service USA',
       '/airport-transfer': 'Airport Transfers across USA | MZS Executive Chauffeurs',
@@ -177,19 +191,65 @@ export function App() {
     }
 
     const t = setTimeout(() => {
+      window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
       ScrollTrigger.refresh();
-    }, 200);
+    }, 50);
     return () => clearTimeout(t);
   }, [currentRoute]);
 
+  // Navigate to route and immediately scroll page to top
   const handleNavigate = (route: string) => {
     const normalized = normalizeRoutePath(route);
     setCurrentRoute(normalized);
     window.history.pushState({}, '', normalized === '/' ? '/' : normalized);
-    window.scrollTo(0, 0);
+    window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
     setTimeout(() => {
+      window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
       ScrollTrigger.refresh();
-    }, 50);
+    }, 20);
+  };
+
+  // Direct redirection to booking card widget with smooth scrolling and subtle highlight
+  const scrollToBookingWidget = () => {
+    const el = document.getElementById('booking-widget');
+    if (el) {
+      const headerOffset = 90;
+      const elementPosition = el.getBoundingClientRect().top;
+      const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+      window.scrollTo({
+        top: Math.max(0, offsetPosition),
+        behavior: 'smooth',
+      });
+      el.classList.add('ring-2', 'ring-[#0F63BD]', 'transition-all', 'duration-500');
+      setTimeout(() => {
+        el.classList.remove('ring-2', 'ring-[#0F63BD]');
+      }, 1600);
+    } else {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  };
+
+  const handleBookNow = () => {
+    const pagesWithWidget = [
+      '/',
+      '/airport-transfer',
+      '/hourly-car-service',
+      '/city-to-city',
+      '/chauffeur-service',
+      '/limousine-service',
+    ];
+
+    const hasWidgetOnCurrentPage =
+      pagesWithWidget.includes(currentRoute) || currentRoute.startsWith('/city-to-city/');
+
+    if (hasWidgetOnCurrentPage) {
+      scrollToBookingWidget();
+    } else {
+      handleNavigate('/');
+      setTimeout(() => {
+        scrollToBookingWidget();
+      }, 150);
+    }
   };
 
   const handleSearchSubmit = (data: BookingState) => {
@@ -306,13 +366,7 @@ export function App() {
         currentRoute={currentRoute}
         onNavigate={handleNavigate}
         onOpenAuth={() => setIsAuthModalOpen(true)}
-        onBookNowClick={() => {
-          if (currentRoute !== '/') {
-            handleNavigate('/');
-          } else {
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-          }
-        }}
+        onBookNowClick={handleBookNow}
       />
 
       {/* Main Page Content wrapped in Error Boundary */}
@@ -324,6 +378,19 @@ export function App() {
 
       {/* Global Footer */}
       <Footer onNavigate={handleNavigate} onOpenCookies={() => setIsCookieModalOpen(true)} />
+
+      {/* Floating Scroll-to-Top Control */}
+      {showScrollTop && (
+        <button
+          type="button"
+          onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+          className="fixed bottom-6 right-6 z-40 p-3 rounded-full bg-[#0F1319]/90 hover:bg-[#0066FF] text-white border border-white/20 shadow-2xl backdrop-blur-md transition-all duration-300 hover:scale-105 cursor-pointer flex items-center gap-1.5 animate-in fade-in zoom-in-90"
+          aria-label="Scroll to top of page"
+        >
+          <ArrowUp className="w-4 h-4 text-white" />
+          <span className="text-[11px] font-semibold pr-1 hidden sm:inline uppercase tracking-wider">Top</span>
+        </button>
+      )}
 
       {/* Modals & Overlays */}
       <AuthModal isOpen={isAuthModalOpen} onClose={() => setIsAuthModalOpen(false)} />

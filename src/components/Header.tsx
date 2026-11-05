@@ -66,6 +66,7 @@ export const Header: React.FC<HeaderProps> = ({
     setActiveDropdown(null);
     setIsMobileMenuOpen(false);
     onNavigate(route);
+    window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
   };
 
   const isLight = isScrolled || (colorMode === 'light' && currentRoute !== '/');
@@ -287,25 +288,27 @@ export const Header: React.FC<HeaderProps> = ({
             <span>Sign in</span>
           </button>
 
-          {/* Book Now Button: Only visible on scrolled state or internal pages */}
-          {(isScrolled || currentRoute !== '/') && (
-            <button
-              type="button"
-              onClick={() => {
-                if (onBookNowClick) {
-                  onBookNowClick();
-                } else {
-                  handleNavClick('/');
-                  setTimeout(() => {
-                    window.scrollTo({ top: 0, behavior: 'smooth' });
-                  }, 100);
-                }
-              }}
-              className="px-5 py-2 text-sm font-semibold text-white bg-[#0F63BD] hover:bg-[#0D529C] rounded-full transition-all duration-200 shadow-md cursor-pointer animate-in fade-in zoom-in-95"
-            >
-              Book now
-            </button>
-          )}
+          {/* Book Now Button: Direct redirect/scroll to booking card */}
+          <button
+            type="button"
+            onClick={() => {
+              if (onBookNowClick) {
+                onBookNowClick();
+              } else {
+                handleNavClick('/');
+                setTimeout(() => {
+                  const el = document.getElementById('booking-widget');
+                  if (el) {
+                    const y = el.getBoundingClientRect().top + window.pageYOffset - 90;
+                    window.scrollTo({ top: Math.max(0, y), behavior: 'smooth' });
+                  }
+                }, 100);
+              }
+            }}
+            className="px-5 py-2 text-sm font-semibold text-white bg-[#0F63BD] hover:bg-[#0D529C] rounded-full transition-all duration-200 shadow-md cursor-pointer shrink-0"
+          >
+            Book now
+          </button>
 
           {/* Mobile Menu Hamburger */}
           <button
@@ -325,6 +328,21 @@ export const Header: React.FC<HeaderProps> = ({
       {isMobileMenuOpen && (
         <div className="lg:hidden fixed inset-0 top-[72px] bg-[#0F1319]/98 backdrop-blur-2xl z-40 overflow-y-auto px-6 py-6 border-t border-white/10 animate-in slide-in-from-top-4 duration-200">
           <div className="flex flex-col space-y-4">
+            {/* Direct Booking Button in Mobile Drawer */}
+            <button
+              type="button"
+              onClick={() => {
+                setIsMobileMenuOpen(false);
+                if (onBookNowClick) {
+                  onBookNowClick();
+                } else {
+                  handleNavClick('/');
+                }
+              }}
+              className="w-full py-3.5 px-6 rounded-2xl bg-[#0F63BD] hover:bg-[#0D529C] text-white font-semibold text-center shadow-lg transition-all cursor-pointer text-base"
+            >
+              Book now
+            </button>
             <div>
               <button
                 onClick={() =>

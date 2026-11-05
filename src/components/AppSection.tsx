@@ -52,7 +52,22 @@ export const AppSection: React.FC = () => {
   }, []);
 
   const scrollToBooking = () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    const el = document.getElementById('booking-widget');
+    if (el) {
+      const headerOffset = 90;
+      const elementPosition = el.getBoundingClientRect().top;
+      const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+      window.scrollTo({
+        top: Math.max(0, offsetPosition),
+        behavior: 'smooth',
+      });
+      el.classList.add('ring-2', 'ring-[#0F63BD]', 'transition-all', 'duration-500');
+      setTimeout(() => {
+        el.classList.remove('ring-2', 'ring-[#0F63BD]');
+      }, 1600);
+    } else {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
   };
 
   return (

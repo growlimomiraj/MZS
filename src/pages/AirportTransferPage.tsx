@@ -149,7 +149,15 @@ export const AirportTransferPage: React.FC<AirportTransferPageProps> = ({ onSear
                   <div className="text-[10px] text-gray-400">+$ {vc.basePrice} base flag drop</div>
                 </div>
                 <button
-                  onClick={() => onNavigate('/')}
+                  onClick={() => {
+                    const el = document.getElementById('booking-widget');
+                    if (el) {
+                      const y = el.getBoundingClientRect().top + window.pageYOffset - 90;
+                      window.scrollTo({ top: Math.max(0, y), behavior: 'smooth' });
+                    } else {
+                      window.scrollTo({ top: 0, behavior: 'smooth' });
+                    }
+                  }}
                   className="text-xs font-semibold text-[#0066FF] flex items-center gap-1 hover:underline cursor-pointer"
                 >
                   Book by Miles <ArrowRight className="w-3.5 h-3.5" />

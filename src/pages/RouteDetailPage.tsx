@@ -119,7 +119,15 @@ export const RouteDetailPage: React.FC<RouteDetailPageProps> = ({
                   <div className="text-sm font-bold text-[#0066FF]">All-Inclusive Quote</div>
                 </div>
                 <button
-                  onClick={() => onNavigate('/airport-transfer')}
+                  onClick={() => {
+                    const el = document.getElementById('booking-widget');
+                    if (el) {
+                      const y = el.getBoundingClientRect().top + window.pageYOffset - 90;
+                      window.scrollTo({ top: Math.max(0, y), behavior: 'smooth' });
+                    } else {
+                      window.scrollTo({ top: 0, behavior: 'smooth' });
+                    }
+                  }}
                   className="text-xs font-semibold text-[#0066FF] flex items-center gap-1 hover:underline cursor-pointer"
                 >
                   Reserve <ArrowRight className="w-3.5 h-3.5" />

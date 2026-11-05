@@ -214,7 +214,7 @@ export const BookingWidget: React.FC<BookingWidgetProps> = ({ onSearch, defaultB
   };
 
   return (
-    <div ref={widgetRef} className="w-full max-w-[1170px] mx-auto flex flex-col items-center">
+    <div id="booking-widget" ref={widgetRef} className="w-full max-w-[1170px] mx-auto flex flex-col items-center scroll-mt-24 transition-all">
       {/* 1. Category Selection Pill */}
       <div className="flex items-center justify-center mb-4 sm:mb-5">
         <div className="inline-grid grid-flow-col gap-1 p-1 bg-black/40 backdrop-blur-xl rounded-full border border-white/25 shadow-lg select-none">
