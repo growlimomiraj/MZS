@@ -187,7 +187,7 @@ export const PartnersPage: React.FC<PartnersPageProps> = ({ onNavigate }) => {
           <div className="p-8 rounded-3xl bg-white border border-gray-200 shadow-sm">
             <h4 className="font-serif text-xl text-[#0F1319] mb-3">Interior Detailing</h4>
             <p className="text-sm text-gray-600 leading-relaxed">
-              Showroom-condition black or dark executive leather interiors. Daily vacuuming, climate control, silent cabin, and complimentary passenger device chargers.
+              Showroom-condition black or dark executive leather interiors. Daily vacuuming, cabin temperature control, silent acoustic interior, and complimentary passenger device chargers.
             </p>
           </div>
           <div className="p-8 rounded-3xl bg-white border border-gray-200 shadow-sm">

@@ -57,7 +57,7 @@ export const VEHICLE_CLASSES: VehicleClass[] = [
       'VIP meet & greet inside airport terminal',
       'Complimentary 60 minutes airport wait time',
       'Highest chauffeur vetting rating',
-      'Onboard phone fast-chargers and climate tailored'
+      'Onboard phone fast-chargers and personalized cabin temperature'
     ]
   },
   {
@@ -94,12 +94,12 @@ export const VEHICLE_CLASSES: VehicleClass[] = [
     hourlyRate: 110,
     price: 162,
     currency: 'USD',
-    description: '100% emission-free zero-impact luxury journeys in leading electric vehicles across the USA.',
+    description: 'Ultra-modern, whisper-quiet luxury journeys in leading premium electric flagship sedans across the USA.',
     features: [
-      'Zero emissions on all rides',
+      'Whisper-quiet electric powertrain',
       'Ultra-quiet acoustic cabin experience',
       'Complimentary 60 minutes airport wait time',
-      '100% carbon-neutral luxury executive travel'
+      'Advanced executive acoustic cabin and fast charging'
     ]
   }
 ];

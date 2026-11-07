@@ -16,7 +16,6 @@ import { LimousineServicePage } from './pages/LimousineServicePage';
 import { PartnersPage } from './pages/PartnersPage';
 import { HelpPage } from './pages/HelpPage';
 import { AboutPage } from './pages/AboutPage';
-import { SustainabilityPage } from './pages/SustainabilityPage';
 import { CitiesPage } from './pages/CitiesPage';
 import { RouteDetailPage } from './pages/RouteDetailPage';
 import { LegalPage } from './pages/LegalPage';
@@ -172,7 +171,6 @@ export function App() {
       '/partners': 'Chauffeur Partner Network | MZS Executive Chauffeurs',
       '/about': 'About Us | MZS Executive Chauffeurs',
       '/career': 'Careers | MZS Executive Chauffeurs',
-      '/sustainability': '100% Carbon-Neutral Travel | MZS Executive Chauffeurs',
       '/cities': 'Service Cities Nationwide | MZS Executive Chauffeurs',
       '/countries': 'Service Regions | MZS Executive Chauffeurs',
       '/help': '24/7 Guest Concierge & Help | MZS Executive Chauffeurs',
@@ -295,11 +293,8 @@ export function App() {
     if (currentRoute === '/help') {
       return <HelpPage onNavigate={handleNavigate} />;
     }
-    if (currentRoute === '/about' || currentRoute === '/career') {
+    if (currentRoute === '/about' || currentRoute === '/career' || currentRoute === '/sustainability') {
       return <AboutPage onNavigate={handleNavigate} />;
-    }
-    if (currentRoute === '/sustainability') {
-      return <SustainabilityPage onNavigate={handleNavigate} />;
     }
     if (currentRoute === '/cities' || currentRoute === '/countries') {
       return <CitiesPage onNavigate={handleNavigate} />;

@@ -24,7 +24,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, onOpenCookies }) => 
             </div>
             <span className="text-gray-500 text-sm hidden sm:inline">|</span>
             <span className="text-gray-300 text-sm font-light">
-              Premier Nationwide Luxury Chauffeur Service across the USA
+              Premier Nationwide Luxury Chauffeur Service
             </span>
           </div>
 
@@ -69,14 +69,6 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, onOpenCookies }) => 
                   className="text-gray-300 hover:text-white transition-colors cursor-pointer text-left"
                 >
                   Careers
-                </button>
-              </li>
-              <li>
-                <button
-                  onClick={() => onNavigate('/sustainability')}
-                  className="text-gray-300 hover:text-white transition-colors cursor-pointer text-left"
-                >
-                  Green initiatives & EVs
                 </button>
               </li>
               <li>

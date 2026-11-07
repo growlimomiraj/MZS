@@ -71,7 +71,7 @@ export const LimousineServicePage: React.FC<LimousineServicePageProps> = ({ onSe
             </div>
             <h3 className="text-2xl font-serif mb-3">Flagship Sedans</h3>
             <p className="text-[#596372] text-sm sm:text-base leading-relaxed">
-              Only latest-generation executive sedans featuring acoustic noise cancellation, heated massage leather seats, and private climate zones.
+              Only latest-generation executive sedans featuring acoustic noise cancellation, heated massage leather seats, and individual temperature zones.
             </p>
           </div>
 

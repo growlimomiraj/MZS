@@ -54,7 +54,6 @@ export type PageRoute =
   | '/help'
   | '/about'
   | '/career'
-  | '/sustainability'
   | '/corporations'
   | '/travel-agencies'
   | '/strategic-partnerships'

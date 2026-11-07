@@ -46,8 +46,8 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onNavigate }) => {
             <div className="text-xs uppercase tracking-wider text-gray-500 font-medium">US Commercial & FBO Airports</div>
           </div>
           <div>
-            <div className="text-4xl sm:text-5xl font-serif font-normal text-[#0066FF] mb-1">100%</div>
-            <div className="text-xs uppercase tracking-wider text-gray-500 font-medium">Carbon Neutral Since 2017</div>
+            <div className="text-4xl sm:text-5xl font-serif font-normal text-[#0066FF] mb-1">99.8%</div>
+            <div className="text-xs uppercase tracking-wider text-gray-500 font-medium">On-Time Arrival Rate</div>
           </div>
           <div>
             <div className="text-4xl sm:text-5xl font-serif font-normal text-[#0066FF] mb-1">4.9 / 5</div>
@@ -107,10 +107,10 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onNavigate }) => {
               By combining real-time flight tracking, strict vehicle standards, and 24/7 US dispatch support, we ensure your chauffeur is waiting for you with a personalized welcome, whether in New York, Miami, Chicago, or Los Angeles.
             </p>
             <button
-              onClick={() => onNavigate('/sustainability')}
+              onClick={() => onNavigate('/chauffeur-service')}
               className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-[#0F1319] text-white hover:bg-black font-medium text-sm transition-all"
             >
-              Learn about our Green Initiatives <ArrowRight className="w-4 h-4" />
+              Explore Chauffeur Services <ArrowRight className="w-4 h-4" />
             </button>
           </div>
         </div>
