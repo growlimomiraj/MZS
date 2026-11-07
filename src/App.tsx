@@ -13,7 +13,6 @@ import { CityToCityPage } from './pages/CityToCityPage';
 import { BusinessPage } from './pages/BusinessPage';
 import { ChauffeurServicePage } from './pages/ChauffeurServicePage';
 import { LimousineServicePage } from './pages/LimousineServicePage';
-import { PartnersPage } from './pages/PartnersPage';
 import { HelpPage } from './pages/HelpPage';
 import { AboutPage } from './pages/AboutPage';
 import { CitiesPage } from './pages/CitiesPage';
@@ -168,7 +167,6 @@ export function App() {
       '/strategic-partnerships': 'Strategic Partnerships & VIP Aviation | MZS Executive Chauffeurs',
       '/chauffeur-service': 'Professional Chauffeurs USA | MZS Executive Chauffeurs',
       '/limousine-service': 'Luxury Limousine Service USA | MZS Executive Chauffeurs',
-      '/partners': 'Chauffeur Partner Network | MZS Executive Chauffeurs',
       '/about': 'About Us | MZS Executive Chauffeurs',
       '/career': 'Careers | MZS Executive Chauffeurs',
       '/cities': 'Service Cities Nationwide | MZS Executive Chauffeurs',
@@ -286,9 +284,6 @@ export function App() {
     }
     if (currentRoute === '/limousine-service') {
       return <LimousineServicePage onSearch={handleSearchSubmit} onNavigate={handleNavigate} />;
-    }
-    if (currentRoute === '/partners') {
-      return <PartnersPage onNavigate={handleNavigate} />;
     }
     if (currentRoute === '/help') {
       return <HelpPage onNavigate={handleNavigate} />;

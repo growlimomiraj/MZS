@@ -50,7 +50,6 @@ export type PageRoute =
   | '/limousine-service'
   | '/car-service'
   | '/ground-transportation'
-  | '/partners'
   | '/help'
   | '/about'
   | '/career'

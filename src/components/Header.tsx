@@ -210,12 +210,6 @@ export const Header: React.FC<HeaderProps> = ({
 
             {/* Direct Links */}
             <button
-              onClick={() => handleNavClick('/partners')}
-              className={`px-3 py-2 text-sm font-normal ${textColor} transition-colors cursor-pointer`}
-            >
-              For chauffeurs
-            </button>
-            <button
               onClick={() => handleNavClick('/help')}
               className={`px-3 py-2 text-sm font-normal ${textColor} transition-colors cursor-pointer`}
             >
@@ -443,12 +437,6 @@ export const Header: React.FC<HeaderProps> = ({
               )}
             </div>
 
-            <button
-              onClick={() => handleNavClick('/partners')}
-              className="text-left py-3 text-lg font-medium text-white border-b border-white/10 cursor-pointer"
-            >
-              For chauffeurs
-            </button>
             <button
               onClick={() => handleNavClick('/help')}
               className="text-left py-3 text-lg font-medium text-white border-b border-white/10 cursor-pointer"

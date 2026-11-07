@@ -73,14 +73,6 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, onOpenCookies }) => 
               </li>
               <li>
                 <button
-                  onClick={() => onNavigate('/partners')}
-                  className="text-gray-300 hover:text-white transition-colors cursor-pointer text-left"
-                >
-                  Become a chauffeur partner
-                </button>
-              </li>
-              <li>
-                <button
                   onClick={() => onNavigate('/help')}
                   className="text-gray-300 hover:text-white transition-colors cursor-pointer text-left"
                 >
