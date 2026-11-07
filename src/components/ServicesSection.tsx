@@ -120,7 +120,7 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({ onNavigate }) 
             Arrive at your best.
           </h2>
           <h3 className="text-base sm:text-xl text-[#666F7B] font-normal">
-            Effortless luxury journeys across the United States, tailored by MZS Executive Chauffeurs.
+            Effortless luxury journeys across the States, tailored by MZS Executive Chauffeurs.
           </h3>
         </div>
 
