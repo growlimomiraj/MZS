@@ -1,12 +1,12 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { MZSLogo } from './MZSLogo';
-import { ChevronDown, User, Menu, X, Globe, Check, Phone, Mail } from 'lucide-react';
+import { ChevronDown, Menu, X, Globe, Check, Phone, Mail } from 'lucide-react';
 import { PageRoute } from '../types';
 
 interface HeaderProps {
   currentRoute: PageRoute;
   onNavigate: (route: PageRoute) => void;
-  onOpenAuth: () => void;
+  onOpenAuth?: () => void;
   onBookNowClick?: () => void;
   colorMode?: 'dark' | 'light';
 }
@@ -267,20 +267,6 @@ export const Header: React.FC<HeaderProps> = ({
               <span>(888) 801-7476</span>
             </a>
           </nav>
-
-          {/* Sign in Button: Glass Pill or Clean White/Border Pill */}
-          <button
-            type="button"
-            onClick={onOpenAuth}
-            className={`flex items-center gap-2 px-4 py-2 text-sm font-normal rounded-full transition-all duration-200 cursor-pointer shadow-sm ${
-              isLight
-                ? 'border border-gray-300 text-[#0F1319] hover:bg-gray-50'
-                : 'glass-pill text-white hover:bg-white/20'
-            }`}
-          >
-            <User className="w-4 h-4 opacity-90" />
-            <span>Sign in</span>
-          </button>
 
           {/* Book Now Button: Direct redirect/scroll to booking card */}
           <button

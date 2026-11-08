@@ -4,10 +4,10 @@ import { Building2, CreditCard, ShieldCheck, FileText, CheckCircle2, ArrowRight,
 
 interface BusinessPageProps {
   onNavigate: (route: PageRoute) => void;
-  onOpenAuth: () => void;
+  onOpenAuth?: () => void;
 }
 
-export const BusinessPage: React.FC<BusinessPageProps> = ({ onNavigate, onOpenAuth }) => {
+export const BusinessPage: React.FC<BusinessPageProps> = ({ onNavigate }) => {
   const [formSubmitted, setFormSubmitted] = useState(false);
   const [companyName, setCompanyName] = useState('');
   const [workEmail, setWorkEmail] = useState('');
@@ -52,12 +52,6 @@ export const BusinessPage: React.FC<BusinessPageProps> = ({ onNavigate, onOpenAu
               className="px-8 py-4 bg-[#0066FF] hover:bg-[#0052CC] text-white font-medium rounded-full transition-all shadow-lg text-sm cursor-pointer"
             >
               Request Corporate Account
-            </button>
-            <button
-              onClick={onOpenAuth}
-              className="px-8 py-4 glass-pill text-white font-medium rounded-full transition-all text-sm cursor-pointer border border-white/20 hover:bg-white/15"
-            >
-              Sign In to Company Portal
             </button>
           </div>
         </div>

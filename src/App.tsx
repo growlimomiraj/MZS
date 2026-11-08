@@ -262,7 +262,7 @@ export function App() {
       currentRoute === '/travel-agencies' ||
       currentRoute === '/strategic-partnerships'
     ) {
-      return <BusinessPage onNavigate={handleNavigate} onOpenAuth={() => setIsAuthModalOpen(true)} />;
+      return <BusinessPage onNavigate={handleNavigate} />;
     }
     if (
       currentRoute === '/chauffeur-service' ||
@@ -344,7 +344,6 @@ export function App() {
       <Header
         currentRoute={currentRoute}
         onNavigate={handleNavigate}
-        onOpenAuth={() => setIsAuthModalOpen(true)}
         onBookNowClick={handleBookNow}
       />
 
