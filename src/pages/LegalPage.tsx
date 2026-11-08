@@ -96,7 +96,7 @@ export const LegalPage: React.FC<LegalPageProps> = ({ initialTab = 'terms', onNa
 
             <h3 className="text-xl font-serif font-semibold mt-6">2. Contractual Relationship & Booking Confirmation</h3>
             <p className="text-sm leading-relaxed text-[#596372]">
-              MZS Executive Chauffeurs arranges executive carriage agreements with fully licensed, commercially insured professional chauffeur partners. A binding booking confirmation is generated immediately upon reservation and delivered via email and SMS.
+              MZS Executive Chauffeurs arranges executive carriage agreements with fully licensed, commercially insured professional chauffeurs. A binding booking confirmation is generated immediately upon reservation and delivered via email and SMS.
             </p>
 
             <h3 className="text-xl font-serif font-semibold mt-6">3. Guaranteed All-Inclusive Pricing</h3>
@@ -139,10 +139,12 @@ export const LegalPage: React.FC<LegalPageProps> = ({ initialTab = 'terms', onNa
             <h2 className="text-3xl font-serif">Corporate Information</h2>
             <div className="p-8 rounded-2xl bg-white border border-gray-200 text-sm space-y-3 leading-relaxed text-[#596372] shadow-sm">
               <p><strong>Company Name:</strong> MZS Executive Chauffeurs Inc.</p>
-              <p><strong>Service Territory:</strong> United States Nationwide</p>
+              <p><strong>Headquarters Address:</strong> 245 Saw Mill River Road, Hawthorne, NY 10532</p>
+              <p><strong>Operations Hub:</strong> Saw Mill River Corridor, Westchester County, New York</p>
+              <p><strong>Service Territory:</strong> New York, Tri-State &amp; Mid-Atlantic Region</p>
               <p><strong>Client Inquiries Email:</strong> <a href="mailto:info@mzexecutivechauffeurs.com" className="text-[#0066FF] font-medium">info@mzexecutivechauffeurs.com</a></p>
               <p><strong>Toll-Free Client Care Line:</strong> <a href="tel:+18888017476" className="text-[#0066FF] font-medium">(888) 801-7476</a></p>
-              <p><strong>Hours of Operation:</strong> 24 Hours / 7 Days a Week Nationwide</p>
+              <p><strong>Hours of Operation:</strong> 24 Hours / 7 Days a Week Live Dispatch</p>
             </div>
           </div>
         )}

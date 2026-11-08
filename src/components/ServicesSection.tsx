@@ -114,13 +114,13 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({ onNavigate }) 
         {/* Title & Subtitle - Centered matching reference video */}
         <div ref={titleWrapperRef} className="text-center max-w-3xl mx-auto mb-12 sm:mb-16">
           <span className="text-xs font-semibold uppercase tracking-widest text-[#0F63BD] mb-3 block">
-            MZS Executive Services &bull; Nationwide USA
+            MZS Executive Services &bull; Executive Ground Travel
           </span>
           <h2 className="text-3xl sm:text-5xl lg:text-[56px] font-['PP_Fragment',serif] font-normal text-[#0F1319] tracking-tight leading-[1.1] mb-3">
             Arrive at your best.
           </h2>
           <h3 className="text-base sm:text-xl text-[#666F7B] font-normal">
-            Effortless luxury journeys across the States, tailored by MZS Executive Chauffeurs.
+            Effortless luxury journeys, tailored by MZS Executive Chauffeurs.
           </h3>
         </div>
 

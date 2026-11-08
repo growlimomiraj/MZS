@@ -11,10 +11,10 @@ interface FeatureItem {
 
 const FEATURES: FeatureItem[] = [
   {
-    title: 'Nationwide coverage',
+    title: 'Executive coverage',
     description: 'Licensed professional MZS chauffeurs',
     image: '/assets/excellence/like.png',
-    alt: 'Nationwide US coverage with MZS Executive Chauffeurs',
+    alt: 'Executive chauffeur coverage with MZS Executive Chauffeurs',
     svgFallback: <WorldwideIcon className="h-28 sm:h-32 w-auto object-contain" />,
   },
   {

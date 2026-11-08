@@ -1,6 +1,6 @@
 import React from 'react';
 import { PageRoute } from '../types';
-import { Phone, Mail, MapPin, ShieldCheck } from 'lucide-react';
+import { Phone, Mail, MapPin, ShieldCheck, ExternalLink, Navigation } from 'lucide-react';
 import { MZSLogo } from './MZSLogo';
 
 interface FooterProps {
@@ -30,6 +30,16 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, onOpenCookies }) => 
 
           {/* Direct Contact Pills */}
           <div className="flex flex-wrap items-center gap-3">
+            <a
+              href="https://maps.google.com/?q=245+Saw+Mill+River+Road,+Hawthorne,+NY+10532"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 hover:bg-white/15 border border-white/15 text-xs font-semibold text-white transition-all shadow-sm"
+              title="View on Google Maps"
+            >
+              <MapPin className="w-3.5 h-3.5 text-[#0066FF]" />
+              <span>245 Saw Mill River Rd, Hawthorne, NY 10532</span>
+            </a>
             <a
               href="tel:+18888017476"
               className="flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 hover:bg-white/15 border border-white/15 text-xs font-semibold text-white transition-all shadow-sm"
@@ -300,6 +310,91 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, onOpenCookies }) => 
                 </button>
               </li>
             </ul>
+          </div>
+        </div>
+
+        {/* Executive Headquarters & Fleet Dispatch Hub with Interactive Map */}
+        <div className="mb-14 p-6 sm:p-8 rounded-3xl bg-white/[0.03] border border-white/10 shadow-2xl backdrop-blur-sm">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+            {/* Left: Address details & CTA */}
+            <div className="lg:col-span-5 space-y-4">
+              <span className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#0066FF]/15 border border-[#0066FF]/30 text-[#4A9CFF] text-xs font-semibold uppercase tracking-wider">
+                <MapPin className="w-3.5 h-3.5 text-[#0066FF]" />
+                Fleet Headquarters & Dispatch Hub
+              </span>
+              <h3 className="text-2xl sm:text-3xl font-serif text-white font-normal leading-tight">
+                MZS Executive Chauffeurs Operations Center
+              </h3>
+              <p className="text-sm text-gray-300 leading-relaxed font-light">
+                Centrally located on the Saw Mill River corridor in Westchester County for rapid private chauffeur dispatch across New York City, JFK, LaGuardia, Newark, Westchester County Airport (HPN), Connecticut, and the greater Northeast region.
+              </p>
+
+              <div className="pt-2 space-y-3">
+                <div className="flex items-start gap-3 p-3.5 rounded-2xl bg-white/5 border border-white/10">
+                  <MapPin className="w-5 h-5 text-[#0066FF] shrink-0 mt-0.5" />
+                  <div>
+                    <div className="text-[11px] uppercase tracking-wider text-gray-400 font-medium">Headquarters Address</div>
+                    <div className="text-sm sm:text-base font-semibold text-white">245 Saw Mill River Road</div>
+                    <div className="text-xs text-gray-300">Hawthorne, NY 10532</div>
+                  </div>
+                </div>
+
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs text-gray-300">
+                  <div className="flex items-center gap-2 p-3 rounded-xl bg-white/5 border border-white/10">
+                    <ShieldCheck className="w-4 h-4 text-emerald-400 shrink-0" />
+                    <span>24/7 Live Executive Dispatch</span>
+                  </div>
+                  <div className="flex items-center gap-2 p-3 rounded-xl bg-white/5 border border-white/10">
+                    <Phone className="w-4 h-4 text-[#0066FF] shrink-0" />
+                    <a href="tel:+18888017476" className="hover:text-white transition-colors">
+                      (888) 801-7476
+                    </a>
+                  </div>
+                </div>
+              </div>
+
+              <div className="pt-2 flex flex-wrap gap-3">
+                <a
+                  href="https://maps.google.com/?q=245+Saw+Mill+River+Road,+Hawthorne,+NY+10532"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 px-6 py-2.5 rounded-full bg-[#0F63BD] hover:bg-[#0D529C] text-white text-xs font-semibold transition-all shadow-md cursor-pointer"
+                >
+                  <Navigation className="w-3.5 h-3.5" />
+                  <span>Get Directions</span>
+                  <ExternalLink className="w-3 h-3 opacity-75" />
+                </a>
+                <a
+                  href="mailto:info@mzexecutivechauffeurs.com"
+                  className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-white/10 hover:bg-white/15 text-white text-xs font-semibold transition-all border border-white/15"
+                >
+                  <Mail className="w-3.5 h-3.5 text-[#0066FF]" />
+                  <span>Contact Operations</span>
+                </a>
+              </div>
+            </div>
+
+            {/* Right: Interactive Embedded Google Map */}
+            <div className="lg:col-span-7 h-[280px] sm:h-[320px] lg:h-[350px] relative rounded-2xl overflow-hidden border border-white/15 shadow-2xl group">
+              <iframe
+                title="MZS Executive Chauffeurs Headquarters - 245 Saw Mill River Road, Hawthorne, NY 10532"
+                src="https://maps.google.com/maps?q=245+Saw+Mill+River+Road,+Hawthorne,+NY+10532&t=&z=15&ie=UTF8&iwloc=&output=embed"
+                className="w-full h-full border-0 brightness-95 contrast-105"
+                loading="lazy"
+                allowFullScreen
+                referrerPolicy="no-referrer-when-downgrade"
+              />
+              <a
+                href="https://maps.google.com/?q=245+Saw+Mill+River+Road,+Hawthorne,+NY+10532"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="absolute bottom-3 left-3 sm:bottom-4 sm:left-4 px-3.5 py-1.5 rounded-xl bg-[#0F1319]/90 hover:bg-[#0F1319] backdrop-blur-md border border-white/20 text-white text-xs font-medium flex items-center gap-2 shadow-xl transition-all"
+              >
+                <MapPin className="w-3.5 h-3.5 text-[#0066FF]" />
+                <span>245 Saw Mill River Rd, Hawthorne, NY &bull; Open in Maps</span>
+                <ExternalLink className="w-3 h-3 text-gray-400" />
+              </a>
+            </div>
           </div>
         </div>
 
