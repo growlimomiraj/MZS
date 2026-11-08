@@ -40,7 +40,7 @@ export const RouteDetailPage: React.FC<RouteDetailPageProps> = ({
         <div className="relative z-10 w-full max-w-5xl mx-auto text-center mb-10">
           <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/10 backdrop-blur-md text-xs font-semibold uppercase tracking-widest text-gray-200 mb-6 border border-white/15">
             <Sparkles className="w-4 h-4 text-[#0066FF]" />
-            Private US City-to-City Route &bull; MZS Executive Chauffeurs
+            Private Executive Route &bull; MZS Executive Chauffeurs
           </span>
           <h1 className="text-4xl sm:text-6xl lg:text-7xl font-serif font-normal text-white mb-6 leading-[1.08] tracking-tight">
             {from} to {to}
@@ -139,8 +139,8 @@ export const RouteDetailPage: React.FC<RouteDetailPageProps> = ({
 
         {/* Custom Route Contact Bar */}
         <div className="mt-16 p-8 rounded-2xl bg-[#0F1319] text-white text-center">
-          <h3 className="text-xl font-serif mb-2">Need a custom US itinerary or multi-day chauffeur?</h3>
-          <p className="text-sm text-gray-300 mb-6">Our 24/7 US dispatch desk provides personalized routing, group transfers, and custom vehicle requests.</p>
+          <h3 className="text-xl font-serif mb-2">Need a custom regional itinerary or multi-day chauffeur?</h3>
+          <p className="text-sm text-gray-300 mb-6">Our 24/7 executive dispatch desk provides personalized routing, group transfers, and custom vehicle requests.</p>
           <div className="flex flex-wrap items-center justify-center gap-4 text-xs sm:text-sm">
             <a href="tel:+18888017476" className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-[#0066FF] hover:bg-[#0052CC] text-white font-medium transition-all">
               <Phone className="w-4 h-4" />

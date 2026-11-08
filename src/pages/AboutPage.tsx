@@ -29,7 +29,7 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onNavigate }) => {
             About MZS Executive Chauffeurs
           </h1>
           <p className="text-lg sm:text-xl text-gray-200 max-w-2xl mx-auto mb-8 font-light leading-relaxed">
-            Delivering peerless chauffeured ground transportation, punctuality, and discreet hospitality across major metropolitan markets and airports in the United States.
+            Delivering peerless chauffeured ground transportation, punctuality, and discreet hospitality across major metropolitan markets and airports in our regional network.
           </p>
         </div>
       </section>
@@ -38,12 +38,12 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onNavigate }) => {
       <section className="py-16 bg-white border-b border-gray-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-2 lg:grid-cols-4 gap-8 text-center">
           <div>
-            <div className="text-4xl sm:text-5xl font-serif font-normal text-[#0066FF] mb-1">Top 50</div>
-            <div className="text-xs uppercase tracking-wider text-gray-500 font-medium">US Metro Hubs Served</div>
+            <div className="text-4xl sm:text-5xl font-serif font-normal text-[#0066FF] mb-1">Top 7</div>
+            <div className="text-xs uppercase tracking-wider text-gray-500 font-medium">Executive Regional Destinations</div>
           </div>
           <div>
             <div className="text-4xl sm:text-5xl font-serif font-normal text-[#0066FF] mb-1">100%</div>
-            <div className="text-xs uppercase tracking-wider text-gray-500 font-medium">US Commercial & FBO Airports</div>
+            <div className="text-xs uppercase tracking-wider text-gray-500 font-medium">Regional Commercial & FBO Airports</div>
           </div>
           <div>
             <div className="text-4xl sm:text-5xl font-serif font-normal text-[#0066FF] mb-1">99.8%</div>
@@ -64,13 +64,13 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onNavigate }) => {
               The Standard
             </span>
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-serif text-[#0F1319] mb-6 leading-tight">
-              Redefining executive travel in the USA
+              Redefining executive chauffeur travel
             </h2>
             <p className="text-base sm:text-lg text-[#596372] leading-relaxed mb-6 font-light">
               MZS Executive Chauffeurs was established to make private ground travel as predictable, dignified, and luxurious as flying private or staying at a 5-star hotel.
             </p>
             <p className="text-sm sm:text-base text-[#596372] leading-relaxed mb-6">
-              Today, MZS Executive Chauffeurs connects business leaders, celebrities, and discerning travelers to commercially licensed, background-checked chauffeurs across the United States. We unite top-tier operators under one uncompromising standard so you can travel with complete certainty.
+              Today, MZS Executive Chauffeurs connects business leaders, celebrities, and discerning travelers to commercially licensed, background-checked chauffeurs across our premier regional network. We unite top-tier operators under one uncompromising standard so you can travel with complete certainty.
             </p>
           </div>
           <div className="relative rounded-3xl overflow-hidden shadow-2xl">
@@ -101,10 +101,10 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onNavigate }) => {
               How MZS Executive Chauffeurs works
             </h2>
             <p className="text-base sm:text-lg text-[#596372] leading-relaxed mb-6 font-light">
-              We partner with elite, insured chauffeur companies across the nation, empowering executives to reserve guaranteed fixed-rate journeys through our seamless web platform.
+              We partner with elite, insured chauffeur companies across the region, empowering executives to reserve guaranteed fixed-rate journeys through our seamless web platform.
             </p>
             <p className="text-sm sm:text-base text-[#596372] leading-relaxed mb-8">
-              By combining real-time flight tracking, strict vehicle standards, and 24/7 US dispatch support, we ensure your chauffeur is waiting for you with a personalized welcome, whether in New York, Miami, Chicago, or Los Angeles.
+              By combining real-time flight tracking, strict vehicle standards, and 24/7 executive dispatch support, we ensure your chauffeur is waiting for you with a personalized welcome, whether in New York, Boston, Philadelphia, or Washington D.C.
             </p>
             <button
               onClick={() => onNavigate('/chauffeur-service')}

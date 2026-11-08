@@ -4,18 +4,19 @@ export const LOCATION_SUGGESTIONS: LocationSuggestion[] = [
   { id: '1', title: 'John F. Kennedy International Airport (JFK)', subtitle: 'Queens, New York, NY, USA', type: 'airport' },
   { id: '2', title: 'Newark Liberty International Airport (EWR)', subtitle: 'Newark, NJ, USA', type: 'airport' },
   { id: '3', title: 'LaGuardia Airport (LGA)', subtitle: 'Queens, New York, NY, USA', type: 'airport' },
-  { id: '4', title: 'Los Angeles International Airport (LAX)', subtitle: 'Los Angeles, CA, USA', type: 'airport' },
-  { id: '5', title: 'San Francisco International Airport (SFO)', subtitle: 'San Francisco, CA, USA', type: 'airport' },
-  { id: '6', title: 'Miami International Airport (MIA)', subtitle: 'Miami, FL, USA', type: 'airport' },
-  { id: '7', title: 'Chicago O\'Hare International Airport (ORD)', subtitle: 'Chicago, IL, USA', type: 'airport' },
-  { id: '8', title: 'Boston Logan International Airport (BOS)', subtitle: 'Boston, MA, USA', type: 'airport' },
-  { id: '9', title: 'Dallas/Fort Worth International Airport (DFW)', subtitle: 'Dallas, TX, USA', type: 'airport' },
-  { id: '10', title: 'The Plaza Hotel', subtitle: '768 5th Ave, New York, NY 10019', type: 'address' },
-  { id: '11', title: 'Grand Central Terminal', subtitle: '89 E 42nd St, New York, NY 10017', type: 'station' },
-  { id: '12', title: 'Manhattan, New York', subtitle: 'New York, NY, USA', type: 'city' },
-  { id: '13', title: 'East Hampton', subtitle: 'Long Island, NY, USA', type: 'city' },
-  { id: '14', title: 'Beverly Hills Hotel', subtitle: '9641 Sunset Blvd, Beverly Hills, CA', type: 'address' },
-  { id: '15', title: 'Palm Beach International Airport (PBI)', subtitle: 'West Palm Beach, FL, USA', type: 'airport' }
+  { id: '4', title: 'Teterboro Airport (TEB - Private Aviation FBO)', subtitle: 'Teterboro, NJ, USA', type: 'airport' },
+  { id: '5', title: 'Boston Logan International Airport (BOS)', subtitle: 'Boston, MA, USA', type: 'airport' },
+  { id: '6', title: 'Philadelphia International Airport (PHL)', subtitle: 'Philadelphia, PA, USA', type: 'airport' },
+  { id: '7', title: 'Ronald Reagan Washington National Airport (DCA)', subtitle: 'Arlington, VA / Washington DC', type: 'airport' },
+  { id: '8', title: 'Washington Dulles International Airport (IAD)', subtitle: 'Dulles, VA / Washington DC', type: 'airport' },
+  { id: '9', title: 'Baltimore/Washington International Airport (BWI)', subtitle: 'Baltimore, MD, USA', type: 'airport' },
+  { id: '10', title: 'Westchester County Airport (HPN)', subtitle: 'White Plains, NY / Greenwich, CT', type: 'airport' },
+  { id: '11', title: 'The Plaza Hotel', subtitle: '768 5th Ave, New York, NY 10019', type: 'address' },
+  { id: '12', title: 'Grand Central Terminal', subtitle: '89 E 42nd St, New York, NY 10017', type: 'station' },
+  { id: '13', title: 'Manhattan, New York', subtitle: 'New York, NY, USA', type: 'city' },
+  { id: '14', title: 'East Hampton', subtitle: 'Long Island, NY, USA', type: 'city' },
+  { id: '15', title: 'Atlantic City Boardwalk', subtitle: 'Atlantic City, NJ, USA', type: 'city' },
+  { id: '16', title: 'Newport & Providence', subtitle: 'Rhode Island, USA', type: 'city' }
 ];
 
 export const VEHICLE_CLASSES: VehicleClass[] = [
@@ -31,7 +32,7 @@ export const VEHICLE_CLASSES: VehicleClass[] = [
     hourlyRate: 95,
     price: 148,
     currency: 'USD',
-    description: 'Our most popular service for corporate business travel and seamless airport transfers across the USA.',
+    description: 'Our most popular service for corporate business travel and seamless regional airport transfers.',
     features: [
       'Complimentary 60 minutes airport wait time',
       'Free cancellation up to 1 hour before pickup',
@@ -51,7 +52,7 @@ export const VEHICLE_CLASSES: VehicleClass[] = [
     hourlyRate: 145,
     price: 225,
     currency: 'USD',
-    description: 'Uncompromising luxury for special occasions, high-profile executives, and VIP hospitality nationwide.',
+    description: 'Uncompromising luxury for special occasions, high-profile executives, and VIP hospitality.',
     features: [
       'Top-tier flagship luxury vehicles',
       'VIP meet & greet inside airport terminal',
@@ -94,7 +95,7 @@ export const VEHICLE_CLASSES: VehicleClass[] = [
     hourlyRate: 110,
     price: 162,
     currency: 'USD',
-    description: 'Ultra-modern, whisper-quiet luxury journeys in leading premium electric flagship sedans across the USA.',
+    description: 'Ultra-modern, whisper-quiet luxury journeys in leading premium electric flagship sedans.',
     features: [
       'Whisper-quiet electric powertrain',
       'Ultra-quiet acoustic cabin experience',
@@ -106,31 +107,43 @@ export const VEHICLE_CLASSES: VehicleClass[] = [
 
 export const CITIES_DATA = [
   {
-    region: 'Northeast & Mid-Atlantic',
-    cities: ['New York City', 'Boston', 'Philadelphia', 'Washington D.C.', 'Baltimore', 'Pittsburgh', 'Greenwich', 'Atlantic City', 'Providence']
+    region: 'New York',
+    cities: ['New York City', 'Manhattan', 'Brooklyn', 'Queens', 'The Hamptons', 'East Hampton', 'Westchester', 'Long Island', 'Albany']
   },
   {
-    region: 'West Coast & Pacific',
-    cities: ['Los Angeles', 'San Francisco', 'San Diego', 'Las Vegas', 'Seattle', 'Phoenix', 'Scottsdale', 'San Jose', 'Portland', 'Palm Springs', 'Orange County']
+    region: 'Connecticut',
+    cities: ['Greenwich', 'Stamford', 'Hartford', 'New Haven', 'Westport', 'Darien', 'Norwalk']
   },
   {
-    region: 'South & Southeast',
-    cities: ['Miami', 'Fort Lauderdale', 'Palm Beach', 'Orlando', 'Tampa', 'Atlanta', 'Charlotte', 'Nashville', 'New Orleans', 'Naples', 'Boca Raton']
+    region: 'Massachusetts',
+    cities: ['Boston', 'Cambridge', 'Martha\'s Vineyard', 'Nantucket', 'Cape Cod', 'Worcester', 'Newton']
   },
   {
-    region: 'Midwest & Central',
-    cities: ['Chicago', 'Dallas', 'Houston', 'Austin', 'Denver', 'Minneapolis', 'Detroit', 'Indianapolis', 'San Antonio', 'Columbus']
+    region: 'New Jersey',
+    cities: ['Jersey City', 'Hoboken', 'Newark', 'Princeton', 'Atlantic City', 'Teterboro', 'Paramus', 'Morristown']
+  },
+  {
+    region: 'Pennsylvania',
+    cities: ['Philadelphia', 'King of Prussia', 'Main Line', 'Pittsburgh', 'Harrisburg', 'Allentown', 'Bucks County']
+  },
+  {
+    region: 'Maryland',
+    cities: ['Baltimore', 'Bethesda', 'Annapolis', 'Silver Spring', 'Rockville', 'Chevy Chase', 'Potomac']
+  },
+  {
+    region: 'Washington DC',
+    cities: ['Downtown Washington D.C.', 'Georgetown', 'Capitol Hill', 'Dupont Circle', 'Tysons / McLean Corridor']
   }
 ];
 
-// Flat quote prices removed per client instruction - custom quotes calculated on request
+// Curated Top Regional Routes specified by client
 export const ROUTES_DATA = [
   { from: 'New York', to: 'East Hampton', duration: '2h 30m', distance: '105 miles', price: 'Custom quote', tag: 'Hamptons Getaway' },
-  { from: 'Los Angeles', to: 'San Diego', duration: '2h 15m', distance: '120 miles', price: 'Custom quote', tag: 'Southern California' },
-  { from: 'Miami', to: 'Palm Beach', duration: '1h 15m', distance: '72 miles', price: 'Custom quote', tag: 'South Florida Corridor' },
+  { from: 'New York', to: 'Rhode Island', duration: '3h 15m', distance: '180 miles', price: 'Custom quote', tag: 'Ocean State Coastal' },
+  { from: 'New York', to: 'Atlantic City', duration: '2h 10m', distance: '128 miles', price: 'Custom quote', tag: 'Jersey Shore Getaway' },
   { from: 'New York', to: 'Philadelphia', duration: '1h 50m', distance: '95 miles', price: 'Custom quote', tag: 'Northeast Corridor' },
-  { from: 'San Francisco', to: 'Napa Valley', duration: '1h 20m', distance: '58 miles', price: 'Custom quote', tag: 'Wine Country' },
-  { from: 'Los Angeles', to: 'Palm Springs', duration: '2h 00m', distance: '108 miles', price: 'Custom quote', tag: 'Desert Oasis' }
+  { from: 'New York', to: 'Washington DC', duration: '4h 00m', distance: '225 miles', price: 'Custom quote', tag: 'Capital Express' },
+  { from: 'New York', to: 'Boston', duration: '4h 15m', distance: '215 miles', price: 'Custom quote', tag: 'New England Executive' }
 ];
 
 export const FAQS_DATA = [

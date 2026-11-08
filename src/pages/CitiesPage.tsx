@@ -19,39 +19,39 @@ export const CitiesPage: React.FC<CitiesPageProps> = ({ onNavigate }) => {
       airports: 'JFK • LGA • EWR • TEB FBO',
     },
     {
-      name: 'Los Angeles',
-      state: 'California',
-      img: 'https://images.unsplash.com/photo-1580655653885-65763b2597d0?auto=format&fit=crop&w=800&q=80',
-      routes: '24+ regional routes',
-      airports: 'LAX • BUR • VNY FBO • SNA',
-    },
-    {
-      name: 'Miami & Palm Beach',
-      state: 'Florida',
-      img: 'https://images.unsplash.com/photo-1506953823976-52e1fdc0149a?auto=format&fit=crop&w=800&q=80',
+      name: 'Boston',
+      state: 'Massachusetts',
+      img: 'https://images.unsplash.com/photo-1501979376754-2ff867a4f659?auto=format&fit=crop&w=800&q=80',
       routes: '18+ regional routes',
-      airports: 'MIA • FLL • PBI • OPF FBO',
+      airports: 'BOS Logan • BED Hanscom FBO',
     },
     {
-      name: 'Chicago',
-      state: 'Illinois',
-      img: 'https://images.unsplash.com/photo-1494522855154-9297ac14b55f?auto=format&fit=crop&w=800&q=80',
+      name: 'Philadelphia',
+      state: 'Pennsylvania',
+      img: 'https://images.unsplash.com/photo-1569974498991-d3c12a504f95?auto=format&fit=crop&w=800&q=80',
       routes: '16+ regional routes',
-      airports: 'ORD • MDW • PWK FBO',
+      airports: 'PHL • PNE Northeast FBO',
     },
     {
-      name: 'San Francisco & Bay Area',
-      state: 'California',
-      img: 'https://images.unsplash.com/photo-1501594907352-04cda38ebc29?auto=format&fit=crop&w=800&q=80',
+      name: 'Washington D.C.',
+      state: 'District of Columbia',
+      img: 'https://images.unsplash.com/photo-1617581629397-a72507c3de9e?auto=format&fit=crop&w=800&q=80',
       routes: '20+ regional routes',
-      airports: 'SFO • OAK • SJC • PAO',
+      airports: 'DCA Reagan • IAD Dulles • BWI',
     },
     {
-      name: 'Las Vegas',
-      state: 'Nevada',
-      img: 'https://images.unsplash.com/photo-1518684079-3c830dcef090?auto=format&fit=crop&w=800&q=80',
-      routes: '12+ regional routes',
-      airports: 'LAS • HND • VGT FBO',
+      name: 'Greenwich & Stamford',
+      state: 'Connecticut',
+      img: 'https://images.unsplash.com/photo-1541872703-74c5e44368f9?auto=format&fit=crop&w=800&q=80',
+      routes: '14+ regional routes',
+      airports: 'HPN Westchester • BDR • HVN',
+    },
+    {
+      name: 'Atlantic City & Jersey City',
+      state: 'New Jersey',
+      img: 'https://images.unsplash.com/photo-1506953823976-52e1fdc0149a?auto=format&fit=crop&w=800&q=80',
+      routes: '15+ regional routes',
+      airports: 'ACY • EWR • TEB FBO',
     },
   ];
 
@@ -79,13 +79,13 @@ export const CitiesPage: React.FC<CitiesPageProps> = ({ onNavigate }) => {
         <div className="relative z-10 max-w-4xl mx-auto">
           <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/10 backdrop-blur-md text-xs font-semibold uppercase tracking-widest text-gray-200 mb-6 border border-white/15">
             <ShieldCheck className="w-4 h-4 text-[#0066FF]" />
-            MZS Nationwide US Executive Coverage
+            MZS Executive Coverage
           </span>
           <h1 className="text-4xl sm:text-6xl font-serif font-normal text-white mb-6 leading-tight">
-            MZS Chauffeur Services in Premier US Cities
+            MZS Chauffeur Services in Premier Regional Destinations
           </h1>
           <p className="text-lg text-gray-200 max-w-2xl mx-auto font-light mb-8">
-            Experience uniform 5-star MZS executive standards, licensed commercial chauffeurs, and transparent fixed pricing across every major metropolitan market in the United States.
+            Experience uniform 5-star MZS executive standards, licensed commercial chauffeurs, and transparent fixed pricing across New York, New Jersey, Connecticut, Massachusetts, Pennsylvania, Maryland, and Washington D.C.
           </p>
 
           <div className="relative max-w-md mx-auto">

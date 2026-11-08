@@ -26,28 +26,17 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
 gsap.registerPlugin(ScrollTrigger);
 
-// Curated US and International City-to-City Route Details
+// Curated Regional City-to-City Route Details
 const KNOWN_CITY_ROUTES: Record<string, { from: string; to: string; duration: string; distance: string }> = {
   'new-york-east-hampton': { from: 'New York', to: 'East Hampton', duration: '2h 30m', distance: '105 miles' },
-  'los-angeles-san-diego': { from: 'Los Angeles', to: 'San Diego', duration: '2h 15m', distance: '120 miles' },
-  'miami-palm-beach': { from: 'Miami', to: 'Palm Beach', duration: '1h 15m', distance: '72 miles' },
+  'new-york-rhode-island': { from: 'New York', to: 'Rhode Island', duration: '3h 15m', distance: '180 miles' },
+  'new-york-atlantic-city': { from: 'New York', to: 'Atlantic City', duration: '2h 10m', distance: '128 miles' },
   'new-york-philadelphia': { from: 'New York', to: 'Philadelphia', duration: '1h 50m', distance: '95 miles' },
-  'san-francisco-napa-valley': { from: 'San Francisco', to: 'Napa Valley', duration: '1h 20m', distance: '58 miles' },
-  'los-angeles-palm-springs': { from: 'Los Angeles', to: 'Palm Springs', duration: '2h 00m', distance: '108 miles' },
-  'new-york-greenwich,-ct': { from: 'New York', to: 'Greenwich, CT', duration: '1h 10m', distance: '38 miles' },
-  'new-york-greenwich-ct': { from: 'New York', to: 'Greenwich, CT', duration: '1h 10m', distance: '38 miles' },
+  'new-york-washington-dc': { from: 'New York', to: 'Washington DC', duration: '4h 00m', distance: '225 miles' },
   'new-york-boston': { from: 'New York', to: 'Boston', duration: '4h 15m', distance: '215 miles' },
-  'los-angeles-santa-barbara': { from: 'Los Angeles', to: 'Santa Barbara', duration: '1h 45m', distance: '95 miles' },
-  'miami-fort-lauderdale': { from: 'Miami', to: 'Fort Lauderdale', duration: '0h 45m', distance: '30 miles' },
-  'miami-naples': { from: 'Miami', to: 'Naples', duration: '2h 10m', distance: '125 miles' },
-  'orlando-tampa': { from: 'Orlando', to: 'Tampa', duration: '1h 30m', distance: '85 miles' },
-  'chicago-milwaukee': { from: 'Chicago', to: 'Milwaukee', duration: '1h 35m', distance: '92 miles' },
-  'chicago-lake-geneva': { from: 'Chicago', to: 'Lake Geneva', duration: '1h 40m', distance: '80 miles' },
-  'dallas-austin': { from: 'Dallas', to: 'Austin', duration: '3h 15m', distance: '195 miles' },
-  'houston-austin': { from: 'Houston', to: 'Austin', duration: '2h 45m', distance: '165 miles' },
-  'london-bristol': { from: 'London', to: 'Bristol', duration: '2h 10m', distance: '118 miles' },
-  'abu-dhabi-dubai': { from: 'Abu Dhabi', to: 'Dubai', duration: '1h 25m', distance: '87 miles' },
-  'paris-reims': { from: 'Paris', to: 'Reims', duration: '1h 45m', distance: '90 miles' },
+  'new-york-greenwich-ct': { from: 'New York', to: 'Greenwich, CT', duration: '1h 10m', distance: '38 miles' },
+  'philadelphia-washington-dc': { from: 'Philadelphia', to: 'Washington DC', duration: '2h 30m', distance: '140 miles' },
+  'boston-rhode-island': { from: 'Boston', to: 'Rhode Island', duration: '1h 15m', distance: '50 miles' },
 };
 
 function normalizeRoutePath(rawPath: string): PageRoute {

@@ -123,50 +123,66 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, onOpenCookies }) => 
             </ul>
           </div>
 
-          {/* Column 3: Top US Cities */}
+          {/* Column 3: Top Destinations */}
           <div>
             <h3 className="text-xs uppercase tracking-wider font-semibold text-gray-400 mb-4">
-              Top US Destinations
+              Top Destinations
             </h3>
             <ul className="space-y-2.5 text-sm">
               <li>
                 <button
-                  onClick={() => onNavigate('/airport-transfer')}
+                  onClick={() => onNavigate('/cities')}
                   className="text-gray-300 hover:text-white transition-colors cursor-pointer text-left"
                 >
-                  New York City
+                  New York
                 </button>
               </li>
               <li>
                 <button
-                  onClick={() => onNavigate('/airport-transfer')}
+                  onClick={() => onNavigate('/cities')}
                   className="text-gray-300 hover:text-white transition-colors cursor-pointer text-left"
                 >
-                  Los Angeles
+                  Connecticut
                 </button>
               </li>
               <li>
                 <button
-                  onClick={() => onNavigate('/airport-transfer')}
+                  onClick={() => onNavigate('/cities')}
                   className="text-gray-300 hover:text-white transition-colors cursor-pointer text-left"
                 >
-                  Miami & Palm Beach
+                  Massachusetts
                 </button>
               </li>
               <li>
                 <button
-                  onClick={() => onNavigate('/airport-transfer')}
+                  onClick={() => onNavigate('/cities')}
                   className="text-gray-300 hover:text-white transition-colors cursor-pointer text-left"
                 >
-                  Chicago
+                  New Jersey
                 </button>
               </li>
               <li>
                 <button
-                  onClick={() => onNavigate('/airport-transfer')}
+                  onClick={() => onNavigate('/cities')}
                   className="text-gray-300 hover:text-white transition-colors cursor-pointer text-left"
                 >
-                  San Francisco
+                  Pennsylvania
+                </button>
+              </li>
+              <li>
+                <button
+                  onClick={() => onNavigate('/cities')}
+                  className="text-gray-300 hover:text-white transition-colors cursor-pointer text-left"
+                >
+                  Maryland
+                </button>
+              </li>
+              <li>
+                <button
+                  onClick={() => onNavigate('/cities')}
+                  className="text-gray-300 hover:text-white transition-colors cursor-pointer text-left"
+                >
+                  Washington DC
                 </button>
               </li>
               <li>
@@ -174,7 +190,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, onOpenCookies }) => 
                   onClick={() => onNavigate('/cities')}
                   className="text-gray-300 hover:text-white transition-colors cursor-pointer text-left font-medium text-[#0066FF]"
                 >
-                  All US cities &rarr;
+                  All destinations &rarr;
                 </button>
               </li>
             </ul>
@@ -191,7 +207,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, onOpenCookies }) => 
                   onClick={() => onNavigate('/airport-transfer')}
                   className="text-gray-300 hover:text-white transition-colors cursor-pointer text-left"
                 >
-                  US airport transfers
+                  Airport transfers
                 </button>
               </li>
               <li>
@@ -229,10 +245,10 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, onOpenCookies }) => 
             </ul>
           </div>
 
-          {/* Column 5: Featured US Routes */}
+          {/* Column 5: Featured Top Routes */}
           <div>
             <h3 className="text-xs uppercase tracking-wider font-semibold text-gray-400 mb-4">
-              Top US Routes
+              Top Routes
             </h3>
             <ul className="space-y-2.5 text-sm">
               <li>
@@ -245,23 +261,23 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, onOpenCookies }) => 
               </li>
               <li>
                 <button
-                  onClick={() => onNavigate('/city-to-city/los-angeles-san-diego')}
+                  onClick={() => onNavigate('/city-to-city/new-york-rhode-island')}
                   className="text-gray-300 hover:text-white transition-colors cursor-pointer text-left"
                 >
-                  Los Angeles &rarr; San Diego
+                  New York &rarr; Rhode Island
                 </button>
               </li>
               <li>
                 <button
-                  onClick={() => onNavigate('/city-to-city/miami-palm-beach')}
+                  onClick={() => onNavigate('/city-to-city/new-york-atlantic-city')}
                   className="text-gray-300 hover:text-white transition-colors cursor-pointer text-left"
                 >
-                  Miami &rarr; Palm Beach
+                  New York &rarr; Atlantic City
                 </button>
               </li>
               <li>
                 <button
-                  onClick={() => onNavigate('/city-to-city')}
+                  onClick={() => onNavigate('/city-to-city/new-york-philadelphia')}
                   className="text-gray-300 hover:text-white transition-colors cursor-pointer text-left"
                 >
                   New York &rarr; Philadelphia
@@ -269,18 +285,18 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, onOpenCookies }) => 
               </li>
               <li>
                 <button
-                  onClick={() => onNavigate('/city-to-city')}
+                  onClick={() => onNavigate('/city-to-city/new-york-washington-dc')}
                   className="text-gray-300 hover:text-white transition-colors cursor-pointer text-left"
                 >
-                  San Francisco &rarr; Napa Valley
+                  New York &rarr; Washington DC
                 </button>
               </li>
               <li>
                 <button
-                  onClick={() => onNavigate('/city-to-city')}
+                  onClick={() => onNavigate('/city-to-city/new-york-boston')}
                   className="text-gray-300 hover:text-white transition-colors cursor-pointer text-left"
                 >
-                  Los Angeles &rarr; Palm Springs
+                  New York &rarr; Boston
                 </button>
               </li>
             </ul>

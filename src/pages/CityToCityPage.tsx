@@ -10,12 +10,12 @@ interface CityToCityPageProps {
 }
 
 export const CityToCityPage: React.FC<CityToCityPageProps> = ({ onSearch, onNavigate }) => {
-  const [activeCityTab, setActiveCityTab] = useState<'all' | 'new-york' | 'california' | 'florida' | 'midwest-texas'>('all');
+  const [activeCityTab, setActiveCityTab] = useState<'all' | 'tri-state' | 'mid-atlantic' | 'new-england'>('all');
   const [openFaq, setOpenFaq] = useState<number | null>(0);
 
   const cityFaqs = [
     {
-      q: 'How do I get a quote for a US city-to-city ride?',
+      q: 'How do I get a quote for an executive city-to-city ride?',
       a: 'Getting a tailored quote is seamless: enter your pickup address and destination city in our reservation widget above. You will immediately calculate all-inclusive rates for your preferred vehicle class with zero hidden fees or toll surcharges.'
     },
     {
@@ -31,36 +31,30 @@ export const CityToCityPage: React.FC<CityToCityPageProps> = ({ onSearch, onNavi
       a: 'All distance journeys are 100% all-inclusive: vehicle fuel, state highway tolls, congestion charges, driver gratuity, and 15 minutes of complimentary wait time are all covered in the guaranteed price you receive.'
     },
     {
-      q: 'Can I work while traveling between US cities?',
+      q: 'Can I work while traveling between regional destinations?',
       a: 'Absolutely. Every MZS Executive Chauffeurs vehicle is equipped with high-speed onboard Wi-Fi, device charging ports, leather executive seating, and absolute privacy so you can take confidential conference calls and work uninterrupted.'
     }
   ];
 
   const cityRoutes = {
     all: ROUTES_DATA,
-    'new-york': [
+    'tri-state': [
       { from: 'New York', to: 'East Hampton', duration: '2h 30m', distance: '105 miles', tag: 'Hamptons Getaway' },
-      { from: 'New York', to: 'Philadelphia', duration: '1h 50m', distance: '95 miles', tag: 'Northeast Corridor' },
+      { from: 'New York', to: 'Atlantic City', duration: '2h 10m', distance: '128 miles', tag: 'Jersey Shore Getaway' },
       { from: 'New York', to: 'Greenwich, CT', duration: '1h 10m', distance: '38 miles', tag: 'Suburban Commute' },
-      { from: 'New York', to: 'Boston', duration: '4h 15m', distance: '215 miles', tag: 'Executive Express' }
+      { from: 'New York', to: 'Philadelphia', duration: '1h 50m', distance: '95 miles', tag: 'Northeast Corridor' }
     ],
-    california: [
-      { from: 'Los Angeles', to: 'San Diego', duration: '2h 15m', distance: '120 miles', tag: 'Southern California' },
-      { from: 'Los Angeles', to: 'Palm Springs', duration: '2h 00m', distance: '108 miles', tag: 'Desert Oasis' },
-      { from: 'Los Angeles', to: 'Santa Barbara', duration: '1h 45m', distance: '95 miles', tag: 'Coastal Route' },
-      { from: 'San Francisco', to: 'Napa Valley', duration: '1h 20m', distance: '58 miles', tag: 'Wine Country' }
+    'mid-atlantic': [
+      { from: 'New York', to: 'Philadelphia', duration: '1h 50m', distance: '95 miles', tag: 'Northeast Corridor' },
+      { from: 'New York', to: 'Washington DC', duration: '4h 00m', distance: '225 miles', tag: 'Capital Express' },
+      { from: 'Philadelphia', to: 'Washington DC', duration: '2h 30m', distance: '140 miles', tag: 'Mid-Atlantic Link' },
+      { from: 'Baltimore', to: 'Washington DC', duration: '1h 05m', distance: '40 miles', tag: 'Executive Shuttle' }
     ],
-    florida: [
-      { from: 'Miami', to: 'Palm Beach', duration: '1h 15m', distance: '72 miles', tag: 'South Florida Corridor' },
-      { from: 'Miami', to: 'Fort Lauderdale', duration: '0h 45m', distance: '30 miles', tag: 'Coastal Express' },
-      { from: 'Miami', to: 'Naples', duration: '2h 10m', distance: '125 miles', tag: 'Gulf Coast Route' },
-      { from: 'Orlando', to: 'Tampa', duration: '1h 30m', distance: '85 miles', tag: 'Central Florida' }
-    ],
-    'midwest-texas': [
-      { from: 'Chicago', to: 'Milwaukee', duration: '1h 35m', distance: '92 miles', tag: 'Midwest Express' },
-      { from: 'Chicago', to: 'Lake Geneva', duration: '1h 40m', distance: '80 miles', tag: 'Resort Getaway' },
-      { from: 'Dallas', to: 'Austin', duration: '3h 15m', distance: '195 miles', tag: 'Texas Tech Corridor' },
-      { from: 'Houston', to: 'Austin', duration: '2h 45m', distance: '165 miles', tag: 'Lone Star Route' }
+    'new-england': [
+      { from: 'New York', to: 'Boston', duration: '4h 15m', distance: '215 miles', tag: 'New England Executive' },
+      { from: 'New York', to: 'Rhode Island', duration: '3h 15m', distance: '180 miles', tag: 'Ocean State Coastal' },
+      { from: 'Boston', to: 'Rhode Island', duration: '1h 15m', distance: '50 miles', tag: 'Coastal Link' },
+      { from: 'Boston', to: 'Greenwich, CT', duration: '3h 20m', distance: '175 miles', tag: 'Interstate Business' }
     ]
   };
 
@@ -84,13 +78,13 @@ export const CityToCityPage: React.FC<CityToCityPageProps> = ({ onSearch, onNavi
         <div className="relative z-10 w-full max-w-5xl mx-auto text-center mb-10">
           <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/10 backdrop-blur-md text-xs font-semibold uppercase tracking-widest text-gray-200 mb-6 border border-white/15">
             <Sparkles className="w-4 h-4 text-[#0066FF]" />
-            Nationwide Long Distance Car Service
+            Executive Long Distance Car Service
           </span>
           <h1 className="text-4xl sm:text-6xl lg:text-7xl font-serif font-normal text-white mb-6 leading-[1.08] tracking-tight">
-            City-to-City Long Distance Car Service across the USA
+            City-to-City Long Distance Chauffeur Service
           </h1>
           <p className="text-lg sm:text-xl text-gray-200 max-w-2xl mx-auto mb-10 font-light leading-relaxed">
-            Skip crowded airport terminals and delayed regional trains. Arrive refreshed and on time with door-to-door luxury transportation anywhere in the United States.
+            Skip crowded airport terminals and delayed regional trains. Arrive refreshed and on time with door-to-door luxury transportation across premier business and coastal corridors.
           </p>
 
           <BookingWidget onSearch={onSearch} />
@@ -189,21 +183,20 @@ export const CityToCityPage: React.FC<CityToCityPageProps> = ({ onSearch, onNavi
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
           <div>
             <span className="text-xs font-semibold tracking-widest text-[#0066FF] uppercase mb-2 block">
-              Curated US Corridors
+              Curated Regional Corridors
             </span>
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-serif font-normal text-[#0F1319]">
-              Featured US City-to-City routes
+              Featured City-to-City routes
             </h2>
           </div>
 
           {/* Region Tabs */}
           <div className="flex flex-wrap gap-2">
             {[
-              { id: 'all', label: 'All US Routes' },
-              { id: 'new-york', label: 'New York & Tri-State' },
-              { id: 'california', label: 'California' },
-              { id: 'florida', label: 'Florida' },
-              { id: 'midwest-texas', label: 'Midwest & Texas' }
+              { id: 'all', label: 'All Regional Routes' },
+              { id: 'tri-state', label: 'New York, NJ & CT' },
+              { id: 'mid-atlantic', label: 'PA, MD & DC' },
+              { id: 'new-england', label: 'MA & Rhode Island' }
             ].map(tab => (
               <button
                 key={tab.id}

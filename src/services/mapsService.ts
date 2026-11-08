@@ -11,30 +11,28 @@ export interface AddressSuggestion {
 }
 
 export const LUXURY_LOCATIONS: AddressSuggestion[] = [
-  // US Major Airports & Private FBOs
+  // Northeast & Mid-Atlantic Executive Airports & Private FBOs
   { id: 'jfk', title: 'JFK - John F. Kennedy International Airport', subtitle: 'Queens, New York, United States', address: 'John F. Kennedy International Airport, Queens, NY 11430', lat: 40.6413, lng: -73.7781, type: 'airport' },
   { id: 'lga', title: 'LGA - LaGuardia Airport', subtitle: 'Queens, New York, United States', address: 'LaGuardia Airport, Queens, NY 11371', lat: 40.7769, lng: -73.8740, type: 'airport' },
   { id: 'ewr', title: 'EWR - Newark Liberty International Airport', subtitle: 'Newark, New Jersey, United States', address: '3 Brewster Rd, Newark, NJ 07114', lat: 40.6895, lng: -74.1745, type: 'airport' },
   { id: 'teb', title: 'TEB - Teterboro Airport (Private Aviation FBO)', subtitle: 'Teterboro, New Jersey, United States', address: '111 Industrial Ave, Teterboro, NJ 07608', lat: 40.8501, lng: -74.0608, type: 'airport' },
-  { id: 'lax', title: 'LAX - Los Angeles International Airport', subtitle: 'Los Angeles, California, United States', address: '1 World Way, Los Angeles, CA 90045', lat: 33.9416, lng: -118.4085, type: 'airport' },
-  { id: 'vny', title: 'VNY - Van Nuys Executive Airport FBO', subtitle: 'Van Nuys, California, United States', address: '16461 Sherman Way, Van Nuys, CA 91406', lat: 34.2098, lng: -118.4899, type: 'airport' },
-  { id: 'sfo', title: 'SFO - San Francisco International Airport', subtitle: 'San Mateo County, California, United States', address: 'San Francisco International Airport, San Francisco, CA 94128', lat: 37.6213, lng: -122.3790, type: 'airport' },
-  { id: 'mia', title: 'MIA - Miami International Airport', subtitle: 'Miami, Florida, United States', address: '2100 NW 42nd Ave, Miami, FL 33142', lat: 25.7959, lng: -80.2870, type: 'airport' },
-  { id: 'opf', title: 'OPF - Miami-Opa Locka Executive Airport FBO', subtitle: 'Opa-locka, Florida, United States', address: '14201 NW 42nd Ave, Opa-locka, FL 33054', lat: 25.9070, lng: -80.2784, type: 'airport' },
-  { id: 'pbi', title: 'PBI - Palm Beach International Airport', subtitle: 'West Palm Beach, Florida, United States', address: '1000 James L Turnage Blvd, West Palm Beach, FL 33415', lat: 26.6832, lng: -80.0956, type: 'airport' },
-  { id: 'ord', title: 'ORD - O\'Hare International Airport', subtitle: 'Chicago, Illinois, United States', address: '10000 W O\'Hare Ave, Chicago, IL 60666', lat: 41.9742, lng: -87.9073, type: 'airport' },
   { id: 'bos', title: 'BOS - Boston Logan International Airport', subtitle: 'Boston, Massachusetts, United States', address: '1 Harborside Dr, Boston, MA 02128', lat: 42.3656, lng: -71.0096, type: 'airport' },
-  { id: 'dfw', title: 'DFW - Dallas/Fort Worth International Airport', subtitle: 'Dallas, Texas, United States', address: '2400 Aviation Dr, DFW Airport, TX 75261', lat: 32.8998, lng: -97.0403, type: 'airport' },
-  { id: 'las', title: 'LAS - Harry Reid International Airport', subtitle: 'Las Vegas, Nevada, United States', address: '5757 Wayne Newton Blvd, Las Vegas, NV 89119', lat: 36.0840, lng: -115.1537, type: 'airport' },
+  { id: 'phl', title: 'PHL - Philadelphia International Airport', subtitle: 'Philadelphia, Pennsylvania, United States', address: '8000 Essington Ave, Philadelphia, PA 19153', lat: 39.8744, lng: -75.2424, type: 'airport' },
+  { id: 'dca', title: 'DCA - Ronald Reagan Washington National Airport', subtitle: 'Arlington, Virginia / Washington DC', address: '2401 Ronald Reagan Washington National Airport Access Rd, Arlington, VA 22202', lat: 38.8512, lng: -77.0402, type: 'airport' },
+  { id: 'iad', title: 'IAD - Washington Dulles International Airport', subtitle: 'Dulles, Virginia / Washington DC', address: '1 Saarinen Cir, Dulles, VA 20166', lat: 38.9531, lng: -77.4565, type: 'airport' },
+  { id: 'bwi', title: 'BWI - Baltimore/Washington International Airport', subtitle: 'Baltimore, Maryland, United States', address: '7050 Friendship Rd, Baltimore, MD 21240', lat: 39.1774, lng: -76.6684, type: 'airport' },
+  { id: 'hpn', title: 'HPN - Westchester County Airport (Executive FBO)', subtitle: 'White Plains, New York / Greenwich, CT', address: '240 Airport Rd, White Plains, NY 10604', lat: 41.0670, lng: -73.7076, type: 'airport' },
 
-  // US Luxury Hotels & Landmarks
+  // Luxury Hotels & Key Destinations
   { id: 'plaza', title: 'The Plaza Hotel', subtitle: 'Fifth Avenue at Central Park South, New York, NY', address: '768 5th Ave, New York, NY 10019', lat: 40.7645, lng: -73.9745, type: 'hotel' },
   { id: 'ritz_ny', title: 'The Ritz-Carlton New York, Central Park', subtitle: '50 Central Park South, New York, NY', address: '50 Central Park S, New York, NY 10019', lat: 40.7654, lng: -73.9765, type: 'hotel' },
-  { id: 'beverly_hills', title: 'The Beverly Hills Hotel', subtitle: '9641 Sunset Boulevard, Beverly Hills, CA', address: '9641 Sunset Blvd, Beverly Hills, CA 90210', lat: 34.0815, lng: -118.4137, type: 'hotel' },
-  { id: 'faena_mia', title: 'Faena Hotel Miami Beach', subtitle: '3201 Collins Ave, Miami Beach, FL', address: '3201 Collins Ave, Miami Beach, FL 33140', lat: 25.8070, lng: -80.1235, type: 'hotel' },
+  { id: 'bellevue_phl', title: 'The Bellevue Hotel Philadelphia', subtitle: '200 S Broad St, Philadelphia, PA', address: '200 S Broad St, Philadelphia, PA 19102', lat: 39.9489, lng: -75.1650, type: 'hotel' },
+  { id: 'willard_dc', title: 'The Willard InterContinental Washington', subtitle: '1401 Pennsylvania Ave NW, Washington, DC', address: '1401 Pennsylvania Ave NW, Washington, DC 20004', lat: 38.8967, lng: -77.0322, type: 'hotel' },
   { id: 'midtown_manhattan', title: 'Midtown Manhattan', subtitle: 'New York, NY 10019, United States', address: 'Midtown Manhattan, New York, NY', lat: 40.7549, lng: -73.9840, type: 'landmark' },
   { id: 'wall_street', title: 'Wall Street & Financial District', subtitle: 'Manhattan, New York, NY 10005', address: 'Wall St, New York, NY 10005', lat: 40.7074, lng: -74.0089, type: 'landmark' },
-  { id: 'brickell_mia', title: 'Brickell Financial District', subtitle: 'Miami, FL 33131, United States', address: 'Brickell, Miami, FL 33131', lat: 25.7617, lng: -80.1918, type: 'landmark' },
+  { id: 'east_hampton', title: 'East Hampton Village', subtitle: 'Long Island, New York, United States', address: 'Main St, East Hampton, NY 11937', lat: 40.9634, lng: -72.1848, type: 'landmark' },
+  { id: 'atlantic_city', title: 'Atlantic City Boardwalk & Resorts', subtitle: 'Atlantic City, New Jersey, United States', address: 'Boardwalk, Atlantic City, NJ 08401', lat: 39.3562, lng: -74.4285, type: 'landmark' },
+  { id: 'rhode_island', title: 'Newport & Providence', subtitle: 'Rhode Island, United States', address: 'Newport, RI 02840', lat: 41.4901, lng: -71.3128, type: 'landmark' },
 ];
 
 /**

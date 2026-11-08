@@ -115,11 +115,11 @@ export const LegalPage: React.FC<LegalPageProps> = ({ initialTab = 'terms', onNa
         {tab === 'privacy' && (
           <div className="space-y-6 text-[#0F1319]">
             <h2 className="text-3xl font-serif">Privacy Policy</h2>
-            <p className="text-sm text-gray-500">CCPA & US Privacy Standards Compliant</p>
+            <p className="text-sm text-gray-500">US Privacy Standards Compliant</p>
 
             <h3 className="text-xl font-serif font-semibold mt-6">1. Data Controller Overview</h3>
             <p className="text-sm leading-relaxed text-[#596372]">
-              MZS Executive Chauffeurs Inc. acts as the responsible data controller for personal information processed under applicable US federal and state privacy statutes, including the California Consumer Privacy Act (CCPA).
+              MZS Executive Chauffeurs Inc. acts as the responsible data controller for personal information processed under applicable federal and state privacy statutes.
             </p>
 
             <h3 className="text-xl font-serif font-semibold mt-6">2. Collection of Information</h3>

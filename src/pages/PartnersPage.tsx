@@ -82,7 +82,7 @@ export const PartnersPage: React.FC<PartnersPageProps> = ({ onNavigate }) => {
           <div className="p-8 sm:p-12 rounded-3xl bg-white border border-gray-200 shadow-sm">
             <span className="text-xs font-semibold uppercase tracking-widest text-[#0066FF] block mb-4">Partner Testimonial</span>
             <blockquote className="text-2xl sm:text-3xl font-serif text-[#0F1319] leading-snug mb-6">
-              &ldquo;MZS Executive Chauffeurs represents over 60% of our fleet revenue. We grew from 2 to 14 executive sedans and SUVs servicing New York, Miami, and Los Angeles.&rdquo;
+              &ldquo;MZS Executive Chauffeurs represents over 60% of our fleet revenue. We grew from 2 to 14 executive sedans and SUVs servicing New York, Boston, and Philadelphia.&rdquo;
             </blockquote>
             <div className="flex items-center gap-3">
               <div className="w-10 h-10 rounded-full bg-[#0F1319] text-white font-semibold flex items-center justify-center text-sm">
@@ -90,7 +90,7 @@ export const PartnersPage: React.FC<PartnersPageProps> = ({ onNavigate }) => {
               </div>
               <div>
                 <div className="font-semibold text-sm text-[#0F1319]">Angel T.</div>
-                <div className="text-xs text-gray-500">Fleet Operations Partner &bull; New York & Miami</div>
+                <div className="text-xs text-gray-500">Fleet Operations Partner &bull; New York & Philadelphia</div>
               </div>
             </div>
           </div>
@@ -265,7 +265,7 @@ export const PartnersPage: React.FC<PartnersPageProps> = ({ onNavigate }) => {
                     required
                     value={city}
                     onChange={(e) => setCity(e.target.value)}
-                    placeholder="e.g. New York, Miami, Los Angeles, Chicago"
+                    placeholder="e.g. New York, Boston, Philadelphia, Washington DC"
                     className="w-full px-4 py-3 rounded-xl border border-gray-300 focus:outline-none focus:border-[#0066FF] text-sm"
                   />
                 </div>

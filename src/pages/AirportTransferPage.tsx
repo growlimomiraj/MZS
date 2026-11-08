@@ -176,24 +176,24 @@ export const AirportTransferPage: React.FC<AirportTransferPageProps> = ({ onSear
               Seamless City Connection
             </span>
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-serif text-[#0F1319] mb-6 leading-tight">
-              Private airport transfers across the US
+              Private airport transfers across premier regional hubs
             </h2>
             <p className="text-base sm:text-lg text-[#596372] leading-relaxed mb-6 font-light">
-              From an executive transfer into Manhattan from JFK or Newark to an oceanfront arrival in Miami, Los Angeles, or San Francisco, MZS Executive Chauffeurs helps you transition from runway to destination with absolute serenity.
+              From an executive transfer into Manhattan from JFK or Newark to arrivals in Boston, Philadelphia, or Washington D.C., MZS Executive Chauffeurs helps you transition from runway to destination with absolute serenity.
             </p>
             <p className="text-sm sm:text-base text-[#596372] leading-relaxed mb-8">
-              Reserve your private transfer in advance and enjoy a sanctuary where you can catch up on emails, review your presentation, or simply unwind in quiet luxury. Available at all commercial terminals and private aviation FBOs throughout the United States.
+              Reserve your private transfer in advance and enjoy a sanctuary where you can catch up on emails, review your presentation, or simply unwind in quiet luxury. Available at all commercial terminals and private aviation FBOs throughout our regional executive network.
             </p>
             <div className="flex flex-wrap gap-3">
               {[
                 'New York (JFK / LGA / EWR)',
-                'Los Angeles (LAX / VNY)',
-                'Miami (MIA / FLL / OPF)',
-                'Chicago (ORD / MDW)',
-                'San Francisco (SFO / OAK)',
-                'Dallas (DFW / DAL)',
-                'Atlanta (ATL)',
-                'Boston (BOS)'
+                'Teterboro FBO (TEB)',
+                'Boston Logan (BOS)',
+                'Philadelphia (PHL)',
+                'Washington DC (DCA / IAD)',
+                'Baltimore (BWI)',
+                'Westchester (HPN)',
+                'Bradley & Rhode Island (BDL / PVD)'
               ].map((city, cIdx) => (
                 <span
                   key={cIdx}
@@ -229,19 +229,19 @@ export const AirportTransferPage: React.FC<AirportTransferPageProps> = ({ onSear
               American Hospitality
             </span>
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-serif text-[#0F1319] mb-6 leading-tight">
-              Executive airport transfers across major US metro hubs
+              Executive airport transfers across premier regional hubs
             </h2>
             <p className="text-base sm:text-lg text-[#596372] leading-relaxed mb-6 font-light">
-              Stepping off a coast-to-coast flight is demanding. There is no better feeling than knowing a dedicated, professional chauffeur is waiting specifically for you inside the arrivals hall.
+              Stepping off an executive flight is demanding. There is no better feeling than knowing a dedicated, professional chauffeur is waiting specifically for you inside the arrivals hall.
             </p>
             <p className="text-sm sm:text-base text-[#596372] leading-relaxed mb-8">
-              Bypass taxi queues, avoid rideshare parking structure walks, and skip dynamic surge pricing spikes. MZS Executive Chauffeurs delivers effortless curbside elegance across all 50 states.
+              Bypass taxi queues, avoid rideshare parking structure walks, and skip dynamic surge pricing spikes. MZS Executive Chauffeurs delivers effortless curbside elegance throughout New York and the Mid-Atlantic corridor.
             </p>
             <button
               onClick={() => onNavigate('/cities')}
               className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-[#0F1319] text-white hover:bg-black font-medium text-sm transition-all"
             >
-              Explore all US service cities <ArrowRight className="w-4 h-4" />
+              Explore all service destinations <ArrowRight className="w-4 h-4" />
             </button>
           </div>
         </div>

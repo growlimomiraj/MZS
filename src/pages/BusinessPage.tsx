@@ -40,7 +40,7 @@ export const BusinessPage: React.FC<BusinessPageProps> = ({ onNavigate, onOpenAu
             Corporate travel, simplified.
           </h1>
           <p className="text-lg sm:text-xl text-gray-200 max-w-2xl mx-auto mb-10 font-light leading-relaxed">
-            One single, intuitive platform for enterprises and travel management teams to book, track, and reconcile executive rides across the United States.
+            One single, intuitive platform for enterprises and travel management teams to book, track, and reconcile executive rides across premier business corridors.
           </p>
 
           <div className="flex flex-wrap items-center justify-center gap-4">
@@ -88,8 +88,8 @@ export const BusinessPage: React.FC<BusinessPageProps> = ({ onNavigate, onOpenAu
               <span className="text-xl font-serif text-emerald-400">Consolidated Monthly</span>
             </div>
             <div>
-              <span className="text-xs uppercase tracking-wider text-gray-400 block mb-1">US Metro Coverage</span>
-              <span className="text-xl font-serif text-[#0066FF]">All 50 States</span>
+              <span className="text-xs uppercase tracking-wider text-gray-400 block mb-1">Corporate Coverage</span>
+              <span className="text-xl font-serif text-[#0066FF]">Tri-State & Northeast</span>
             </div>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 text-sm text-gray-300">
