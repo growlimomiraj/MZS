@@ -39,7 +39,7 @@ export const AuthModal: React.FC<AuthModalProps> = ({ isOpen, onClose }) => {
         {/* Logo & Heading */}
         <div className="text-center mb-6">
           <div className="flex justify-center mb-4">
-            <MZSLogo color="white" className="h-6 w-auto" />
+            <MZSLogo color="white" className="h-12 sm:h-14 w-auto" />
           </div>
           <h3 className="text-2xl font-serif">
             {tab === 'signin' ? 'Sign in to MZS Executive Chauffeurs' : 'Create your account'}

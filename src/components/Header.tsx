@@ -96,7 +96,7 @@ export const Header: React.FC<HeaderProps> = ({
             className="flex items-center focus:outline-none cursor-pointer"
             aria-label="Go to Homepage"
           >
-            <MZSLogo color={logoColor} className="h-6 sm:h-7 w-auto transition-transform hover:opacity-90" />
+            <MZSLogo color={logoColor} className="h-10 sm:h-12 w-auto transition-transform hover:opacity-90" />
           </button>
         </div>
 
@@ -322,6 +322,19 @@ export const Header: React.FC<HeaderProps> = ({
       {isMobileMenuOpen && (
         <div className="lg:hidden fixed inset-0 top-[72px] bg-[#0F1319]/98 backdrop-blur-2xl z-40 overflow-y-auto px-6 py-6 border-t border-white/10 animate-in slide-in-from-top-4 duration-200">
           <div className="flex flex-col space-y-4">
+            {/* Top Logo in Mobile Drawer */}
+            <div className="flex items-center justify-between pb-3 border-b border-white/10">
+              <MZSLogo color="white" className="h-9 w-auto" />
+              <button
+                type="button"
+                onClick={() => setIsMobileMenuOpen(false)}
+                className="text-gray-400 hover:text-white p-1 rounded-lg cursor-pointer"
+                aria-label="Close menu"
+              >
+                <X className="w-5 h-5" />
+              </button>
+            </div>
+
             {/* Direct Booking Button in Mobile Drawer */}
             <button
               type="button"

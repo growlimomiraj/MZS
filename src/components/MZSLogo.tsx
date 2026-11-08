@@ -8,31 +8,28 @@ interface LogoProps {
 
 export const MZSLogo: React.FC<LogoProps> = ({
   color = 'white',
-  className = 'h-7 w-auto',
-  showSubtitle = true,
+  className = 'h-9 sm:h-11 w-auto',
 }) => {
-  const fillColor = color === 'white' ? '#FFFFFF' : '#0F1319';
-  const subColor = color === 'white' ? 'rgba(255,255,255,0.85)' : '#4B5563';
+  const isDarkBg = color === 'white';
+  const webpSrc = isDarkBg
+    ? '/assets/logo/mzs-logo-transparent.webp'
+    : '/assets/logo/mzs-logo-light.webp';
+  const pngSrc = isDarkBg
+    ? '/assets/logo/mzs-logo-transparent.png'
+    : '/assets/logo/mzs-logo-light.png';
 
   return (
-    <div className={`flex items-center gap-2 select-none ${className}`}>
-      <div className="flex flex-col justify-center leading-none">
-        <span
-          style={{ color: fillColor }}
-          className="text-2xl sm:text-[26px] font-['PP_Fragment',serif] font-bold tracking-[0.08em] transition-colors leading-none"
-        >
-          MZS
-        </span>
-        {showSubtitle && (
-          <span
-            style={{ color: subColor }}
-            className="text-[8px] sm:text-[9px] font-sans font-semibold uppercase tracking-[0.22em] mt-1 whitespace-nowrap transition-colors"
-          >
-            Executive Chauffeurs
-          </span>
-        )}
-      </div>
+    <div className={`inline-flex items-center justify-center select-none ${className}`}>
+      <picture className="h-full w-auto inline-flex items-center">
+        <source srcSet={webpSrc} type="image/webp" />
+        <img
+          src={pngSrc}
+          alt="MZS Executive Chauffeurs - Your Journey • Our Priority"
+          className="h-full w-auto max-h-full object-contain transition-transform duration-200"
+          loading="eager"
+          decoding="async"
+        />
+      </picture>
     </div>
   );
 };
-

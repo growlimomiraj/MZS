@@ -1,6 +1,7 @@
 import React from 'react';
 import { PageRoute } from '../types';
 import { Phone, Mail, MapPin, ShieldCheck } from 'lucide-react';
+import { MZSLogo } from './MZSLogo';
 
 interface FooterProps {
   onNavigate: (route: PageRoute) => void;
@@ -13,18 +14,17 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, onOpenCookies }) => 
       <div className="max-w-[1440px] mx-auto">
         {/* Top Branding & Direct Contact Row */}
         <div className="flex flex-col lg:flex-row items-start lg:items-center justify-between pb-12 mb-12 border-b border-white/10 gap-6">
-          <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-4">
-            <div className="flex flex-col">
-              <span className="text-2xl font-['PP_Fragment',serif] font-bold tracking-[0.08em] leading-none">
-                MZS
-              </span>
-              <span className="text-[10px] font-sans font-semibold uppercase tracking-[0.22em] text-gray-300 mt-1">
-                Executive Chauffeurs
-              </span>
-            </div>
-            <span className="text-gray-500 text-sm hidden sm:inline">|</span>
+          <div className="flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-6">
+            <button
+              onClick={() => onNavigate('/')}
+              className="focus:outline-none cursor-pointer text-left"
+              aria-label="MZS Executive Chauffeurs Home"
+            >
+              <MZSLogo color="white" className="h-12 sm:h-14 w-auto" />
+            </button>
+            <span className="text-gray-600 text-sm hidden sm:inline">|</span>
             <span className="text-gray-300 text-sm font-light">
-              Premier Nationwide Luxury Chauffeur Service
+              Premier Regional Luxury Chauffeur Service
             </span>
           </div>
 

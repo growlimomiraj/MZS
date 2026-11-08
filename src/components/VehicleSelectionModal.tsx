@@ -3,6 +3,7 @@ import { X, Users, Briefcase, CheckCircle2, Shield, ArrowRight, ArrowLeft, Clock
 import { BookingState, VehicleClass } from '../types';
 import { VEHICLE_CLASSES } from '../constants/data';
 import { calculateFare } from '../services/mapsService';
+import { MZSLogo } from './MZSLogo';
 
 interface VehicleSelectionModalProps {
   isOpen: boolean;
@@ -309,6 +310,7 @@ export const VehicleSelectionModal: React.FC<VehicleSelectionModalProps> = ({
               </div>
 
               <div>
+                <MZSLogo color="white" className="h-10 w-auto mx-auto mb-3" />
                 <span className="inline-block px-3 py-1 rounded-full bg-white/10 text-xs font-mono font-medium text-gray-300 mb-2">
                   Confirmation #{bookingCode}
                 </span>
