@@ -43,7 +43,7 @@ export const VEHICLE_CLASSES: VehicleClass[] = [
   {
     id: 'first',
     name: 'First Class',
-    models: 'New 2026 Mercedes-Benz S-Class, BMW 7 Series, Audi A8 or similar',
+    models: 'New 2026 BMW i7, BMW 7 Series, Audi A8 or similar',
     image: '/assets/vehicles/first-class.jpg',
     passengers: 3,
     luggage: 2,
@@ -54,11 +54,11 @@ export const VEHICLE_CLASSES: VehicleClass[] = [
     currency: 'USD',
     description: 'Uncompromising luxury for special occasions, high-profile executives, and VIP hospitality.',
     features: [
-      'Top-tier flagship luxury vehicles',
+      'New 2026 BMW i7 flagship luxury sedan',
       'VIP meet & greet inside airport terminal',
       'Complimentary 60 minutes airport wait time',
       'Highest chauffeur vetting rating',
-      'Onboard phone fast-chargers and personalized cabin temperature'
+      'Executive lounge seating with whisper-quiet cabin'
     ]
   },
   {

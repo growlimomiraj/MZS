@@ -12,7 +12,7 @@ export const PartnersPage: React.FC<PartnersPageProps> = ({ onNavigate }) => {
   const [email, setEmail] = useState('');
   const [phone, setPhone] = useState('');
   const [city, setCity] = useState('');
-  const [vehicle, setVehicle] = useState('Mercedes-Benz S-Class');
+  const [vehicle, setVehicle] = useState('BMW i7');
   const [openFaq, setOpenFaq] = useState<number | null>(0);
 
   const handleSubmit = (e: React.FormEvent) => {
@@ -276,7 +276,7 @@ export const PartnersPage: React.FC<PartnersPageProps> = ({ onNavigate }) => {
                     onChange={(e) => setVehicle(e.target.value)}
                     className="w-full px-4 py-3 rounded-xl border border-gray-300 focus:outline-none focus:border-[#0066FF] text-sm bg-white"
                   >
-                    <option value="Mercedes-Benz S-Class">Mercedes-Benz S-Class</option>
+                    <option value="BMW i7">BMW i7</option>
                     <option value="Mercedes-Benz E-Class">Mercedes-Benz E-Class</option>
                     <option value="Cadillac Escalade ESV">Cadillac Escalade ESV / Luxury SUV</option>
                     <option value="Lincoln Navigator L">Lincoln Navigator L</option>

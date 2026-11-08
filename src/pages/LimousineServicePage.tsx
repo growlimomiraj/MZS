@@ -15,7 +15,7 @@ export const LimousineServicePage: React.FC<LimousineServicePageProps> = ({ onSe
   const limoFaqs = [
     {
       q: 'What is considered a luxury limousine service with MZS Executive Chauffeurs?',
-      a: 'At MZS Executive Chauffeurs, limousine service means pristine executive sedans (such as the Mercedes-Benz S-Class, BMW 7 Series, Audi A8) and spacious luxury SUVs (Cadillac Escalade, Lincoln Navigator) driven by commercially certified chauffeurs in tailored business suits, rather than stretched novelty limousines.'
+      a: 'At MZS Executive Chauffeurs, limousine service means pristine executive sedans (such as the BMW i7, BMW 7 Series, Audi A8) and spacious luxury SUVs (Cadillac Escalade, Lincoln Navigator) driven by commercially certified chauffeurs in tailored business suits, rather than stretched novelty limousines.'
     },
     {
       q: 'How far in advance can I book a limousine?',
@@ -52,10 +52,10 @@ export const LimousineServicePage: React.FC<LimousineServicePageProps> = ({ onSe
             First-Class Flagship Mobility
           </span>
           <h1 className="text-4xl sm:text-6xl lg:text-7xl font-serif font-normal text-white mb-6 leading-[1.08] tracking-tight">
-            Luxury Limo Service across the United States
+            Luxury Limo Service &amp; Chauffeur Mobility
           </h1>
           <p className="text-lg sm:text-xl text-gray-200 max-w-2xl mx-auto mb-10 font-light leading-relaxed">
-            Mercedes-Benz S-Class, BMW 7 Series, Cadillac Escalade, and flagship prestige vehicles for distinguished arrivals across the USA.
+            BMW i7, BMW 7 Series, Cadillac Escalade, and flagship prestige vehicles for distinguished arrivals across New York and the Northeast corridor.
           </p>
 
           <BookingWidget onSearch={onSearch} />
