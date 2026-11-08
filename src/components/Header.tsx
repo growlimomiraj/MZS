@@ -96,7 +96,7 @@ export const Header: React.FC<HeaderProps> = ({
             className="flex items-center focus:outline-none cursor-pointer"
             aria-label="Go to Homepage"
           >
-            <MZSLogo color={logoColor} className="h-10 sm:h-12 w-auto transition-transform hover:opacity-90" />
+            <MZSLogo color={logoColor} className="h-11 sm:h-13 w-auto transition-transform hover:opacity-90" />
           </button>
         </div>
 
@@ -324,7 +324,7 @@ export const Header: React.FC<HeaderProps> = ({
           <div className="flex flex-col space-y-4">
             {/* Top Logo in Mobile Drawer */}
             <div className="flex items-center justify-between pb-3 border-b border-white/10">
-              <MZSLogo color="white" className="h-9 w-auto" />
+              <MZSLogo color="white" className="h-11 w-auto" />
               <button
                 type="button"
                 onClick={() => setIsMobileMenuOpen(false)}

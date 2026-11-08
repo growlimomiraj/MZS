@@ -20,7 +20,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, onOpenCookies }) => 
               className="focus:outline-none cursor-pointer text-left"
               aria-label="MZS Executive Chauffeurs Home"
             >
-              <MZSLogo color="white" className="h-12 sm:h-14 w-auto" />
+              <MZSLogo color="white" className="h-14 sm:h-16 w-auto" />
             </button>
             <span className="text-gray-600 text-sm hidden sm:inline">|</span>
             <span className="text-gray-300 text-sm font-light">
