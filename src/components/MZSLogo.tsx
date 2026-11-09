@@ -8,7 +8,7 @@ interface LogoProps {
 
 export const MZSLogo: React.FC<LogoProps> = ({
   color = 'white',
-  className = 'h-13 sm:h-15 w-auto',
+  className = 'h-12 sm:h-14 w-auto',
 }) => {
   const isDarkBg = color === 'white';
   const webpSrc = isDarkBg
@@ -24,7 +24,7 @@ export const MZSLogo: React.FC<LogoProps> = ({
         <source srcSet={webpSrc} type="image/webp" />
         <img
           src={pngSrc}
-          alt="MZS Executive Chauffeurs - Your Journey • Our Priority"
+          alt="MZS Executive Chauffeurs"
           className="h-full w-auto max-h-full object-contain filter drop-shadow-[0_1px_4px_rgba(0,0,0,0.2)] transition-transform duration-200"
           style={{ imageRendering: '-webkit-optimize-contrast' }}
           loading="eager"
