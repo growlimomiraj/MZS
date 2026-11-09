@@ -21,69 +21,6 @@ export const LOCATION_SUGGESTIONS: LocationSuggestion[] = [
 
 export const VEHICLE_CLASSES: VehicleClass[] = [
   {
-    id: 'first',
-    name: 'First Class Sedan',
-    models: 'New 2026 BMW i7, BMW 7 Series, Mercedes-Benz S-Class or similar',
-    image: '/assets/vehicles/first-class.jpg',
-    passengers: 3,
-    luggage: 2,
-    basePrice: 95,
-    perMileRate: 5.50,
-    hourlyRate: 145,
-    price: 225,
-    currency: 'USD',
-    description: 'Travel in premier comfort and style in our flagship executive sedans with high-speed 5G Wi-Fi and chilled refreshments.',
-    features: [
-      'New 2026 BMW i7 & flagship executive sedans',
-      'High-speed 5G Wi-Fi & device charging',
-      'Ambient-lit cabin with chilled bottled mineral water',
-      'VIP meet & greet inside airport terminal',
-      'Complimentary 60 minutes airport wait time'
-    ]
-  },
-  {
-    id: 'van',
-    name: 'First Class SUV',
-    models: 'New 2026 Cadillac Escalade ESV, Lincoln Navigator L or similar',
-    image: '/assets/vehicles/business-van.jpg',
-    passengers: 6,
-    luggage: 5,
-    basePrice: 85,
-    perMileRate: 4.85,
-    hourlyRate: 125,
-    price: 185,
-    currency: 'USD',
-    description: 'Enjoy spacious comfort in our extended wheelbase premium SUVs, ideal for airport transfers, family travel, and corporate delegations.',
-    features: [
-      'New 2026 Cadillac Escalade ESV & luxury flagship SUVs',
-      'Up to 6 passengers with spacious captain chairs',
-      'Massive luggage capacity for 5 full-size bags',
-      '110V power outlets & in-cabin refreshment cooler',
-      'Complimentary 60 minutes airport wait time'
-    ]
-  },
-  {
-    id: 'sprinter',
-    name: 'Executive Mercedes Sprinter',
-    models: 'New 2026 Mercedes-Benz Sprinter Executive Jet Van (Up to 14 Passengers)',
-    image: '/assets/vehicles/executive-sprinter.jpg',
-    passengers: 14,
-    luggage: 10,
-    basePrice: 150,
-    perMileRate: 7.20,
-    hourlyRate: 195,
-    price: 295,
-    currency: 'USD',
-    description: 'Comfortable luxury group transportation for airport transfers, corporate outings, private aviation, and special VIP events.',
-    features: [
-      'Executive Mercedes-Benz Sprinter seating up to 14 passengers',
-      'Generous dedicated luggage compartment for 10 full-size bags',
-      'Hand-stitched leather captain chairs with center walk-in aisle',
-      'In-cabin cellarette & refreshment bar amenities',
-      '110V power outlets, high-speed 5G Wi-Fi & 6ft 4in standing headroom'
-    ]
-  },
-  {
     id: 'business',
     name: 'Premium Sedan',
     models: '2026 BMW 5 Series, Mercedes-Benz E-Class, Cadillac CT6 or similar',
@@ -105,8 +42,71 @@ export const VEHICLE_CLASSES: VehicleClass[] = [
     ]
   },
   {
+    id: 'van',
+    name: 'Business SUV',
+    models: 'New 2026 Cadillac Escalade ESV, Lincoln Navigator L, Chevrolet Suburban or similar',
+    image: '/assets/vehicles/business-van.jpg',
+    passengers: 6,
+    luggage: 5,
+    basePrice: 85,
+    perMileRate: 4.85,
+    hourlyRate: 125,
+    price: 185,
+    currency: 'USD',
+    description: 'Enjoy spacious comfort in our extended wheelbase premium SUVs, ideal for airport transfers, family travel, and corporate delegations.',
+    features: [
+      'New 2026 Cadillac Escalade ESV & luxury flagship SUVs',
+      'Up to 6 passengers with spacious captain chairs',
+      'Massive luggage capacity for 5 full-size bags',
+      '110V power outlets & in-cabin refreshment cooler',
+      'Complimentary 60 minutes airport wait time'
+    ]
+  },
+  {
+    id: 'first',
+    name: 'First Class',
+    models: 'New 2026 BMW i7, BMW 7 Series, Mercedes-Benz S-Class or similar',
+    image: '/assets/vehicles/first-class.jpg',
+    passengers: 3,
+    luggage: 2,
+    basePrice: 95,
+    perMileRate: 5.50,
+    hourlyRate: 145,
+    price: 225,
+    currency: 'USD',
+    description: 'Travel in premier comfort and style in our flagship executive sedans with high-speed 5G Wi-Fi and chilled refreshments.',
+    features: [
+      'New 2026 BMW i7 & flagship executive sedans',
+      'High-speed 5G Wi-Fi & device charging',
+      'Ambient-lit cabin with chilled bottled mineral water',
+      'VIP meet & greet inside airport terminal',
+      'Complimentary 60 minutes airport wait time'
+    ]
+  },
+  {
+    id: 'sprinter',
+    name: 'Sprinter',
+    models: 'New 2026 Mercedes-Benz Sprinter Executive Jet Van (Up to 14 Passengers)',
+    image: '/assets/vehicles/executive-sprinter.jpg',
+    passengers: 14,
+    luggage: 10,
+    basePrice: 150,
+    perMileRate: 7.20,
+    hourlyRate: 195,
+    price: 295,
+    currency: 'USD',
+    description: 'Comfortable luxury group transportation for airport transfers, corporate outings, private aviation, and special VIP events.',
+    features: [
+      'Executive Mercedes-Benz Sprinter seating up to 14 passengers',
+      'Generous dedicated luggage compartment for 10 full-size bags',
+      'Hand-stitched leather captain chairs with center walk-in aisle',
+      'In-cabin cellarette & refreshment bar amenities',
+      '110V power outlets, high-speed 5G Wi-Fi & 6ft 4in standing headroom'
+    ]
+  },
+  {
     id: 'electric',
-    name: 'Electric Class',
+    name: 'Electric',
     models: 'New 2026 BMW i7 xDrive60, Mercedes-Benz EQS, Lucid Air or similar',
     image: '/assets/vehicles/electric-class.jpg',
     passengers: 3,

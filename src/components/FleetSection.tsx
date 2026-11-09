@@ -8,7 +8,7 @@ interface FleetSectionProps {
 }
 
 export const FleetSection: React.FC<FleetSectionProps> = ({ onSelectVehicle }) => {
-  const [selectedId, setSelectedId] = useState<string>(VEHICLE_CLASSES[0]?.id || 'first');
+  const [selectedId, setSelectedId] = useState<string>(VEHICLE_CLASSES[0]?.id || 'business');
 
   const handleBookVehicle = (vc: VehicleClass) => {
     if (onSelectVehicle) {
@@ -60,7 +60,7 @@ export const FleetSection: React.FC<FleetSectionProps> = ({ onSelectVehicle }) =
                   {/* Category Pill */}
                   <div className="flex items-center justify-between gap-2 mb-3">
                     <span className="text-[11px] uppercase tracking-wider font-bold text-[#0F63BD] bg-white px-2.5 py-1 rounded-full shadow-2xs border border-gray-100">
-                      {vc.name.includes('Sprinter') ? 'Group Luxury' : vc.name.includes('SUV') ? 'First Class SUV' : vc.name}
+                      {vc.name}
                     </span>
                     <span className="text-[11px] font-semibold text-gray-500">
                       From ${vc.price}
