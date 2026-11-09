@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { X, Users, Briefcase, CheckCircle2, Shield, ArrowRight, ArrowLeft, Clock, MapPin, Calendar, Check } from 'lucide-react';
+import { X, Users, Briefcase, CheckCircle2, Shield, ArrowRight, ArrowLeft, Clock, MapPin, Calendar, Check, Loader2 } from 'lucide-react';
 import { BookingState, VehicleClass } from '../types';
 import { VEHICLE_CLASSES } from '../constants/data';
 import { calculateFare } from '../services/mapsService';
@@ -24,6 +24,7 @@ export const VehicleSelectionModal: React.FC<VehicleSelectionModalProps> = ({
   const [flightNumber, setFlightNumber] = useState('');
   const [notes, setNotes] = useState('');
   const [bookingCode, setBookingCode] = useState('');
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   if (!isOpen || !bookingData) return null;
 
@@ -36,11 +37,37 @@ export const VehicleSelectionModal: React.FC<VehicleSelectionModalProps> = ({
     setStep('details');
   };
 
-  const handleConfirmBooking = (e: React.FormEvent) => {
+  const handleConfirmBooking = async (e: React.FormEvent) => {
     e.preventDefault();
+    if (isSubmitting) return;
+    setIsSubmitting(true);
     const code = 'MZS-' + Math.floor(100000 + Math.random() * 900000);
     setBookingCode(code);
-    setStep('confirmed');
+
+    try {
+      await fetch('/api/send-booking', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          bookingCode: code,
+          selectedVehicle,
+          bookingData,
+          passengerName,
+          passengerEmail,
+          passengerPhone,
+          flightNumber,
+          notes,
+          selectedFare,
+        }),
+      });
+    } catch (err) {
+      console.warn('Booking email dispatch notice:', err);
+    } finally {
+      setIsSubmitting(false);
+      setStep('confirmed');
+    }
   };
 
   const handleReset = () => {
@@ -295,9 +322,17 @@ export const VehicleSelectionModal: React.FC<VehicleSelectionModalProps> = ({
                 </button>
                 <button
                   type="submit"
-                  className="px-8 py-3 rounded-full bg-[#0F63BD] hover:bg-[#0D529C] text-sm font-semibold text-white shadow-lg transition-all"
+                  disabled={isSubmitting}
+                  className="px-8 py-3 rounded-full bg-[#0F63BD] hover:bg-[#0D529C] text-sm font-semibold text-white shadow-lg transition-all flex items-center justify-center gap-2 disabled:opacity-70 disabled:cursor-not-allowed cursor-pointer"
                 >
-                  Confirm & Reserve Journey
+                  {isSubmitting ? (
+                    <>
+                      <Loader2 className="w-4 h-4 animate-spin" />
+                      <span>Confirming & Dispatching...</span>
+                    </>
+                  ) : (
+                    'Confirm & Reserve Journey'
+                  )}
                 </button>
               </div>
             </form>
