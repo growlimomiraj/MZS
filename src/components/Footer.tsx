@@ -75,6 +75,20 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, onOpenCookies }) => 
               </li>
               <li>
                 <button
+                  onClick={() => {
+                    onNavigate('/');
+                    setTimeout(() => {
+                      const el = document.getElementById('fleet');
+                      if (el) el.scrollIntoView({ behavior: 'smooth' });
+                    }, 100);
+                  }}
+                  className="text-gray-300 hover:text-white transition-colors cursor-pointer text-left"
+                >
+                  Our luxury fleet
+                </button>
+              </li>
+              <li>
+                <button
                   onClick={() => onNavigate('/career')}
                   className="text-gray-300 hover:text-white transition-colors cursor-pointer text-left"
                 >
@@ -250,6 +264,20 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, onOpenCookies }) => 
                   className="text-gray-300 hover:text-white transition-colors cursor-pointer text-left"
                 >
                   Executive chauffeur service
+                </button>
+              </li>
+              <li>
+                <button
+                  onClick={() => {
+                    onNavigate('/');
+                    setTimeout(() => {
+                      const el = document.getElementById('fleet');
+                      if (el) el.scrollIntoView({ behavior: 'smooth' });
+                    }, 100);
+                  }}
+                  className="text-gray-300 hover:text-white transition-colors cursor-pointer text-left"
+                >
+                  Executive Mercedes Sprinter
                 </button>
               </li>
             </ul>

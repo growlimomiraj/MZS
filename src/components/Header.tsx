@@ -210,6 +210,18 @@ export const Header: React.FC<HeaderProps> = ({
 
             {/* Direct Links */}
             <button
+              onClick={() => {
+                onNavigate('/');
+                setTimeout(() => {
+                  const el = document.getElementById('fleet');
+                  if (el) el.scrollIntoView({ behavior: 'smooth' });
+                }, 100);
+              }}
+              className={`px-3 py-2 text-sm font-normal ${textColor} transition-colors cursor-pointer hover:opacity-80`}
+            >
+              Fleet
+            </button>
+            <button
               onClick={() => handleNavClick('/help')}
               className={`px-3 py-2 text-sm font-normal ${textColor} transition-colors cursor-pointer`}
             >
@@ -435,6 +447,20 @@ export const Header: React.FC<HeaderProps> = ({
                 </div>
               )}
             </div>
+
+            <button
+              onClick={() => {
+                setIsMobileMenuOpen(false);
+                onNavigate('/');
+                setTimeout(() => {
+                  const el = document.getElementById('fleet');
+                  if (el) el.scrollIntoView({ behavior: 'smooth' });
+                }, 100);
+              }}
+              className="text-left py-3 text-lg font-medium text-white border-b border-white/10 cursor-pointer"
+            >
+              Fleet
+            </button>
 
             <button
               onClick={() => handleNavClick('/help')}

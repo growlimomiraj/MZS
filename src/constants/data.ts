@@ -21,29 +21,9 @@ export const LOCATION_SUGGESTIONS: LocationSuggestion[] = [
 
 export const VEHICLE_CLASSES: VehicleClass[] = [
   {
-    id: 'business',
-    name: 'Business Class',
-    models: '2026 Mercedes-Benz E-Class, BMW 5 Series, Cadillac CT6 or similar',
-    image: '/assets/vehicles/business-class.jpg',
-    passengers: 3,
-    luggage: 2,
-    basePrice: 65,
-    perMileRate: 3.85,
-    hourlyRate: 95,
-    price: 148,
-    currency: 'USD',
-    description: 'Our most popular service for corporate business travel and seamless regional airport transfers.',
-    features: [
-      'Complimentary 60 minutes airport wait time',
-      'Free cancellation up to 1 hour before pickup',
-      'Professional licensed US chauffeur',
-      'Complimentary bottled water and Wi-Fi'
-    ]
-  },
-  {
     id: 'first',
-    name: 'First Class',
-    models: 'New 2026 BMW i7, BMW 7 Series, Audi A8 or similar',
+    name: 'First Class Sedan',
+    models: 'New 2026 BMW i7, BMW 7 Series, Mercedes-Benz S-Class or similar',
     image: '/assets/vehicles/first-class.jpg',
     passengers: 3,
     luggage: 2,
@@ -52,55 +32,97 @@ export const VEHICLE_CLASSES: VehicleClass[] = [
     hourlyRate: 145,
     price: 225,
     currency: 'USD',
-    description: 'Uncompromising luxury for special occasions, high-profile executives, and VIP hospitality.',
+    description: 'Travel in premier comfort and style in our flagship executive sedans with high-speed 5G Wi-Fi and chilled refreshments.',
     features: [
-      'New 2026 BMW i7 flagship luxury sedan',
+      'New 2026 BMW i7 & flagship executive sedans',
+      'High-speed 5G Wi-Fi & device charging',
+      'Ambient-lit cabin with chilled bottled mineral water',
       'VIP meet & greet inside airport terminal',
-      'Complimentary 60 minutes airport wait time',
-      'Highest chauffeur vetting rating',
-      'Executive lounge seating with whisper-quiet cabin'
+      'Complimentary 60 minutes airport wait time'
     ]
   },
   {
     id: 'van',
-    name: 'Business Van / SUV',
-    models: 'New 2026 Cadillac Escalade ESV, Lincoln Navigator or similar',
+    name: 'First Class SUV',
+    models: 'New 2026 Cadillac Escalade ESV, Lincoln Navigator L or similar',
     image: '/assets/vehicles/business-van.jpg',
-    passengers: 5,
+    passengers: 6,
     luggage: 5,
     basePrice: 85,
     perMileRate: 4.85,
     hourlyRate: 125,
     price: 185,
     currency: 'USD',
-    description: 'Spacious luxury seating for executive teams, roadshows, family travel, and extra luggage.',
+    description: 'Enjoy spacious comfort in our extended wheelbase premium SUVs, ideal for airport transfers, family travel, and corporate delegations.',
     features: [
       'New 2026 Cadillac Escalade ESV & luxury flagship SUVs',
-      'Spacious luxury seating for up to 5 passengers',
-      'Generous luggage room for 5 full-size suitcases',
+      'Up to 6 passengers with spacious captain chairs',
+      'Massive luggage capacity for 5 full-size bags',
+      '110V power outlets & in-cabin refreshment cooler',
+      'Complimentary 60 minutes airport wait time'
+    ]
+  },
+  {
+    id: 'sprinter',
+    name: 'Executive Mercedes Sprinter',
+    models: 'New 2026 Mercedes-Benz Sprinter Executive Jet Van (Up to 14 Passengers)',
+    image: '/assets/vehicles/executive-sprinter.jpg',
+    passengers: 14,
+    luggage: 10,
+    basePrice: 150,
+    perMileRate: 7.20,
+    hourlyRate: 195,
+    price: 295,
+    currency: 'USD',
+    description: 'Comfortable luxury group transportation for airport transfers, corporate outings, private aviation, and special VIP events.',
+    features: [
+      'Executive Mercedes-Benz Sprinter seating up to 14 passengers',
+      'Generous dedicated luggage compartment for 10 full-size bags',
+      'Hand-stitched leather captain chairs with center walk-in aisle',
+      'In-cabin cellarette & refreshment bar amenities',
+      '110V power outlets, high-speed 5G Wi-Fi & 6ft 4in standing headroom'
+    ]
+  },
+  {
+    id: 'business',
+    name: 'Premium Sedan',
+    models: '2026 BMW 5 Series, Mercedes-Benz E-Class, Cadillac CT6 or similar',
+    image: '/assets/vehicles/business-class.jpg',
+    passengers: 3,
+    luggage: 2,
+    basePrice: 65,
+    perMileRate: 3.85,
+    hourlyRate: 95,
+    price: 148,
+    currency: 'USD',
+    description: 'Enjoy comfortable, stylish executive transportation in our premium sedan category, ideal for business travel and private rides.',
+    features: [
+      '2026 BMW 5 Series & Mercedes-Benz E-Class executive sedans',
+      'Up to 3 passengers with 2 full-size bags',
       'Complimentary 60 minutes airport wait time',
-      'Ideal for airport transfers and multi-city roadshows',
+      'Complimentary bottled water and Wi-Fi',
       'Free cancellation up to 1 hour before pickup'
     ]
   },
   {
     id: 'electric',
     name: 'Electric Class',
-    models: 'New 2026 Mercedes-Benz EQS, Lucid Air, Porsche Taycan or similar',
+    models: 'New 2026 BMW i7 xDrive60, Mercedes-Benz EQS, Lucid Air or similar',
     image: '/assets/vehicles/electric-class.jpg',
     passengers: 3,
     luggage: 2,
     basePrice: 75,
     perMileRate: 4.20,
     hourlyRate: 110,
-    price: 162,
+    price: 165,
     currency: 'USD',
     description: 'Ultra-modern, whisper-quiet luxury journeys in leading premium electric flagship sedans.',
     features: [
-      'Whisper-quiet electric powertrain',
-      'Ultra-quiet acoustic cabin experience',
+      'New 2026 BMW i7 electric flagship sedan',
+      'Whisper-quiet electric powertrain and zero tailpipe emissions',
+      'Ultra-quiet acoustic glass cabin experience',
       'Complimentary 60 minutes airport wait time',
-      'Advanced executive acoustic cabin and fast charging'
+      'Onboard high-speed USB-C charging & 5G connectivity'
     ]
   }
 ];

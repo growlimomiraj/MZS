@@ -27,7 +27,7 @@ export const ChauffeurServicePage: React.FC<ChauffeurServicePageProps> = ({ onSe
     },
     {
       q: 'Can I request a child seat?',
-      a: 'Yes. When completing your booking, you can add child booster or safety seats in the special requests field for Business Class, First Class, and Business Van / SUV reservations.'
+      a: 'Yes. When completing your booking, you can add child booster or safety seats in the special requests field for Premium Sedan, First Class Sedan, First Class SUV, and Executive Mercedes Sprinter reservations.'
     }
   ];
 
@@ -141,7 +141,7 @@ export const ChauffeurServicePage: React.FC<ChauffeurServicePageProps> = ({ onSe
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6">
           {VEHICLE_CLASSES.map((vc) => (
             <div key={vc.id} className="p-6 rounded-3xl bg-white border border-gray-200 shadow-sm flex flex-col justify-between">
               <div>

@@ -15,7 +15,7 @@ export const LimousineServicePage: React.FC<LimousineServicePageProps> = ({ onSe
   const limoFaqs = [
     {
       q: 'What is considered a luxury limousine service with MZS Executive Chauffeurs?',
-      a: 'At MZS Executive Chauffeurs, limousine service means pristine executive sedans (such as the BMW i7, BMW 7 Series, Audi A8) and spacious luxury SUVs (Cadillac Escalade, Lincoln Navigator) driven by commercially certified chauffeurs in tailored business suits, rather than stretched novelty limousines.'
+      a: 'At MZS Executive Chauffeurs, limousine service means pristine executive sedans (such as the BMW i7, BMW 7 Series, Mercedes-Benz S-Class), spacious luxury SUVs (Cadillac Escalade ESV), and Executive Mercedes Sprinters driven by commercially certified career chauffeurs in tailored business suits, rather than stretched novelty limousines.'
     },
     {
       q: 'How far in advance can I book a limousine?',
@@ -141,7 +141,7 @@ export const LimousineServicePage: React.FC<LimousineServicePageProps> = ({ onSe
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6">
           {VEHICLE_CLASSES.map((vc) => (
             <div key={vc.id} className="p-6 rounded-3xl bg-white border border-gray-200 shadow-sm flex flex-col justify-between">
               <div>
