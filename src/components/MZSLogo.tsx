@@ -8,7 +8,7 @@ interface LogoProps {
 
 export const MZSLogo: React.FC<LogoProps> = ({
   color = 'white',
-  className = 'h-11 sm:h-13 w-auto',
+  className = 'h-13 sm:h-15 w-auto',
 }) => {
   const isDarkBg = color === 'white';
   const webpSrc = isDarkBg

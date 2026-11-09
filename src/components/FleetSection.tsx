@@ -169,3 +169,4 @@ export const FleetSection: React.FC<FleetSectionProps> = ({ onSelectVehicle }) =
     </section>
   );
 };
+

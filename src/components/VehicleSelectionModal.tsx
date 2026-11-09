@@ -310,7 +310,7 @@ export const VehicleSelectionModal: React.FC<VehicleSelectionModalProps> = ({
               </div>
 
               <div>
-                <MZSLogo color="white" className="h-12 sm:h-14 w-auto mx-auto mb-3" />
+                <MZSLogo color="white" className="h-16 sm:h-20 w-auto mx-auto mb-3" />
                 <span className="inline-block px-3 py-1 rounded-full bg-white/10 text-xs font-mono font-medium text-gray-300 mb-2">
                   Confirmation #{bookingCode}
                 </span>
