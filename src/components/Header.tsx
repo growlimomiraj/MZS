@@ -69,22 +69,18 @@ export const Header: React.FC<HeaderProps> = ({
     window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
   };
 
-  const isLight = isScrolled || (colorMode === 'light' && currentRoute !== '/');
-  const textColor = isLight ? 'text-[#0F1319] hover:text-[#0F63BD]' : 'text-white/90 hover:text-white';
-  const logoColor = isLight ? 'dark' : 'white';
-  const dropdownBg = isLight
-    ? 'bg-white/98 text-[#0F1319] border border-gray-200 shadow-xl'
-    : 'bg-[#0F1319]/95 text-white border border-white/15 shadow-2xl';
-  const dropdownItemClass = isLight
-    ? 'w-full text-left px-4 py-2.5 text-sm text-gray-700 hover:text-[#0F63BD] hover:bg-gray-50 rounded-xl transition-colors cursor-pointer'
-    : 'w-full text-left px-4 py-2.5 text-sm text-gray-200 hover:text-white hover:bg-white/10 rounded-xl transition-colors cursor-pointer';
+  const isLight = false; // MZS Luxury dark header standard across all views for brand consistency
+  const textColor = 'text-white/90 hover:text-[#D4AF37]';
+  const logoColor = 'white';
+  const dropdownBg = 'bg-[#0F1319]/95 text-white border border-white/15 shadow-2xl';
+  const dropdownItemClass = 'w-full text-left px-4 py-2.5 text-sm text-gray-200 hover:text-[#D4AF37] hover:bg-white/10 rounded-xl transition-colors cursor-pointer';
 
   return (
     <header
       ref={headerRef}
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isLight
-          ? 'bg-white/95 backdrop-blur-md shadow-sm border-b border-gray-100'
+        isScrolled || currentRoute !== '/'
+          ? 'bg-[#0B0E14]/90 backdrop-blur-md shadow-2xl border-b border-white/10'
           : 'bg-transparent'
       }`}
     >
