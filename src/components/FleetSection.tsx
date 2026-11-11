@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { VEHICLE_CLASSES } from '../constants/data';
 import { VehicleClass } from '../types';
-import { Users, Briefcase, Wifi, Zap, Check, ArrowRight, ShieldCheck, Sparkles } from 'lucide-react';
+import { Users, Briefcase, Wifi, Zap, Check, ArrowRight, ShieldCheck, Sparkles, Phone } from 'lucide-react';
 
 interface FleetSectionProps {
   onSelectVehicle?: (vehicle: VehicleClass) => void;
@@ -122,13 +122,15 @@ export const FleetSection: React.FC<FleetSectionProps> = ({ onSelectVehicle }) =
                     <div className="text-[10px] text-gray-400 font-light">or ${vc.hourlyRate}/hr</div>
                   </div>
 
-                  <button
-                    onClick={() => handleBookVehicle(vc)}
-                    className="px-4 py-2 rounded-full bg-[#0F63BD] hover:bg-[#0D529C] text-white text-xs font-semibold transition-all shadow-xs hover:shadow-md cursor-pointer flex items-center gap-1.5 shrink-0"
+                  <a
+                    href="tel:+18888017476"
+                    className="px-3.5 py-2 rounded-full bg-[#0F63BD] hover:bg-[#0D529C] text-white text-xs font-semibold transition-all shadow-xs hover:shadow-md cursor-pointer flex items-center gap-1.5 shrink-0"
+                    title="Call 24/7 Hotline: (888) 801-7476"
+                    aria-label="Call 24/7 Hotline: (888) 801-7476"
                   >
-                    <span>Reserve</span>
-                    <ArrowRight className="w-3 h-3" />
-                  </button>
+                    <Phone className="w-3 h-3" />
+                    <span>Call Hotline</span>
+                  </a>
                 </div>
               </div>
             );
