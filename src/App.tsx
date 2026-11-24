@@ -20,7 +20,7 @@ import { RouteDetailPage } from './pages/RouteDetailPage';
 import { LegalPage } from './pages/LegalPage';
 
 import { BookingState, PageRoute } from './types';
-import { ArrowUp } from 'lucide-react';
+import { ArrowUp, Phone, CalendarCheck } from 'lucide-react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
@@ -339,7 +339,7 @@ export function App() {
   };
 
   return (
-    <div className="min-h-screen flex flex-col bg-[#0F1319] text-[#0F1319]">
+    <div className="min-h-screen flex flex-col bg-[#0F1319] text-[#0F1319] pb-16 md:pb-0">
       {/* Global Header */}
       <Header
         currentRoute={currentRoute}
@@ -362,13 +362,35 @@ export function App() {
         <button
           type="button"
           onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-          className="fixed bottom-6 right-6 z-40 p-3 rounded-full bg-[#0F1319]/90 hover:bg-[#0066FF] text-white border border-white/20 shadow-2xl backdrop-blur-md transition-all duration-300 hover:scale-105 cursor-pointer flex items-center gap-1.5 animate-in fade-in zoom-in-90"
+          className="fixed bottom-20 md:bottom-6 right-4 md:right-6 z-40 p-3 rounded-full bg-[#0F1319]/90 hover:bg-[#0066FF] text-white border border-white/20 shadow-2xl backdrop-blur-md transition-all duration-300 hover:scale-105 cursor-pointer flex items-center gap-1.5 animate-in fade-in zoom-in-90"
           aria-label="Scroll to top of page"
         >
           <ArrowUp className="w-4 h-4 text-white" />
           <span className="text-[11px] font-semibold pr-1 hidden sm:inline uppercase tracking-wider">Top</span>
         </button>
       )}
+
+      {/* Mobile Sticky Bottom Action Bar: Call Now & Book Now */}
+      <div className="md:hidden fixed bottom-0 left-0 right-0 z-40 bg-[#0B0E14]/95 backdrop-blur-md border-t border-white/15 px-4 py-3 pb-[max(0.75rem,env(safe-area-inset-bottom))] shadow-[0_-8px_30px_rgba(0,0,0,0.45)]">
+        <div className="grid grid-cols-2 gap-3 max-w-md mx-auto">
+          <a
+            href="tel:+18888017476"
+            className="flex items-center justify-center gap-2 py-2.5 px-4 rounded-full border border-[#D4AF37]/60 bg-white/5 hover:bg-white/10 text-white text-sm font-semibold transition-all active:scale-95"
+            aria-label="Call Now: (888) 801-7476"
+          >
+            <Phone className="w-4 h-4 text-[#D4AF37]" />
+            <span>Call Now</span>
+          </a>
+          <button
+            type="button"
+            onClick={handleBookNow}
+            className="flex items-center justify-center gap-2 py-2.5 px-4 rounded-full bg-[#0F63BD] hover:bg-[#0D529C] text-white text-sm font-semibold shadow-lg transition-all active:scale-95 cursor-pointer"
+          >
+            <CalendarCheck className="w-4 h-4" />
+            <span>Book Now</span>
+          </button>
+        </div>
+      </div>
 
       {/* Modals & Overlays */}
       <AuthModal isOpen={isAuthModalOpen} onClose={() => setIsAuthModalOpen(false)} />

@@ -276,27 +276,16 @@ export const Header: React.FC<HeaderProps> = ({
             </a>
           </nav>
 
-          {/* Book Now Button: Direct redirect/scroll to booking card */}
-          <button
-            type="button"
-            onClick={() => {
-              if (onBookNowClick) {
-                onBookNowClick();
-              } else {
-                handleNavClick('/');
-                setTimeout(() => {
-                  const el = document.getElementById('booking-widget');
-                  if (el) {
-                    const y = el.getBoundingClientRect().top + window.pageYOffset - 90;
-                    window.scrollTo({ top: Math.max(0, y), behavior: 'smooth' });
-                  }
-                }, 100);
-              }
-            }}
-            className="px-5 py-2 text-sm font-semibold text-white bg-[#0F63BD] hover:bg-[#0D529C] rounded-full transition-all duration-200 shadow-md cursor-pointer shrink-0"
+          {/* Call Now Button: Direct phone dial */}
+          <a
+            href="tel:+18888017476"
+            className="px-4 sm:px-5 py-2 text-xs sm:text-sm font-semibold text-white bg-[#0F63BD] hover:bg-[#0D529C] rounded-full transition-all duration-200 shadow-md cursor-pointer shrink-0 flex items-center gap-1.5"
+            title="Call 24/7 Hotline: (888) 801-7476"
+            aria-label="Call Now: (888) 801-7476"
           >
-            Book now
-          </button>
+            <Phone className="w-3.5 h-3.5" />
+            <span>Call now</span>
+          </a>
 
           {/* Mobile Menu Hamburger */}
           <button
